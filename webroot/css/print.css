@@ -1,0 +1,73 @@
+div#header h1, div#main_nav, div#secondary_nav, div#sites_nav, form#search, div#side, div.options, div#footer span, pre.code, div.flags {
+	display:none;
+}
+body{
+	font-family:"lucida grande",verdana,helvetica,arial,sans-serif;
+	font-size:12px;
+	color:#333;
+	background:#003d4c url(images/body_bg.gif) repeat-x;
+	/*background:url(images/grid_bg.gif) repeat-y center;*/
+	margin: 0;
+}
+#container {
+	position:relative;
+	background: url(../img/cake.icon.gif) no-repeat 10px 10px;
+	padding-top:44px;
+}
+div#body {
+	display:block;
+	width: auto;
+	margin: 0;
+	padding: 0 10px;
+	border: 0;
+	color: black;
+	background:#fff;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+#container a:link, #container a:visited {
+   color: blue;
+   background: transparent;
+   font-weight: bold;
+   text-decoration: underline;
+}
+
+#container a:link:after, #container a:visited:after {
+   content: " (" attr(href) ") ";
+   font-size: 90%;
+}
+h3 {
+	/* page-break-before: always; */
+}
+ol.code {
+	margin: 1em 0;
+	padding: 0;
+	font-size: 0.75em;
+	line-height: 1.8em;
+	overflow: hidden;
+	color: #939399;
+	text-align: left;
+	list-style-position: inside;
+	border: 1px solid #d3d3d0;
+}
+ol.code li {
+	float: left;
+	clear: both;
+	width: 99%;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0 0 0 1%;
+	background: #f3f3f0;
+}
+ol.code li.even { background: #fff; }
+ol.code li code {
+	font: 1.2em courier, monospace;
+	color: #c30;
+	white-space: pre;
+	padding-left: 0.5em;
+}
+.code .comment { color: #939399; }
+.code .default { color: #44c; }
+.code .keyword { color: #373; }
+.code .string { color: #c30; }

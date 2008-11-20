@@ -1,0 +1,21 @@
+digraph G {
+overlap=false;
+splines=true;
+edge [fontname="Helvetica",fontsize=8];
+ranksep=0.1;
+nodesep=0.1;
+node [shape=record,fontname="Helvetica",fontsize=9];
+	"Change" [shape=Mrecord,label="{<0> Change|{<f0> id\lrevision_id\luser_id\lauthor_id\lstatus_from\lstatus_to\lcomment\lcreated\l|<f1> integer[11]\lstring[36]\linteger[11]\linteger[11]\lstring[10]\lstring[10]\lstring[255]\ldatetime\l}}"];
+	"Node" [shape=Mrecord,label="{<0> Node|{<f0> id\lshow_in_toc\llft\lrght\lparent_id\lstatus\lcomment_level\ledit_level\ldepth\lsequence\lcreated\lmodified\l|<f1> string[36]\lboolean[1]\linteger[10]\linteger[10]\lstring[36]\linteger[2]\linteger[4], default: \"200\"\linteger[4], default: \"200\"\linteger[2]\lstring[20]\ldatetime\ldatetime\l}}"];
+	"Comment" [shape=Mrecord,label="{<0> Comment|{<f0> id\lnode_id\luser_id\lrevision_id\llang\ltitle\lauthor\lemail\lurl\lbody\lpublished\lcreated\lmodified\l|<f1> integer[10]\linteger[10]\linteger[10]\linteger[10]\lstring[2]\lstring[150]\lstring[255]\lstring[255]\lstring[255]\ltext\lboolean[1], default: \"1\"\ldatetime\ldatetime\l}}"];
+	"Revision" [shape=Mrecord,label="{<0> Revision|{<f0> id\lnode_id\lunder_node_id\lafter_node_id\lstatus\luser_id\llang\lslug\ltitle\lcontent\ltype\lreason\lflags\lcreated\lmodified\l|<f1> string[36]\lstring[36]\lstring[36]\lstring[36]\lstring[30], default: \"pending\"\linteger[10]\lstring[3]\lstring[30]\lstring[200]\ltext\lstring[50]\lstring[300]\lstring[100]\ldatetime\ldatetime\l}}"];
+	"Change" -> "User" [label="Change->User"]
+	"Change" -> "User" [label="Change->Author"]
+	"Change" -> "Revision" [label="Change->Revision"]
+	"Change" -> "Node" [label="Change->Node"]
+	"Revision" -> "Node" [label="Revision->Node"]
+	"Comment" -> "Node" [label="Comment->Node"]
+	"Comment" -> "Revision" [label="Comment->Revision"]
+	"Comment" -> "User" [label="Comment->User"]
+	"Revision" -> "User" [label="Revision->User"]
+}

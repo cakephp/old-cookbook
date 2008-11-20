@@ -1,0 +1,403 @@
+span.search_term_0 {background-color: #66ffff; color: black;}
+span.search_term_1 {background-color: #ff66ff; color: black;}
+span.search_term_2 {background-color: #ffff66; color: black;}
+span.search_term_3 {background-color: #ff8888; color: black;}
+span.search_term_4 {background-color: #88ff88; color: black;}
+span.search_term_5 {background-color: #8888ff; color: black;}
+span.search_term_6 {background-color: #88dddd; color: black;}
+span.search_term_7 {background-color: #dd88dd; color: black;}
+span.search_term_8 {background-color: #dddd88; color: black;}
+span.search_term_9 {background-color: #aaddff; color: black;}
+span.search_term_10 {background-color: #aaffdd; color: black;}
+span.search_term_11 {background-color: #ddaaff; color: black;}
+#results {
+margin-right:3em;
+}
+#results dt {
+margin:1.5em 0pt 0pt;
+}
+#results dt a {
+color:#3333CC;
+}
+#results dd {
+font-size:80%;
+margin:0pt;
+padding:0pt;
+}
+#results .author, #results .date, #results .keywords {
+color:#009900;
+}
+
+.admin {
+	color: #993;
+}
+#content {
+	padding: 0px 0px;
+	background: #F4F4F4;
+	overflow: hidden;
+}
+#side {
+	margin: 0 0 0em 70%;
+	border-left: 2px #e4e4e4 solid;
+	background: #F4F4F4;
+	min-width: 200px;
+	min-height: 200px;
+}
+#side h4 {
+	padding-top: 20px;
+}
+#body {
+	float: left;
+	width: 70%;
+	text-align: justify;
+	background: #fff;
+	padding: 0 0px 20px 0px;
+	margin: 0 2em 0 0;
+	border-right: 2px #e4e4e4 solid;
+	min-height: 200px;
+}
+div.form {
+	padding: 0 24px;
+}
+div.view {
+	padding: 0 24px;
+}
+div.view ul {
+	margin-left: 2em;
+}
+div.view li {
+	margin-bottom: .5em;
+}
+
+div.logo {
+	margin: 5px;
+	padding: 5px;
+	width: 225px;
+  	display: block;
+	margin-left: auto;
+}
+
+div.introduction {
+	margin: 5px;
+	padding: 5px;
+	width: 240px;
+	text-align: justify;
+	margin-left: auto;
+}
+
+div.rss-icon {
+	margin: 5px;
+	padding: 5px;
+	width: 246px;
+	margin-left: auto;
+}
+div.rss-icon img {
+	float: left;
+	padding-left: 10px;
+}
+div.rss-icon h4 {
+	display: block;
+	padding-top: 22px;
+	margin-bottom: 0px;
+}
+div.login {
+	padding: 0 40px;
+}
+div.login form {
+	width: 400px;
+}
+span.date {
+	display: block;
+}
+p {
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+p.caption {
+	width: 100%;
+	text-align: center;
+	font-style: italic;
+}
+div.comments {
+	width: 100%;
+}
+div.comment {
+	background: #F4F4F4;
+	margin: 1em;
+	padding: 1em;
+}
+p.commenttitle {
+	color:#333333;
+	font-size:120%;
+	margin-bottom:0.6em;
+}
+p.commentmeta {
+	float: right;
+	padding: 0;
+	font-style: italic;
+	margin: 0.5em 0 0.5em 0;
+}
+ol, ol li {
+	margin-left: 2em;
+}
+ul li ul {
+	padding-left: 1em;
+}
+div.crumbs {
+	padding: 10px 20px 0 18px;
+	background: #fff;
+}
+div.crumbs a {
+	padding-right: 6px;
+	padding-left: 6px;
+}
+div.context-menu  {
+	margin: 1em 0 0 1em;
+}
+div.context-menu  ul {
+	margin-left: 20px;
+}
+div.context-menu  li {
+	margin: .5em 0;
+	font-size: 14px;
+}
+div.toc h3 {
+	margin-bottom: 1em;
+}
+div.toc div.tree {
+	margin-left: 20px;
+}
+div.toc ul {
+	margin: 0em 0 0em 1em;
+}
+div.toc li {
+	font-size: 14px;
+	margin: .5em 0 0 0;
+}
+div.toc ul > li.active a{
+	font-size: +1;
+}
+div.toc li.active a {
+}
+div.view h2 {
+	margin-bottom: 0;
+	font-size: 240%;
+	clear:left;
+}
+div.view h3 {
+	clear: left;
+	margin-top: 20px;
+	margin-bottom: 0;
+	font-size: 210%;
+}
+div.view h4 {
+	font-size: 180%;
+}
+div.view h5 {
+	font-size: 150%;
+}
+div.view h6 {
+	font-size: 120%;
+}
+div.view div.summary {
+	padding: 0 2px;
+}
+div.view div.sections div.body {
+	padding: 0 2px;
+}
+div.view img {
+	margin: 1em auto;
+}
+div.options {
+	margin-bottom: 10px;
+}
+div.options ul.node-options {
+	margin: 0;
+}
+
+div.options ul.node-options li {
+	margin-right: 10px;
+	display: inline;
+}
+div.options ul.node-options a, a.treeOptionsToggle {
+	color: #993;
+}
+ul.tree-options {
+	margin: 0;
+	padding-left: none;
+	display: inline;
+}
+ul.tree-options li {
+	margin-right: 10px;
+	display: inline;
+}
+ul.tree-options a {
+	color: #993;
+	text-decoration: none;
+}
+div.userstats ul {
+	width: 30%;
+	float: left;
+}
+div.node-nav {
+	clear: left;
+	padding: 40px 20px 20px 24px;
+}
+table {
+	clear: none;
+}
+pre {
+	overflow:auto;
+}
+pre.code {
+	display: none;
+	background: #F0F0F0;
+	padding: 1em 30px;
+	line-height: 1.1em;
+}
+pre.diff {
+	width: 100em;
+}
+pre.shell {
+	background: black;
+	color: white;
+	font: monospace;
+}
+
+ol.code {
+	margin: 0 0 1em;
+	padding: 0;
+	font-size: 0.75em;
+	line-height: 1.8em;
+	overflow: auto;
+	color: #939399;
+	text-align: left;
+	list-style-position: inside;
+	border: 1px solid #d3d3d0;
+}
+ol.code li {
+	float: left;
+	clear: both;
+	width: 99%;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0 0 0 1%;
+}
+ol.code li.even { background: #f3f3f0; }
+ol.code li code {
+	font: 1.2em courier, monospace;
+	color: #c30;
+	white-space: pre;
+	padding-left: 0.5em;
+}
+.code .comment { color: #939399; }
+.code .default { color: #44c; }
+.code .keyword { color: #373; }
+.code .string { color: #c30; }
+
+
+#main_nav ul.navigation{
+	margin-right: 280px;
+}
+#search {
+	height:40px;
+	line-height:40px;
+	min-width:100px;
+	padding-right:15px;
+	right:0pt;
+	top:42px;
+}
+#search_submit_btn {
+	display:inline;
+	font-size:100%;
+	padding:0px;
+	text-align:right;
+	position:absolute;
+	right:10px;
+	text-align:right;
+	top:12px;
+}
+form#search input.query {
+	width:200px;
+	display:inline;
+	margin-top: 2px;
+	position:absolute;
+	right:70px;
+	top:10px;
+	width:180px;
+}
+h1.pending, h2.pending, h3.pending, h4.pending, h5.pending, h6.pending {
+	background:transparent url(images/pending.png) no-repeat scroll 0% 50%;
+	padding-left: 20px;
+	margin-left: -20px;
+}
+div.flags {
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	float: right;
+}
+
+div.flags img {
+	padding: 0;
+	margin: 0;
+}
+
+/* DIFF */
+table.diff td.diffdeleted 				{ border-color: #F21515;}
+table.diff td.diffadded 				{ border-color: #7AB317;}
+table.diff td.diffdeleted span.diffchar	{ background-color: #FFD3D2;}
+table.diff td.diffadded span.diffchar	{ background-color: #CAFFCF;}
+
+dl#results dt.content a 				{ color:#EE3322; font-size:29px; margin:0.5em 0pt; }
+
+/* SNOOK STYLES! */
+dl#results dt,
+div.nodes h2,
+div.nodes h3,
+div.nodes h4,
+div.nodes h5                            {background-color:#f1f1f1;padding:7px 20px;border-top:1px solid #036;font-weight:normal;margin-top:0;}
+
+.nodes .body h3,
+.nodes .summary h3,
+.nodes .body h4,
+.nodes .summary h4,
+.nodes .body h5,
+.nodes .summary h5                      {background-color:transparent;padding:0;border:0;}
+
+.summary, .body                         {margin-bottom:1em;}
+div.crumbs					            {padding:10px 20px;}
+
+div.view div.comments                   {padding:10px 0 10px 20px;width:auto;}
+div.view div.comments h2                {background-color:transparent;border-top:1px solid #900;font-size:160%;padding:5px;}
+div.view div.comments h2 a              {color:#900;}
+
+div.view div.comment                    {padding:0;margin:0;background-color:#F9F9F9;}
+div.comment div.commentbody             {padding:10px;margin-bottom:5px;}
+div.comment p.commenttitle              {background-color:#F1F1F1;font-size:12px;padding:5px 10px;font-weight:bold;}
+div.comment p.commentmeta               {padding-right:10px;font-size:11px;}
+
+div#body                                {text-align:left;}
+.options                                {background-color:#f6f6ff;padding:5px 20px;font-size:11px;}
+a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em}
+div.flags                               {position:relative;top:25px;right:10px;height:auto;float:none;text-align:right;}
+
+.summary a                              {text-decoration:underline;}
+.summary a:hover                        {color:#C00;}
+
+div.view                                {padding-left:0;}
+div#body div.revisions,
+div.view div.summary,
+div.view div.body                       {padding-left:20px;}
+
+table                                   {border-collapse:collapse;}
+table tr th, table tr td                {padding:5px; border:1px solid #DDD;}
+
+.warning 				{margin:1em 0;padding:10px 10px 10px 35px;background:#FEE url(images/24-message-warn.png) no-repeat 7px 7px;border:1px solid #900;}
+.note 					{margin:1em 0;padding:10px 10px 10px 35px;background:#FFB url(images/24-message-info.png) no-repeat 7px 7px;border:1px solid #CC6;}
+.method 				{margin:1em 0;font-weight:bold;font-size:14px;margin-left:20px}
+a.selected {
+	background: #ddd;
+  	padding:0.2em;
+}

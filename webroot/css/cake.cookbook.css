@@ -401,3 +401,6 @@ a.selected {
 	background: #ddd;
   	padding:0.2em;
 }
+a#loggedInAs {
+	color: #fff;
+}

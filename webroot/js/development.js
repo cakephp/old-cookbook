@@ -42,18 +42,4 @@ function positionSqlLogs(where, what) {
 		$(what).css('bottom', 0);
 		$(what).css('z-index', 1000);
 	}
-	/* Toggle Code */
-	$('pre.code').before('<a class="codeToggle" href="#">Plain Text View</a>');
-	$('a.codeToggle').click().toggle(function() {
-			$(this).next().show();
-			$(this).next().next().hide();
-			$(this).text('Code View');
-			return false;
-		}, function() {
-			$(this).next().hide();
-			$(this).next().next().show();
-			$(this).text('Plain Text View');
-			return false;
-	});
-
 }

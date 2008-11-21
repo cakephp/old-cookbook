@@ -15,7 +15,7 @@ foreach ($data as $id => $row) {
 	$sequence = $Node['sequence'];
 	$sequence = $sequence?$sequence:'#';
 	echo "<h2 id=\"{$Revision['slug']}-{$Node['id']}\">" .
-		$html->link($sequence, '#' . $Revision['slug'] . '-' . $Node['id']) . ' ' . htmlspecialchars($Revision['title']) . "</h2>";
+		$html->link($sequence, array('action' => 'view', $Node['id'], $Revision['slug'])) . ' ' . htmlspecialchars($Revision['title']) . "</h2>";
 
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $row));

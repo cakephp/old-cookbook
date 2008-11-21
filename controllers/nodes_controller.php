@@ -725,7 +725,7 @@ class NodesController extends AppController {
 		$pendingUpdates = Set::extract($pendingUpdates, '{n}.Revision.node_id');
 		$this->set(compact('pendingUpdates'));
 		if ($this->params['lang'] == 'en') {
-			$this->data = $this->paginate(array('Revision.content LIKE' => '<h'));
+			$this->data = $this->paginate(array('Revision.content LIKE' => '%<h%'));
 			return $this->render('english_todo');
 		} else {
 			$this->data = $this->paginate(array('OR' => array('Revision.id' => null, 'Revision.flags LIKE' => 'englishChanged')));

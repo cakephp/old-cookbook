@@ -282,7 +282,7 @@ msgid "Top Contributors"
 msgstr "Top Colaboradores"
 
 #: /views/elements/secondary_nav.ctp:13
-msgid "todo"
+msgid "Todo"
 msgstr ""
 
 #: /views/elements/secondary_nav.ctp:17
@@ -463,4 +463,3 @@ msgstr "Busque book.cakephp.org"
 #: /webroot/test.php:75
 msgid "Debug setting does not allow access to this url."
 msgstr ""
-

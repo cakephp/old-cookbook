@@ -3,15 +3,24 @@
 This app is designed to run with the branch version of 1.2
 
 The user system is linked to the bakery, it's therefore a good idea to have
-a working http://cakeforge.org/projects/bakery/ install first. 
+a working http://cakeforge.org/projects/bakery/ install first.
 
 == DB setup ==
-create the book database and tables using either the schema.php or schema.sql file
-Add the sample data from the config/sql folder
-if you haven't installed the bakery code, you at least need to create the user
-table from the bakery schema
+if you have a working bakery install
+        create the book database and tables using either the schema.php or schema.sql file
+        create your databse.php file with a default and bakery pointing at
+        their respective databases
+if you don't have or don't want to install the bakery
+        create an empty database and fill it with the complete.sql file
+        create your databse.php file with a default and bakery pointing at the
+        same database
 
 == Config setup ==
 Create a core.php file, or copy from a stock 1.2 install
 Create a database.php file naming the database with a default and bakery
 connection
+
+== Creating your initial data ==
+On first load, the book will populate itself with some test data if the database is empty and debug mode is enabled
+Therefore, to start your book experience - create or empty the database and
+simply browse

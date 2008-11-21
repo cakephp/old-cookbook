@@ -284,7 +284,7 @@ msgid "Top Contributors"
 msgstr "Top des contributeurs"
 
 #: /views/elements/secondary_nav.ctp:13
-msgid "todo"
+msgid "Todo"
 msgstr ""
 
 #: /views/elements/secondary_nav.ctp:17
@@ -469,4 +469,3 @@ msgstr ""
 #, fuzzy
 #~ msgid "Top %s contributors"
 #~ msgstr "Top des contributeurs"
-

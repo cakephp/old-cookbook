@@ -840,6 +840,24 @@ class Node extends AppModel {
 			$conditions['Node.rght <'] = $this->field('rght', array('id' => $parentId));
 		} else {
 			$conditions = array();
+			$table = $this->table;
+			$this->query("UPDATE $table SET depth = (
+				SELECT wrapper.parents FROM (
+					SELECT
+						this.id as row,
+						COUNT(parent.id) as parents
+					FROM
+						$table AS this
+					LEFT JOIN $table AS parent ON (
+						parent.lft < this.lft AND
+						parent.rght > this.rght)
+					GROUP BY
+						this.id
+				) AS wrapper WHERE wrapper.row = $table.id)");
+			$db =& ConnectionManager::getDataSource($this->useDbConfig);
+			if (!$db->error) {
+				return true;
+			}
 		}
 		$nodes = $this->find('list', compact('conditions'));
 		foreach ($nodes as $nodeId => $node) {

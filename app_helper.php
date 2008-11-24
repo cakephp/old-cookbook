@@ -39,13 +39,6 @@
  */
 class AppHelper extends Helper {
 /**
- * name variable
- *
- * @var string
- * @access public
- */
-	var $name = 'App';
-/**
  * url function
  *
  * @param mixed $url

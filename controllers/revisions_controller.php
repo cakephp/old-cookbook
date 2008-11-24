@@ -404,6 +404,7 @@ class RevisionsController extends AppController {
 		if ($id) {
 			return $this->redirect(array('action' => 'view', $id), null, true);
 		} else {
+			//$this->Session->setFlash('No more pending revisions for that language');
 			return $this->redirect(array('action' => 'pending'), null, true);
 		}
 	}

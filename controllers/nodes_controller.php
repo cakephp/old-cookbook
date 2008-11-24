@@ -154,8 +154,10 @@ class NodesController extends AppController {
 			$this->currentPath = $this->Node->getPath($this->currentNode, $fields, 0);
 			$this->set('currentPath', $this->currentPath);
 		}
-		$this->Auth->allowedActions = array('index', 'view', 'single_page', 'toc', 'collections', 'app_name',
-			'compare', 'history', 'stats', 'todo');
+		if ($this->params['url']['ext'] != 'xml') {
+			$this->Auth->allowedActions = array('index', 'view', 'single_page', 'toc', 'collections',
+				'app_name', 'compare', 'history', 'stats', 'todo');
+		}
 	}
 /**
  * beforeRender function

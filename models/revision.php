@@ -108,6 +108,7 @@ class Revision extends AppModel {
  * @access public
  */
 	function afterSave($created) {
+		$this->Behaviors->enable('Searchable.Searchable');
 		if (!$created) {
 			return;
 		}
@@ -138,6 +139,7 @@ class Revision extends AppModel {
 		) {
 			$this->data['Revision']['lang'] = $this->Node->language;
 		}
+		$this->Behaviors->disable('Searchable.Searchable');
 		return true;
 	}
 /**

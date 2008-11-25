@@ -93,7 +93,7 @@ class Node extends AppModel {
  * @var array
  * @access public
  */
-	var $actsAs = array ('Tree');
+	var $actsAs = array ('Tree', 'Acl' => 'controlled');
 /**
  * validate property
  *

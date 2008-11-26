@@ -140,7 +140,7 @@ class ChangesController extends AppController {
 		if (isset($this->params['named']['user'])) {
 			$userId = $this->Change->User->field('id', array('username' => $this->params['named']['user']));
 			if ($userId) {
-				$conditions['Change.user_id'] = $userId;
+				$conditions['Change.author_id'] = $userId;
 				$this->pageTitle .= ' ' . sprintf(__('by %s', true), $this->params['named']['user']);
 			}
 		}

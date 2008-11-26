@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-11-19 13:34+0100\n"
-"PO-Revision-Date: 2008-11-26 21:27-0300\n"
+"PO-Revision-Date: 2008-11-26 21:53-0300\n"
 "Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Nó inválido."
 
 #: /controllers/comments_controller.php:93
 msgid "Your comment has been added"
-msgstr "Seu comentário foi adicionando"
+msgstr "Seu comentário foi adicionado"
 
 #: /controllers/comments_controller.php:96
 msgid "Please correct errors below."

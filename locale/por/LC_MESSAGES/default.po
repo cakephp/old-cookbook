@@ -26,8 +26,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-11-19 13:34+0100\n"
-"PO-Revision-Date: 2008-11-19 13:36+0100\n"
-"Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
+"PO-Revision-Date: 2008-11-26 21:27-0300\n"
+"Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: /app_controller.php:93
 msgid "Whoops, not a valid language."
-msgstr "Ops, não é uma linguagem válida."
+msgstr "Ops, essa não é uma linguagem válida."
 
 #: /app_controller.php:109
 msgid "Please login to continue"
@@ -50,9 +50,8 @@ msgid "Attachment controller - no class or foreignKey error."
 msgstr "Attachment controller - sem class ou erro na chave estrangeira (foreignKey)."
 
 #: /controllers/attachments_controller.php:110
-#, fuzzy
 msgid "Existing Attachment for %s, id %s updated"
-msgstr "Novo Anexo para %s, id %s adicionando"
+msgstr "Novo Anexo para %s, id %s atualizado"
 
 #: /controllers/attachments_controller.php:112
 msgid "New Attachment for %s, id %s added"
@@ -138,7 +137,7 @@ msgstr "Essa função é para comparar diferentes (públicos) contéudos entre a
 
 #: /controllers/revisions_controller.php:615;620;643
 msgid "Only current and previous revisions can be viewed"
-msgstr "Apenas a revisão anterior e a corrente podem ser vistas"
+msgstr "Apenas a revisão anterior e a atual podem ser vistas"
 
 #: /controllers/revisions_controller.php:624
 msgid "Only possible to compare revisions of the same node"
@@ -238,7 +237,7 @@ msgstr "Editar"
 
 #: /views/elements/node_options.ctp:11
 msgid "View just this section"
-msgstr "Visualizar apenas este seção"
+msgstr "Visualizar apenas esta seção"
 
 #: /views/elements/node_options.ctp:14
 msgid "Comments (%s)"
@@ -254,7 +253,7 @@ msgstr "Histórico"
 
 #: /views/elements/node_options.ctp:32
 msgid "This text may be out of sync with the English version"
-msgstr "Talve esse texto esteja desatualizado com a versão em Inglês"
+msgstr "Talvez este texto esteja desatualizado com a versão em Inglês"
 
 #: /views/elements/node_options.ctp:39
 msgid "Compare to original content"
@@ -283,7 +282,7 @@ msgstr "Top Colaboradores"
 
 #: /views/elements/secondary_nav.ctp:13
 msgid "Todo"
-msgstr ""
+msgstr "To-do"
 
 #: /views/elements/secondary_nav.ctp:17
 msgid "Logged in as %s"
@@ -291,7 +290,7 @@ msgstr "Logado como %s"
 
 #: /views/elements/secondary_nav.ctp:18
 msgid "Logout"
-msgstr "Logout"
+msgstr "Sair"
 
 #: /views/elements/secondary_nav.ctp:26
 msgid "About CakePHP"
@@ -385,7 +384,7 @@ msgstr "Opcionalmente me explique resumidamente porque você está propondo esta
 
 #: /views/nodes/admin_merge.ctp:18
 msgid "You are sure? Please check the preview"
-msgstr "Você tem certeza? Por favor verifique o preview"
+msgstr "Você tem certeza? Por favor verifique a pre-visualização"
 
 #: /views/nodes/compare.ctp:11
 #: /views/revisions/view.ctp:12
@@ -394,7 +393,7 @@ msgstr "Diferenças"
 
 #: /views/nodes/edit.ctp:40
 msgid "What is the reason for the edit? (In English Please) :)"
-msgstr "Qual é a razão dessa alteração? (Em Inglês por favor) :)"
+msgstr "Qual é a razão desta alteração? (Em Inglês por favor) :)"
 
 #: /views/nodes/history.ctp:6
 msgid "See English edits too"
@@ -402,7 +401,7 @@ msgstr "Ver alterações em Inglês também"
 
 #: /views/nodes/stats.ctp:5
 msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
-msgstr ""
+msgstr "Aqui vai um grito para os que têm dedicado tempo, suor e lágrimas para escrever, traduzir e editar o conteúdo do cookcook."
 
 #: /views/nodes/stats.ctp:7;37
 msgid "Top %s Contributors"
@@ -410,39 +409,39 @@ msgstr "Top Colaboradores %s"
 
 #: /views/nodes/stats.ctp:9;38
 msgid "Last update: %s"
-msgstr ""
+msgstr "Última atualização: %s"
 
 #: /views/nodes/stats.ctp:27;63
 msgid "%s (%s current)"
-msgstr ""
+msgstr "%s (%s atual)"
 
 #: /views/nodes/stats.ctp:39
 msgid "%s%% translated"
-msgstr ""
+msgstr "%s%% traduzido"
 
 #: /views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
-msgstr ""
+msgstr "O cookbook precisa de você! Nada foi enviada para esta linguagem!"
 
 #: /views/nodes/stats.ctp:44
 msgid "The cookbook needs you! This language will soon be removed if not updated."
-msgstr ""
+msgstr "O cookbook precisa de você! Esta linguagem vai ser removido em breve caso não seja atualizada."
 
 #: /views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
-msgstr ""
+msgstr "O cookbook precisa de você! Nada foi atualizado há um mês."
 
 #: /views/nodes/todo.ctp:7
 msgid "These is no <a href=\"%s\">po file</a> for %s"
-msgstr ""
+msgstr "Não há <a href=\"%s\">po file</a> para %s"
 
 #: /views/nodes/todo.ctp:9
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
-msgstr ""
+msgstr "Estas seções não têm uma tradução ou o texto em Inglês mudou desde que foi traduzido"
 
 #: /views/nodes/view_all.ctp:40;67
 msgid "See comments for this section"
-msgstr "Ver comentários dessa seção"
+msgstr "Ver comentários desta seção"
 
 #: /views/nodes/view_all.ctp:114;126
 msgid "Change history for %s"
@@ -462,4 +461,5 @@ msgstr "Busque book.cakephp.org"
 
 #: /webroot/test.php:75
 msgid "Debug setting does not allow access to this url."
-msgstr ""
+msgstr "Configuração de Debug não permite acesso para esta url."
+

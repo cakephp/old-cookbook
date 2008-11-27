@@ -645,10 +645,11 @@ class RevisionsController extends AppController {
 		       	if (!($this->Auth->user('Level') > COMMENTER ||
 				$this->Auth->user('id') != $this->data['this']['Revision']['user_id'])) {
 				$this->Session->setFlash(__('Only current and previous revisions can be viewed', true));
-				$this->redirect($this->Session->read('referer'));
+				$this->redirect('/');
 			}
 		} else {
-			$this->redirect('/login');
+			$this->Session->setFlash(__('Please login to access this revision', true));
+			$this->redirect('/users/login');
 		}
 		if ($this->data['this']['Revision']['status'] != 'current') {
 			$this->Revision->Node->setLanguage($this->data['this']['Revision']['lang']);

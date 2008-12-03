@@ -637,12 +637,19 @@ class RevisionsController extends AppController {
  * @access public
  */
 	function view($id) {
-		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		$this->Revision->recursive = 0;
 		$this->data['this'] = $this->Revision->find('first', array('conditions' => array('Revision.id' => $id)));
-		if (!in_array($this->data['this']['Revision']['status'], array('current', 'previous'))) {
-			$this->Session->setFlash(__('Only current and previous revisions can be viewed', true));
-			$this->redirect($this->Session->read('referer'));
+		if (in_array($this->data['this']['Revision']['status'], array('current', 'previous'))) {
+			$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
+		} elseif ($this->Auth->user('id')) {
+		       	if (!($this->Auth->user('Level') > COMMENTER ||
+				$this->Auth->user('id') != $this->data['this']['Revision']['user_id'])) {
+				$this->Session->setFlash(__('Only current and previous revisions can be viewed', true));
+				$this->redirect('/');
+			}
+		} else {
+			$this->Session->setFlash(__('Please login to access this revision', true));
+			$this->redirect('/users/login');
 		}
 		if ($this->data['this']['Revision']['status'] != 'current') {
 			$this->Revision->Node->setLanguage($this->data['this']['Revision']['lang']);

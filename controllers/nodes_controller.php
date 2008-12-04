@@ -154,7 +154,7 @@ class NodesController extends AppController {
 			$this->currentPath = $this->Node->getPath($this->currentNode, $fields, 0);
 			$this->set('currentPath', $this->currentPath);
 		}
-		if ($this->params['url']['ext'] != 'xml') {
+		if (!isset($this->params['url']['ext']) || $this->params['url']['ext'] != 'xml') {
 			$this->Auth->allowedActions = array('index', 'view', 'single_page', 'toc', 'collections',
 				'app_name', 'compare', 'history', 'stats', 'todo');
 		}
@@ -604,34 +604,36 @@ class NodesController extends AppController {
  * @access public
  * @return void
  */
-	function collections($lang = 'en') {
+	function collections() {
 		$this->autoRender = false;
-		$this->Node->setLanguage($lang);
+		$this->Node->setLanguage($this->params['lang']);
 		$recursive = 0;
 		$first = $this->Node->field('id', array('Node.parent_id' => null));
 		$conditions = array('Node.parent_id' => $first);
 		$fields = array('Node.id', 'Revision.title', 'Revision.slug');
 		$data = $this->Node->find('all', compact('recursive', 'conditions', 'fields'));
-		cache('views/collections_' . $lang, serialize($data), CACHE_DURATION);
+		cache('views/collections_' . $this->params['lang'], serialize($data), CACHE_DURATION);
 		return $data;
 	}
 /**
  * app_name method
+ * 
+ * Only called by requestAction
  *
  * @param string $lang
  * @return void
  * @access public
  */
-	function app_name($lang = 'en') {
+	function app_name() {
 		$this->autoRender = false;
-		$this->Node->setLanguage($lang);
+		$this->Node->setLanguage($this->params['lang']);
 		$recursive = 0;
 		$conditions = array('Node.parent_id' => null);
 		$fields = array('Revision.title', 'Revision.content');
 		$data = $this->Node->find('first', compact('recursive', 'conditions', 'fields'));
 		$return['name'] = $data['Revision']['title'];
 		$return['tag_line'] = strip_tags($data['Revision']['content']);
-		cache('views/app_name_' . $lang, serialize($return), CACHE_DURATION);
+		cache('views/app_name_' . $this->params['lang'], serialize($return), CACHE_DURATION);
 		return $return;
 	}
 /**

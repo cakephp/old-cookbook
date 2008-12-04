@@ -6,7 +6,7 @@ $collections = cache('views/collection_' . $this->params['lang']);
 if ($collections) {
 	$collections = unserialize($collections);
 } else {
-	$collections = $this->requestAction('/nodes/collections/' . $this->params['lang']);
+	$collections = $this->requestAction('/nodes/collections/lang:' . $this->params['lang']);
 }
 $currentCollection = isset($currentPath[1])?$currentPath[1]:array('Node' => array('id' => false));
 foreach ($collections as $row) {

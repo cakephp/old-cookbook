@@ -7,7 +7,7 @@ $app = cache('views/app_name_' . $this->params['lang']);
 if ($app) {
 	$app = unserialize($app);
 } else {
-	$app = $this->requestAction('/nodes/app_name/' . $this->params['lang']);
+	$app = $this->requestAction('/nodes/app_name/lang:' . $this->params['lang']);
 }
 if ($this->here == $this->webroot) {
 	$title_for_layout = $app['tag_line'];

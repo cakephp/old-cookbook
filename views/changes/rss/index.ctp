@@ -25,9 +25,9 @@
 
 		$desc = '<ul>';
 		$author = isset($Author['username'])?$Author['username']:'unknown';
-		$desc .= '<li>Submitted by: ' . $author . '</li>';
+		$desc .= '<li>' . sprintf(__('Submitted by: %s', true), $author) . '</li>';
 		if ($Change['status_to'] != 'pending'){
-			$desc .= '<li>Changed by: ' . $User['username'] . '</li>';
+			$desc .= '<li>' . sprintf(__('Changed by: %s', true), $User['username']) . '</li>';
 		}
 		$comment = $html->clean(trim($Change['comment']));
 		if ($comment) {

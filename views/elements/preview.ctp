@@ -3,10 +3,10 @@ if (isset($highlight)) {
 	$highlight->auto = false;
 }
 $messages = array(
-	'Perfect!' => 'How\'d you like them apples?',
-	'Done!' => 'How\'s that for a slice of fried gold?',
-	'Tastey!' => 'How\'s that for a slice of cake?',
-	'Yeah!' => 'Are we done yet?',
+	'Perfect!' => __('How\'d you like them apples?', true),
+	'Done!' => __('How\'s that for a slice of fried gold?', true),
+	'Tastey!' => __('How\'s that for a slice of cake?', true),
+	'Yeah!' => __('Are we done yet?', true)
 );
 $confirm = array_rand($messages);
 $message = $messages[$confirm];
@@ -54,7 +54,7 @@ if (empty($errors)) {
 	}
 	echo $form->create(null, array('url' => '/' .$this->params['url']['url']));
 	echo $form->inputs($inputs);
-	echo $form->end($confirm . ' Save it');
+	echo $form->end($confirm . ' ' . __('Save it', true));
 }
 ?>
 </fieldset>

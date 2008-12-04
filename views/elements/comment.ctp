@@ -12,7 +12,7 @@ if (isset($commenters[$user_id])) {
 }
 echo "<div id='comment_{$id}' class=\"comment$class\">";
 echo "<p class=\"commentmeta\">";
-echo 'By ' . $name . ' ' . $time->timeAgoInWords($created);
+echo sprintf(__('By %s %s', true), $name, $time->timeAgoInWords($created));
 echo "</p>";
 echo "<p class=\"commenttitle\">";
 if ($this->action == 'recent') {

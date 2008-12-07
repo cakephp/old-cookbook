@@ -1,0 +1,441 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cbt\n"
+"POT-Creation-Date: 2008-11-19 13:34+0100\n"
+"PO-Revision-Date: 2008-12-07 13:03+0100\n"
+"Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /app_controller.php:93
+msgid "Whoops, not a valid language."
+msgstr "Aduh, bukan bahasa yang sah."
+
+#: /app_controller.php:109
+msgid "Please login to continue"
+msgstr "Silahkan masuk untuk melanjutkan."
+
+#: /app_controller.php:293
+msgid "All %s matching the term \"%s\""
+msgstr "Semua %s yang terkait dengan istilah \"%s\""
+
+#: /controllers/attachments_controller.php:85
+msgid "Attachment controller - no class or foreignKey error."
+msgstr "Attachment controller - tidak ada kesalahan pada class atau foreignKey"
+
+#: /controllers/attachments_controller.php:110
+msgid "Existing Attachment for %s, id %s updated"
+msgstr "Lampiran  terdahulu untuk %s, id %s telah diperbaharui."
+
+#: /controllers/attachments_controller.php:112
+msgid "New Attachment for %s, id %s added"
+msgstr "Lampiran baru untuk %s, id %s telah ditambahkan."
+
+#: /controllers/attachments_controller.php:137
+msgid "%s with id %s updated"
+msgstr "%s dengan id %s telah diperbaharui."
+
+#: /controllers/attachments_controller.php:140
+msgid "errors in form"
+msgstr "kesalahan pada formulir"
+
+#: /controllers/changes_controller.php:130
+msgid "Recent Changes for %s"
+msgstr "Perubahan Terkini untuk %s"
+
+#: /controllers/changes_controller.php:134
+#: /views/layouts/default.ctp:33
+msgid "Recent Changes for all languages"
+msgstr "Perubahan terkini untuk semua bahasa"
+
+#: /controllers/changes_controller.php:136
+#: /views/layouts/default.ctp:28
+msgid "Recent Changes"
+msgstr "Perubahan Terkini"
+
+#: /controllers/changes_controller.php:144
+#: /controllers/comments_controller.php:191
+msgid "by %s"
+msgstr "oleh %s"
+
+#: /controllers/changes_controller.php:149
+msgid "restricted to status: %s"
+msgstr "dibatasi atas status: %s"
+
+#: /controllers/comments_controller.php:84;116
+msgid "Invalid Node."
+msgstr "Node tidak sah."
+
+#: /controllers/comments_controller.php:93
+msgid "Your comment has been added"
+msgstr "Komentar anda telah ditambahkan."
+
+#: /controllers/comments_controller.php:96
+msgid "Please correct errors below."
+msgstr "Silahkan perbaiki kesalahan-kesalahan di bawah ini."
+
+#: /controllers/comments_controller.php:120
+msgid "No permissions to see comments for that section"
+msgstr "Tidak berhak melihat komentar untuk bagian tersebut."
+
+#: /controllers/comments_controller.php:128
+#: /views/nodes/view_all.ctp:110;120
+msgid "Comments for %s"
+msgstr "Komentar untuk %s"
+
+#: /controllers/comments_controller.php:161
+msgid "Invalid Comment."
+msgstr "Komentar tidak sah."
+
+#: /controllers/comments_controller.php:180
+#: /views/comments/index.ctp:6
+msgid "Recent Comments"
+msgstr "Komentar Terkini"
+
+#: /controllers/comments_controller.php:182
+#: /views/layouts/default.ctp:43
+msgid "Recent Comments for all languages"
+msgstr "Komentar Terkini untuk semua bahasa"
+
+#: /controllers/nodes_controller.php:846
+msgid "Invalid Collection"
+msgstr "Koleksi tidak sah"
+
+#: /controllers/nodes_controller.php:871;976
+msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr "Terima kasih atas kontribusi Anda! Anjuran Anda telah dikirim untuk kami tinjau."
+
+#: /controllers/nodes_controller.php:931
+msgid "This function is for comparing different (public) language content"
+msgstr "Fungsi ini adalah untuk membedakan isi dari berbagai bahasa (publik)"
+
+#: /controllers/revisions_controller.php:615;620;643
+msgid "Only current and previous revisions can be viewed"
+msgstr "Hanya revisi terkini dan yang terdahulu yang dapat dilihat"
+
+#: /controllers/revisions_controller.php:624
+msgid "Only possible to compare revisions of the same node"
+msgstr "Hanya mungkin untuk membedakan revisi pada node yang sama"
+
+#: /models/node.php:170
+msgid "Default Title"
+msgstr "Judul Awal"
+
+#: /models/node.php:173
+msgid "default_slug"
+msgstr "default_slug"
+
+#: /models/node.php:176
+msgid "Default Content"
+msgstr "Isi Awal"
+
+#: /plugins/users/views/users/login.ctp:8;20
+#: /views/elements/secondary_nav.ctp:23
+msgid "Login"
+msgstr "Masuk"
+
+#: /plugins/users/views/users/login.ctp:13
+msgid "Forgot your password?"
+msgstr "Lupa password?"
+
+#: /views/changes/index.ctp:18
+msgid "change submitted by %s, %s"
+msgstr "perubahan dikirim oleh %s, %s"
+
+#: /views/changes/index.ctp:24
+#: /views/changes/rss/index.ctp:14
+msgid "accepted"
+msgstr "diterima"
+
+#: /views/changes/index.ctp:27
+#: /views/changes/rss/index.ctp:17
+msgid "not accepted"
+msgstr "ditolak"
+
+#: /views/changes/index.ctp:30
+#: /views/changes/rss/index.ctp:20
+msgid "pending"
+msgstr "ditangguhkan"
+
+#: /views/changes/index.ctp:35
+msgid "changed from %s to %s by %s, %s"
+msgstr "berubah dari %s menjadi %s oleh %s, %s"
+
+#: /views/changes/index.ctp:41
+msgid "submitted by %s"
+msgstr "dikirim oleh %s"
+
+#: /views/comments/add.ctp:6
+msgid "Comment: %s"
+msgstr "Komentar: %s"
+
+#: /views/comments/index.ctp:4
+msgid "Comments: %s"
+msgstr "Komentar: %s"
+
+#: /views/comments/index.ctp:11
+msgid "No Comments yet!"
+msgstr "Belum ada komentar!"
+
+#: /views/comments/index.ctp:20
+msgid "This page as a feed"
+msgstr "Halaman ini sebagai feed"
+
+#: /views/elements/attachments.ctp:2
+msgid "Images/Files associated with this content"
+msgstr "Gambar/Berkas terkait dengan isi ini"
+
+#: /views/elements/comment.ctp:9
+msgid "unknown"
+msgstr "tidak diketahui"
+
+#: /views/elements/comment_form.ctp:4
+msgid "Login to add a comment"
+msgstr "Masuk untuk memberikan komentar"
+
+#: /views/elements/comment_form.ctp:17
+msgid "Comment on %s"
+msgstr "Komentar pada %s"
+
+#: /views/elements/login_hint.ctp:3
+msgid "Login with your Bakery account"
+msgstr "masuk dengan akun Bakery Anda"
+
+#: /views/elements/login_hint.ctp:4
+msgid "Not got one? Hop on over to %s and sign up"
+msgstr "Belum mempunyai akun? Silahkan mendaftar"
+
+#: /views/elements/node_options.ctp:8
+msgid "Edit"
+msgstr "Sunting"
+
+#: /views/elements/node_options.ctp:11
+msgid "View just this section"
+msgstr "Lihat hanya bagian ini"
+
+#: /views/elements/node_options.ctp:14
+msgid "Comments (%s)"
+msgstr "Komentar (%s)"
+
+#: /views/elements/node_options.ctp:19
+msgid "there is a pending change for this section"
+msgstr "ada perubahan yang masih ditangguhkan untuk bagian ini"
+
+#: /views/elements/node_options.ctp:22
+msgid "History"
+msgstr "Sejarah"
+
+#: /views/elements/node_options.ctp:32
+msgid "This text may be out of sync with the English version"
+msgstr "Teks ini mungkin saja tidak sejalan dengan versi bahasa Inggris"
+
+#: /views/elements/node_options.ctp:39
+msgid "Compare to original content"
+msgstr "Bandingkan dengan isi yang asli"
+
+#: /views/elements/paging.ctp:4
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: /views/elements/paging.ctp:5
+msgid "<< previous"
+msgstr "<< sebelumnya"
+
+#: /views/elements/paging.ctp:8
+msgid "Next >>"
+msgstr "Selanjutnya >>"
+
+#: /views/elements/search.ctp:22
+#: /views/elements/search_form.ctp:12
+msgid "Search"
+msgstr "Cari"
+
+#: /views/elements/secondary_nav.ctp:10
+msgid "Top Contributors"
+msgstr "Kontributor Teratas"
+
+#: /views/elements/secondary_nav.ctp:13
+msgid "todo"
+msgstr "harus dikerjakan"
+
+#: /views/elements/secondary_nav.ctp:17
+msgid "Logged in as %s"
+msgstr "Masuk sebagai %s"
+
+#: /views/elements/secondary_nav.ctp:18
+msgid "Logout"
+msgstr "Keluar"
+
+#: /views/elements/secondary_nav.ctp:26
+msgid "About CakePHP"
+msgstr "Tentang CakePHP"
+
+#: /views/elements/secondary_nav.ctp:27
+msgid "Donate"
+msgstr "Sumbang"
+
+#: /views/elements/side_menu.ctp:14
+#: /views/nodes/view_all.ctp:95
+msgid "All in one page"
+msgstr "Semuanya dalam satu halaman"
+
+#: /views/elements/side_menu.ctp:23
+#: /views/nodes/view_all.ctp:102
+msgid "Suggest a new section here"
+msgstr "Anjurkan bagian baru di sini"
+
+#: /views/elements/side_menu.ctp:30
+msgid "Options"
+msgstr "Pilihan"
+
+#: /views/elements/toc.ctp:13
+#: /views/nodes/toc.ctp:5
+msgid "Table of Contents"
+msgstr "Daftar Isi"
+
+#: /views/elements/toc.ctp:16
+msgid "see fully expanded table of contents (only)"
+msgstr "lihat keseluruhan daftar isi "
+
+#: /views/elements/toc.ctp:19
+msgid "Books in "
+msgstr "Buku dalam"
+
+#: /views/elements/toc.ctp:21
+msgid "Available collections"
+msgstr "Koleksi yang tersedia"
+
+#: /views/layouts/default.ctp:38
+msgid "Recent comments"
+msgstr "Komentar terkini"
+
+#: /views/layouts/default.ctp:51;55
+msgid "My Submissions"
+msgstr "Kiriman Saya"
+
+#: /views/layouts/default.ctp:88
+msgid "Welcome to %s"
+msgstr "Selamat datang %s"
+
+#: /views/layouts/error.ctp:6
+msgid "CakePHP: the rapid development php framework:"
+msgstr "CakePHP: the rapid development php framework:"
+
+#: /views/layouts/error.ctp:34
+msgid "CakePHP: the rapid development php framework"
+msgstr "CakePHP: the rapid development php framework"
+
+#: /views/nodes/add.ctp:17
+#: /views/nodes/edit.ctp:26
+msgid "Please review the guidelines for submitting to the Cookbook to ensure consistency."
+msgstr "Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep untuk memastikan konsistensi."
+
+#: /views/nodes/add.ctp:22
+msgid "Add a new section"
+msgstr "Tambahkan bagian baru"
+
+#: /views/nodes/add.ctp:28
+#: /views/nodes/edit.ctp:32
+msgid "Show me a preview before submitting"
+msgstr "Perlihatkan preview sebelum mengirim"
+
+#: /views/nodes/add.ctp:30
+msgid "under"
+msgstr "di bawah"
+
+#: /views/nodes/add.ctp:33
+msgid "after"
+msgstr "setelah"
+
+#: /views/nodes/add.ctp:39
+#: /views/nodes/edit.ctp:35
+msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr "Isi. Kode dalam tag pre akan di-escape. Pengiriman tanpa kode html akan diformat secara otomatis"
+
+#: /views/nodes/add.ctp:44
+msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr "Jelaskan dengan singkat mengapa anda mengajukan penambahan ini (usahakan dalam bahasa Inggris)"
+
+#: /views/nodes/admin_merge.ctp:18
+msgid "You are sure? Please check the preview"
+msgstr "Anda yakin? Silahkan lihat preview"
+
+#: /views/nodes/compare.ctp:11
+#: /views/revisions/view.ctp:12
+msgid "Differences"
+msgstr "Perbedaan"
+
+#: /views/nodes/edit.ctp:40
+msgid "What is the reason for the edit? (In English Please) :)"
+msgstr "Apa alasan penyuntingan ini dilakukan? (usahakan dalam bahasa Inggris)"
+
+#: /views/nodes/history.ctp:6
+msgid "See English edits too"
+msgstr "Lihat suntingan dalam bahasa Inggris-nya juga"
+
+#: /views/nodes/stats.ctp:5
+msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr "Berikut ini ditujukan kepada orang-orang yang telah mendedikasikan waktu, keringat dan air mata untuk menulis, menerjemahkan dan mengedit isi buku resep."
+
+#: /views/nodes/stats.ctp:7;37
+msgid "Top %s Contributors"
+msgstr "%s Kontributor Teratas"
+
+#: /views/nodes/stats.ctp:9;38
+msgid "Last update: %s"
+msgstr "Pembaharuan terakhir: %s"
+
+#: /views/nodes/stats.ctp:27;63
+msgid "%s (%s current)"
+msgstr "%s (terkini adalah %s)"
+
+#: /views/nodes/stats.ctp:39
+msgid "%s%% translated"
+msgstr "telah diterjemahkan sebanyak %s% %"
+
+#: /views/nodes/stats.ctp:41
+msgid "The cookbook needs you! No submissions for this language!"
+msgstr "Buku resep ini membutuhkanmu! Tidak ada kiriman untuk bahasa ini!"
+
+#: /views/nodes/stats.ctp:44
+msgid "The cookbook needs you! This language will soon be removed if not updated."
+msgstr "Buku resep ini membutuhkanmu! Bahasa ini akan dibuang jika tidak diperbaharui."
+
+#: /views/nodes/stats.ctp:46
+msgid "The cookbook needs you! No updates for one month."
+msgstr "Buku resep ini membutuhkanmu! tidak ada pembaharuan selama sebulan!"
+
+#: /views/nodes/todo.ctp:7
+msgid "These is no <a href=\"%s\">po file</a> for %s"
+msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
+
+#: /views/nodes/todo.ctp:9
+msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr "Bagian ini tidak mempunyai terjemahan, atau teks dalam bahasa Inggris-nya telah berubah sejak waktu diterjemahkan"
+
+#: /views/nodes/view_all.ctp:40;67
+msgid "See comments for this section"
+msgstr "Lihat komentar untuk bagian ini"
+
+#: /views/nodes/view_all.ctp:114;126
+msgid "Change history for %s"
+msgstr "Sejarah Perubahan untuk %s"
+
+#: /views/revisions/results.ctp:8
+msgid "Search Results"
+msgstr "Hasil Pencarian"
+
+#: /views/revisions/results.ctp:32
+msgid "No results"
+msgstr "Tidak ada hasil"
+
+#: /views/revisions/search.ctp:1
+msgid "Search book.cakephp.org"
+msgstr "Cari di book.cakephp.org"
+
+#: /webroot/test.php:75
+msgid "Debug setting does not allow access to this url."
+msgstr "Pengaturan pada debug tidak memperkenankan akses ke url ini."
+

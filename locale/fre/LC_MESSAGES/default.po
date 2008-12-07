@@ -28,8 +28,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-12-07 13:55+0100\n"
-"PO-Revision-Date: 2008-12-07 14:04+0100\n"
+"POT-Creation-Date: 2008-12-07 17:32+0100\n"
+"PO-Revision-Date: 2008-12-07 17:36+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -445,10 +445,14 @@ msgid "The cookbook needs you! No updates for one month."
 msgstr ""
 
 #: views/nodes/todo.ctp:7
+msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+msgstr ""
+
+#: views/nodes/todo.ctp:10
 msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr ""
 
-#: views/nodes/todo.ctp:9
+#: views/nodes/todo.ctp:13
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 

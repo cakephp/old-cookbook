@@ -39,8 +39,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2008-12-07 13:55+0100\n"
-"PO-Revision-Date: 2008-12-07 14:05+0100\n"
+"POT-Creation-Date: 2008-12-07 17:32+0100\n"
+"PO-Revision-Date: 2008-12-07 17:35+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -456,10 +456,15 @@ msgid "The cookbook needs you! No updates for one month."
 msgstr "Het cookbook heeft jou nodig! Deze taal heeft meer dan een maand geen inzendingen gehad."
 
 #: views/nodes/todo.ctp:7
+#, fuzzy
+msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+msgstr "Er is geen <a href=\"%s\">po bestand</avoor %s"
+
+#: views/nodes/todo.ctp:10
 msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr "Er is geen <a href=\"%s\">po bestand</avoor %s"
 
-#: views/nodes/todo.ctp:9
+#: views/nodes/todo.ctp:13
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr "Deze rubrieken zijn nog niet vertaald of de Engelse tekst is gewijzigd sinds de laatste wijziging aan de rubiek."
 

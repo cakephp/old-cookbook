@@ -12,7 +12,11 @@ if (isset($commenters[$user_id])) {
 }
 echo "<div id='comment_{$id}' class=\"comment$class\">";
 echo "<p class=\"commentmeta\">";
-echo 'By ' . $name . ' ' . $time->timeAgoInWords($created);
+if (!empty($fixedDates)) {
+	echo sprintf(__('By %s on %s', true),  $name, $time->nice($created));
+} else {
+	echo sprintf(__('By %s %s', true),  $name, $time->timeAgoInWords($created));
+}
 echo "</p>";
 echo "<p class=\"commenttitle\">";
 if ($this->action == 'recent') {

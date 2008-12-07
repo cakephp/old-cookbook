@@ -9,6 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Persian\n"
+"X-Poedit-Basepath: ../../../\n"
 
 #: /app_controller.php:93
 msgid "Whoops, not a valid language."

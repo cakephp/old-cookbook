@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2008-12-07 17:32+0100\n"
-"PO-Revision-Date: 2008-12-07 17:36+0100\n"
+"POT-Creation-Date: 2008-12-07 18:23+0100\n"
+"PO-Revision-Date: 2008-12-07 18:24+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,11 @@ msgstr "فقط نسخه‌های فعلی و قبلی می‌توانند نشا
 
 #: controllers/revisions_controller.php:625
 msgid "Only possible to compare revisions of the same node"
-msgstr "فقط مقایسه‌ی نسخه‌هایی ممکن است که از یک گره باشند."
+msgstr ""
+
+#: controllers/revisions_controller.php:651
+msgid "Please login to access this revision"
+msgstr ""
 
 #: models/node.php:170
 msgid "Default Title"
@@ -191,7 +195,15 @@ msgstr "تصاویر/فایل‌های مرتبط با این محتوا"
 
 #: views/elements/comment.ctp:9
 msgid "unknown"
-msgstr "نامشخص"
+msgstr ""
+
+#: views/elements/comment.ctp:16
+msgid "By %s on %s"
+msgstr ""
+
+#: views/elements/comment.ctp:18
+msgid "By %s %s"
+msgstr ""
 
 #: views/elements/comment_form.ctp:4
 msgid "Login to add a comment"
@@ -252,7 +264,15 @@ msgstr " بعدی >>"
 #: views/elements/search.ctp:22
 #: views/elements/search_form.ctp:12
 msgid "Search"
-msgstr "جستجو"
+msgstr ""
+
+#: views/elements/secondary_nav.ctp:6
+msgid "Logged in as %s"
+msgstr ""
+
+#: views/elements/secondary_nav.ctp:7
+msgid "Logout"
+msgstr ""
 
 #: views/elements/secondary_nav.ctp:21
 msgid "Top Contributors"
@@ -406,6 +426,10 @@ msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr ""
 
 #: views/nodes/todo.ctp:13
+msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgstr ""
+
+#: views/nodes/todo.ctp:14
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 

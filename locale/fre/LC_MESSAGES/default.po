@@ -28,8 +28,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2008-12-07 17:32+0100\n"
-"PO-Revision-Date: 2008-12-07 17:36+0100\n"
+"POT-Creation-Date: 2008-12-07 18:23+0100\n"
+"PO-Revision-Date: 2008-12-07 18:24+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -453,6 +453,10 @@ msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr ""
 
 #: views/nodes/todo.ctp:13
+msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgstr ""
+
+#: views/nodes/todo.ctp:14
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 

@@ -14,7 +14,7 @@
 		return array(
 			'title'		=> $Comment['title'],
 			'link'		=> array('controller' => 'comments', 'action' => 'view', $Comment['id']),
-			'description'	=> $_this->element('comment', array('data' => $row['Comment'])),
+			'description'	=> $_this->element('comment', array('data' => $row['Comment'], 'fixedDates' => true)),
 			'pubDate'	=> date('r', strtotime($Comment['created'])),
 		);
 	}

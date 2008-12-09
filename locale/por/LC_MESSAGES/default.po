@@ -26,12 +26,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2008-12-04 15:20-0200\n"
-"PO-Revision-Date: 2008-12-04 15:28-0300\n"
+"PO-Revision-Date: 2008-12-09 14:35-0300\n"
 "Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../../\n"
 
 #: app_controller.php:93
 msgid "Whoops, not a valid language."
@@ -51,7 +52,7 @@ msgstr "Attachment controller - sem class ou erro na chave estrangeira (foreignK
 
 #: controllers/attachments_controller.php:110
 msgid "Existing Attachment for %s, id %s updated"
-msgstr "Novo Anexo para %s, id %s atualizado"
+msgstr "Anexo Existente para %s, id %s atualizado"
 
 #: controllers/attachments_controller.php:112
 msgid "New Attachment for %s, id %s added"
@@ -123,15 +124,15 @@ msgstr "Comentários Recentes"
 msgid "Recent Comments for all languages"
 msgstr "Comentários Recentes em todas as linguagens"
 
-#: controllers/nodes_controller.php:850
+#: controllers/nodes_controller.php:848
 msgid "Invalid Collection"
 msgstr "Coleção Inválida."
 
-#: controllers/nodes_controller.php:875;980
+#: controllers/nodes_controller.php:873;978
 msgid "Thanks for your contribution! Your suggestion has been submitted for review."
 msgstr "Obrigado por sua contribuição! Sua sugestão foi enviada para revisão."
 
-#: controllers/nodes_controller.php:935
+#: controllers/nodes_controller.php:933
 msgid "This function is for comparing different (public) language content"
 msgstr "Essa função é para comparar diferentes (públicos) contéudos entre as linguagens"
 
@@ -145,7 +146,7 @@ msgstr "Só é possível comparar revisões do mesmo nó"
 
 #: controllers/revisions_controller.php:651
 msgid "Please login to access this revision"
-msgstr "Faça o login para acessar essa revisão"
+msgstr "Por favor faça o login para acessar esta revisão"
 
 #: models/node.php:170
 msgid "Default Title"
@@ -227,7 +228,11 @@ msgstr "Imagens/Arquivos associados com este conteúdo"
 msgid "unknown"
 msgstr "desconhecido"
 
-#: views/elements/comment.ctp:15
+#: views/elements/comment.ctp:16
+msgid "By %s on %s"
+msgstr "Por %s em %s"
+
+#: views/elements/comment.ctp:18
 msgid "By %s %s"
 msgstr "Por %s %s"
 
@@ -293,7 +298,7 @@ msgstr "Como você gosta das maças?"
 
 #: views/elements/preview.ctp:7
 msgid "How's that for a slice of fried gold?"
-msgstr "Como vai este pedaço de ouro?"
+msgstr "Como vai este pedacinho de ouro?"
 
 #: views/elements/preview.ctp:8
 msgid "How's that for a slice of cake?"
@@ -379,11 +384,7 @@ msgstr "Minhas Contribuições"
 msgid "Welcome to %s"
 msgstr "Bem-vindo ao Cookbook"
 
-#: views/layouts/error.ctp:6
-msgid "CakePHP: the rapid development php framework:"
-msgstr "CakePHP: o framework de desenvolvimento rápido para php:"
-
-#: views/layouts/error.ctp:34
+#: views/layouts/error.ctp:6;34
 msgid "CakePHP: the rapid development php framework"
 msgstr "CakePHP: o framework de desenvolvimento rápido para php"
 
@@ -468,10 +469,18 @@ msgid "The cookbook needs you! No updates for one month."
 msgstr "O cookbook precisa de você! Nada foi atualizado há um mês."
 
 #: views/nodes/todo.ctp:7
+msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+msgstr "Quer verificar ou atualizar o <a href=\"%s\">po file</a> para %s?"
+
+#: views/nodes/todo.ctp:10
 msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr "Não há <a href=\"%s\">po file</a> para %s"
 
-#: views/nodes/todo.ctp:9
+#: views/nodes/todo.ctp:13
+msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgstr "Por favor use <a href=\"http://www.poedit.net\">Po Edit</a> para editar os arquivos po"
+
+#: views/nodes/todo.ctp:14
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr "Estas seções não têm uma tradução ou o texto em Inglês mudou desde que foi traduzido"
 
@@ -495,7 +504,6 @@ msgstr "Sem resultados"
 msgid "Search book.cakephp.org"
 msgstr "Busque book.cakephp.org"
 
-#: webroot/test.php:75
-msgid "Debug setting does not allow access to this url."
-msgstr "Configuração de Debug não permite acesso para esta url."
+#~ msgid "CakePHP: the rapid development php framework:"
+#~ msgstr "CakePHP: o framework de desenvolvimento rápido para php:"
 

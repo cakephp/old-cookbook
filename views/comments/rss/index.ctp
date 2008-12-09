@@ -15,7 +15,7 @@
 			'title'		=> $Node['sequence'] . ' ' . $Revision['title'] . ' - ' . $html->clean(htmlspecialchars($Comment['title'])),
 			'link'		=> array('controller' => 'comments', 'action' => 'index', $Comment['node_id'], 'lang' => $Comment['lang'], '#'
 		=> "comment_{$Comment['id']}"),
-			'description'	=> $_this->element('comment', array('data' => $row)),
+			'description'	=> $_this->element('comment', array('data' => $row, 'fixedDates' => true)),
 			'pubDate'	=> date('r', strtotime($Comment['created'])),
 		);
 	}

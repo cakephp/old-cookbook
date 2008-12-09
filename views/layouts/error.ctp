@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>
-		<?php __('CakePHP: the rapid development php framework:'); ?>
+		<?php __('CakePHP: the rapid development php framework'); ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php

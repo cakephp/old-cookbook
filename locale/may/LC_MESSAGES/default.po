@@ -1,0 +1,491 @@
+# LANGUAGE translation of Cakebook Application
+# Copyright 2008 Andy Dawson <andydawson76@yahoo.co.uk>
+# Generated from files:
+#  Revision: 697 app_controller.php
+#  Revision: 689 controllers/attachments_controller.php
+#  Revision: 689 controllers/changes_controller.php
+#  Revision: 702 views/layouts/default.ctp
+#  Revision: 689 controllers/comments_controller.php
+#  Revision: 706 views/nodes/view_all.ctp
+#  Revision: 600 views/comments/index.ctp
+#  Revision: 704 controllers/nodes_controller.php
+#  Revision: 711 controllers/revisions_controller.php
+#  Revision: 701 models/node.php
+#  Revision: 659 plugins/users/views/users/login.ctp
+#  Revision: 705 views/elements/secondary_nav.ctp
+#  Revision: 600 views/changes/index.ctp
+#  Revision: 638 views/changes/rss/index.ctp
+#  Revision: 600 views/comments/add.ctp
+#  Revision: 666 views/elements/attachments.ctp
+#  Revision: 673 views/elements/comment.ctp
+#  Revision: 661 views/elements/comment_form.ctp
+#  Revision: 600 views/elements/login_hint.ctp
+#  Revision: 705 views/elements/node_options.ctp
+#  Revision: 673 views/elements/paging.ctp
+#  Revision: 600 views/elements/search.ctp
+#  Revision: 672 views/elements/side_menu.ctp
+#  Revision: 600 views/elements/toc.ctp
+#  Revision: 673 views/nodes/toc.ctp
+#  Revision: 600 views/layouts/error.ctp
+#  Revision: 672 views/nodes/add.ctp
+#  Revision: 673 views/nodes/edit.ctp
+#  Revision: 600 views/nodes/admin_merge.ctp
+#  Revision: 600 views/nodes/history.ctp
+#  Revision: 708 views/nodes/stats.ctp
+#  Revision: 707 views/nodes/todo.ctp
+#  Revision: 673 views/revisions/results.ctp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cakebook-\n"
+"POT-Creation-Date: 2008-12-07 18:23+0100\n"
+"PO-Revision-Date: 2008-12-10 11:31+0800\n"
+"Last-Translator: Ahmad Amran Kapi <r0kawa@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../../\n"
+
+#: app_controller.php:93
+msgid "Whoops, not a valid language."
+msgstr "Alamak, bukan bahasa yang sah"
+
+#: app_controller.php:109
+msgid "Please login to continue"
+msgstr "Sila login untuk proses seterusnya"
+
+#: app_controller.php:293
+msgid "All %s matching the term \"%s\""
+msgstr "Semua %s yang sama dengan terma \"%s\""
+
+#: controllers/attachments_controller.php:85
+msgid "Attachment controller - no class or foreignKey error."
+msgstr "Attachment controller - tiada class atau kesilapan foreignKey "
+
+#: controllers/attachments_controller.php:110
+msgid "Existing Attachment for %s, id %s updated"
+msgstr "Lampiran Sediada untuk %s, id %s dikemaskini"
+
+#: controllers/attachments_controller.php:112
+msgid "New Attachment for %s, id %s added"
+msgstr "Lampiran Baru untuk %s, id %s ditambah"
+
+#: controllers/attachments_controller.php:137
+msgid "%s with id %s updated"
+msgstr "%s untuk id %s dikemaskini"
+
+#: controllers/attachments_controller.php:140
+msgid "errors in form"
+msgstr "kesilapan di dalam borang"
+
+#: controllers/changes_controller.php:130
+msgid "Recent Changes for %s"
+msgstr "Perubahan terkini untuk %s"
+
+#: controllers/changes_controller.php:134
+#: views/layouts/default.ctp:33
+msgid "Recent Changes for all languages"
+msgstr "Perubahan terkini untuk semua bahasa"
+
+#: controllers/changes_controller.php:136
+#: views/layouts/default.ctp:28
+msgid "Recent Changes"
+msgstr "Perubahan Terkini"
+
+#: controllers/changes_controller.php:144
+#: controllers/comments_controller.php:191
+msgid "by %s"
+msgstr "oleh %s"
+
+#: controllers/changes_controller.php:149
+msgid "restricted to status: %s"
+msgstr "terhad kepada status: %s"
+
+#: controllers/comments_controller.php:84;116
+msgid "Invalid Node."
+msgstr "Nod tidak sah."
+
+#: controllers/comments_controller.php:93
+msgid "Your comment has been added"
+msgstr "Komen anda telah ditambah"
+
+#: controllers/comments_controller.php:96
+msgid "Please correct errors below."
+msgstr "Sila betulkan kesalahan dibawah."
+
+#: controllers/comments_controller.php:120
+msgid "No permissions to see comments for that section"
+msgstr "Tiada kebenaran untuk melihat komen bagi seksyen tersebut"
+
+#: controllers/comments_controller.php:128
+#: views/nodes/view_all.ctp:110;120
+msgid "Comments for %s"
+msgstr "Komen untuk %s"
+
+#: controllers/comments_controller.php:161
+msgid "Invalid Comment."
+msgstr "Komen tidak sah"
+
+#: controllers/comments_controller.php:180
+#: views/comments/index.ctp:6
+msgid "Recent Comments"
+msgstr "Komen Terkini"
+
+#: controllers/comments_controller.php:182
+#: views/layouts/default.ctp:43
+msgid "Recent Comments for all languages"
+msgstr "Komen terkini untuk semua bahasa"
+
+#: controllers/nodes_controller.php:848
+msgid "Invalid Collection"
+msgstr "Koleksi tidak sah"
+
+#: controllers/nodes_controller.php:873;978
+msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr "Terima kasih kepada sumbangan anda! Cadangan anda telah dihantar untuk diperiksa."
+
+#: controllers/nodes_controller.php:933
+msgid "This function is for comparing different (public) language content"
+msgstr "Fungsi ini adalah untuk membandingkan perbezaan (umum) kandungan bahasa"
+
+#: controllers/revisions_controller.php:616;621;647
+msgid "Only current and previous revisions can be viewed"
+msgstr "Hanya semakan yang terkini dan sebelumnya boleh dilihat"
+
+#: controllers/revisions_controller.php:625
+msgid "Only possible to compare revisions of the same node"
+msgstr "Hanya boleh membuat perbandingan dengan nod yang sama"
+
+#: controllers/revisions_controller.php:651
+msgid "Please login to access this revision"
+msgstr "Sila login untuk mengakses semakan"
+
+#: models/node.php:170
+msgid "Default Title"
+msgstr "Tajuk Asas (Default)"
+
+#: models/node.php:173
+msgid "default_slug"
+msgstr "default_slug"
+
+#: models/node.php:176
+msgid "Default Content"
+msgstr "Kandungan Asas (Default)"
+
+#: plugins/users/views/users/login.ctp:8;20
+#: views/elements/secondary_nav.ctp:12
+msgid "Login"
+msgstr "Login"
+
+#: plugins/users/views/users/login.ctp:13
+msgid "Forgot your password?"
+msgstr "Terlupa kata laluan anda ?"
+
+#: views/changes/index.ctp:18
+msgid "change submitted by %s, %s"
+msgstr "perubahan dihantar oleh %s, %s"
+
+#: views/changes/index.ctp:24
+#: views/changes/rss/index.ctp:14
+msgid "accepted"
+msgstr "diterima"
+
+#: views/changes/index.ctp:27
+#: views/changes/rss/index.ctp:17
+msgid "not accepted"
+msgstr "tidak diterima"
+
+#: views/changes/index.ctp:30
+#: views/changes/rss/index.ctp:20
+msgid "pending"
+msgstr "menunggu pengesahan"
+
+#: views/changes/index.ctp:35
+msgid "changed from %s to %s by %s, %s"
+msgstr "perubahan dari %s kepada %s oleh %s, %s"
+
+#: views/changes/index.ctp:41
+msgid "submitted by %s"
+msgstr "dihantar oleh %s"
+
+#: views/comments/add.ctp:6
+msgid "Comment: %s"
+msgstr "Komen: %s"
+
+#: views/comments/index.ctp:4
+msgid "Comments: %s"
+msgstr "Komen: %s"
+
+#: views/comments/index.ctp:11
+msgid "No Comments yet!"
+msgstr "Tiada komen lagi !"
+
+#: views/comments/index.ctp:20
+msgid "This page as a feed"
+msgstr "Halaman ini sebagai feed"
+
+#: views/elements/attachments.ctp:2
+msgid "Images/Files associated with this content"
+msgstr "Imej/Fail berkaitan dengan kandungan ini"
+
+#: views/elements/comment.ctp:9
+msgid "unknown"
+msgstr "tidak diketahui"
+
+#: views/elements/comment.ctp:16
+msgid "By %s on %s"
+msgstr "Oleh %s pada %s"
+
+#: views/elements/comment.ctp:18
+msgid "By %s %s"
+msgstr "Oleh %s %s"
+
+#: views/elements/comment_form.ctp:4
+msgid "Login to add a comment"
+msgstr "Login untuk menambah komen"
+
+#: views/elements/comment_form.ctp:17
+msgid "Comment on %s"
+msgstr "Komen pada %s"
+
+#: views/elements/login_hint.ctp:3
+msgid "Login with your Bakery account"
+msgstr "Login dengan akaun Bakery anda"
+
+#: views/elements/login_hint.ctp:4
+msgid "Not got one? Hop on over to %s and sign up"
+msgstr "Masih tiada akaun lagi ? Pergi ke %s dan daftar"
+
+#: views/elements/node_options.ctp:8
+msgid "Edit"
+msgstr "Kemaskini"
+
+#: views/elements/node_options.ctp:11
+msgid "View just this section"
+msgstr "Lihat hanya seksyen ini"
+
+#: views/elements/node_options.ctp:14
+msgid "Comments (%s)"
+msgstr "Komen (%s)"
+
+#: views/elements/node_options.ctp:19
+msgid "there is a pending change for this section"
+msgstr "ada perubahan tertangguh untuk seksyen ini"
+
+#: views/elements/node_options.ctp:22
+msgid "History"
+msgstr "Sejarah"
+
+#: views/elements/node_options.ctp:32
+msgid "This text may be out of sync with the English version"
+msgstr "Teks ini mungkin tidak selaras dengan versi Inggeris"
+
+#: views/elements/node_options.ctp:39
+msgid "Compare to original content"
+msgstr "Bandingkan dengan kandungan asal"
+
+#: views/elements/paging.ctp:4
+msgid "Page %s"
+msgstr "Halaman %s"
+
+#: views/elements/paging.ctp:5
+msgid "<< previous"
+msgstr "<< sebelum"
+
+#: views/elements/paging.ctp:8
+msgid "Next >>"
+msgstr "Seterusnya >>"
+
+#: views/elements/search.ctp:22
+#: views/elements/search_form.ctp:12
+msgid "Search"
+msgstr "Cari"
+
+#: views/elements/secondary_nav.ctp:6
+msgid "Logged in as %s"
+msgstr "Masuk sebagai %s"
+
+#: views/elements/secondary_nav.ctp:7
+msgid "Logout"
+msgstr "Keluar"
+
+#: views/elements/secondary_nav.ctp:21
+msgid "Top Contributors"
+msgstr "Penyumbang Tertinggi"
+
+#: views/elements/secondary_nav.ctp:28
+msgid "Todo"
+msgstr "Tugasan"
+
+#: views/elements/secondary_nav.ctp:30
+msgid "About CakePHP"
+msgstr "Tentang CakePHP"
+
+#: views/elements/secondary_nav.ctp:31
+msgid "Donate"
+msgstr "Derma"
+
+#: views/elements/side_menu.ctp:14
+#: views/nodes/view_all.ctp:95
+msgid "All in one page"
+msgstr "Semua dalam satu halaman"
+
+#: views/elements/side_menu.ctp:23
+#: views/nodes/view_all.ctp:102
+msgid "Suggest a new section here"
+msgstr "Cadang seksyen baru di sini"
+
+#: views/elements/side_menu.ctp:30
+msgid "Options"
+msgstr "Pilihan"
+
+#: views/elements/toc.ctp:13
+#: views/nodes/toc.ctp:5
+msgid "Table of Contents"
+msgstr "Senarai Kandungan"
+
+#: views/elements/toc.ctp:16
+msgid "see fully expanded table of contents (only)"
+msgstr "lihat kandungan penuh "
+
+#: views/elements/toc.ctp:19
+msgid "Books in "
+msgstr "Buku didalam"
+
+#: views/elements/toc.ctp:21
+msgid "Available collections"
+msgstr "Koleksi sedia ada"
+
+#: views/layouts/default.ctp:38
+msgid "Recent comments"
+msgstr "Komen terkini"
+
+#: views/layouts/default.ctp:51;55
+msgid "My Submissions"
+msgstr "Sumbangan Saya"
+
+#: views/layouts/default.ctp:88
+msgid "Welcome to %s"
+msgstr "Selamat datang ke %s"
+
+#: views/layouts/error.ctp:6;34
+msgid "CakePHP: the rapid development php framework"
+msgstr "CakePHP: kerangka pembangunan pantas php"
+
+#: views/nodes/add.ctp:17
+#: views/nodes/edit.ctp:26
+msgid "Please review the guidelines for submitting to the Cookbook to ensure consistency."
+msgstr "Sila periksa panduan yang diberikan sebelum menghantar kepada Cookbook untuk memastikan ianya konsisten."
+
+#: views/nodes/add.ctp:22
+msgid "Add a new section"
+msgstr "Tambah seksyen baru"
+
+#: views/nodes/add.ctp:28
+#: views/nodes/edit.ctp:32
+msgid "Show me a preview before submitting"
+msgstr "Pratonton kandungan sebelum menghantar"
+
+#: views/nodes/add.ctp:30
+msgid "under"
+msgstr "di bawah"
+
+#: views/nodes/add.ctp:33
+msgid "after"
+msgstr "selepas"
+
+#: views/nodes/add.ctp:39
+#: views/nodes/edit.ctp:35
+msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr "Kandungan. Kod pada pre tag akan di lepaskan. Penghantar dengan tiada format html akan diformat secara automatik"
+
+#: views/nodes/add.ctp:44
+msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr "Sebagai pilihan, sila terangkan dengan ringkas kenapa anda mencadangkan penambahan (Dalam bahasa Inggeris ) :)"
+
+#: views/nodes/admin_merge.ctp:18
+msgid "You are sure? Please check the preview"
+msgstr "Adakah anda pasti ? Sila pratoton kandungan"
+
+#: views/nodes/compare.ctp:11
+#: views/revisions/view.ctp:12
+msgid "Differences"
+msgstr "Perbezaan"
+
+#: views/nodes/edit.ctp:40
+msgid "What is the reason for the edit? (In English Please) :)"
+msgstr "Apakah sebab untuk kemaskini ? (Dalam bahasa Inggeris) :)"
+
+#: views/nodes/history.ctp:6
+msgid "See English edits too"
+msgstr "Lihat kemaskini Inggeris juga"
+
+#: views/nodes/stats.ctp:5
+msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr "Berikan ucapan kepada semua yang mendedikasikan masa, peluh dan air mata untuk menulis, menterjemah dan mengemaskini kandungan cookbook"
+
+#: views/nodes/stats.ctp:7;37
+msgid "Top %s Contributors"
+msgstr "Penyumbang %s teratas"
+
+#: views/nodes/stats.ctp:9;38
+msgid "Last update: %s"
+msgstr "Kemaskini terakhir: %s"
+
+#: views/nodes/stats.ctp:27;63
+msgid "%s (%s current)"
+msgstr "%s (%s sekarang)"
+
+#: views/nodes/stats.ctp:39
+msgid "%s%% translated"
+msgstr "%s%% diterjemah"
+
+#: views/nodes/stats.ctp:41
+msgid "The cookbook needs you! No submissions for this language!"
+msgstr "Cookbook memerlukan anda ! Tiada penghantaran untuk bahasa ini !"
+
+#: views/nodes/stats.ctp:44
+msgid "The cookbook needs you! This language will soon be removed if not updated."
+msgstr "Cookbook memerlukan anda! Bahasa ini akan dipadam jika tidak dikemaskini"
+
+#: views/nodes/stats.ctp:46
+msgid "The cookbook needs you! No updates for one month."
+msgstr "Cookbook memerlukan anda! Tiada kemaskini selama sebulan."
+
+#: views/nodes/todo.ctp:7
+msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+msgstr "Mahu memeriksa atau kemaskini <a href=\"%s\">fail po</a> untuk %s ?"
+
+#: views/nodes/todo.ctp:10
+msgid "These is no <a href=\"%s\">po file</a> for %s"
+msgstr "Tiada <a href=\"%s\">fail po</a> untuk %s"
+
+#: views/nodes/todo.ctp:13
+msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgstr "Sila guna <a href=\"http://www.poedit.net\">PO Edit</a> untuk mengemaskini fail po"
+
+#: views/nodes/todo.ctp:14
+msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr "Samaada seksyen ini tiada terjemahan atau perkataan Inggeris telah berubah setelah ia diterjemah"
+
+#: views/nodes/view_all.ctp:40;67
+msgid "See comments for this section"
+msgstr "Lihat komen untuk bahagian ini"
+
+#: views/nodes/view_all.ctp:114;126
+msgid "Change history for %s"
+msgstr "Sejarah perubahan untuk %s"
+
+#: views/revisions/results.ctp:8
+msgid "Search Results"
+msgstr "Hasil Carian"
+
+#: views/revisions/results.ctp:32
+msgid "No results"
+msgstr "Tiada hasil"
+
+#: views/revisions/search.ctp:1
+msgid "Search book.cakephp.org"
+msgstr "Cari book.cakephp.org"
+

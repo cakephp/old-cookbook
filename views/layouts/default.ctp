@@ -71,10 +71,6 @@ if (isset ($javascript)) {
 	echo $javascript->link('scripts.js?v=537');
 }
 echo $scripts_for_layout;
-if (Configure::read()) {
-	echo $html->css('development');
-	echo $javascript->link('development');
-}
 ?>
 </head>
 <body>
@@ -158,9 +154,6 @@ pageTracker._trackPageview();
 </script>
 <?php endif;
 $this->set('data', false); $this->cache->data = false;
-if (Configure::read()) {
-	echo $this->element('development');
-}
 ?>
 </body>
 </html>

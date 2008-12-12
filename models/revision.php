@@ -108,7 +108,6 @@ class Revision extends AppModel {
  * @access public
  */
 	function afterSave($created) {
-		$this->Behaviors->enable('Searchable.Searchable');
 		if (!$created) {
 			return;
 		}
@@ -125,6 +124,7 @@ class Revision extends AppModel {
 		$Change = ClassRegistry::init('Change');
 		$Change->create();
 		$Change->save($change);
+		$this->Behaviors->enable('Searchable');
 	}
 /**
  * beforeSave function
@@ -139,7 +139,7 @@ class Revision extends AppModel {
 		) {
 			$this->data['Revision']['lang'] = $this->Node->language;
 		}
-		$this->Behaviors->disable('Searchable.Searchable');
+		$this->Behaviors->disable('Searchable');
 		return true;
 	}
 /**
@@ -240,7 +240,7 @@ class Revision extends AppModel {
 			);
 			$this->create($update);
 			$this->save();
-			$this->delete_from_index($revision);
+			//$this->delete_from_index($revision);
 		}
 		$this->id = $id;
 		$change['status_from'] = $this->field('status');

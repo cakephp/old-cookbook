@@ -15,7 +15,7 @@
  * @filesource
  * @copyright     Copyright (c) 2008, Marcin Domanski
  * @link          www.kabturek.info
- * @package       
+ * @package
  * @subpackage    projects.cookbook.models.behaviors
  * @since         v 0.1
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -24,7 +24,7 @@
  * SearchableBehavior class
  *
  * @uses          ModelBehavior
- * @package       
+ * @package
  * @subpackage    searchable.models.behaviors.searchable
  */
 class SearchableBehavior extends ModelBehavior {
@@ -113,6 +113,10 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function afterSave(&$Model, $created){
+			debug(Debugger::trace());
+		debug('here'); die;
+
+		debug('here'); die;
 		if (!$created) {
 			$this->delete_from_index($Model, $Model->id);
 		}
@@ -133,6 +137,9 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function afterDelete(&$Model){
+			debug(Debugger::trace());
+		debug('here'); die;
+
 		$this->delete_from_index($Model, $Model->id);
 	}
 /**
@@ -164,6 +171,9 @@ class SearchableBehavior extends ModelBehavior {
  * @access public
  */
 	function create_index($Model){
+			debug(Debugger::trace());
+		debug('here'); die;
+
 		try {
 			$this->Index = Zend_Search_Lucene::create($this->index_file);
 			return $this->Index;
@@ -257,6 +267,9 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function delete_from_index(&$Model, $id){
+			debug(Debugger::trace());
+		debug('here'); die;
+
 		// open the index
 		if(!$this->open_index($Model)){
 			return false;
@@ -294,6 +307,8 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function add_to_index(&$Model, $id){
+		debug(Debugger::trace());
+		debug('here'); die;
 		if(!empty($this->settings[$Model->alias])){
 			if(!$this->open_index($Model)){
 				return false;
@@ -356,6 +371,9 @@ class SearchableBehavior extends ModelBehavior {
  * @access public
  */
 	function build_index($Model, $mergeFactor = 2000, $maxBufferDocs = 500){
+			debug(Debugger::trace());
+		debug('here'); die;
+
 		if (Configure::read()) {
 			$this->log('Starting to build index.', 'searchable');
 			$start = getMicrotime();

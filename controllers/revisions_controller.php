@@ -316,6 +316,7 @@ class RevisionsController extends AppController {
  * @access public
  */
 	function admin_reset() {
+		Configure::write('debug', 1);
 		$this->Revision->reset();
 		$this->redirect($this->Session->read('referer'), null, false);
 	}

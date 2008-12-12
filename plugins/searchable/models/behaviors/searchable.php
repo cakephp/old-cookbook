@@ -113,10 +113,6 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function afterSave(&$Model, $created){
-			debug(Debugger::trace());
-		debug('here'); die;
-
-		debug('here'); die;
 		if (!$created) {
 			$this->delete_from_index($Model, $Model->id);
 		}
@@ -137,9 +133,6 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function afterDelete(&$Model){
-			debug(Debugger::trace());
-		debug('here'); die;
-
 		$this->delete_from_index($Model, $Model->id);
 	}
 /**
@@ -171,9 +164,6 @@ class SearchableBehavior extends ModelBehavior {
  * @access public
  */
 	function create_index($Model){
-			debug(Debugger::trace());
-		debug('here'); die;
-
 		try {
 			$this->Index = Zend_Search_Lucene::create($this->index_file);
 			return $this->Index;
@@ -267,9 +257,6 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function delete_from_index(&$Model, $id){
-			debug(Debugger::trace());
-		debug('here'); die;
-
 		// open the index
 		if(!$this->open_index($Model)){
 			return false;
@@ -307,8 +294,6 @@ class SearchableBehavior extends ModelBehavior {
  * @return void
  */
 	function add_to_index(&$Model, $id){
-		debug(Debugger::trace());
-		debug('here'); die;
 		if(!empty($this->settings[$Model->alias])){
 			if(!$this->open_index($Model)){
 				return false;
@@ -344,9 +329,9 @@ class SearchableBehavior extends ModelBehavior {
 					$this->Index->commit();
 					if (Configure::read()) {
 						$Hits = $this->Index->find($query);
-						// TODO why isn't it possible to find what was just added
 						if(!count($Hits)){
-							debug ('Tried to add to the search index, no errors but couldnt find what was just added!');
+							// TODO why isn't it possible to find what was just added
+							$this->log('Tried to add to the search index, no errors but couldnt find what was just added!', 'searchable');
 						}
 						$this->log('added to index id:'.$id, 'searchable');
 					}
@@ -371,9 +356,6 @@ class SearchableBehavior extends ModelBehavior {
  * @access public
  */
 	function build_index($Model, $mergeFactor = 2000, $maxBufferDocs = 500){
-			debug(Debugger::trace());
-		debug('here'); die;
-
 		if (Configure::read()) {
 			$this->log('Starting to build index.', 'searchable');
 			$start = getMicrotime();

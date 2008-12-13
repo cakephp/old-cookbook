@@ -3,7 +3,9 @@
 <?php
 echo '<h2>Revision Details</h2>';
 if(empty($data['Revision']['node_id']) && !empty($data['Revision']['under_node_id'])) {
-	echo '<p>A new section under '.$data['UnderNode']['sequence'].' after '.$data['AfterNode']['sequence']. '</p>';
+	echo '<p>A new section under '
+		. $html->link($data['UnderNode']['sequence'], array('admin' => false, 'controller' => 'nodes', 'action' => 'view', $data['UnderNode']['id']))
+		. ' after '.$data['AfterNode']['sequence']. '</p>';
 }
 echo '<p>' . up($data['Revision']['lang']) . ' Submission by ' . $html->link($user['username'], 'mailto:' . $user['email']) . ' ' . $time->timeAgoInWords($data['Revision']['created']) . '</p>';
 if(!empty($data['Revision']['reason'])) {

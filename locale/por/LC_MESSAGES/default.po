@@ -25,8 +25,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
+<<<<<<< HEAD:locale/por/LC_MESSAGES/default.po
 "POT-Creation-Date: 2008-12-04 15:20-0200\n"
 "PO-Revision-Date: 2008-12-09 14:35-0300\n"
+=======
+"POT-Creation-Date: 2008-11-19 13:34+0100\n"
+"PO-Revision-Date: 2008-11-26 21:27-0300\n"
+>>>>>>> 02ad943... Corrected spell of an word:locale/por/LC_MESSAGES/default.po
 "Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -95,7 +100,7 @@ msgstr "Nó inválido."
 
 #: controllers/comments_controller.php:93
 msgid "Your comment has been added"
-msgstr "Seu comentário foi adicionado"
+msgstr "Seu comentário foi adicionando"
 
 #: controllers/comments_controller.php:96
 msgid "Please correct errors below."

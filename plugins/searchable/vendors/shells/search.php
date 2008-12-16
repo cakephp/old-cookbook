@@ -61,8 +61,10 @@ class SearchShell extends Shell {
 			} else {
 				$results = $model->find('all', $model_options['find_options']);
 			}
-			$this->log($model->name.' find time: '.(time()-$start));
-			$start = time();
+			if (Configure::read()) {
+				$this->log($model->name.' find time: '.(time()-$start), 'searchable');
+				$start = time();
+			}
 
 			$count = count($results);
 			$i =1;
@@ -72,26 +74,30 @@ class SearchShell extends Shell {
 				$i++;
 
 				$this->out('Processing '.$model->name.' #'.$result[$model->name]['id']);
-                                $doc = new Zend_Search_Lucene_Document();
+				$doc = new Zend_Search_Lucene_Document();
 
 				// add the model field
 				$doc->addField(Zend_Search_Lucene_Field::Keyword('cake_model', $model->name, 'utf-8'));
 				foreach($model_options['fields'] as $field_name => $options){
-                                    if(!empty($options['prepare']) && function_exists($options['prepare'])){
-                                        $result[$model->name][$field_name] = call_user_func($options['prepare'], $result[$model->name][$field_name]);
-                                    }
+					if(!empty($options['prepare']) && function_exists($options['prepare'])){
+						$result[$model->name][$field_name] = call_user_func($options['prepare'], $result[$model->name][$field_name]);
+					}
 					$alias = !empty($options['alias']) ? $options['alias'] : $field_name;
 					$doc->addField(Zend_Search_Lucene_Field::$options['type']($alias, $result[$model->name][$field_name], 'utf-8'));
 				}
 				$index->addDocument($doc);
 				$this->out('Processed '.$model->name.' #'.$result[$model->name]['id']);
 			}
-		$this->log($model->name.' adding time: '.(time()-$start));
-			$start = time();
+			if (Configure::read()) {
+				$this->log($model->name.' adding time: '.(time()-$start), 'searchable');
+				$start = time();
 			}
+		}
 		$this->optimize($index);
 		$index->commit();
-		$this->log('Optimize+commit time: '.(time()-$start));
+		if (Configure::read()) {
+			$this->log('Optimize+commit time: '.(time()-$start));
+		}
 	}
 /**
  * query function

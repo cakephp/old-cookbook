@@ -215,7 +215,6 @@ class Zend_Search_Lucene_Index_SegmentInfo
         		}
         	}
         }
-
         $this->_segFiles = array();
         if ($this->_isCompound) {
             $cfsFile = $this->_directory->getFileObject($name . '.cfs');

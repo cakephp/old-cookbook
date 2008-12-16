@@ -15,7 +15,7 @@
  * @filesource
  * @copyright     Copyright (c) 2008, Marcin Domanski
  * @link          www.kabturek.info
- * @package       
+ * @package
  * @subpackage    projects.cookbook.models.behaviors
  * @since         v 0.1
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
@@ -24,7 +24,7 @@
  * SearchableBehavior class
  *
  * @uses          ModelBehavior
- * @package       
+ * @package
  * @subpackage    searchable.models.behaviors.searchable
  */
 class SearchableBehavior extends ModelBehavior {
@@ -329,9 +329,9 @@ class SearchableBehavior extends ModelBehavior {
 					$this->Index->commit();
 					if (Configure::read()) {
 						$Hits = $this->Index->find($query);
-						// TODO why isn't it possible to find what was just added
 						if(!count($Hits)){
-							debug ('Tried to add to the search index, no errors but couldnt find what was just added!');
+							// TODO why isn't it possible to find what was just added
+							$this->log('Tried to add to the search index, no errors but couldnt find what was just added!', 'searchable');
 						}
 						$this->log('added to index id:'.$id, 'searchable');
 					}

@@ -1,10 +1,9 @@
-#Cookbook sql generated on: 2008-11-21 11:11:01 : 1227265021
+#Cakebook sql generated on: 2008-12-23 09:12:48 : 1230022728
 
 DROP TABLE IF EXISTS `attachments`;
 DROP TABLE IF EXISTS `changes`;
 DROP TABLE IF EXISTS `comments`;
 DROP TABLE IF EXISTS `nodes`;
-DROP TABLE IF EXISTS `nodes_backup`;
 DROP TABLE IF EXISTS `revisions`;
 
 
@@ -66,26 +65,6 @@ CREATE TABLE `nodes` (
 	`show_in_toc` tinyint(1) DEFAULT 1 NOT NULL,	PRIMARY KEY  (`id`),
 	KEY LFT_RGHT (`lft`, `rght`),
 	KEY RGHT_LFT (`rght`, `lft`));
-
-CREATE TABLE `nodes_backup` (
-	`revision_id` int(10) NOT NULL AUTO_INCREMENT,
-	`id` int(10) NOT NULL AUTO_INCREMENT,
-	`date_start` datetime DEFAULT NULL,
-	`date_end` datetime DEFAULT NULL,
-	`lft` int(10) NOT NULL,
-	`rght` int(10) NOT NULL,
-	`parent_id` int(10) DEFAULT NULL,
-	`user_id` int(10) NOT NULL,
-	`depth` int(2) DEFAULT 0 NOT NULL,
-	`sequence` varchar(20) NOT NULL,
-	`slug` varchar(30) DEFAULT NULL,
-	`title` varchar(200) DEFAULT NULL,
-	`content` text DEFAULT NULL,
-	`created` datetime DEFAULT NULL,
-	`modified` datetime DEFAULT NULL,	PRIMARY KEY  (`revision_id`),
-	UNIQUE KEY UNIQUE_STATE (`id`, `date_start`, `date_end`),
-	KEY LFT_RGHT (`lft`, `rght`),
-	KEY RGHT (`rght`));
 
 CREATE TABLE `revisions` (
 	`id` int(10) NOT NULL AUTO_INCREMENT,

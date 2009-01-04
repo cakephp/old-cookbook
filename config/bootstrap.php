@@ -68,4 +68,35 @@ if (Configure::read()) {
 	define('CACHE_DURATION', '+99 days');
 	ob_start('ob_gzhandler');
 }
+
+
+// Content Url Rewrites
+Configure::write('Content.layout', 'default');
+Configure::write('Content.rewriteBase', false);
+
+// All possible prefixes and their layout (for the future..)
+Configure::write('Content.prefixes', array('m' => 'mobile'));
+
+// Modifiy url if any possible prefix is found, update Content.layout
+if (isset($_GET['url'])) {
+	if ($prefixes = Configure::read('Content.prefixes')) {
+		foreach ($prefixes as $prefix => $layout) {
+			if ((strpos($_GET['url'], $prefix.'/') === 0)) {
+				$_GET['url'] = str_replace($prefix.'/', '', $_GET['url']);
+				if (empty($_GET['url'])) $_GET['url'] = '/';
+				Configure::write('Content.layout', $layout);
+				Configure::write('Content.rewriteBase', $prefix);				
+				break; 
+			} elseif ($_GET['url'] == $prefix) {
+				$_GET['url'] = '/';
+				Configure::write('Content.layout', $layout);
+				Configure::write('Content.rewriteBase', $prefix);				
+				break; 
+			}
+		}
+		$layout = $prefix = null;
+	}
+	unset($prefixes);
+}
+
 ?>

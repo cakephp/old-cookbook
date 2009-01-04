@@ -125,6 +125,17 @@ class AppController extends Controller {
 		}
 		$this->set('modelClass', $this->modelClass);
 		$this->set('isAdmin', isset($this->params['admin']));
+		
+		$this->layout = Configure::read('Content.layout');
+
+		if ($this->layout == 'mobile') {
+			if ($this->RequestHandler->isMobile()) {
+				$this->set('isMobile', true);
+			} else {
+				$this->set('isMobile', false);
+			}		
+		}
+		
 		if ($this->name == 'App' && Configure::read()) {
 			$this->layout = 'error';
 		}
@@ -145,6 +156,11 @@ class AppController extends Controller {
 		if (!isset($url['lang']) && !in_array($this->params['lang'], array(null, 'en'))) {
 			$url['lang'] = $this->params['lang'];
 		}
+		
+		if ($prefix = Configure::read('Content.rewriteBase')) {
+			$url = r($this->base, '/' . $prefix, Router::url($url));
+		}		
+		
 		return parent::redirect($url, $code, $exit);
 	}
 /**

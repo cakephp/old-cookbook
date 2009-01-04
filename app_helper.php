@@ -47,10 +47,7 @@ class AppHelper extends Helper {
  * @return void
  */
 	function url($url = null, $full = false) {
-		;
-		
 		if (is_array($url)) {
-			
 			if (isset($url['lang'])) {
 				if ($url['lang'] == 'en') {
 					unset ($url['lang']);

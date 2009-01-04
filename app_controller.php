@@ -86,6 +86,17 @@ class AppController extends Controller {
 			$this->Session->write('referer', $this->referer(array('action' => 'index')));
 		}
 
+		$this->layout = Configure::read('Content.layout');
+
+		// Send user to mobile version if browsing to default url with a mobile phone
+		if ($this->RequestHandler->isMobile()) {
+			$prefixes = Configure::read('Content.prefixes');
+			if (($this->layout != 'mobile') && $base = array_search('mobile', $prefixes)) {
+				Configure::write('Content.rewriteBase', $base);
+				$this->redirect($this->Session->read('referer'));
+			}
+		}
+
 		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:
 			(isset($this->params['named']['lang'])?$this->params['named']['lang']:'en');
 		Configure::write('Config.language', $this->params['lang']);
@@ -125,8 +136,6 @@ class AppController extends Controller {
 		}
 		$this->set('modelClass', $this->modelClass);
 		$this->set('isAdmin', isset($this->params['admin']));
-		
-		$this->layout = Configure::read('Content.layout');
 
 		if ($this->layout == 'mobile') {
 			if ($this->RequestHandler->isMobile()) {

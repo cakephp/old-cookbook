@@ -25,6 +25,7 @@
 	<title><?php echo ($title_for_layout ? $title_for_layout : $app['tag_line']) . ' :: ' . $app['name']; ?></title>
 	<?php echo $html->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'), 'stylesheet', array('media' => 'screen')); ?>
 	<?php if ($isMobile): ?> 
+	<link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
 	<style type="text/css">
 		body{font-size:40px}
 		#ft #copy p, #ft #secondary_nav ul, #ft #csf, #ft #img {float: none; display:block; text-align:center } 

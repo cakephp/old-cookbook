@@ -52,7 +52,7 @@ Configure::write('Site.email', 'team@cakefoundation.org');
 
 Configure::write('Site.database', 'bakery');
 
-$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms', 'tw');
+$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms', 'tw', 'ru');
 sort($langs);
 Configure::write('Languages.all', $langs);
 define('ADMIN', '800');
@@ -85,13 +85,13 @@ if (isset($_GET['url'])) {
 				$_GET['url'] = str_replace($prefix.'/', '', $_GET['url']);
 				if (empty($_GET['url'])) $_GET['url'] = '/';
 				Configure::write('Content.layout', $layout);
-				Configure::write('Content.rewriteBase', $prefix);				
-				break; 
+				Configure::write('Content.rewriteBase', $prefix);
+				break;
 			} elseif ($_GET['url'] == $prefix) {
 				$_GET['url'] = '/';
 				Configure::write('Content.layout', $layout);
-				Configure::write('Content.rewriteBase', $prefix);				
-				break; 
+				Configure::write('Content.rewriteBase', $prefix);
+				break;
 			}
 		}
 		$layout = $prefix = null;

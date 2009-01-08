@@ -79,15 +79,16 @@ Configure::write('Content.prefixes', array('m' => 'mobile'));
 
 // Modifiy url if any possible prefix is found, update Content.layout
 if (isset($_GET['url'])) {
+	$_url = trim($_GET['url'], '/');
 	if ($prefixes = Configure::read('Content.prefixes')) {
 		foreach ($prefixes as $prefix => $layout) {
-			if ((strpos($_GET['url'], $prefix.'/') === 0)) {
-				$_GET['url'] = str_replace($prefix.'/', '', $_GET['url']);
+			if ((strpos($_url, $prefix.'/') === 0)) {
+				$_GET['url'] = str_replace($prefix.'/', '', $_url);
 				if (empty($_GET['url'])) $_GET['url'] = '/';
 				Configure::write('Content.layout', $layout);
 				Configure::write('Content.rewriteBase', $prefix);
 				break;
-			} elseif ($_GET['url'] == $prefix) {
+			} elseif ($_url == $prefix) {
 				$_GET['url'] = '/';
 				Configure::write('Content.layout', $layout);
 				Configure::write('Content.rewriteBase', $prefix);

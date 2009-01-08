@@ -164,9 +164,12 @@ class AppController extends Controller {
 			}
 		}
 		if ($prefix = Configure::read('Content.rewriteBase')) {
-			$url = r($this->base, '/' . $prefix, Router::url($url));
+			$url = Router::url($url);
+			if ($this->base) {
+				$url = str_replace($this->base, '', $url);
+			}
+			$url = '/' . $prefix . $url;
 		}
-
 		return parent::redirect($url, $code, $exit);
 	}
 /**

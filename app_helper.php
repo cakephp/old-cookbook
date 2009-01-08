@@ -56,19 +56,23 @@ class AppHelper extends Helper {
 				$url['lang'] = $this->params['lang'];
 			}
 		}
-		
+
 		$return = Router::url($url, $full);
-		
+
 		$id = Configure::read('Site.homeNode');
 		if (strpos($return, 'view/' . $id . '/')) {
-			$return = $this->webroot;		
+			$return = $this->webroot;
 			if (isset($url['lang'])) {
 				$return .= $url['lang'] . '/';
-			}		
+			}
 		}
-		
+
 		if ($prefix = Configure::read('Content.rewriteBase')) {
-			$return = r($this->base, $this->base . '/' . $prefix, $return);
+			$return = Router::url($return);
+			if ($this->base) {
+				$return = str_replace($this->base, '', $return);
+			}
+			$return = $this->base . '/' . $prefix . $return;
 		}
 		return $return;
 	}

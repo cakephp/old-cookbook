@@ -70,6 +70,13 @@ class NodesController extends AppController {
  */
 	var $paginate = array ('limit' => 2);
 /**
+ * components property
+ *
+ * @var array
+ * @access public
+ */
+	var $components = array('UniqueUrl');
+/**
  * beforeFilter function
  *
  * First, check if the url matches routes and if not redirect
@@ -85,67 +92,10 @@ class NodesController extends AppController {
 		}
 		$this->Node->Revision->currentUserId = $this->Node->currentUserId;
 		if (!isset($this->params['requested']) && $this->action != 'todo') {
-			$urlIsCorrect = true;
-			if ((!isset($this->params['admin']) &&
-				(($this->params['lang'] == 'en' && $this->params['url']['url'] != '/')
-				|| ($this->params['lang'] != 'en' && $this->params['url']['url'] != '/' . $this->params['lang'])))
-			) {
-				if ($this->action == 'view' && isset($this->params['pass'][0]) && $this->params['pass'][0] == Configure::read('Site.homeNode')) {
-					if ($this->params['lang'] == 'en') {
-						$urlIsCorrect = false;
-						$url = '/';
-					} elseif ($this->params['url']['url'] != $this->params['lang']) {
-						$urlIsCorrect = false;
-						$url = '/' . $this->params['lang'];
-					}
-				}
-				if ($this->params['lang'] != 'en') {
-					$this->params['pass']['lang'] = $this->params['lang'];
-				}
-				if ($this->params['url']['ext'] == 'html') {
-					$normalized = Router::normalize($this->params['pass']);
-				} else {
-					$normalized = Router::normalize(am($this->params['pass'], array('ext' => $this->params['url']['ext'])));
-				}
-				if ($normalized != '/' . $this->params['url']['url']) {
-					$urlIsCorrect = false;
-					$url = '/' . $normalized;
-				}
+			if ($this->action === 'view') {
+				$this->Node->id = $this->currentNode = Configure::read('Site.homeNode'); // default
 			}
-			if (!isset($this->params['admin']) && isset($this->params['pass'][0])) {
-				$urlSlug = isset($this->params['pass'][1])?$this->params['pass'][1]:'';
-				$conditions['Node.id'] = $this->params['pass'][0];
-				$fields = array ('Node.id', 'Node.id', 'Revision.slug');
-				$recursive = 0;
-				$result = $this->Node->find('first', compact('conditions', 'fields', 'recursive'));
-				if ($result) {
-					$this->Node->id = $this->currentNode = $result['Node']['id'];
-				} else {
-					$this->redirect($this->Session->read('referer'), null, true);
-				}
-				$base = '/';
-				$here = '/' . $this->params['url']['url'];
-				if ($this->params['lang'] != 'en') {
-					$base .= $this->params['lang'] . '/';
-					if (strlen($here) < 4 ) {
-						$here .= '/';
-					}
-				}
-				if (!($this->data)&&($base != $here)) {
-					if ($urlSlug<>$result['Revision']['slug']) {
-						$urlIsCorrect = false;
-						$url = array($result['Node']['id'], $result['Revision']['slug']);
-					}
-				}
-			} elseif (isset($this->params['pass'][0])) {
-				$this->Node->id = $this->currentNode = $this->params['pass'][0];
-			}
-			if (!$urlIsCorrect) {
-				if ($this->params['url']['ext'] != 'html') {
-					$url['ext'] = $this->params['url']['ext'];
-				}
-				$this->redirect($url, 301);
-			}
+			$this->UniqueUrl->check();
 			$fields = array ('Node.id', 'Node.depth', 'Node.id', 'Node.lft', 'Node.rght', 'Node.comment_level', 'Node.edit_level', 'Revision.id', 'Revision.slug', 'Revision.title', 'Revision.content');
 			if (!isset($this->currentNode)) {
 				$topNode = $this->Node->find(array('Node.depth' => '0'), array('Node.id'), null, 0);
@@ -617,7 +567,7 @@ class NodesController extends AppController {
 	}
 /**
  * app_name method
- * 
+ *
  * Only called by requestAction
  *
  * @param string $lang

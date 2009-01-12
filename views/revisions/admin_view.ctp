@@ -7,7 +7,12 @@ if(empty($data['Revision']['node_id']) && !empty($data['Revision']['under_node_i
 		. $html->link($data['UnderNode']['sequence'], array('admin' => false, 'controller' => 'nodes', 'action' => 'view', $data['UnderNode']['id']))
 		. ' after '.$data['AfterNode']['sequence']. '</p>';
 }
-echo '<p>' . up($data['Revision']['lang']) . ' Submission by ' . $html->link($user['username'], 'mailto:' . $user['email']) . ' ' . $time->timeAgoInWords($data['Revision']['created']) . '</p>';
+echo '<p>' . up($data['Revision']['lang']) .
+	' Submission by ' .
+	$html->link($user['username'], 'mailto:' . $user['email']) . ' to ' .
+	$html->link($data['Node']['sequence'] . ' ' . $data['Revision']['title'],
+		array('admin' => false, 'controller' => 'nodes', 'action' => 'view', $data['Node']['id'])) . ' ' .
+	$time->timeAgoInWords($data['Revision']['created']) . '</p>';
 if(!empty($data['Revision']['reason'])) {
 	echo '<p>Reason: ' . htmlspecialchars($data['Revision']['reason']) . '</p>';
 }

@@ -75,8 +75,9 @@ Configure::write('Content.layout', 'default');
 Configure::write('Content.rewriteBase', false);
 
 // All possible prefixes and their layout (for the future..)
-Configure::write('Content.prefixes', array('m' => 'mobile'));
-
+//Configure::write('Content.prefixes', array('m' => 'mobile'));
+Configure::write('Content.prefixes', array());
+/*
 // Modifiy url if any possible prefix is found, update Content.layout
 if (isset($_GET['url'])) {
 	$_url = trim($_GET['url'], '/');
@@ -99,5 +100,6 @@ if (isset($_GET['url'])) {
 	}
 	unset($prefixes);
 }
+ */
 
 ?>

@@ -44,6 +44,7 @@ class UniqueUrlComponent extends Object {
 /**
  * Verify that the current url is the right url to view the content
  *
+ * Disabled if debug is > 1
  * Doesn't do anything for admin methods or if data has been submitted, otherwise, check slugs
  * and 301 redirect to the correct url if the url doesn't match route definitions
  *
@@ -52,11 +53,10 @@ class UniqueUrlComponent extends Object {
  * @access public
  */
 	function check ($defaultLang = 'en') {
-		if (isset($this->controller->params['admin']) ||
-			$this->controller->data
-		) {
+		if (isset($this->controller->params['requested']) || isset($this->controller->params['admin']) ||
+			$this->controller->data) {
 			return;
-		}
+			}
 		$this->here = $here = '/' . trim($this->controller->params['url']['url'], '/');
 		$params =& $this->controller->params;
 		$pass =& $this->controller->params['pass'];
@@ -74,7 +74,7 @@ class UniqueUrlComponent extends Object {
 			}
 			return $this->controller->redirect('/' . $params['lang'], 301);
 		}
-		if (in_array($this->controller->action, array('view', 'single_page', 'toc'))) {
+		if (in_array($this->controller->action, array('view', 'complete', 'toc'))) {
 			list($pass) = array_chunk($pass, 2);
 		}
 		//$pass = am($pass, $params['named']);

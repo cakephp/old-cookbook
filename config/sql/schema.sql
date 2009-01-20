@@ -1,4 +1,4 @@
-#Cookbook sql generated on: 2008-11-21 11:11:01 : 1227265021
+#Cakebook sql generated on: 2008-12-23 09:12:48 : 1230022728
 
 DROP TABLE IF EXISTS `attachments`;
 DROP TABLE IF EXISTS `changes`;

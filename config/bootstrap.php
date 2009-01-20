@@ -52,7 +52,7 @@ Configure::write('Site.email', 'team@cakefoundation.org');
 
 Configure::write('Site.database', 'bakery');
 
-$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms');
+$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms', 'tw', 'ru');
 sort($langs);
 Configure::write('Languages.all', $langs);
 define('ADMIN', '800');
@@ -68,4 +68,36 @@ if (Configure::read()) {
 	define('CACHE_DURATION', '+99 days');
 	ob_start('ob_gzhandler');
 }
+
+
+// Content Url Rewrites
+Configure::write('Content.layout', 'default');
+Configure::write('Content.rewriteBase', false);
+
+// All possible prefixes and their layout (for the future..)
+Configure::write('Content.prefixes', array('m' => 'mobile'));
+
+// Modifiy url if any possible prefix is found, update Content.layout
+if (isset($_GET['url'])) {
+	$_url = trim($_GET['url'], '/');
+	if ($prefixes = Configure::read('Content.prefixes')) {
+		foreach ($prefixes as $prefix => $layout) {
+			if ((strpos($_url, $prefix.'/') === 0)) {
+				$_GET['url'] = str_replace($prefix.'/', '', $_url);
+				if (empty($_GET['url'])) $_GET['url'] = '/';
+				Configure::write('Content.layout', $layout);
+				Configure::write('Content.rewriteBase', $prefix);
+				break;
+			} elseif ($_url == $prefix) {
+				$_GET['url'] = '/';
+				Configure::write('Content.layout', $layout);
+				Configure::write('Content.rewriteBase', $prefix);
+				break;
+			}
+		}
+		$layout = $prefix = null;
+	}
+	unset($prefixes);
+}
+
 ?>

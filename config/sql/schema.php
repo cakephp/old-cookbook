@@ -1,8 +1,8 @@
 <?php 
 /* SVN FILE: $Id$ */
-/* Cookbook schema generated on: 2008-11-21 11:11:43 : 1227264943*/
-class CookbookSchema extends CakeSchema {
-	var $name = 'Cookbook';
+/* Cakebook schema generated on: 2008-12-23 09:12:43 : 1230022723*/
+class CakebookSchema extends CakeSchema {
+	var $name = 'Cakebook';
 
 	function before($event = array()) {
 		return true;
@@ -70,24 +70,6 @@ class CookbookSchema extends CakeSchema {
 			'modified' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
 			'show_in_toc' => array('type' => 'boolean', 'null' => false, 'default' => '1'),
 			'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'LFT_RGHT' => array('column' => array('lft', 'rght'), 'unique' => 0), 'RGHT_LFT' => array('column' => array('rght', 'lft'), 'unique' => 0))
-		);
-	var $nodes_backup = array(
-			'revision_id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10, 'key' => 'primary'),
-			'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10, 'key' => 'primary'),
-			'date_start' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
-			'date_end' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
-			'lft' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10, 'key' => 'index'),
-			'rght' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10, 'key' => 'index'),
-			'parent_id' => array('type' => 'integer', 'null' => true, 'default' => NULL, 'length' => 10),
-			'user_id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10),
-			'depth' => array('type' => 'integer', 'null' => false, 'default' => '0', 'length' => 2),
-			'sequence' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 20),
-			'slug' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 30),
-			'title' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 200),
-			'content' => array('type' => 'text', 'null' => true, 'default' => NULL),
-			'created' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
-			'modified' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
-			'indexes' => array('PRIMARY' => array('column' => 'revision_id', 'unique' => 1), 'UNIQUE_STATE' => array('column' => array('id', 'date_start', 'date_end'), 'unique' => 1), 'LFT_RGHT' => array('column' => array('lft', 'rght'), 'unique' => 0), 'RGHT' => array('column' => 'rght', 'unique' => 0))
 		);
 	var $revisions = array(
 			'id' => array('type' => 'integer', 'null' => false, 'default' => NULL, 'length' => 10, 'key' => 'primary'),

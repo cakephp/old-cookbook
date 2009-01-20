@@ -10,7 +10,7 @@ if ($Node['edit_level'] <= $auth['User']['Level']) {
 if ($Node['depth'] >= $viewAllLevel) {
 	$out[] = $html->link(__('View just this section', true), array('action'=>'view',$Node['id'], $Revision['slug']));
 }
-if ($Node['comment_level'] <= $auth['User']['Level']) {
+if ($Node['comment_level'] <= $auth['User']['Level'] && $this->layout == 'default') {
 	$out[] = $html->link(sprintf(__('Comments (%s)', true), count($Comment)), '#comments-' . $Node['id'], array('class' => 'show-comment'));
 }
 $flags = explode(',', trim($Revision['flags']));

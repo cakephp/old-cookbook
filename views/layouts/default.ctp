@@ -2,6 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<cake:nocache>
+<?php
+// Preventing automatic language detection
+Configure::write('Config.language', $this->params['lang']);
+?>
+</cake:nocache>
 <?php echo $html->charset('UTF-8');
 $app = cache('views/app_name_' . $this->params['lang']);
 if ($app) {

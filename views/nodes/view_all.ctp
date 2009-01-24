@@ -93,7 +93,7 @@ if ($currentNode['Node']['depth'] > 1 && $currentNode['Node']['depth'] < $viewAl
 	$menu->add(array(
 		'section' => 'Options',
 		'title' => __('All in one page', true),
-		'url' => array('action' => 'single_page', $currentNode['Node']['id'], $currentNode['Revision']['slug'])
+		'url' => array('action' => 'complete', $currentNode['Node']['id'], $currentNode['Revision']['slug'])
 	));
 }
 if ($currentNode['Node']['edit_level'] <= $auth['User']['Level']) {

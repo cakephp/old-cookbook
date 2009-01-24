@@ -12,7 +12,7 @@ if (!$this->name && !empty($this->data['Node'])) {
 		$menu->add(array(
 			'section' => 'Options',
 			'title' => __('All in one page', true),
-			'url' => array('controller' => 'nodes', 'action' => 'single_page', $id, $slug)
+			'url' => array('controller' => 'nodes', 'action' => 'complete', $id, $slug)
 		));
 	}
 	$authLevel = $session->read('Auth.User.Level');

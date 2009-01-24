@@ -105,7 +105,7 @@ class NodesController extends AppController {
 			$this->set('currentPath', $this->currentPath);
 		}
 		if (!isset($this->params['url']['ext']) || $this->params['url']['ext'] != 'xml') {
-			$this->Auth->allowedActions = array('index', 'view', 'single_page', 'toc', 'collections',
+			$this->Auth->allowedActions = array('index', 'view', 'complete', 'toc', 'collections',
 				'app_name', 'compare', 'history', 'stats', 'todo');
 		}
 	}
@@ -599,7 +599,7 @@ class NodesController extends AppController {
 			$this->Node->id = $this->currentNode = $id = $this->Node->field('id', array('Node.depth' => 2));
 		}
 		if ($this->params['url']['ext'] == 'xml') {
-			$url = array('action' => 'single_page', $id, $this->Node->Revision->field('slug', array('node_id' => $id)), 'ext' => 'xml');
+			$url = array('action' => 'complete', $id, $this->Node->Revision->field('slug', array('node_id' => $id)), 'ext' => 'xml');
 			$this->redirect($url);
 		}
 		$fields = array ('Node.id', 'Node.depth', 'Node.id', 'Node.lft', 'Node.rght', 'Node.comment_level', 'Node.edit_level', 'Revision.id', 'Revision.slug', 'Revision.title', 'Revision.content');
@@ -695,7 +695,7 @@ class NodesController extends AppController {
  */
 	function view($nodeId = false, $slug = '') {
 		if ($this->params['url']['ext'] == 'xml') {
-			$this->redirect(am(array('action' => 'single_page'), $this->passedArgs));
+			$this->redirect(am(array('action' => 'complete'), $this->passedArgs));
 		}
 		if (!$nodeId || $nodeId == Configure::read('Site.homeNode')) {
 			$this->redirect(array('index'));
@@ -709,13 +709,13 @@ class NodesController extends AppController {
 		}
 	}
 /**
- * single_page function
+ * complete function
  *
  * @param mixed $nodeId
  * @access public
  * @return void
  */
-	function single_page($nodeId = null) {
+	function complete($nodeId = null) {
 		if ($this->params['url']['ext'] == 'xml') {
 			$this->data = $this->Node->exportData($this->currentNode);
 			$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);

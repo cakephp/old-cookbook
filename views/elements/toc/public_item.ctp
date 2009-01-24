@@ -12,7 +12,7 @@ if (isset($pathIds)) {
 		$params['class'] = 'selected';
 	}
 }
-if ($this->action == 'single_page' && $Node['lft'] >= $currentNode['lft'] && $Node['rght'] <= $currentNode['rght']) {
+if ($this->action == 'complete' && $Node['lft'] >= $currentNode['lft'] && $Node['rght'] <= $currentNode['rght']) {
 	echo $html->link($Node['sequence'] . ' ' . $Revision['title'], '#' . $Revision['slug'] . '-' . $Node['id'],
 		$params);
 	return;

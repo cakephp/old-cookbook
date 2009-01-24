@@ -6,7 +6,11 @@ $collections = cache('views/collection_' . $this->params['lang']);
 if ($collections) {
 	$collections = unserialize($collections);
 } else {
-	$collections = $this->requestAction('/nodes/collections/lang:' . $this->params['lang']);
+	$__cache = Configure::read('Cache.check');
+	Configure::write('Cache.check', false);
+	$collections = $this->requestAction(array('plugin' => null, 'prefix' => null, 'controller' => 'nodes',
+		'action' => 'collections', 'lang' => $this->params['lang']));
+	Configure::write('Cache.check', $__cache);
 }
 $currentCollection = isset($currentPath[1])?$currentPath[1]:array('Node' => array('id' => false));
 foreach ($collections as $row) {

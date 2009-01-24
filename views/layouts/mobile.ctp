@@ -8,7 +8,11 @@
 		if ($app) {
 			$app = unserialize($app);
 		} else {
-			$app = $this->requestAction('/nodes/app_name/lang:' . $this->params['lang']);
+			$__cache = Configure::read('Cache.check');
+			Configure::write('Cache.check', false);
+			$app = $this->requestAction(array('plugin' => false, 'prefix' => null, 'controller' => 'nodes',
+				'action' => 'app_name',	'lang' => $this->params['lang']));
+			Configure::write('Cache.check', $__cache);
 		}
 		if ($this->here == $this->webroot) {
 			$title_for_layout = $app['tag_line'];

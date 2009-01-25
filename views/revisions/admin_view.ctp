@@ -11,7 +11,7 @@ echo '<p>' . up($data['Revision']['lang']) .
 	' Submission by ' .
 	$html->link($user['username'], 'mailto:' . $user['email']) . ' to ' .
 	$html->link($data['Node']['sequence'] . ' ' . $data['Revision']['title'],
-		array('admin' => false, 'controller' => 'nodes', 'action' => 'view', $data['Node']['id'])) . ' ' .
+		array('admin' => false, 'controller' => 'nodes', 'action' => 'view', 'lang' => $data['Revision']['lang'], $data['Node']['id'])) . ' ' .
 	$time->timeAgoInWords($data['Revision']['created']) . '</p>';
 if(!empty($data['Revision']['reason'])) {
 	echo '<p>Reason: ' . htmlspecialchars($data['Revision']['reason']) . '</p>';

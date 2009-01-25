@@ -41,7 +41,9 @@ Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'pro
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
 // missing images
 Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
-
+// User plugin
+Router::connect('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array());
+Router::connect('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array());
 $routes = array(
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
@@ -68,9 +70,10 @@ foreach ($routes as $route) {
 	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
 
 	$route[1]['theme'] = 'default'; // default layout
+	Router::connect($route[0], $route[1], $route[2]);
+
 	$route[2]['lang'] = '[a-z]{2}';
 	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 
-	Router::connect($route[0], $route[1], $route[2]);
 }
 ?>

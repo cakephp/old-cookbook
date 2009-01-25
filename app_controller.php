@@ -97,17 +97,12 @@ class AppController extends Controller {
 			}
 		}
 		$this->params['theme'] = isset($this->params['theme'])?$this->params['theme']:'default';
-
 		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:
 			(isset($this->params['named']['lang'])?$this->params['named']['lang']:'en');
 		Configure::write('Config.language', $this->params['lang']);
 		if (($this->name != 'App') && !in_array($this->params['lang'], Configure::read('Languages.all'))) {
 			$this->Session->setFlash(__('Whoops, not a valid language.', true));
 			return $this->redirect($this->Session->read('referer'), 301, true);
-		}
-
-		if (!isset($this->params['requested']) && strpos($this->params['url']['url'], 'en') === 0) {
-			return $this->redirect($this->params['pass'], 301, true);
 		}
 
 		if (!in_array($this->params['lang'], array(null, 'en'))) {
@@ -118,6 +113,9 @@ class AppController extends Controller {
 			}
 		}
 		if (!$this->Auth->user()) {
+			if($this->name != 'Users' && !isset($this->params['requested'])) {
+				$this->Session->write('Auth.redirect', '/' . $this->params['url']['url']);
+			}
 			$this->Auth->authError = __('Please login to continue', true);
 		}
 		$this->Auth->loginRedirect = $this->Session->read('referer');

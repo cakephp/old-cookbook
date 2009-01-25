@@ -70,10 +70,10 @@ foreach ($routes as $route) {
 	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
 
 	$route[1]['theme'] = 'default'; // default layout
-	Router::connect($route[0], $route[1], $route[2]);
 
 	$route[2]['lang'] = '[a-z]{2}';
 	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
+	Router::connect($route[0], $route[1], $route[2]);
 
 }
 ?>

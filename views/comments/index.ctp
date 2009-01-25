@@ -17,5 +17,5 @@ if (!$data) {
 if (isset($node)) {
 	echo $this->element('comment_form');
 }
-$html->meta('rss', am($this->params['pass'], array('ext' => 'rss')), array('title' => __('This page as a feed', true)), false);
+$html->meta('rss', am($this->params['pass'], array('theme' => 'defaut', 'ext' => 'rss')), array('title' => __('This page as a feed', true)), false);
 ?>

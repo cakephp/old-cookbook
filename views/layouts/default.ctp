@@ -63,7 +63,7 @@ if ($session->read('Auth.User.id')) {
 	$menu->add(array(
 		'section' => 'Feeds',
 		'title' => __('My Submissions', true),
-		'url' => array('admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'user' => $userName, 'language' => '*', 'ext' => 'rss')
+		'url' => array('theme' => 'default', 'admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'user' => $userName, 'language' => '*', 'ext' => 'rss')
 	));
 }
 ?></cake:nocache><?php

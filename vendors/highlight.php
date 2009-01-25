@@ -4,7 +4,7 @@
 /**
  * Class to style php code as an ordered list.
  *
- * Originally from http://shiflett.org/blog/oct/formatting-and-highlighting-php-code-listings
+ * Originally from http://shiflett.org/blog/2006/oct/formatting-and-highlighting-php-code-listings
  * Some minor modifications to allow it to work with php4.
  *
  * PHP versions 4 and 5

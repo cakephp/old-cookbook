@@ -79,9 +79,6 @@ class NodesController extends AppController {
 /**
  * beforeFilter function
  *
- * First, check if the url matches routes and if not redirect
- * Second, check the slug matches and if not redirect
- *
  * @access public
  * @return void
  */
@@ -94,6 +91,9 @@ class NodesController extends AppController {
 		if (!isset($this->params['requested']) && $this->action != 'todo') {
 			if ($this->action === 'view') {
 				$this->Node->id = $this->currentNode = Configure::read('Site.homeNode'); // default
+			}
+			if (isset($this->passedArgs[0])) {
+				$this->Node->id = $this->currentNode = $this->passedArgs[0];
 			}
 			$this->UniqueUrl->check();
 			$fields = array ('Node.id', 'Node.depth', 'Node.id', 'Node.lft', 'Node.rght', 'Node.comment_level', 'Node.edit_level', 'Revision.id', 'Revision.slug', 'Revision.title', 'Revision.content');

@@ -11,8 +11,8 @@
  *
  * CakePHP :  Rapid Development Framework <http://www.cakephp.org/>
  * Copyright (c)	2006, Cake Software Foundation, Inc.
- *								1785 E. Sahara Avenue, Suite 490-204
- *								Las Vegas, Nevada 89104
+ *			1785 E. Sahara Avenue, Suite 490-204
+ *			Las Vegas, Nevada 89104
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -28,72 +28,49 @@
  * @lastmodified  $Date: 2008-11-19 13:13:40 +0100 (Wed, 19 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-/**
- * Here, we are connecting '/' (base path) to controller called 'Pages',
- * its action called 'display', and we pass a param to select the view file
- * to use (in this case, /app/views/pages/home.thtml)...
- */
-if (!empty($fromUrl) && strpos($fromUrl, 'admin') === 0) {
-	Router::connectNamed(true);
-} else {
-	Router::connectNamed(array('node', 'user', 'language', 'status'), array('default' => true));
+if (!empty($fromUrl)) {
+       	if (strpos($fromUrl, 'admin') === 0) {
+		Router::connectNamed(true);
+	} else {
+		Router::connectNamed(array('node', 'user', 'language', 'status'), array('default' => true));
+	}
 }
 Router::parseExtensions('rss', 'xml');
-
-Router::connect('/', array('controller' => 'nodes', 'action' => 'index'), array('lang' => 'en'));
-Router::connect('/:lang/', array('controller' => 'nodes', 'action' => 'index'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/:lang/stats/*', array('controller' => 'nodes', 'action' => 'stats'), array('lang' => '[a-z]{2}'));
-Router::connect('/stats', array('controller' => 'nodes', 'action' => 'stats'), array('lang' => 'en'));
-
-Router::connect('/:lang/todo/*', array('controller' => 'nodes', 'action' => 'todo'), array('lang' => '[a-z]{2}'));
-Router::connect('/todo', array('controller' => 'nodes', 'action' => 'todo'), array('lang' => 'en'));
-
-Router::connect('/:lang/view/*', array('controller' => 'nodes', 'action' => 'view'), array('lang' => '[a-z]{2}'));
-Router::connect('/view/*', array('controller' => 'nodes', 'action' => 'view'), array('lang' => 'en'));
-
-Router::connect('/search/*', array('controller' => 'revisions', 'action' => 'search'), array('lang' => 'en'));
-Router::connect('/:lang/search/*', array('controller' => 'revisions', 'action' => 'search'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/results/*', array('controller' => 'revisions', 'action' => 'results'), array('lang' => 'en'));
-Router::connect('/:lang/results/*', array('controller' => 'revisions', 'action' => 'results'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/compare/*', array('controller' => 'nodes', 'action' => 'compare'), array('lang' => 'en'));
-Router::connect('/:lang/compare/*', array('controller' => 'nodes', 'action' => 'compare'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/changes/*', array('controller' => 'changes', 'action' => 'index'), array('lang' => 'en'));
-Router::connect('/:lang/changes/*', array('controller' => 'changes', 'action' => 'index'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/history/*', array('controller' => 'nodes', 'action' => 'history'), array('lang' => 'en'));
-Router::connect('/:lang/history/*', array('controller' => 'nodes', 'action' => 'history'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/toc/*', array('controller' => 'nodes', 'action' => 'toc'), array('lang' => 'en'));
-Router::connect('/:lang/toc/*', array('controller' => 'nodes', 'action' => 'toc'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/complete/*', array('controller' => 'nodes', 'action' => 'single_page'), array('lang' => 'en'));
-Router::connect('/:lang/complete/*', array('controller' => 'nodes', 'action' => 'single_page'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/edit/*', array('controller' => 'nodes', 'action' => 'edit'), array('lang' => 'en'));
-Router::connect('/:lang/edit/*', array('controller' => 'nodes', 'action' => 'edit'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/add/*', array('controller' => 'nodes', 'action' => 'add'), array('lang' => 'en'));
-Router::connect('/:lang/add/*', array('controller' => 'nodes', 'action' => 'add'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+', 'lang' => 'en'));
-Router::connect('/:lang/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+', 'lang' => '[a-z]{2}'));
-
-Router::connect('/comment/*', array('controller' => 'comments', 'action' => 'add'), array('lang' => 'en'));
-Router::connect('/:lang/comment/*', array('controller' => 'comments', 'action' => 'add'), array('lang' => '[a-z]{2}'));
-
-Router::connect('/admin', array('prefix' => 'admin', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array('admin' => true));
-Router::connect('/:lang/admin', array('prefix' => 'admin', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array('admin' => true, 'lang' => '[a-z]{2}'));
-
-Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
 // Legacy
 Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'process', 'chapter'));
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
+// missing images
+Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
 
-if (isset($fromUrl) && strpos('admin', $fromUrl) !== false) {
-	Router::connectNamed(array('query', 'collection', 'lang'), array('greedy' => false, 'default' => true));
+$routes = array(
+	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
+	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
+	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */
+	array('/add/*', array('controller' => 'nodes', 'action' => 'add'), array()),
+	array('/compare/*', array('controller' => 'nodes', 'action' => 'compare'), array()),
+	array('/complete/*', array('controller' => 'nodes', 'action' => 'complete'), array()),
+	array('/edit/*', array('controller' => 'nodes', 'action' => 'edit'), array()),
+	array('/history/*', array('controller' => 'nodes', 'action' => 'history'), array()),
+	array('/stats/*', array('controller' => 'nodes', 'action' => 'stats'), array()),
+	array('/toc/*', array('controller' => 'nodes', 'action' => 'toc'), array()),
+	array('/todo/*', array('controller' => 'nodes', 'action' => 'todo'), array()),
+	array('/view/*', array('controller' => 'nodes', 'action' => 'view'), array()),
+	/* array('/:action/*', array('controller' => 'revisions'), array('action' => 'search|results')), */
+	array('/search/*', array('controller' => 'revisions', 'action' => 'search'), array()),
+	array('/results/*', array('controller' => 'revisions', 'action' => 'results'), array()),
+	array('/admin/:controller/:action/*', array('prefix' => 'admin', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array()),
+	array('/:controller/:action/*', array('controller' => 'default', 'action' => 'index'), array()),
+);
+foreach ($routes as $route) {
+	$route[1]['lang'] = 'en'; // default language
+	$route[1]['theme'] = 'mobile';
+	Router::connect('/m' . $route[0], $route[1], $route[2]);
+	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
+
+	$route[1]['theme'] = 'default'; // default layout
+	$route[2]['lang'] = '[a-z]{2}';
+	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
+
+	Router::connect($route[0], $route[1], $route[2]);
 }
 ?>

@@ -96,6 +96,7 @@ class AppController extends Controller {
 				$this->redirect($this->Session->read('referer'));
 			}
 		}
+		$this->params['theme'] = isset($this->params['theme'])?$this->params['theme']:'default';
 
 		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:
 			(isset($this->params['named']['lang'])?$this->params['named']['lang']:'en');
@@ -137,9 +138,7 @@ class AppController extends Controller {
 		$this->set('modelClass', $this->modelClass);
 		$this->set('isAdmin', isset($this->params['admin']));
 
-		if ($this->layout == 'mobile') {
-			$this->set('isMobile', true);
-		}
+		$this->layout = $this->params['theme'];
 
 		if ($this->name == 'App' && Configure::read()) {
 			$this->layout = 'error';
@@ -155,21 +154,17 @@ class AppController extends Controller {
  * @return void
  */
 	function redirect($url, $code = null, $exit = true) {
-		if (is_array($url)) {
-			if (!isset($this->params['lang'])) {
-				$this->params['lang'] = 'en';
-			}
-			if (!isset($url['lang']) && !in_array($this->params['lang'], array(null, 'en'))) {
-				$url['lang'] = $this->params['lang'];
-			}
+		if (!is_array($url)) {
+			return parent::redirect($url, $code, $exit);
 		}
-		if ($prefix = Configure::read('Content.rewriteBase')) {
-			$url = Router::url($url);
-			if ($this->base) {
-				$url = str_replace($this->base, '', $url);
-			}
-			$url = '/' . $prefix . $url;
-		}
+		$defaults = array(
+			'controller' => Inflector::underscore($this->name),
+			'action' => $this->action,
+			'admin' => !empty($this->params['admin']),
+			'lang' => $this->params['lang'],
+			'theme' => $this->params['theme'],
+		);
+		$url = am($defaults, $url);
 		return parent::redirect($url, $code, $exit);
 	}
 /**

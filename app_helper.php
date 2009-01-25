@@ -47,34 +47,28 @@ class AppHelper extends Helper {
  * @return void
  */
 	function url($url = null, $full = false) {
-		if (is_array($url)) {
-			if (isset($url['lang'])) {
-				if ($url['lang'] == 'en') {
-					unset ($url['lang']);
-				}
-			} elseif (!empty($this->params['lang']) && !in_array($this->params['lang'], array(null, 'en'))) {
-				$url['lang'] = $this->params['lang'];
+		if (!is_array($url)) {
+			return parent::url($url, $full);
+		}
+		$defaults = array(
+			'controller' => $this->params['controller'],
+			'action' => $this->params['action'],
+			'admin' => !empty($this->params['admin']),
+			'lang' => $this->params['lang'],
+			'theme' => $this->params['theme'],
+		);
+		$url = am($defaults, $url);
+		if (isset($url[0])) {
+			$id = Configure::read('Site.homeNode');
+			if (empty($url['admin']) && $url['controller'] === 'nodes' && $url['action'] === 'view' && $url[0] == $id) {
+				$url = array(
+					'action' => 'index',
+					'lang' => $this->params['lang'],
+					'theme' => $this->params['theme']
+				);
 			}
 		}
-
-		$return = Router::url($url, $full);
-
-		$id = Configure::read('Site.homeNode');
-		if (strpos($return, 'view/' . $id . '/')) {
-			$return = $this->webroot;
-			if (isset($url['lang'])) {
-				$return .= $url['lang'] . '/';
-			}
-		}
-
-		if ($prefix = Configure::read('Content.rewriteBase')) {
-			$return = Router::url($return);
-			if ($this->base) {
-				$return = str_replace($this->base, '', $return);
-			}
-			$return = $this->base . '/' . $prefix . $return;
-		}
-		return $return;
+		return parent::url($url, $full);
 	}
 }
 ?>

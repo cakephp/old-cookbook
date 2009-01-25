@@ -28,7 +28,6 @@
 	?>
 	<title><?php echo ($title_for_layout ? $title_for_layout : $app['tag_line']) . ' :: ' . $app['name']; ?></title>
 	<?php echo $html->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'), 'stylesheet', array('media' => 'screen')); ?>
-	<?php if ($isMobile): ?>
 	<link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
 	<style type="text/css">
 		body{font-size:40px}
@@ -40,20 +39,12 @@
 		#search_row fieldset { width: 70%; padding-top: 0.2em; padding-right: 0.4em }
 		#search_row input.query { padding: 0.2em }
 	</style>
-	<?php else: ?>
-	<link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
-	<?php endif; ?>
 </head>
 <body>
 	<div id="doc3">
 
 		<div id="hd">
 			<h1>CakePHP Cookbook <sup>mobile!</sup></h1>
-
-			<?php if (!$isMobile): ?>
-				<big class="notmobile">YOU SHOULD BE WATCHING THIS ON YOUR PHONE!</big>
-			<?php endif; ?>
 		</div>
    		<div id="bd">
    			<div class="yui-g" id="collections_row">

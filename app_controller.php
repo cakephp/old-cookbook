@@ -113,7 +113,7 @@ class AppController extends Controller {
 			}
 		}
 		if (!$this->Auth->user()) {
-			if($this->name != 'Users' && !isset($this->params['requested'])) {
+			if(!in_array($this->name, array('Users', 'CakeError')) && !isset($this->params['requested'])) {
 				$this->Session->write('Auth.redirect', '/' . $this->params['url']['url']);
 			}
 			$this->Auth->authError = __('Please login to continue', true);

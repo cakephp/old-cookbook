@@ -41,10 +41,10 @@ Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'pro
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
 // missing images
 Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
-// User plugin
-Router::connect('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array());
-Router::connect('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array());
+
 $routes = array(
+	array('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array()),
+	array('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array()),
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
 	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */

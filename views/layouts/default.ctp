@@ -32,7 +32,6 @@ echo $html->meta(
 <link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <?php
-Router::connectNamed(true);
 echo $html->meta(
 	'rss',
 	array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index', 'ext' => 'rss'),

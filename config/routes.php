@@ -45,7 +45,7 @@ Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view
 
 $routes = array(
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
-	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
+	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('pass' => array('id'), 'id' => '[0-9]+')),
 	array('/comments/:action/*', array('controller' => 'comments', 'action' => 'index'), array()),
 	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */
 	array('/add/*', array('controller' => 'nodes', 'action' => 'add'), array()),

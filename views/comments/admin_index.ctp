@@ -51,7 +51,6 @@ foreach ($data as $row) {
 		$book . ' (' . $collection . ')',
 		$Node?$html->link($Node['sequence'] . ' ' . $Revision['title'], am($pass, array('page' => 1, 'node_id' => $Comment['node_id']))):'',
 		$html->link($Comment['title'], array('action' => 'view', $Comment['id'])),
-		$html->link($Comment['lang'], am($pass, array('page' => 1, 'lang' => $Comment['lang']))),
 		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Comment['user_id']))):'',
 		$html->link($Comment['email'], am($pass, array('page' => 1, 'email' => $Comment['email']))),
 		$html->link($Comment['published'], am($pass, array('page' => 1, 'published' => $Comment['published']))),

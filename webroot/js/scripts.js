@@ -46,9 +46,9 @@ $(document).ready(function() {
 	$('ul.tree-options').hide().after('&nbsp;<a href="#" class="treeOptionsToggle">Show Options</a>');
 	$('a.treeOptionsToggle').click(function(){
 		if ($(this).prev('ul').toggle().is(':visible')) {
-			$(this).text('Hide Options');	
+			$(this).text('Hide Options');
 		} else {
-			$(this).text('Show Options');	
+			$(this).text('Show Options');
 		}
 		return false;
 	});

@@ -12,10 +12,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -125,7 +125,7 @@
 
 				// listen key events
 				$$.keydown(keyPressed).keyup(keyPressed);
-				
+
 				// bind an event to catch external calls
 				$$.bind("insertion", function(e, settings) {
 					if (settings.target !== false) {
@@ -183,7 +183,7 @@
 							$(li).addClass('markItUpDropMenu').append(dropMenus(button.dropMenu));
 						}
 					}
-				}); 
+				});
 				levels.pop();
 				return ul;
 			}
@@ -242,10 +242,10 @@
 				} else {
 					block = openWith + (string||selection) + closeWith;
 				}
-				return {block:		block, 
+				return {block:		block,
 
-						openWith:	openWith, 
-						replaceWith:replaceWith, 
+						openWith:	openWith,
+						replaceWith:replaceWith,
 						placeHolder:placeHolder,
 						closeWith:	closeWith
 					};
@@ -264,9 +264,9 @@
 				prepare(clicked.beforeInsert);
 				if (ctrlKey === true && shiftKey === true) {
 					prepare(clicked.beforeMultiInsert);
-				}			
+				}
 				$.extend(hash, { line:1 });
-				
+
 				if (ctrlKey === true && shiftKey === true) {
 					lines = selection.split(/\r?\n/);
 					for (j = 0, n = lines.length, i = 0; i < n; i++) {
@@ -298,7 +298,7 @@
 				}
 				if ((selection === '' && string.replaceWith === '')) {
 					caretOffset += fixOperaBug(string.block);
-					
+
 					start = caretPosition + string.openWith.length;
 					len = string.block.length - string.openWith.length - string.closeWith.length;
 
@@ -326,9 +326,9 @@
 
 				// refresh preview if opened
 				if (previewWindow && options.previewAutoRefresh) {
-					refreshPreview(); 
+					refreshPreview();
 				}
-																									
+
 				// reinit keyevent
 				shiftKey = altKey = ctrlKey = abort = false;
 			}
@@ -347,9 +347,9 @@
 				}
 				return 0;
 			}
-				
+
 			// add markup
-			function insert(block) {																
+			function insert(block) {
 				if (document.selection) {
 					var newSelection = document.selection.createRange();
 					newSelection.text = block;
@@ -363,8 +363,8 @@
 				if (textarea.createTextRange){
 					range = textarea.createTextRange();
 					range.collapse(true);
-					range.moveStart('character', start); 
-					range.moveEnd('character', len); 
+					range.moveStart('character', start);
+					range.moveEnd('character', len);
 
 					range.select();
 				} else if (textarea.setSelectionRange ){
@@ -395,7 +395,7 @@
 				} else { // gecko
 					caretPosition = textarea.selectionStart;
 					selection = $$.val().substring(caretPosition, textarea.selectionEnd);
-				} 
+				}
 				return selection;
 			}
 
@@ -410,7 +410,7 @@
 							iFrame.insertAfter(footer);
 						} else {
 							iFrame.insertBefore(header);
-						}	
+						}
 						previewWindow = iFrame[iFrame.length-1].contentWindow || frame[iFrame.length-1];
 					}
 				} else if (altKey === true) {
@@ -421,7 +421,7 @@
 					previewWindow = iFrame = false;
 				}
 				if (!options.previewAutoRefresh) {
-					refreshPreview(); 
+					refreshPreview();
 				}
 				if (options.previewInWindow) {
 					previewWindow.focus();
@@ -445,7 +445,7 @@
 						url: options.previewParserPath,
 						data: options.previewParserVar+'='+encodeURIComponent($$.val()),
 						success: function(data) {
-							html = localize(data, 1); 
+							html = localize(data, 1);
 						}
 					} );
 				} else {
@@ -454,7 +454,7 @@
 							async: false,
 							url: options.previewTemplatePath,
 							success: function(data) {
-								template = localize(data, 1); 
+								template = localize(data, 1);
 							}
 						} );
 					}
@@ -462,9 +462,9 @@
 				}
 				return html;
 			}
-			
+
 			// set keys pressed
-			function keyPressed(e) { 
+			function keyPressed(e) {
 				shiftKey = e.shiftKey;
 				altKey = e.altKey;
 				ctrlKey = (!(e.altKey && e.ctrlKey)) ? e.ctrlKey : false;

@@ -81,7 +81,7 @@ class UsersController extends AppController {
 
 	function logout() {
 		$this->Session->destroy();
-		$this->redirect('/', null, true);
+		$this->redirect(array('plugin' => null, 'controller' => 'nodes', 'action' => 'index'), null, true);
 	}
 
 	function reset() {

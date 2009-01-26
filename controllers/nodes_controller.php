@@ -1017,6 +1017,7 @@ class NodesController extends AppController {
 		set_time_limit(max(30, $count / 10));
 		$order = 'Node.lft';
 		$children = array();
+
 		if ($viewAll) {
 			$children = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
 		} else {

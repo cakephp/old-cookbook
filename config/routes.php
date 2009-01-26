@@ -45,6 +45,7 @@ Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view
 $routes = array(
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
+	array('/comments/:action/*', array('controller' => 'comments', 'action' => 'index'), array()),
 	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */
 	array('/add/*', array('controller' => 'nodes', 'action' => 'add'), array()),
 	array('/compare/*', array('controller' => 'nodes', 'action' => 'compare'), array()),
@@ -59,7 +60,6 @@ $routes = array(
 	array('/search/*', array('controller' => 'revisions', 'action' => 'search'), array()),
 	array('/results/*', array('controller' => 'revisions', 'action' => 'results'), array()),
 	array('/changes/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
-	array('/comments/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
 	array('/nodes/:action/*', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/revisions/:action/*', array('controller' => 'revisions', 'action' => 'index'), array()),
 	array('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array()),

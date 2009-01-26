@@ -156,6 +156,7 @@ class Node extends AppModel {
  *
  * When looking for English content, if there isn't a current revision, populate with default text
  * When looking for none English content, if there isn't a current revision populate with the English text
+ * 	Auto correct any links in content to point at same-language pages
  *
  * @param mixed $results
  * @access public
@@ -180,48 +181,55 @@ class Node extends AppModel {
 					}
 				}
 			}
-		} else {
-			if (isset($results[0]['Revision'])) {
-				$missing = false;
-				foreach ($results as $i => $result) {
+			return $results;
+		}
+		if (isset($results[0]['Revision'])) {
+			$missing = false;
+			foreach ($results as $result) {
+				if (array_key_exists('title', $result['Revision']) && !$result['Revision']['title']) {
+					$missing = true;
+					break;
+				}
+				if (array_key_exists('slug', $result['Revision']) && !$result['Revision']['slug']) {
+					$missing = true;
+					break;
+				}
+				if (array_key_exists('content', $result['Revision']) && !$result['Revision']['content']) {
+					$missing = true;
+					break;
+				}
+			}
+			$language = $this->language;
+			if ($missing) {
+				$this->setLanguage('en');
+				if ($this->__queryData['order'] == array(null)) {
+					unset($this->__queryData['order']);
+				}
+				$ids = Set::Extract($results, '/Node/id');
+				$engResults = $this->find('all', am($this->__queryData, array('conditions' => array('Node.id' => $ids))));
+				$this->setLanguage($language);
+			}
+			$find = '@href="/(?!' . $language . '/)@';
+			$replace = 'href="/' . $language . '/';
+			foreach ($results as $i => &$result) {
+				if (isset($engResults[$i])) {
 					if (array_key_exists('title', $result['Revision']) && !$result['Revision']['title']) {
-						$missing = true;
-						break;
+						$result['Revision']['title'] = $engResults[$i]['Revision']['title'];
 					}
 					if (array_key_exists('slug', $result['Revision']) && !$result['Revision']['slug']) {
-						$missing = true;
-						break;
+						$result['Revision']['slug'] = $engResults[$i]['Revision']['slug'];
 					}
 					if (array_key_exists('content', $result['Revision']) && !$result['Revision']['content']) {
-						$missing = true;
-						break;
+						$result['Revision']['content'] =
+							$engResults[$i]['Revision']['content'];
+					}
+					if (array_key_exists('lang', $result['Revision']) && !$result['Revision']['lang']) {
+						$result['Revision']['lang'] = 'en';
 					}
 				}
-				if ($missing) {
-					$language = $this->language;
-					$this->setLanguage('en');
-					if ($this->__queryData['order'] == array(null)) {
-						unset($this->__queryData['order']);
-					}
-					$ids = Set::Extract($results, '/Node/id');
-					$engResults = $this->find('all', am($this->__queryData, array('conditions' => array('Node.id' => $ids))));
-					$this->setLanguage($language);
-					foreach ($results as $i => $result) {
-						if (isset($engResults[$i])) {
-							if (array_key_exists('title', $result['Revision']) && !$result['Revision']['title']) {
-								$results[$i]['Revision']['title'] = $engResults[$i]['Revision']['title'];
-							}
-							if (array_key_exists('slug', $result['Revision']) && !$result['Revision']['slug']) {
-								$results[$i]['Revision']['slug'] = $engResults[$i]['Revision']['slug'];
-							}
-							if (array_key_exists('content', $result['Revision']) && !$result['Revision']['content']) {
-								$results[$i]['Revision']['content'] = $engResults[$i]['Revision']['content'];
-							}
-							if (array_key_exists('lang', $result['Revision']) && !$result['Revision']['lang']) {
-								$results[$i]['Revision']['lang'] = 'en';
-							}
-						}
-					}
+				//if (isset($result['Revision']['content']) && strpos('href="/', $result['Revision']['content'])) {
+				if (isset($result['Revision']['content'])) {
+					$result['Revision']['content'] = preg_replace($find, $replace, $result['Revision']['content']);
 				}
 			}
 		}

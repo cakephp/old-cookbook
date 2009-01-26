@@ -5,7 +5,11 @@ if (isset($this->params['admin'])) {
 extract($data);
 $options = array();
 if ($Node['edit_level'] <= $auth['User']['Level']) {
-	$out[] = $html->link(__('Edit', true), array('action'=>'edit',$Node['id'], $Revision['slug']));
+	if (!$Revision['id']) {
+		$out[] = $html->link(__('Translate', true), array('action'=>'edit',$Node['id'], $Revision['slug']));
+	} else {
+		$out[] = $html->link(__('Edit', true), array('action'=>'edit',$Node['id'], $Revision['slug']));
+	}
 }
 if ($Node['depth'] >= $viewAllLevel) {
 	$out[] = $html->link(__('View just this section', true), array('action'=>'view',$Node['id'], $Revision['slug']));

@@ -1,8 +1,8 @@
 <?php /* SVN FILE: $Id: default.ctp 702 2008-11-19 12:13:02Z AD7six $ */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<cake:nocache>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<cake:nocache>
 <?php
 // Preventing automatic language detection
 Configure::write('Config.language', $this->params['lang']);
@@ -15,7 +15,7 @@ if ($app) {
 } else {
 	$__cache = Configure::read('Cache.check');
 	Configure::write('Cache.check', false);
-	$app = $this->requestAction(array('plugin' => false, 'prefix' => null, 'controller' => 'nodes',
+	$app = $this->requestAction(array('plugin' => null, 'prefix' => null, 'controller' => 'nodes',
 		'action' => 'app_name', 'lang' => $this->params['lang']));
 	Configure::write('Cache.check', $__cache);
 }
@@ -32,24 +32,25 @@ echo $html->meta(
 <link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <?php
+Router::connectNamed(true);
 echo $html->meta(
 	'rss',
-	array('admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'ext' => 'rss'),
+	array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index', 'ext' => 'rss'),
 	array('title' => __('Recent Changes', true))
 );
 echo $html->meta(
 	'rss',
-	array('admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'language' => '*', 'ext' => 'rss'),
+	$html->url(array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index')) . '/language:*.rss',
 	array('title' => __('Recent Changes for all languages', true))
 );
 echo $html->meta(
 	'rss',
-	array('admin' => false, 'plugin' => false, 'controller' => 'comments', 'action' => 'recent', 'ext' => 'rss'),
+	array('admin' => false, 'plugin' => null, 'controller' => 'comments', 'action' => 'recent', 'ext' => 'rss'),
 	array('title' => __('Recent comments', true))
 );
 echo $html->meta(
 	'rss',
-	array('admin' => false, 'plugin' => false, 'controller' => 'comments', 'action' => 'recent', 'language' => '*', 'ext' => 'rss'),
+	$html->url(array('admin' => false, 'plugin' => null, 'controller' => 'comments', 'action' => 'recent')) . '/language:*.rss',
 	array('title' => __('Recent Comments for all languages', true))
 );
 ?><cake:nocache><?php
@@ -57,13 +58,13 @@ if ($session->read('Auth.User.id')) {
 	$userName = $session->read('Auth.User.username');
 	echo $html->meta(
 		'rss',
-		array('admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'user' => $userName, 'language' => '*', 'ext' => 'rss'),
+		$html->url(array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index')) . "/language:*/user:$userName.rss",
 		array('title' => __('My Submissions', true))
 	);
 	$menu->add(array(
 		'section' => 'Feeds',
 		'title' => __('My Submissions', true),
-		'url' => array('theme' => 'default', 'admin' => false, 'plugin' => false, 'controller' => 'changes', 'action' => 'index', 'user' => $userName, 'language' => '*', 'ext' => 'rss')
+		'url' => $html->url(array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index')) . "/language:*/user:$userName.rss",
 	));
 }
 ?></cake:nocache><?php

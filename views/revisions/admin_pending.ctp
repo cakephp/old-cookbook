@@ -4,7 +4,7 @@
 <?php
 $links = array();
 foreach ($counts as $lang => $count) {
-	$links[] = $html->link(sprintf(__('%s for %s', true), $count, $lang), array('language' => $lang));
+	$links[] = $html->link(sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)), array('lang' => $lang));
 }
 if ($links) {
 	echo '<p>' . implode($links, ', ') . '</p>';

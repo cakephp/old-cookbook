@@ -10,7 +10,7 @@
 		} else {
 			$__cache = Configure::read('Cache.check');
 			Configure::write('Cache.check', false);
-			$app = $this->requestAction(array('plugin' => false, 'prefix' => null, 'controller' => 'nodes',
+			$app = $this->requestAction(array('plugin' => null, 'prefix' => null, 'controller' => 'nodes',
 				'action' => 'app_name',	'lang' => $this->params['lang']));
 			Configure::write('Cache.check', $__cache);
 		}

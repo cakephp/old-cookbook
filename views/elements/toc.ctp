@@ -1,7 +1,7 @@
 <?php /* SVN FILE: $Id: toc.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <div id="toc" class="context-menu toc tree">
 <?php
-$url = array('plugin' => false, 'prefix' => null, 'controller' => 'nodes', 'action' => 'toc', $data['Node']['Node']['id'], 'lang' => $this->params['lang']);
+$url = array('plugin' => null, 'prefix' => null, 'controller' => 'nodes', 'action' => 'toc', $data['Node']['Node']['id'], 'lang' => $this->params['lang']);
 //$url = str_replace($this->base, '', Router::url($url));
 $__cache = Configure::read('Cache.check');
 Configure::write('Cache.check', false);

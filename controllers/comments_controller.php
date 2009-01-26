@@ -63,9 +63,21 @@ class CommentsController extends AppController {
  * @return void
  */
 	function admin_index($nodeId=null) {
+		$counts = $this->Comment->find('all', array(
+			'recursive' => -1,
+			'fields' => array('lang', 'COUNT(id) as count'),
+			'order' => array('lang'),
+			'group' => 'lang'
+		));
+		$counts = Set::combine($counts, '/Comment/lang', '/0/count');
+		$language = isset($this->passedArgs['language'])?$this->passedArgs['language']:$this->params['lang'];
+		$this->set(compact('counts', 'language'));
+
 		$this->Comment->recursive = 2;
 		$this->paginate['limit']= 10;
 		$this->paginate['order'] = 'Comment.id desc';
+		unset ($this->params['named']['language']);
+		$this->params['named']['lang'] = $language;
 		if ($nodeId) {
 			$this->params['named']['node_id'] = $nodeId;
 		}

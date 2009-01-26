@@ -106,11 +106,11 @@ if ($currentNode['Node']['edit_level'] <= $auth['User']['Level']) {
 extract($this->data);
 $html->meta(
 	'rss',
-	array('theme' => 'default', 'plugin' => false, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
+	array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
 	array('title' => sprintf(__('Comments for %s', true), $Revision['title']))
 	, false);
 $html->meta('rss',
-	array('theme' => 'default', 'plugin' => false, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
+	array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
 	array('title' => sprintf(__('Change history for %s', true), $Revision['title']))
 	, false);
 ?><cake:nocache>     <?php
@@ -118,12 +118,12 @@ extract($this->data);
 $menu->add(array(
 	'section' => 'Feeds',
 	'title' => sprintf(__('Comments for %s', true), $Revision['title']),
-	'url' => array('theme' => 'default', 'plugin' => false, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
+	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
 ));
 
 $menu->add(array(
 	'section' => 'Feeds',
 	'title' => sprintf(__('Change history for %s', true), $Revision['title']),
-	'url' => array('theme' => 'default', 'plugin' => false, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
+	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
 ));
 ?></cake:nocache>

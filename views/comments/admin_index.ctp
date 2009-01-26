@@ -1,7 +1,14 @@
 <?php /* SVN FILE: $Id: admin_index.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
-<h1>Comments</h1>
+<h1><?php echo up($language) ?> Comments</h1>
 <div class="container">
 <?php
+$links = array();
+foreach ($counts as $lang => $count) {
+	$links[] = $html->link(sprintf(__n('%s %s comment', '%s %s comments', $count, true), $count, up($lang)), array('lang' => $lang));
+}
+if ($links) {
+	echo '<p>' . implode($links, ', ') . '</p>';
+}
 $pass = $this->passedArgs;
 $pass['action'] = str_replace(Configure::read('Routing.admin') . '_', '', $this->action); // temp
 $paginator->options(array('url' => $pass));
@@ -12,7 +19,6 @@ $th = array(
 	'Book',
 	$paginator->sort('Section', 'Node.sequence'),
 	$paginator->sort('Comment Title', 'title'),
-	$paginator->sort('lang'),
 	$paginator->sort('User', 'User.username'),
 	$paginator->sort('email'),
 	$paginator->sort('published'),

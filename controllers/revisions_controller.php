@@ -533,6 +533,10 @@ class RevisionsController extends AppController {
 		));
 		$counts = Set::combine($counts, '/Revision/lang', '/0/count');
 		$language = isset($this->passedArgs['language'])?$this->passedArgs['language']:$this->params['lang'];
+
+		unset ($this->params['named']['language']);
+		$this->params['named']['lang'] = $language;
+
 		$this->set(compact('counts', 'language'));
 		$this->paginate['limit'] = 10;
 		$this->paginate['order'] = 'Revision.id ASC';
@@ -548,10 +552,7 @@ class RevisionsController extends AppController {
 				'foreignKey' => 'under_node_id',
 			)
 		)),false );
-		$collections = $this->Revision->Node->find('all', array('conditions' => array('Node.parent_id' => 1), 'fields' => 'Node.*, Revision.title'));
-		$books = $this->Revision->Node->find('all', array('conditions' => array('Node.depth' => 2), 'fields' => 'Node.*, Revision.title'));
-		$this->set(compact('collections', 'books'));
-		$this->data = $this->paginate();
+		$this->admin_index();
 	}
 /**
  * admin_reset_slugs function

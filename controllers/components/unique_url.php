@@ -54,7 +54,7 @@ class UniqueUrlComponent extends Object {
  */
 	function check ($defaultLang = 'en') {
 		if (isset($this->controller->params['requested']) || isset($this->controller->params['admin']) ||
-			$this->controller->data) {
+			isset($this->controller->params['isAjax']) || $this->controller->data) {
 			return;
 		}
 		$this->here = $here = '/' . trim($this->controller->params['url']['url'], '/');

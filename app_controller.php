@@ -108,7 +108,8 @@ class AppController extends Controller {
 			}
 			$this->Auth->authError = __('Please login to continue', true);
 		}
-		$this->Auth->loginRedirect = $this->Session->read('referer');
+		$this->Auth->loginAction = array('lang' => $this->params['lang'], 'theme' => $this->params['theme'],
+			'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 		$this->Auth->autoRedirect = false;
 		$this->Auth->allow('display');
 		$this->{$this->modelClass}->currentUserId = $this->Auth->user('id');
@@ -125,9 +126,9 @@ class AppController extends Controller {
 		}
 		$this->set('modelClass', $this->modelClass);
 		$this->set('isAdmin', isset($this->params['admin']));
-
-		$this->layout = $this->params['theme'];
-
+		if (!$this->RequestHandler->isAjax()) {
+			$this->layout = $this->params['theme'];
+		}
 		if ($this->name == 'App' && Configure::read()) {
 			$this->layout = 'error';
 		}
@@ -311,7 +312,8 @@ class AppController extends Controller {
  */
 	function appError($message = 'x') {
 		if (Configure::read()) {
-			debug (func_get_args()); die;
+			debug (func_get_args());
+			debug (Router::currentRoute()); die;
 		}
 		$this->Session->setFlash('Whoops! nothing to see there');
 		$this->redirect('/');

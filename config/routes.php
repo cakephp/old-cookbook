@@ -43,8 +43,6 @@ Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'pr
 Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
 
 $routes = array(
-	array('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array()),
-	array('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array()),
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('id' => '[0-9]+')),
 	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */
@@ -60,8 +58,13 @@ $routes = array(
 	/* array('/:action/*', array('controller' => 'revisions'), array('action' => 'search|results')), */
 	array('/search/*', array('controller' => 'revisions', 'action' => 'search'), array()),
 	array('/results/*', array('controller' => 'revisions', 'action' => 'results'), array()),
-	array('/admin/:controller/:action/*', array('prefix' => 'admin', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array()),
-	array('/:controller/:action/*', array('controller' => 'default', 'action' => 'index'), array()),
+	array('/changes/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
+	array('/comments/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
+	array('/nodes/:action/*', array('controller' => 'nodes', 'action' => 'index'), array()),
+	array('/revisions/:action/*', array('controller' => 'revisions', 'action' => 'index'), array()),
+	array('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array()),
+	array('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array()),
+
 );
 foreach ($routes as $route) {
 	$route[1]['lang'] = 'en'; // default language
@@ -71,9 +74,11 @@ foreach ($routes as $route) {
 
 	$route[1]['theme'] = 'default'; // default layout
 
-	$route[2]['lang'] = '[a-z]{2}';
-	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
+	$route[2]['lang'] = '(?!en)[a-z]{2}';
 	Router::connect($route[0], $route[1], $route[2]);
-
+	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 }
+Router::connect('/admin/:controller/:action/*', array('lang' => 'en', 'theme' => 'default', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array());
+Router::connect('/m/:controller/:action/*', array('lang' => 'en', 'theme' => 'mobile', 'controller' => 'nodes', 'action' => 'index'), array());
+Router::connect('/:controller/:action/*', array('lang' => 'en', 'theme' => 'default', 'controller' => 'nodes', 'action' => 'index'), array());
 ?>

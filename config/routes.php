@@ -65,7 +65,9 @@ $routes = array(
 	array('/revisions/:action/*', array('controller' => 'revisions', 'action' => 'index'), array()),
 	array('/users/:action/*', array('plugin' => 'users', 'controller' => 'users', 'action' => 'index'), array()),
 	array('/admin/users/:action/*', array('prefix' => 'admin', 'plugin' => 'users', 'controller' => 'users', 'action' => 'index', 'admin' => true), array()),
-
+	array('/admin', array('controller' => 'revisions', 'action' => 'pending', 'admin' => true), array()),
+	array('/admin/:controller/:action/*', array('controller' => 'revisions', 'action' => 'pending', 'admin' => true), array()),
+	array('/:controller/:action/*', array('controller' => 'nodes', 'action' => 'index'), array())
 );
 foreach ($routes as $route) {
 	$route[1]['lang'] = $defaultLang;
@@ -79,7 +81,4 @@ foreach ($routes as $route) {
 	Router::connect($route[0], $route[1], $route[2]);
 	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 }
-Router::connect('/admin/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'default', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array());
-Router::connect('/m/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'mobile', 'controller' => 'nodes', 'action' => 'index'), array());
-Router::connect('/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'default', 'controller' => 'nodes', 'action' => 'index'), array());
 ?>

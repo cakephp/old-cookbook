@@ -6,7 +6,7 @@
 			echo '<li>' . $html->link(sprintf(__('Logged in as %s', true), $session->read('Auth.User.username')), '#', array('id' => 'loggedInAs')) . '</li>';
 			echo '<li>' . $html->link(__('Logout', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'logout')) . '</li>';
 			if ($session->read('Auth.User.Level') === ADMIN) {
-				echo '<li>' . $html->link('Admin', '/admin') . '</li>';
+				echo '<li>' . $html->link('Admin', array('plugin' => null, 'admin' => true, 'controller' => 'revisions', 'action' => 'pending')) . '</li>';
 			}
 		} else {
 			echo '<li>' . $html->link(__('Login', true), array('plugin' => 'users', 'controller' => 'users', 'action' => 'login')) . '</li>';

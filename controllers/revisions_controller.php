@@ -524,9 +524,19 @@ class RevisionsController extends AppController {
  * @return void
  */
 	function admin_pending () {
+		$counts = $this->Revision->find('all', array(
+			'recursive' => -1,
+			'fields' => array('lang', 'COUNT(id) as count'),
+			'conditions' => array('status' => 'pending'),
+			'order' => array('lang'),
+			'group' => 'lang'
+		));
+		$counts = Set::combine($counts, '/Revision/lang', '/0/count');
+		$language = isset($this->passedArgs['language'])?$this->passedArgs['language']:$this->params['lang'];
+		$this->set(compact('counts', 'language'));
 		$this->paginate['limit'] = 10;
 		$this->paginate['order'] = 'Revision.id ASC';
-		$this->paginate['conditions'] = array('Revision.status' => 'pending');
+		$this->paginate['conditions'] = array('Revision.status' => 'pending', 'lang' => $language);
 		$this->Revision->recursive = 1;
 		$this->Revision->bindModel(array('belongsTo' => array(
 			'AfterNode' => array(
@@ -538,7 +548,10 @@ class RevisionsController extends AppController {
 				'foreignKey' => 'under_node_id',
 			)
 		)),false );
-		$this->admin_index();
+		$collections = $this->Revision->Node->find('all', array('conditions' => array('Node.parent_id' => 1), 'fields' => 'Node.*, Revision.title'));
+		$books = $this->Revision->Node->find('all', array('conditions' => array('Node.depth' => 2), 'fields' => 'Node.*, Revision.title'));
+		$this->set(compact('collections', 'books'));
+		$this->data = $this->paginate();
 	}
 /**
  * admin_reset_slugs function

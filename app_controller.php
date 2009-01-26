@@ -87,8 +87,7 @@ class AppController extends Controller {
 		}
 		$defaultLang = Configure::read('Languages.default');
 		$this->params['theme'] = isset($this->params['theme'])?$this->params['theme']:'default';
-		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:
-			(isset($this->params['named']['lang'])?$this->params['named']['lang']:$defaultLang);
+		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:$defaultLang;
 		Configure::write('Config.language', $this->params['lang']);
 		if (($this->name != 'App') && !in_array($this->params['lang'], Configure::read('Languages.all'))) {
 			$this->Session->setFlash(__('Whoops, not a valid language.', true));
@@ -275,6 +274,8 @@ class AppController extends Controller {
 		} else {
 			$conditions = $this->__conditions;
 		}
+		unset($conditions[$this->modelClass . '.theme']);
+		unset($conditions[$this->modelClass . '.language']);
 		$Node = ClassRegistry::init('Node');
 		$collections = $Node->find('all', array('conditions' => array('Node.parent_id' => 1), 'fields' => 'Node.*, Revision.title'));
 		$books = $Node->find('all', array('conditions' => array('Node.depth' => 2), 'fields' => 'Node.*, Revision.title'));

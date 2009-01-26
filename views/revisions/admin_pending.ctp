@@ -1,7 +1,14 @@
 <?php /* SVN FILE: $Id: admin_pending.ctp 672 2008-10-06 14:03:23Z AD7six $ */ ?>
-<h1>Pending Submissions</h1>
+<h1>Pending <?php echo up($language) ?> Submissions</h1>
 <div class="container">
-<?php echo
+<?php
+$links = array();
+foreach ($counts as $lang => $count) {
+	$links[] = $html->link(sprintf(__('%s for %s', true), $count, $lang), array('language' => $lang));
+}
+if ($links) {
+	echo '<p>' . implode($links, ', ') . '</p>';
+}
 $this->set('modelClass', 'Revision');
 $this->element('filter', array('filters' => array(
 	'Node.sequence',
@@ -19,7 +26,6 @@ $th = array(
 	'Book',
 	$paginator->sort('Section', 'Node.sequence'),
 	$paginator->sort('Title', 'slug'),
-	$paginator->sort('lang'),
 	$paginator->sort('User','User.username'),
 	$paginator->sort('Email', 'User.email'),
 	$paginator->sort('created'),
@@ -58,7 +64,6 @@ foreach ($data as $row) {
 		$book . ' (' . $collection . ')',
 		$sequence,
 		$html->link($Revision['title'],array('action'=>'view',$Revision['id'])),
-		$html->link($Revision['lang'], am($pass, array('page' => 1, 'lang' => $Revision['lang']))),
 		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Revision['user_id']))):'',
 		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
 		$html->link($Revision['created'], am($pass, array('page' => 1, 'created' => $Revision['created']))),

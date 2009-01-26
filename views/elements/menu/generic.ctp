@@ -85,99 +85,71 @@ if (isset($this->params['admin'])) {
 				'published' => 0),
 				'under' => 'Comments'
 			));
-
 		}
-
 	}
 	if ($auth['User']['Level'] >= ADMIN) {
 		if ($this->name == 'Nodes') {
 			$menu->add(array(
-				'section' => 'Main Options',
-				'title' => 'Admin functions',
-				'url' => false,
-				'under' => 'Nodes'
-			));
-			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Verify Tree',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'verify_tree', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Recover Tree',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'recover_tree', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Reset Depths',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'reset_depths', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Reset Sequences',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'reset_sequences', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Export',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'export', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Import',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'import', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 		} elseif ($this->name == 'Revisions') {
 			$menu->add(array(
-				'section' => 'Main Options',
-				'title' => 'Admin functions',
-				'url' => false,
-				'under' => 'Revisions'
-			));
-			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Reset Slugs',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'revisions', 'action' => 'reset_slugs', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Build Search Index',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'revisions', 'action' => 'build_index', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Delete and Build Search Index',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'revisions', 'action' => 'build_index', 'admin' => true, 'reset'),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Check and fix current revisions',
 				'url' => array('prefix' => null, 'plugin' => null, 'controller' => 'revisions', 'action' => 'reset'),
-				'under' => 'Admin functions'
 			));
-		} elseif ($this->name == 'Comments') {
-
 		} elseif ($this->name == 'Attachments') {
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Export',
 				'url' => array('prefix' => null, 'plugin' => null, 'action' => 'export', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 			$menu->add(array(
-				'section' => 'Main Options',
+				'section' => 'Admin functions',
 				'title' => 'Import',
 				'url' => array('prefix' => null, 'plugin' => null, 'action' => 'import', 'admin' => true),
-				'under' => 'Admin functions'
 			));
 		}
 	}

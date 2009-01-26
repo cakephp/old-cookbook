@@ -251,11 +251,12 @@ class Revision extends AppModel {
 		$change['user_id'] = $this->currentUserId;
 		$return = $this->saveField('status', 'current');
 		$data = $this->read();
-		if ($data['Revision']['lang'] == 'en' && $flagTranslations) {
+		$defaultLang = Configure::read('Languages.default');
+		if ($data['Revision']['lang'] == $defaultLang && $flagTranslations) {
 			$conditions = array();
 			$conditions['Revision.node_id'] = $data['Revision']['node_id'];
 			$conditions['Revision.status'] = array('current', 'pending');
-			$conditions['NOT']['Revision.lang'] = 'en';
+			$conditions['NOT']['Revision.lang'] = $defaultLang;
 			$hasTranslations = $this->find('count', compact('conditions'));
 			if ($hasTranslations) {
 				$revisions = $this->find('list', compact('conditions'));

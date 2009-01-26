@@ -45,14 +45,14 @@ class UniqueUrlComponent extends Object {
  * Verify that the current url is the right url to view the content
  *
  * Disabled if debug is > 1
- * Doesn't do anything for admin methods or if data has been submitted, otherwise, check slugs
- * and 301 redirect to the correct url if the url doesn't match route definitions
+ * Doesn't do anything for admin methods, requestAction calls, ajax requests, or if data has been submitted.
+ * Otherwise, check the url matches what the router says should be the url, check slugs and 301 redirect to the
+ * correct url if the url doesn't match
  *
- * @param string $defaultLang
  * @return void
  * @access public
  */
-	function check ($defaultLang = 'en') {
+	function check () {
 		if (isset($this->controller->params['requested']) || isset($this->controller->params['admin']) ||
 			isset($this->controller->params['isAjax']) || $this->controller->data) {
 			return;

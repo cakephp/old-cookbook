@@ -67,7 +67,7 @@ if ($session->read('Auth.User.id')) {
 	));
 }
 ?></cake:nocache><?php
-if (!isset($this->params['lang']) || $this->params['lang'] == 'en') {
+if (!isset($this->params['lang']) || $this->params['lang'] === $defaultLang) {
 	$base = $html->url('/');
 } else {
 	$base = $html->url('/' . $this->params['lang'] . '/');
@@ -88,7 +88,7 @@ echo $scripts_for_layout;
 		<div id="header">
 		<h1><?php
 $link = '/';
-if ($this->params['lang'] != 'en') {
+if ($this->params['lang'] != $defaultLang) {
 	$link .= $this->params['lang'];
 }
 echo $html->link(sprintf(__('Welcome to %s', true), $app['name']), $link);
@@ -125,15 +125,13 @@ if ($this->name == 'Nodes' && isset($data['Node']['Node']) && !$isAdmin) {
 		</div>
 
 		<div id="footer">
-			<p>
-			<span>Also available in:
-			<?php
+			<p><span><?php
 			$url = $this->passedArgs;
 			foreach (Configure::read('Languages.all') as $lang) {
 				$url['lang'] = $lang;
 				$languages[] = $html->link($lang, $url);
 			}
-			echo implode (' &middot; ', $languages);
+			echo sprintf(__('Also available in %s', true), implode (' &middot; ', $languages));
 			?></span>
 			<?php echo ' &nbsp; ';
 			echo $html->link(

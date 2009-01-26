@@ -85,22 +85,19 @@ class AppController extends Controller {
 		} elseif (!$sessionReferer) {
 			$this->Session->write('referer', $this->referer(array('action' => 'index')));
 		}
-
+		$defaultLang = Configure::read('Languages.default');
 		$this->params['theme'] = isset($this->params['theme'])?$this->params['theme']:'default';
 		$this->params['lang'] = isset($this->params['lang'])?$this->params['lang']:
-			(isset($this->params['named']['lang'])?$this->params['named']['lang']:'en');
+			(isset($this->params['named']['lang'])?$this->params['named']['lang']:$defaultLang);
 		Configure::write('Config.language', $this->params['lang']);
 		if (($this->name != 'App') && !in_array($this->params['lang'], Configure::read('Languages.all'))) {
 			$this->Session->setFlash(__('Whoops, not a valid language.', true));
 			return $this->redirect($this->Session->read('referer'), 301, true);
 		}
-
-		if (!in_array($this->params['lang'], array(null, 'en'))) {
-			if (isset($this->Node)) {
-				$this->Node->setLanguage($this->params['lang']);
-			} elseif (isset($this->{$this->modelClass}->Node)) {
-				$this->{$this->modelClass}->Node->setLanguage($this->params['lang']);
-			}
+		if (isset($this->Node)) {
+			$this->Node->setLanguage($this->params['lang']);
+		} elseif (isset($this->{$this->modelClass}->Node)) {
+			$this->{$this->modelClass}->Node->setLanguage($this->params['lang']);
 		}
 		if (!$this->Auth->user()) {
 			if(!in_array($this->name, array('Users', 'CakeError')) && !isset($this->params['requested'])) {
@@ -132,6 +129,7 @@ class AppController extends Controller {
 		if ($this->name == 'App' && Configure::read()) {
 			$this->layout = 'error';
 		}
+		$this->set('defaultLang', Configure::read('Languages.default'));
 	}
 /**
  * redirect function

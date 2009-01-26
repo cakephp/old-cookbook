@@ -28,6 +28,7 @@
  * @lastmodified  $Date: 2008-11-19 13:13:40 +0100 (Wed, 19 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
+$defaultLang = Configure::read('Languages.default');
 if (!empty($fromUrl)) {
        	if (strpos($fromUrl, 'admin') === 0) {
 		Router::connectNamed(true);
@@ -40,7 +41,7 @@ Router::parseExtensions('rss', 'xml');
 Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'process', 'chapter'));
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
 // missing images
-Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => 'en'));
+Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => $defaultLang));
 
 $routes = array(
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
@@ -67,18 +68,18 @@ $routes = array(
 
 );
 foreach ($routes as $route) {
-	$route[1]['lang'] = 'en'; // default language
+	$route[1]['lang'] = $defaultLang;
 	$route[1]['theme'] = 'mobile';
 	Router::connect('/m' . $route[0], $route[1], $route[2]);
 	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
 
 	$route[1]['theme'] = 'default'; // default layout
 
-	$route[2]['lang'] = '(?!en)[a-z]{2}';
+	$route[2]['lang'] = '[a-z]{2}';
 	Router::connect($route[0], $route[1], $route[2]);
 	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 }
-Router::connect('/admin/:controller/:action/*', array('lang' => 'en', 'theme' => 'default', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array());
-Router::connect('/m/:controller/:action/*', array('lang' => 'en', 'theme' => 'mobile', 'controller' => 'nodes', 'action' => 'index'), array());
-Router::connect('/:controller/:action/*', array('lang' => 'en', 'theme' => 'default', 'controller' => 'nodes', 'action' => 'index'), array());
+Router::connect('/admin/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'default', 'controller' => 'revisions', 'action' => 'pending', 'admin' => true), array());
+Router::connect('/m/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'mobile', 'controller' => 'nodes', 'action' => 'index'), array());
+Router::connect('/:controller/:action/*', array('lang' => $defaultLang, 'theme' => 'default', 'controller' => 'nodes', 'action' => 'index'), array());
 ?>

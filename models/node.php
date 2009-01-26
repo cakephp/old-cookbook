@@ -164,7 +164,8 @@ class Node extends AppModel {
  */
 	function afterFind($results) {
 		$before = $results;
-		if ($this->language == 'en') {
+		$defaultLang = Configure::read('Languages.default');
+		if ($this->language == $defaultLang) {
 			if (isset($results[0]['Revision'])) {
 				foreach ($results as $i => $result) {
 					if (array_key_exists('title', $result['Revision']) && !$result['Revision']['title']) {
@@ -177,7 +178,7 @@ class Node extends AppModel {
 						$results[$i]['Revision']['content'] = __('Default Content', true);
 					}
 					if (array_key_exists('lang', $result['Revision']) && !$result['Revision']['lang']) {
-						$results[$i]['Revision']['lang'] = 'en';
+						$results[$i]['Revision']['lang'] = $defaultLang;
 					}
 				}
 			}
@@ -201,7 +202,7 @@ class Node extends AppModel {
 			}
 			$language = $this->language;
 			if ($missing) {
-				$this->setLanguage('en');
+				$this->setLanguage($defaultLang);
 				if ($this->__queryData['order'] == array(null)) {
 					unset($this->__queryData['order']);
 				}
@@ -209,8 +210,12 @@ class Node extends AppModel {
 				$engResults = $this->find('all', am($this->__queryData, array('conditions' => array('Node.id' => $ids))));
 				$this->setLanguage($language);
 			}
-			$find = '@href="/(?!' . $language . '/)@';
-			$replace = 'href="/' . $language . '/';
+			$root = trim(Router::url('/'), '/');
+			if ($root) {
+				$root .= '/';
+			}
+			$find = '@href="/' . $root . '(?!' . $language . '/)@';
+			$replace = 'href="/' . $root . $language . '/';
 			foreach ($results as $i => &$result) {
 				if (isset($engResults[$i])) {
 					if (array_key_exists('title', $result['Revision']) && !$result['Revision']['title']) {
@@ -224,7 +229,7 @@ class Node extends AppModel {
 							$engResults[$i]['Revision']['content'];
 					}
 					if (array_key_exists('lang', $result['Revision']) && !$result['Revision']['lang']) {
-						$result['Revision']['lang'] = 'en';
+						$result['Revision']['lang'] = $defaultLang;
 					}
 				}
 				//if (isset($result['Revision']['content']) && strpos('href="/', $result['Revision']['content'])) {
@@ -243,7 +248,7 @@ class Node extends AppModel {
  * @return void
  */
 	function beforeFind($queryData) {
-		if ($this->language != 'en') {
+		if ($this->language != Configure::read('Languages.default')) {
 			$this->__queryData = $queryData;
 		}
 		return true;
@@ -446,7 +451,7 @@ class Node extends AppModel {
 			$allow_moves = true;
 			$auto_approve = true;
 		}
-		$importLang = isset($meta[0]['Meta']['lang'])?$meta[0]['Meta']['lang']:'en';
+		$importLang = isset($meta[0]['Meta']['lang'])?$meta[0]['Meta']['lang']:Configure::read('Languages.default');;
 		$this->setLanguage($importLang);
 		$message = array();
 		$counters = array();
@@ -648,7 +653,8 @@ class Node extends AppModel {
 			'title' => 'Your Collections',
 			'content' => 'Edit the collection index to change this text',
 			'status' => 'current',
-			'lang' => 'en');
+			'lang' => Configure::read('Languages.default')
+		);
 		$this->Revision->create();
 		$this->Revision->save($toSave);
 		for ($i=1; $i<=$collections; $i++) {
@@ -670,7 +676,7 @@ class Node extends AppModel {
  * @access private
  */
 	function __initCollection($i, $books, $sections, $id) {
-		$toSave = array('status' => 'current', 'lang' => 'en', 'content' => 'a collection of books');
+		$toSave = array('status' => 'current', 'lang' => Configure::read('Languages.default'), 'content' => 'a collection of books');
 		$this->create();
 		$this->save(array('parent_id' => $id));
 		$id = $this->id;
@@ -690,7 +696,7 @@ class Node extends AppModel {
  * @access private
  */
 	function __initBook($i, $sections, $id) {
-		$toSave = array('status' => 'current', 'lang' => 'en', 'content' => 'a book about... ' . $i);
+		$toSave = array('status' => 'current', 'lang' => Configure::read('Languages.default'), 'content' => 'a book about... ' . $i);
 		$this->create();
 		$this->save(array('parent_id' => $id));
 		$id = $this->id;
@@ -719,7 +725,7 @@ class Node extends AppModel {
 		$this->save(array('parent_id' => $id));
 		$id = $this->id;
 		$this->Revision->create();
-		$toSave = array('status' => 'current', 'lang' => 'en', 'content' => 'Section ' . $id . ' content');
+		$toSave = array('status' => 'current', 'lang' => Configure::read('Languages.default'), 'content' => 'Section ' . $id . ' content');
 		$this->Revision->save(am($toSave, array('node_id' => $id, 'title' => 'Section id ' . $id)));
 		return $this->Revision->id;
 	}
@@ -744,17 +750,18 @@ class Node extends AppModel {
 		$fields = array('lang', 'title');
 		$oldTitles = $this->Revision->find('list', compact('recursive', 'conditions', 'fields', 'order'));
 		$toSave = array();
+		$defaultLang = Configure::read('Languages.default');
 		foreach ($contents as $lang => $content) {
-			$title = isset($titles[$lang])?$titles[$lang]:$titles['en'];
+			$title = isset($titles[$lang])?$titles[$lang]:$titles[$defaultLang];
 			$toSave[$lang] = array(
 				'node_id' => $mergeId,
 				'title' => $title,
 				'content' => $content,
 				'lang' => $lang,
-				'reason' => 'Merging "' . $oldTitles['en'] . '" content into "' . $title . '"',
+				'reason' => 'Merging "' . $oldTitles[$defaultLang] . '" content into "' . $title . '"',
 				'user_id' => $this->currentUserId
 			);
-			if ($lang != 'en') {
+			if ($lang != $defaultLang) {
 				$toSave[$lang]['flags'] = 'englishChanged';
 			}
 		}
@@ -765,9 +772,9 @@ class Node extends AppModel {
 			$toSave[$lang] = array(
 				'node_id' => $mergeId,
 				'title' => $title,
-				'content' => $contents['en'],
+				'content' => $contents[$defaultLang],
 				'lang' => $lang,
-				'reason' => 'Merging "' . $oldTitles['en'] . '" content into "' . $title . '"',
+				'reason' => 'Merging "' . $oldTitles[$defaultLang] . '" content into "' . $title . '"',
 				'user_id' => $this->currentUserId,
 				'flags' => 'englishChanged'
 			);
@@ -921,7 +928,10 @@ class Node extends AppModel {
  * @access public
  * @return void
  */
-	function setLanguage($lang = 'en') {
+	function setLanguage($lang = null) {
+		if (!$lang) {
+			$lang = Configure::read('Languages.default');
+		}
 		$bind['hasOne']['Revision']['conditions']['Revision.lang'] = $lang;
 		$bind['hasOne']['Revision']['conditions']['Revision.status'] = 'current';
 		$bind['hasMany']['Comment']['conditions']['Comment.lang'] = $lang;

@@ -52,9 +52,11 @@ Configure::write('Site.email', 'team@cakefoundation.org');
 
 Configure::write('Site.database', 'bakery');
 
+Configure::write('Languages.default', 'en');
 $langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms', 'tw', 'ru');
 sort($langs);
 Configure::write('Languages.all', $langs);
+
 define('ADMIN', '800');
 define('EDITOR', '700');
 define('MODERATOR', '600');

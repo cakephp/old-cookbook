@@ -258,14 +258,15 @@ class RevisionsController extends AppController {
 	function admin_approve($id) {
 		$data = $this->Revision->read(array('lang', 'node_id'), $id);
 		$isSignificant = false;
+		$defaultLang = Configure::read('Languages.default');
 		if (
-			$this->params['lang'] == 'en' &&
+			$this->params['lang'] === $defaultLang &&
 			$data['Revision']['node_id'] &&
 			$this->Revision->find('list',
 				array('conditions' => array(
 					'Revision.node_id' => $data['Revision']['node_id'],
 					'Revision.status' => array('current', 'pending'),
-					'Revision.lang !=' => 'en'
+					'Revision.lang !=' => $defaultLang
 				))
 			)
 		) {
@@ -435,6 +436,7 @@ class RevisionsController extends AppController {
 	function admin_invalid($fix = false) {
 		$query = 'SELECT nodes.id, revisions.lang, count(revisions.id) FROM nodes left join revisions on revisions.node_id = nodes.id WHERE revisions.status = "current" GROUP BY nodes.id, revisions.lang HAVING count(revisions.id) > 1';
 		$results = $this->Revision->query($query);
+		$defaultLang = Configure::read('Languages.default');
 		if ($results) {
 			if ($fix) {
 				debug ($results);
@@ -444,7 +446,7 @@ class RevisionsController extends AppController {
 			$nodes = Set::extract('/nodes/id', $results);
 			$this->params['named']['node_id'] = $nodes;
 			$this->params['named']['status'] = 'current';
-			$this->params['named']['lang'] = 'en';
+			$this->params['named']['lang'] = $defaultLang;
 			$this->admin_index();
 			$this->render('admin_index');
 			return;
@@ -501,7 +503,7 @@ class RevisionsController extends AppController {
 				}
 				$this->Session->setFlash('Nodes with no current revision found');
 				$this->params['named']['node_id'] = array_keys($results);
-				$this->params['named']['lang'] = 'en';
+				$this->params['named']['lang'] = $defaultLang;
 				$this->admin_index();
 				$this->render('admin_index');
 				return;

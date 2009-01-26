@@ -6,11 +6,11 @@
 </div>
 <h3><?php echo sprintf(__('Top %s Contributors', true), 'EN') ?></h3>
 <div class="options"><ul class="node-options">
-	<li><?php echo sprintf(__('Last update: %s', true), $time->niceShort($data['en']['last_update'])) ?></li>
+	<li><?php echo sprintf(__('Last update: %s', true), $time->niceShort($data[$defaultLang]['last_update'])) ?></li>
 </ul></div>
 <div class="summary">
 <?php
-foreach ($data['en']['top_contributors'] as $row) {
+foreach ($data[$defaultLang]['top_contributors'] as $row) {
 	if (isset($users[$row['Revision']['user_id']])) {
 		$nick = $users[$row['Revision']['user_id']]['User']['username'];
 		if ($users[$row['Revision']['user_id']]['Profile']['url']) {
@@ -23,14 +23,14 @@ foreach ($data['en']['top_contributors'] as $row) {
 		$url = 'http://bakery.cakephp.org/profiles/view/' . $row['Revision']['user_id'] . '/' . $nick;
 	}
 	$menu->add(array(
-		'section' => 'en',
+		'section' => $defaultLang,
 		'title' => sprintf(__('%s (%s current)', true), $nick, $row[0]['count']),
 		'url' => $url
 	));
 }
-unset ($counts['en']);
+unset ($counts[$defaultLang]);
 echo '<br style="clear:left" />';
-echo '<div class="userstats">' . $menu->generate('en', array('class' => 'stats', 'splitCount' => 3)) . '</div>';
+echo '<div class="userstats">' . $menu->generate($defaultLang, array('class' => 'stats', 'splitCount' => 3)) . '</div>';
 echo '</div>';
 foreach ($counts as $lang => $count) {
 	$row = $data[$lang];

@@ -57,7 +57,6 @@ class RedirectController extends AppController {
  */
 	function beforeFilter() {
 		$this->Auth->allow('process');
-		$this->params['lang'] = 'en';
 	}
 /**
  * process function. Based on the passed params, send the user to the equivalent page.

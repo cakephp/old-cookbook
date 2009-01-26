@@ -1,6 +1,6 @@
 <?php /* SVN FILE: $Id: history.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <h1>History</h1>
-<?php if ($this->params['lang'] != 'en') {
+<?php if ($this->params['lang'] != $defaultLang) {
 	$url = $this->passedArgs;
 	$url[] = 1;
 	echo '<p>' . $html->link(__('See English edits too', true), $url) . '</p>';
@@ -23,7 +23,7 @@ echo $html->tableHeaders($th);
 foreach ($data as $row) {
 	extract($row);
 	$defaultReason = 'edit';
-	if ($Revision['lang'] != 'en') {
+	if ($Revision['lang'] != $defaultLang) {
 		$defaultReason = 'edit/translation';
 	}
 	if ($Revision['status'] == 'pending') {

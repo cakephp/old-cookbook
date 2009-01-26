@@ -17,10 +17,6 @@
 		if ($this->here == $this->webroot) {
 			$title_for_layout = $app['tag_line'];
 		}
-		$link = '/';
-		if ($this->params['lang'] != 'en') {
-			$link .= $this->params['lang'];
-		}
 		echo $html->meta(
 			'keywords',
 				'CakePHP Documentation, ' . str_replace(' :: ', ', ', $title_for_layout)

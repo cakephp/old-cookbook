@@ -678,7 +678,7 @@ class NodesController extends AppController {
 		$pendingUpdates = $this->Node->Revision->find('all', compact('conditions', 'recursive', 'fields'));
 		$pendingUpdates = Set::extract($pendingUpdates, '{n}.Revision.node_id');
 		$this->set(compact('pendingUpdates'));
-		if ($this->params['lang'] == 'en') {
+		if ($this->params['lang'] === Configure::read('Languages.default')) {
 			$this->data = $this->paginate(array('Revision.content LIKE' => '%<h%'));
 			return $this->render('english_todo');
 		} else {
@@ -757,7 +757,7 @@ class NodesController extends AppController {
 			if (!isset($counts[$lang])) {
 				$counts[$lang] = 0;
 			}
-			if ($lang == 'en') {
+			if ($lang == Configure::read('Languages.default')) {
 				$userLimit = 15;
 			} else {
 				$userLimit = 6;
@@ -880,7 +880,10 @@ class NodesController extends AppController {
  * @return void
  * @access public
  */
-	function compare($id, $slug, $lang = 'en') {
+	function compare($id, $slug, $lang = null) {
+		if (!$lang) {
+			$lang = Configure::read('Languages.default');
+		}
 		if ($this->Node->language == $lang) {
 			$this->Session->setFlash(__('This function is for comparing different (public) language content', true));
 			$this->redirect(array('action' => 'view', $id, $slug));
@@ -955,10 +958,11 @@ class NodesController extends AppController {
  * @access public
  */
 	function history($id, $slug, $englishToo = false) {
+		$defaultLang = Configure::read('Languages.default');
 		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		$language = array($this->params['lang']);
-		if ($englishToo && $this->params['lang'] != 'en') {
-			$language[] = 'en';
+		if ($englishToo && $this->params['lang'] != $defaultLang) {
+			$language[] = $defaultLang;
 		}
 		$conditions['Revision.node_id'] = $id;
 		$conditions['Revision.lang'] = $language;

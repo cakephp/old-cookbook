@@ -39,7 +39,7 @@ foreach($flags as $flag) {
 		$flagLis .= '<li class="flag warning">' . __($flag, true) . '</li>';
 	}
 }
-if ($this->params['lang'] != 'en' && $Revision['id'] && $compare) {
+if ($this->params['lang'] != $defaultLang && $Revision['id'] && $compare) {
 	$out[] = $html->link(__('Compare to original content', true), array('action' => 'compare', $Node['id'], $Revision['slug']));
 }
 

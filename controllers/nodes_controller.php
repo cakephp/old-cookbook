@@ -77,6 +77,13 @@ class NodesController extends AppController {
  */
 	var $components = array('UniqueUrl');
 /**
+ * helpers property
+ *
+ * @var array
+ * @access public
+ */
+	var $helpers = array('Theme');
+/**
  * beforeFilter function
  *
  * @access public

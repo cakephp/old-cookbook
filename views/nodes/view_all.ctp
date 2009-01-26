@@ -24,9 +24,7 @@ if ($this->params['isAjax']) {
 	echo '</div>';
 	if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $currentNode['Revision']['content'])))) != '') {
 		echo '<div class="summary">';
-			// TODO Identify why this is problematic
-			//echo $html->clean($currentNode['Revision']['content']);
-			echo $currentNode['Revision']['content'];
+			echo $theme->out($currentNode['Revision']['content']);
 		echo '</div>';
 		echo $html->meta(
 			'description',
@@ -57,9 +55,7 @@ if ($this->params['isAjax']) {
 
 		if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $Revision['content'])))) != '') {
 			echo '<div class="body">';
-				// TODO Identify why this is problematic
-				//echo $html->clean($Revision['content']);
-				echo $Revision['content'];
+				echo $theme->out($Revision['content']);
 			echo '</div>';
 		}
 		echo '<div class="comments" id="comments-' . $Node['id'] . '">';

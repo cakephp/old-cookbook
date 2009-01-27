@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: index.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <div class="container">
 <h2>Change Log</h2>
 <ul id="results">

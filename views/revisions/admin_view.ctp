@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_view.ctp 698 2008-11-19 08:53:30Z AD7six $ */ ?>
 <div class="revisions view">
 <?php
 echo '<h2>Revision Details</h2>';

@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_edit.ctp 672 2008-10-06 14:03:23Z AD7six $ */ ?>
 <div>
 <h2>Properties for <?php echo $this->data['Revision']['title']; ?></h2>
 <?php

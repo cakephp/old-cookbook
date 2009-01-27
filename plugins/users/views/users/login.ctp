@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: login.ctp 659 2008-09-10 14:52:21Z AD7six $ */ ?>
 <div class="login">
 <?php
 	echo $form->create('User', array('action' => 'login'));

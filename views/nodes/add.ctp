@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: add.ctp 672 2008-10-06 14:03:23Z AD7six $ */ ?>
 <div class="nodes add">
 <?php
 $contents = '';

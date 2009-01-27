@@ -1,5 +1,3 @@
-<?php /* SVN FILE: $Id: english_todo.ctp 707 2008-11-19 12:18:03Z AD7six $ */ ?>
-<?php /* SVN FILE: $Id: english_todo.ctp 707 2008-11-19 12:18:03Z AD7six $ */ ?>
 <div class="nodes view">
 <div class="summary">
 <p>These sections have been marked as needing updating.</p>

@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: search.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <div id="site_search"><?php
 $currentCollection = 2;
 if (isset($currentPath[1])) {

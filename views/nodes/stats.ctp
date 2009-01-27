@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: stats.ctp 708 2008-11-19 12:39:19Z AD7six $ */ ?>
 <div class="nodes view">
 <h2>Statistics</h2>
 <div class="summary">

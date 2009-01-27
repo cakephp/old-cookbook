@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: node_navigation.ctp 673 2008-10-06 14:05:17Z AD7six $ */ ?>
 <div class="node-nav">
 <?php
 $prevUrl = $nextUrl = false;

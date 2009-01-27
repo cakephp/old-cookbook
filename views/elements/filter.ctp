@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: filter.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <p>
 <?php
 if (!isset($filters)) {

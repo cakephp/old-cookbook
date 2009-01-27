@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_view.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <h2>Comment</h2>
 <table>
 <?php

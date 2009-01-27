@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: sites_nav.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <div id="sites_nav">
 	<ul class="navigation">
 		<li class="current"><a href="http://cakephp.org/">CakePHP</a></li>

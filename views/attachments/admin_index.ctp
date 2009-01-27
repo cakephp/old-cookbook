@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_index.ctp 666 2008-09-23 18:03:17Z AD7six $ */ ?>
 <h2>All Attachments</h2>
 <table>
 <?php

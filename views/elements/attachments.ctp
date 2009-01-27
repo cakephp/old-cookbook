@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: attachments.ctp 666 2008-09-23 18:03:17Z AD7six $ */ ?>
 <div id='thumbs' class='clearfix'><p><?php __('Images/Files associated with this content') ?></p><?php
 $out = array();
 if (isset($attachments)) {

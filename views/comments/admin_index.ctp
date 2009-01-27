@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_index.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <h1><?php echo up($language) ?> Comments</h1>
 <div class="container">
 <?php

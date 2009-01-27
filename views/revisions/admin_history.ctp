@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_history.ctp 673 2008-10-06 14:05:17Z AD7six $ */ ?>
 <h1>History</h1>
 <div class="container">
 <table>

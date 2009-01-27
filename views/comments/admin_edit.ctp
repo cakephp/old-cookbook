@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: admin_edit.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <h1>Comments -  edit Comment </h1>
 <div class="form-container">
 <?php

@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: default.ctp 611 2008-08-19 15:39:29Z AD7six $ */ ?>
 <cake:nocache><?php header('Content-type: application/rss-xml'); ?></cake:nocache><?php
 echo $rss->header();
 

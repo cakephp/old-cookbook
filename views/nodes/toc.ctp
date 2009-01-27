@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: toc.ctp 673 2008-10-06 14:05:17Z AD7six $ */ ?>
 <div class="toc">
 <?php
 echo '<h2>' . $data[0]['Revision']['title'] . '</h2>';

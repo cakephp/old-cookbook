@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: history.ctp 600 2008-08-07 17:55:23Z AD7six $ */ ?>
 <h1>History</h1>
 <?php if ($this->params['lang'] != $defaultLang) {
 	$url = $this->passedArgs;

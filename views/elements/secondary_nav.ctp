@@ -1,4 +1,3 @@
-<?php /* SVN FILE: $Id: secondary_nav.ctp 705 2008-11-19 12:15:50Z AD7six $ */ ?>
 <div id="secondary_nav">
 <ul class="navigation">
 		<?php

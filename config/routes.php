@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: routes.php 703 2008-11-19 12:13:40Z AD7six $ */
 /**
  * Short description for file.
  *

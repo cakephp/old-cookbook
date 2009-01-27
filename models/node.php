@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: node.php 701 2008-11-19 12:12:33Z AD7six $ */
 /**
  * Short description for node.php
  *

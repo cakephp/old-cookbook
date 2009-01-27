@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: nodes_controller.php 704 2008-11-19 12:15:11Z AD7six $ */
 /**
  * Short description for nodes_controller.php
  *

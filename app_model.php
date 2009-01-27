@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: app_model.php 689 2008-11-05 10:30:07Z AD7six $ */
 
 /**
  * Application model for Cake.

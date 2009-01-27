@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: menu.php 699 2008-11-19 12:11:38Z AD7six $ */
 /**
  * Short description for menu.php
  *

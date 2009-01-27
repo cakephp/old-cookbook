@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: highlight.php 689 2008-11-05 10:30:07Z AD7six $ */
 
 /**
  * Class to style php code as an ordered list.

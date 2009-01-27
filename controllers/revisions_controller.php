@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: revisions_controller.php 711 2008-11-19 18:20:57Z AD7six $ */
 /**
  * Short description for revisions_controller.php
  *

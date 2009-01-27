@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
 /* Cakebook schema generated on: 2008-11-21 11:11:33 : 1227265113*/
 class AppSchema extends CakeSchema {
 	var $name = 'App';

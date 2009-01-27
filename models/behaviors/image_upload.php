@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: image_upload.php 689 2008-11-05 10:30:07Z AD7six $ */
 /**
  * Short description for image_upload.php
  *

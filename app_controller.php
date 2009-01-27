@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: app_controller.php 697 2008-11-10 20:50:32Z AD7six $ */
 /**
  * Short description for file.
  *

@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id: comment_fixture.php 693 2008-11-05 13:01:32Z AD7six $ */
 /**
  * Short description for comment_fixture.php
  *

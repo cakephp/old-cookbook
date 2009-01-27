@@ -15,7 +15,7 @@
  * @filesource
  * @copyright     Copyright (c) 2008, Marcin Domanski
  * @link          www.kabturek.info
- * @package       
+ * @package
  * @subpackage    projects.cookbook.models.behaviors
  * @since         v 0.1
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License

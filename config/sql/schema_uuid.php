@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* SVN FILE: $Id: schema_uuid.php 566 2008-07-14 09:23:58Z AD7six $ */
 /* Cookbook schema generated on: 2008-07-14 11:07:35 : 1216026935*/
 class CookbookUuidSchema extends CakeSchema {

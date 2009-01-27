@@ -18,9 +18,6 @@
  * @package       cookbook
  * @subpackage    cookbook.tests.cases.models
  * @since         v 1.0
- * @version       $Revision: 694 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-05 14:59:08 +0100 (Wed, 05 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 App::import('Model', 'Node');

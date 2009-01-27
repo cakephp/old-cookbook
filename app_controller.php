@@ -22,9 +22,6 @@
  * @package       cake
  * @subpackage    cake.app
  * @since         CakePHP v 0.2.9
- * @version       $Revision: 697 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-10 21:50:32 +0100 (Mon, 10 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**

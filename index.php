@@ -17,9 +17,6 @@
  * @package       cake
  * @subpackage    cake.app
  * @since         CakePHP v 0.10.0.1076
- * @version       $Revision: 689 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-05 11:30:07 +0100 (Wed, 05 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';

@@ -27,9 +27,6 @@
  * @package       bakery
  * @subpackage    bakery.models
  * @since         Bakery v 1.0.0.0
- * @version       $Revision: 689 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-05 11:30:07 +0100 (Wed, 05 Nov 2008) $
  * @license       http://www.cakefoundation.org/licenses/csfl/  The CSFL License
  */
 /**

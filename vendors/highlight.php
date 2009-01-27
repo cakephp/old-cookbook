@@ -12,10 +12,7 @@
  * @filesource
  * @package       vendors
  * @since         Noswad site version 3
- * @version       $Revision: 689 $
  * @created      26/01/2007
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-05 11:30:07 +0100 (Wed, 05 Nov 2008) $
  */
 
 /*

@@ -18,9 +18,6 @@
  * @package       base
  * @subpackage    base.views.helpers
  * @since         v 1.0
- * @version       $Revision: 699 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-19 13:11:38 +0100 (Wed, 19 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* SVN FILE: $Id$ */
 /* Cakebook schema generated on: 2008-12-23 09:12:43 : 1230022723*/
 class CakebookSchema extends CakeSchema {

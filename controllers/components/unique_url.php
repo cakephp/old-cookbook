@@ -18,9 +18,6 @@
  * @package       cookbook
  * @subpackage    cookbook.controllers.components
  * @since         v 1.0
- * @version       $Revision$
- * @modifiedby    $LastChangedBy$
- * @lastmodified  $Date$
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 class UniqueUrlComponent extends Object {

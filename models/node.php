@@ -18,9 +18,6 @@
  * @package       cookbook
  * @subpackage    cookbook.models
  * @since         1.0
- * @version       $Revision: 701 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-19 13:12:33 +0100 (Wed, 19 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**

@@ -18,9 +18,6 @@
  * @package       cookbook
  * @subpackage    cookbook.controllers
  * @since         1.0
- * @version       $Revision: 689 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-05 11:30:07 +0100 (Wed, 05 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**

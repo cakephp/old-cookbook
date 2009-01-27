@@ -23,9 +23,6 @@
  * @package       cake
  * @subpackage    cake.app.config
  * @since         CakePHP v 0.2.9
- * @version       $Revision: 703 $
- * @modifiedby    $LastChangedBy: AD7six $
- * @lastmodified  $Date: 2008-11-19 13:13:40 +0100 (Wed, 19 Nov 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 $defaultLang = Configure::read('Languages.default');

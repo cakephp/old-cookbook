@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: generic.ctp 683 2008-10-25 23:05:10Z AD7six $ */
+<?php
 if (!isset($session)) {
 	return;
 }

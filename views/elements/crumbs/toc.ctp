@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: toc.ctp 600 2008-08-07 17:55:23Z AD7six $ */
+<?php
 if (isset($crumbPath)&&($crumbPath)) {
 	//$html->addCrumb('Collection Index',array('action'=>'index'));
 	foreach($crumbPath as $linkInfo) {

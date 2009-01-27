@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: comment.ctp 673 2008-10-06 14:05:17Z AD7six $ */
+<?php
 if (1==2 && $data['user_id']==$data['Revision']['user_id']) {
 	$class = " highlight";
 } else {

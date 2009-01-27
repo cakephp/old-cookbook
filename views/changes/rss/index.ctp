@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: index.ctp 638 2008-09-01 23:24:26Z AD7six $ */
+<?php
 	transformRSS (null, $html);
 	echo $rss->items($data, 'transformRSS');
 

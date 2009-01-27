@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: admin_merge.ctp 600 2008-08-07 17:55:23Z AD7six $ */
+<?php
 if (isset($preview)) :
 ?>
 <div id='preview' class="nodes view">

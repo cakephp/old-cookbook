@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: public_item.ctp 616 2008-08-20 17:13:45Z AD7six $ */
+<?php
 $params = array();
 extract($data);
 if (!isset($pathIds) && isset ($currentPath)) {

@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: admin_import.ctp 600 2008-08-07 17:55:23Z AD7six $ */
+<?php
 echo $form->create(null, array('type' => 'file', 'url' => '/' . $this->params['url']['url']));
 echo $form->inputs(array(
 	'legend' => 'Import files from another install, or restore to a previous backup',

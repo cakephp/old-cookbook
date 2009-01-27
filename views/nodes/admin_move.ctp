@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: admin_move.ctp 600 2008-08-07 17:55:23Z AD7six $ */
+<?php
 echo $form->create('Node', array('url' => '/' . $this->params['url']['url']));
 echo $form->inputs(array(
 	'id' => array('options' => $nodes, 'label' => 'Move this', 'value' => $data['Node']['id']),

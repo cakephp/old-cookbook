@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: view_all.ctp 607 2008-08-19 15:36:49Z AD7six $ */
+<?php
 $uuid = String::uuid();
 $key = array_pop(explode('-', $uuid));
 $content = $xml->serialize(array('meta' => array(

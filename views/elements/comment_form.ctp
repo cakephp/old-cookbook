@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: comment_form.ctp 661 2008-09-10 14:53:56Z AD7six $ */
+<?php
 if (!isset($auth['User']['id'])) {
 	echo '<div class="comment"><p class="commenttitle"><em>';
 	echo $html->link(__('Login to add a comment', true), array('controller' => 'comments', 'action' => 'add'));

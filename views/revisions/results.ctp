@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: results.ctp 673 2008-10-06 14:05:17Z AD7six $ */
+<?php
 //echo $this->element('search_form');
 echo '<div class="searchresults">';
 if(!empty($results)){

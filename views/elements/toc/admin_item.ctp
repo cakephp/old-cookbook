@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: admin_item.ctp 600 2008-08-07 17:55:23Z AD7six $ */
+<?php
 extract($data);
 extract($Revision);
 extract($Node);

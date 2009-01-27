@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: node_options.ctp 705 2008-11-19 12:15:50Z AD7six $ */
+<?php
 if (isset($this->params['admin'])) {
 	return;
 }

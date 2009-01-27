@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: view_all.ctp 706 2008-11-19 12:16:42Z AD7six $ */
+<?php
 if ($this->params['isAjax']) {
 	echo $this->element('crumbs');
 

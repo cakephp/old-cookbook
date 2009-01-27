@@ -1,4 +1,4 @@
-<?php /* SVN FILE: $Id: side_menu.ctp 672 2008-10-06 14:03:23Z AD7six $ */
+<?php
 if ($this->name == 'Users') {
 	echo $this->element('login_hint');
 }

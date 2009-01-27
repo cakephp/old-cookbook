@@ -1,5 +1,4 @@
-<?php /* SVN FILE: $Id: index.ctp 600 2008-08-07 17:55:23Z AD7six $ */
-echo '<?php /* SVN FILE: $Id' . '$ */ ?>' . "\r\n";
+<?php
 $singularHumanName = Inflector::Humanize( Inflector::Underscore($singularHumanName));
 $pluralHumanName = Inflector::Humanize( Inflector::Underscore($pluralHumanName));
 $namedString = implode ('\', \'', $fields);

@@ -31,6 +31,10 @@ echo $html->meta(
 <link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />
 <?php
+echo $html->meta(array(
+	'rel' => 'alternate', 'title' => __('Mobile version', true), 'type' => 'text/html', 'media' => 'handheld',
+	'url' => $html->url(array('admin' => false, 'plugin' => null, 'controller' => 'nodes', 'action' => 'index', 'theme' => 'mobile'), true),
+));
 echo $html->meta(
 	'rss',
 	array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index', 'ext' => 'rss'),

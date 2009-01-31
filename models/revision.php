@@ -186,7 +186,8 @@ class Revision extends AppModel {
 					for($i = 0; $i < $count; $i++) {
 						$replaced = str_replace('<', '&lt;', $result['1'][$i]); // ensure escaping
 						$replaced = str_replace('>', '&gt;', $replaced); // ensure escaping
-						$contents = str_replace($result[1][$i], $replaced, $contents);
+						$replaced = str_replace($result[1][$i], $replaced, $result[0][$i]);
+						$contents = str_replace($result[0][$i], $replaced, $contents);
 					}
 				}
 				$this->data['Revision']['content'] = $contents;

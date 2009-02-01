@@ -1,46 +1,12 @@
 # LANGUAGE translation of Cakebook Application
 # Copyright 2008 Andy Dawson <andydawson76@yahoo.co.uk>
-# Generated from files:
-#  Revision: 697 app_controller.php
-#  Revision: 689 controllers/attachments_controller.php
-#  Revision: 689 controllers/changes_controller.php
-#  Revision: 702 views/layouts/default.ctp
-#  Revision: 689 controllers/comments_controller.php
-#  Revision: 706 views/nodes/view_all.ctp
-#  Revision: 600 views/comments/index.ctp
-#  Revision: 704 controllers/nodes_controller.php
-#  Revision: 711 controllers/revisions_controller.php
-#  Revision: 701 models/node.php
-#  Revision: 659 plugins/users/views/users/login.ctp
-#  Revision: 705 views/elements/secondary_nav.ctp
-#  Revision: 600 views/changes/index.ctp
-#  Revision: 638 views/changes/rss/index.ctp
-#  Revision: 600 views/comments/add.ctp
-#  Revision: 666 views/elements/attachments.ctp
-#  Revision: 673 views/elements/comment.ctp
-#  Revision: 661 views/elements/comment_form.ctp
-#  Revision: 600 views/elements/login_hint.ctp
-#  Revision: 705 views/elements/node_options.ctp
-#  Revision: 673 views/elements/paging.ctp
-#  Revision: 600 views/elements/preview.ctp
-#  Revision: 600 views/elements/search.ctp
-#  Revision: 672 views/elements/side_menu.ctp
-#  Revision: 600 views/elements/toc.ctp
-#  Revision: 673 views/nodes/toc.ctp
-#  Revision: 600 views/layouts/error.ctp
-#  Revision: 672 views/nodes/add.ctp
-#  Revision: 673 views/nodes/edit.ctp
-#  Revision: 600 views/nodes/admin_merge.ctp
-#  Revision: 600 views/nodes/history.ctp
-#  Revision: 708 views/nodes/stats.ctp
-#  Revision: 707 views/nodes/todo.ctp
-#  Revision: 673 views/revisions/results.ctp
+# No version information was available in the source files.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2008-12-04 15:20-0200\n"
+"Project-Id-Version: cakebook-\n"
+"POT-Creation-Date: 2009-02-01 20:12+0100\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team:\n"
@@ -49,169 +15,178 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../../\n"
 
-#: app_controller.php:93
+#: app_controller.php:89
 msgid "Whoops, not a valid language."
 msgstr ""
 
-#: app_controller.php:109
+#: app_controller.php:101
 msgid "Please login to continue"
 msgstr ""
 
-#: app_controller.php:293
+#: app_controller.php:297
 msgid "All %s matching the term \"%s\""
 msgstr ""
 
-#: controllers/attachments_controller.php:85
+#: controllers/attachments_controller.php:81
 msgid "Attachment controller - no class or foreignKey error."
 msgstr ""
 
-#: controllers/attachments_controller.php:110
+#: controllers/attachments_controller.php:106
 msgid "Existing Attachment for %s, id %s updated"
 msgstr ""
 
-#: controllers/attachments_controller.php:112
+#: controllers/attachments_controller.php:108
 msgid "New Attachment for %s, id %s added"
 msgstr ""
 
-#: controllers/attachments_controller.php:137
+#: controllers/attachments_controller.php:133
 msgid "%s with id %s updated"
 msgstr ""
 
-#: controllers/attachments_controller.php:140
+#: controllers/attachments_controller.php:136
 msgid "errors in form"
 msgstr ""
 
-#: controllers/changes_controller.php:130
+#: controllers/changes_controller.php:127
 msgid "Recent Changes for %s"
 msgstr ""
 
-#: controllers/changes_controller.php:134
-#: views/layouts/default.ctp:33
+#: controllers/changes_controller.php:131
+#: views/layouts/default.ctp:46
 msgid "Recent Changes for all languages"
 msgstr ""
 
-#: controllers/changes_controller.php:136
-#: views/layouts/default.ctp:28
+#: controllers/changes_controller.php:133
+#: views/layouts/default.ctp:41
 msgid "Recent Changes"
 msgstr ""
 
-#: controllers/changes_controller.php:144
-#: controllers/comments_controller.php:191
+#: controllers/changes_controller.php:141
+#: controllers/comments_controller.php:199
 msgid "by %s"
 msgstr ""
 
-#: controllers/changes_controller.php:149
+#: controllers/changes_controller.php:146
 msgid "restricted to status: %s"
 msgstr ""
 
-#: controllers/comments_controller.php:84;116
+#: controllers/comments_controller.php:92;124
 msgid "Invalid Node."
 msgstr ""
 
-#: controllers/comments_controller.php:93
+#: controllers/comments_controller.php:101
 msgid "Your comment has been added"
 msgstr ""
 
-#: controllers/comments_controller.php:96
+#: controllers/comments_controller.php:104
 msgid "Please correct errors below."
 msgstr ""
 
-#: controllers/comments_controller.php:120
+#: controllers/comments_controller.php:128
 msgid "No permissions to see comments for that section"
 msgstr ""
 
-#: controllers/comments_controller.php:128
-#: views/nodes/view_all.ctp:110;120
+#: controllers/comments_controller.php:136
+#: views/nodes/view_all.ctp:106;116
 msgid "Comments for %s"
 msgstr ""
 
-#: controllers/comments_controller.php:161
+#: controllers/comments_controller.php:169
 msgid "Invalid Comment."
 msgstr ""
 
-#: controllers/comments_controller.php:180
-#: views/comments/index.ctp:6
+#: controllers/comments_controller.php:188
+#: views/comments/index.ctp:5
 msgid "Recent Comments"
 msgstr ""
 
-#: controllers/comments_controller.php:182
-#: views/layouts/default.ctp:43
+#: controllers/comments_controller.php:190
+#: views/layouts/default.ctp:56
 msgid "Recent Comments for all languages"
 msgstr ""
 
-#: controllers/nodes_controller.php:848
+#: controllers/nodes_controller.php:807
+msgid "New content needs to be added in the site's default language."
+msgstr ""
+
+#: controllers/nodes_controller.php:814
 msgid "Invalid Collection"
 msgstr ""
 
-#: controllers/nodes_controller.php:873;978
+#: controllers/nodes_controller.php:839;947
 msgid "Thanks for your contribution! Your suggestion has been submitted for review."
 msgstr ""
 
-#: controllers/nodes_controller.php:933
+#: controllers/nodes_controller.php:902
 msgid "This function is for comparing different (public) language content"
 msgstr ""
 
-#: controllers/revisions_controller.php:616;621;647
+#: controllers/revisions_controller.php:629;634;686
 msgid "Only current and previous revisions can be viewed"
 msgstr ""
 
-#: controllers/revisions_controller.php:625
+#: controllers/revisions_controller.php:638
 msgid "Only possible to compare revisions of the same node"
 msgstr ""
 
-#: controllers/revisions_controller.php:651
+#: controllers/revisions_controller.php:668
+msgid "Current Pending revisions "
+msgstr ""
+
+#: controllers/revisions_controller.php:690
 msgid "Please login to access this revision"
 msgstr ""
 
-#: models/node.php:170
+#: models/node.php:168
 msgid "Default Title"
 msgstr ""
 
-#: models/node.php:173
+#: models/node.php:171
 msgid "default_slug"
 msgstr ""
 
-#: models/node.php:176
+#: models/node.php:174
 msgid "Default Content"
 msgstr ""
 
-#: plugins/users/views/users/login.ctp:8;20
-#: views/elements/secondary_nav.ctp:12
+#: plugins/users/views/users/login.ctp:7;19
+#: views/elements/secondary_nav.ctp:11
 msgid "Login"
 msgstr ""
 
-#: plugins/users/views/users/login.ctp:13
+#: plugins/users/views/users/login.ctp:12
 msgid "Forgot your password?"
 msgstr ""
 
-#: views/changes/index.ctp:18
+#: views/changes/index.ctp:17
 msgid "change submitted by %s, %s"
 msgstr ""
 
-#: views/changes/index.ctp:24
+#: views/changes/index.ctp:23
 #: views/changes/rss/index.ctp:14
 msgid "accepted"
 msgstr ""
 
-#: views/changes/index.ctp:27
+#: views/changes/index.ctp:26
 #: views/changes/rss/index.ctp:17
 msgid "not accepted"
 msgstr ""
 
-#: views/changes/index.ctp:30
+#: views/changes/index.ctp:29
 #: views/changes/rss/index.ctp:20
 msgid "pending"
 msgstr ""
 
-#: views/changes/index.ctp:35
+#: views/changes/index.ctp:34
 msgid "changed from %s to %s by %s, %s"
 msgstr ""
 
-#: views/changes/index.ctp:41
+#: views/changes/index.ctp:40
 msgid "submitted by %s"
 msgstr ""
 
 #: views/changes/rss/index.ctp:28
+#: views/revisions/rss/index.ctp:14
 msgid "Submitted by: %s"
 msgstr ""
 
@@ -219,23 +194,29 @@ msgstr ""
 msgid "Changed by: %s"
 msgstr ""
 
-#: views/comments/add.ctp:6
+#: views/comments/add.ctp:5
 msgid "Comment: %s"
 msgstr ""
 
-#: views/comments/index.ctp:4
+#: views/comments/admin_index.ctp:8
+msgid "%s %s comment"
+msgid_plural "%s %s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/comments/index.ctp:3
 msgid "Comments: %s"
 msgstr ""
 
-#: views/comments/index.ctp:11
+#: views/comments/index.ctp:10
 msgid "No Comments yet!"
 msgstr ""
 
-#: views/comments/index.ctp:20
+#: views/comments/index.ctp:19
 msgid "This page as a feed"
 msgstr ""
 
-#: views/elements/attachments.ctp:2
+#: views/elements/attachments.ctp:1
 msgid "Images/Files associated with this content"
 msgstr ""
 
@@ -259,51 +240,55 @@ msgstr ""
 msgid "Comment on %s"
 msgstr ""
 
-#: views/elements/login_hint.ctp:3
+#: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
 msgstr ""
 
-#: views/elements/login_hint.ctp:4
+#: views/elements/login_hint.ctp:3
 msgid "Not got one? Hop on over to %s and sign up"
 msgstr ""
 
-#: views/elements/node_options.ctp:8
-msgid "Edit"
+#: views/elements/node_options.ctp:9
+msgid "Translate"
 msgstr ""
 
 #: views/elements/node_options.ctp:11
+msgid "Edit"
+msgstr ""
+
+#: views/elements/node_options.ctp:15
 msgid "View just this section"
 msgstr ""
 
-#: views/elements/node_options.ctp:14
+#: views/elements/node_options.ctp:18
 msgid "Comments (%s)"
 msgstr ""
 
-#: views/elements/node_options.ctp:19
+#: views/elements/node_options.ctp:23
 msgid "there is a pending change for this section"
 msgstr ""
 
-#: views/elements/node_options.ctp:22
+#: views/elements/node_options.ctp:26
 msgid "History"
 msgstr ""
 
-#: views/elements/node_options.ctp:32
+#: views/elements/node_options.ctp:36
 msgid "This text may be out of sync with the English version"
 msgstr ""
 
-#: views/elements/node_options.ctp:39
+#: views/elements/node_options.ctp:43
 msgid "Compare to original content"
 msgstr ""
 
-#: views/elements/paging.ctp:4
+#: views/elements/paging.ctp:3
 msgid "Page %s"
 msgstr ""
 
-#: views/elements/paging.ctp:5
+#: views/elements/paging.ctp:4
 msgid "<< previous"
 msgstr ""
 
-#: views/elements/paging.ctp:8
+#: views/elements/paging.ctp:7
 msgid "Next >>"
 msgstr ""
 
@@ -327,110 +312,122 @@ msgstr ""
 msgid "Save it"
 msgstr ""
 
-#: views/elements/search.ctp:22
+#: views/elements/search.ctp:21
 #: views/elements/search_form.ctp:12
 msgid "Search"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:6
+#: views/elements/secondary_nav.ctp:5
 msgid "Logged in as %s"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:7
+#: views/elements/secondary_nav.ctp:6
 msgid "Logout"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:21
+#: views/elements/secondary_nav.ctp:15
 msgid "Top Contributors"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:28
+#: views/elements/secondary_nav.ctp:18
 msgid "Todo"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:30
+#: views/elements/secondary_nav.ctp:20
 msgid "About CakePHP"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:31
+#: views/elements/secondary_nav.ctp:21
 msgid "Donate"
 msgstr ""
 
 #: views/elements/side_menu.ctp:14
-#: views/nodes/view_all.ctp:95
+#: views/nodes/view_all.ctp:91
 msgid "All in one page"
 msgstr ""
 
-#: views/elements/side_menu.ctp:23
-#: views/nodes/view_all.ctp:102
+#: views/elements/side_menu.ctp:24
+#: views/nodes/view_all.ctp:98
 msgid "Suggest a new section here"
 msgstr ""
 
-#: views/elements/side_menu.ctp:30
-msgid "Options"
-msgstr ""
-
-#: views/elements/toc.ctp:13
-#: views/nodes/toc.ctp:5
+#: views/elements/toc.ctp:15
+#: views/nodes/toc.ctp:4
 msgid "Table of Contents"
 msgstr ""
 
-#: views/elements/toc.ctp:16
+#: views/elements/toc.ctp:18
 msgid "see fully expanded table of contents (only)"
 msgstr ""
 
-#: views/elements/toc.ctp:19
+#: views/elements/toc.ctp:21
 msgid "Books in "
 msgstr ""
 
-#: views/elements/toc.ctp:21
+#: views/elements/toc.ctp:23
 msgid "Available collections"
 msgstr ""
 
-#: views/layouts/default.ctp:38
+#: views/layouts/default.ctp:35
+msgid "Mobile version"
+msgstr ""
+
+#: views/layouts/default.ctp:51
 msgid "Recent comments"
 msgstr ""
 
-#: views/layouts/default.ctp:51;55
+#: views/layouts/default.ctp:64;69
 msgid "My Submissions"
 msgstr ""
 
-#: views/layouts/default.ctp:88
+#: views/layouts/default.ctp:75
+msgid "Pending Submissions"
+msgstr ""
+
+#: views/layouts/default.ctp:105
 msgid "Welcome to %s"
 msgstr ""
 
-#: views/layouts/error.ctp:6;34
+#: views/layouts/default.ctp:151
+msgid "Also available in %s"
+msgstr ""
+
+#: views/layouts/error.ctp:5;33
 msgid "CakePHP: the rapid development php framework"
 msgstr ""
 
-#: views/nodes/add.ctp:17
-#: views/nodes/edit.ctp:26
+#: views/layouts/flash/new_content_default_language.ctp:5
+msgid "Want to know why?"
+msgstr ""
+
+#: views/nodes/add.ctp:16
+#: views/nodes/edit.ctp:25
 msgid "Please review the guidelines for submitting to the Cookbook to ensure consistency."
 msgstr ""
 
-#: views/nodes/add.ctp:22
+#: views/nodes/add.ctp:21
 msgid "Add a new section"
 msgstr ""
 
-#: views/nodes/add.ctp:28
-#: views/nodes/edit.ctp:32
+#: views/nodes/add.ctp:27
+#: views/nodes/edit.ctp:31
 msgid "Show me a preview before submitting"
 msgstr ""
 
-#: views/nodes/add.ctp:30
+#: views/nodes/add.ctp:29
 msgid "under"
 msgstr ""
 
-#: views/nodes/add.ctp:33
+#: views/nodes/add.ctp:32
 msgid "after"
 msgstr ""
 
-#: views/nodes/add.ctp:39
-#: views/nodes/edit.ctp:35
+#: views/nodes/add.ctp:38
+#: views/nodes/edit.ctp:34
 msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
 msgstr ""
 
-#: views/nodes/add.ctp:44
+#: views/nodes/add.ctp:43
 msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
 msgstr ""
 
@@ -443,69 +440,75 @@ msgstr ""
 msgid "Differences"
 msgstr ""
 
-#: views/nodes/edit.ctp:40
+#: views/nodes/edit.ctp:39
 msgid "What is the reason for the edit? (In English Please) :)"
 msgstr ""
 
-#: views/nodes/history.ctp:6
+#: views/nodes/history.ctp:5
 msgid "See English edits too"
 msgstr ""
 
-#: views/nodes/stats.ctp:5
+#: views/nodes/stats.ctp:4
 msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
 msgstr ""
 
-#: views/nodes/stats.ctp:7;37
+#: views/nodes/stats.ctp:6;36
 msgid "Top %s Contributors"
 msgstr ""
 
-#: views/nodes/stats.ctp:9;38
+#: views/nodes/stats.ctp:8;37
 msgid "Last update: %s"
 msgstr ""
 
-#: views/nodes/stats.ctp:27;63
+#: views/nodes/stats.ctp:26;62
 msgid "%s (%s current)"
 msgstr ""
 
-#: views/nodes/stats.ctp:39
+#: views/nodes/stats.ctp:38
 msgid "%s%% translated"
 msgstr ""
 
-#: views/nodes/stats.ctp:41
+#: views/nodes/stats.ctp:40
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr ""
 
-#: views/nodes/stats.ctp:44
+#: views/nodes/stats.ctp:43
 msgid "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 
-#: views/nodes/stats.ctp:46
+#: views/nodes/stats.ctp:45
 msgid "The cookbook needs you! No updates for one month."
 msgstr ""
 
-#: views/nodes/todo.ctp:7
+#: views/nodes/todo.ctp:6
 msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
 msgstr ""
 
-#: views/nodes/todo.ctp:10
+#: views/nodes/todo.ctp:9
 msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr ""
 
-#: views/nodes/todo.ctp:13
+#: views/nodes/todo.ctp:12
 msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
 msgstr ""
 
-#: views/nodes/todo.ctp:14
+#: views/nodes/todo.ctp:13
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 
-#: views/nodes/view_all.ctp:40;67
+#: views/nodes/view_all.ctp:38;63
 msgid "See comments for this section"
 msgstr ""
 
-#: views/nodes/view_all.ctp:114;126
+#: views/nodes/view_all.ctp:110;122
 msgid "Change history for %s"
 msgstr ""
+
+#: views/revisions/admin_pending.ctp:7
+msgid "%s pending %s submission"
+msgid_plural "%s pending %s submissions"
+msgstr[0] ""
+msgstr[1] ""
 
 #: views/revisions/results.ctp:8
 msgid "Search Results"
@@ -518,3 +521,4 @@ msgstr ""
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr ""
+

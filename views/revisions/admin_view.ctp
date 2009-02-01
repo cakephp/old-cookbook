@@ -38,41 +38,38 @@ if ($data['Revision']['node_id'] && isset($current) && $data['Revision']['id'] !
 }
 
 echo $this->element('node_navigation');
+if ($data['Revision']['node_id']) {
+ $menu->add(array(
+	 'section' => 'This Revision',
+	 'title' => 'See History',
+	 'url' => array('action' => 'history', $data['Revision']['node_id'])
+	));
+}
 $menu->add(array(
-	'section' => 'Options',
-	'title' => 'See History',
-	'url' => array('action' => 'history', $data['Node']['id'])
-));
-$menu->add(array(
-	'section' => 'Options',
+	 'section' => 'This Revision',
 	'title' => 'Edit',
 	'url' => array('action' => 'edit', $data['Revision']['id'])
 ));
 if ($data['Revision']['status'] == 'current') {
 	$menu->add(array(
-		'section' => 'Options',
 		'title' => 'Unapprove',
 		'url' => array('action' => 'hide', $data['Revision']['id'])
 	));
 } elseif ($data['Revision']['status'] == 'pending') {
 	$menu->add(array(
-		'section' => 'Options',
 		'title' => 'Approve',
 		'url' => array('action' => 'approve', $data['Revision']['id'])
 	));
 	$menu->add(array(
-		'section' => 'Options',
 		'title' => 'Reject',
 		'url' => array('action' => 'reject', $data['Revision']['id'])
 	));
 	$menu->add(array(
-		'section' => 'Options',
 		'title' => 'Ignore',
 		'url' => array('action' => 'ignore', $data['Revision']['id'])
 	));
 } elseif ($data['Revision']['status'] == 'previous') {
 	$menu->add(array(
-		'section' => 'Options',
 		'title' => 'Revert',
 		'url' => array('action' => 'approve', $data['Revision']['id'])
 	));

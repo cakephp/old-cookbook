@@ -3,7 +3,12 @@
 <?php
 $links = array();
 foreach ($counts as $lang => $count) {
-	$links[] = $html->link(sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)), array('lang' => $lang));
+ $menu->add(array(
+  'section' => 'Options' ,
+                'title' => sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)),
+		'url' => array('language' => $lang),
+		'under' => 'Pending'
+	));
 }
 if ($links) {
 	echo '<p>' . implode($links, ', ') . '</p>';

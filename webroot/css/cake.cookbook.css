@@ -168,9 +168,6 @@ div.toc h3 {
 div.toc div.tree {
 	margin-left: 20px;
 }
-div.toc ul {
-	margin: 0em 0 0em 1em;
-}
 div.toc li {
 	font-size: 14px;
 	margin: .5em 0 0 0;
@@ -379,7 +376,7 @@ div.comment p.commenttitle              {background-color:#F1F1F1;font-size:12px
 div.comment p.commentmeta               {padding-right:10px;font-size:11px;}
 
 div#body                                {text-align:left;}
-.options                                {background-color:#f6f6ff;padding:5px 20px;font-size:11px;}
+div.nodes .options                      {background-color:#f6f6ff;padding:5px 20px;font-size:11px;}
 a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em}
 div.flags                               {position:relative;top:25px;right:10px;height:auto;float:none;text-align:right;}
 
@@ -403,4 +400,14 @@ a.selected {
 }
 a#loggedInAs {
 	color: #fff;
+}
+div.feeds h4 {
+	background:transparent url(images/feed.png) no-repeat scroll 0% 100%;
+	padding-left: 30px;
+}
+ul.navigation li.active a {
+	background:#F4F4F4 none repeat scroll 0 0;
+	font-weight:bold;
+	text-decoration:none;
+	white-space:nowrap;
 }

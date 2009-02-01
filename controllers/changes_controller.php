@@ -108,9 +108,10 @@ class ChangesController extends AppController {
 		$conditions = array(
 			'Revision.title !=' => ''
 		);
-		$language = $this->params['lang'];
 		if (isset($this->params['named']['language'])) {
 			$language = $this->params['named']['language'];
+		} else {
+			$language = $this->params['lang'];
 		}
 		if ($language != '*') {
 			$conditions['Revision.lang'] = $language;

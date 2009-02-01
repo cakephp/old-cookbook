@@ -266,7 +266,12 @@ class NodesController extends AppController {
 			$this->params['named']['rght <='] = $limits['Node']['rght'];
 			$this->Session->setFlash('Only "' . $limits['Revision']['title'] . '" and below');
 		}
-		$conditions = array('Revision.status' => 'pending', 'Revision.lang' => $this->params['lang']);
+		if (!empty($this->passedArgs['language'])) {
+			$language = $this->passedArgs['language'];
+		} else {
+			$language = $this->params['lang'];
+		}
+		$conditions = array('Revision.status' => 'pending', 'Revision.lang' => $language);
 		$recursive = -1;
 		$fields = array('DISTINCT node_id');
 		$pendingUpdates = $this->Node->Revision->find('all', compact('conditions', 'recursive', 'fields'));
@@ -279,7 +284,6 @@ class NodesController extends AppController {
 /**
  * admin_merge method
  *
- * @TODO Finish this logic
  * @param mixed $id
  * @return void
  * @access public
@@ -799,6 +803,13 @@ class NodesController extends AppController {
  * @return void
  */
 	function add($parentId = null) {
+		if ($this->params['lang'] !== Configure::read('Languages.default')) {
+			$this->Session->setFlash(__('New content needs to be added in the site\'s default language.', true),
+				'flash/new_content_default_language',
+				array('lang' => $this->params['lang'])
+			);
+			return $this->redirect(array_merge($this->passedArgs, array('lang' => Configure::read('Languages.default'))));
+		}
 		if (!isset($this->params['admin']) && !$parentId && $this->Node->hasAny(array('Node.depth' => '> 0'))) {
 			$this->Session->setFlash(__('Invalid Collection', true));
 			return $this->redirect($this->Session->read('referer'), null, true);

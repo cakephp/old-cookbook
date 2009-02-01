@@ -74,7 +74,7 @@ class RevisionsController extends AppController {
 			$this->currentPath = $this->Revision->Node->getPath($this->currentNode, $fields, 0);
 		}
 		$this->set('currentPath', $this->currentPath);
-		$this->Auth->allowedActions = array('search', 'results', 'view', 'compare');
+		$this->Auth->allowedActions = array('search', 'results', 'view', 'compare', 'pending');
 		parent::beforeFilter();
 	}
 /**
@@ -641,6 +641,32 @@ class RevisionsController extends AppController {
 		$this->helpers[] = 'Highlight';
 		$this->helpers[] = 'Diff';
 		$this->render('view');
+        }
+/**
+ * pending method
+ *
+ * Pending revisions feed
+ *
+ * @return void
+ * @access public
+ */
+	function pending() {
+		$conditions = array('Revision.status' => 'pending');
+		if (isset($this->params['named']['language'])) {
+			$language = $this->params['named']['language'];
+			if ($language != '*') {
+				$conditions['Revision.lang'] = $language;
+			}
+		} else {
+			$conditions['Revision.lang'] = $this->params['lang'];
+		}
+
+		$this->data = $this->Revision->find('all', array(
+			'conditions' => $conditions,
+			'order' => array('Revision.created DESC')
+		));
+		$this->pageTitle = sprintf(__('Current Pending revisions ', true));
+		$this->render('index');
 	}
 /**
  * view method

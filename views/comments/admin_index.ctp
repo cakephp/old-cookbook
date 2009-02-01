@@ -3,13 +3,14 @@
 <?php
 $links = array();
 foreach ($counts as $lang => $count) {
-	$links[] = $html->link(sprintf(__n('%s %s comment', '%s %s comments', $count, true), $count, up($lang)), array('lang' => $lang));
-}
-if ($links) {
-	echo '<p>' . implode($links, ', ') . '</p>';
+	$menu->add(array(
+		'section' => 'Options',
+		'title' => sprintf(__n('%s %s comment', '%s %s comments', $count, true), $count, up($lang)),
+		'url' => array('language' => $lang),
+		'under' => 'Comments'
+	));
 }
 $pass = $this->passedArgs;
-$pass['action'] = str_replace(Configure::read('Routing.admin') . '_', '', $this->action); // temp
 $paginator->options(array('url' => $pass));
 ?>
 <table>

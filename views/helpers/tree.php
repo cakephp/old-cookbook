@@ -1,4 +1,5 @@
 <?php
+/* SVN FILE: $Id: tree.php 675 2008-12-08 11:54:00Z ad7six $ */
 /**
  * Tree Helper.
  *
@@ -17,6 +18,9 @@
  * @package       base
  * @subpackage    base.views.helpers
  * @since         v 1.0
+ * @version       $Revision: 675 $
+ * @modifiedby    $LastChangedBy: ad7six $
+ * @lastmodified  $Date: 2008-12-08 12:54:00 +0100 (Mon, 08 Dec 2008) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -97,7 +101,8 @@ class TreeHelper extends AppHelper {
  *	'splitDepth' => if multiple "parallel" types are required, instead of one big type, nominate the depth to do so here
  *		example: useful if you have 30 items to display, and you'd prefer they appeared in the source as 3 lists of 10 to be able to
  *		style/float them.
- *	'splitCount' => the number of "parallel" types. defaults to 3
+ *	'splitCount' => the number of "parallel" types. defaults to null (disabled) set the splitCount,
+ *		and optionally set the splitDepth to get parallel lists
  *
  * @param array $data data to loop on
  * @param array $settings
@@ -121,7 +126,7 @@ class TreeHelper extends AppHelper {
 			'firstChild' => true,
 			'indent' => null,
 			'splitDepth' => false,
-			'splitCount' => 3,
+			'splitCount' => null,
 			'totalNodes' => false
 		), (array)$settings);
 		if ($this->__settings['autoPath'] && !isset($this->__settings['autoPath'][2])) {
@@ -134,9 +139,6 @@ class TreeHelper extends AppHelper {
 		$view =& ClassRegistry:: getObject('view');
 		if ($model === null) {
 			$model = Inflector::classify($view->params['models'][0]);
-		}
-		if (!$model) {
-			$model = '_NULL_';
 		}
 		$this->__itemAttributes = $this->__typeAttributes = $this->__typeAttributesNext = array();
 		$stack = array();
@@ -155,18 +157,19 @@ class TreeHelper extends AppHelper {
 		$__addType = true;
 		$this->__settings['totalNodes'] = count($data);
 		$keys = array_keys($data);
-		foreach ($data as $i => $result) {
+		foreach ($data as $i => &$result) {
 			/* Allow 2d data arrays */
-			if ($model == '_NULL_') {
-				$_result = $result;
-				$result[$model] = $_result;
+			if ($model && isset($result[$model])) {
+				$row =& $result[$model];
+			} else {
+				$row =& $result;
 			}
 			/* BulletProof */
-			if (!isset($result[$model][$left]) && !isset($result['children'])) {
+			if (!isset($row[$left]) && !isset($result['children'])) {
 				$result['children'] = array();
 			}
 			/* Close open items as appropriate */
-			while ($stack && ($stack[count($stack)-1] < $result[$model][$right])) {
+			while ($stack && ($stack[count($stack)-1] < $row[$right])) {
 				array_pop($stack);
 				if ($indent) {
 					$whiteSpace = str_repeat("\t",count($stack));
@@ -194,18 +197,18 @@ class TreeHelper extends AppHelper {
 				if ($key == count($keys) - 1) {
 					$lastChild = true;
 				}
-			} elseif (isset($result[$model][$left])) {
-				if ($result[$model][$left] != ($result[$model][$right] - 1)) {
+			} elseif (isset($row[$left])) {
+				if ($row[$left] != ($row[$right] - 1)) {
 					$hasChildren = true;
-					$numberOfTotalChildren = ($result[$model][$right] - $result[$model][$left] - 1) / 2;
-					if (isset($data[$i + 1]) && $data[$i + 1][$model][$right] < $result[$model][$right]) {
+					$numberOfTotalChildren = ($row[$right] - $row[$left] - 1) / 2;
+					if (isset($data[$i + 1]) && $data[$i + 1][$model][$right] < $row[$right]) {
 						$hasVisibleChildren = true;
 					}
 				}
-				if (!isset($data[$i - 1]) || ($data[$i - 1][$model][$left] == ($result[$model][$left] - 1))) {
+				if (!isset($data[$i - 1]) || ($data[$i - 1][$model][$left] == ($row[$left] - 1))) {
 					$firstChild = true;
 				}
-				if (!isset($data[$i + 1]) || ($stack && $stack[count($stack) - 1] == ($result[$model][$right] + 1))) {
+				if (!isset($data[$i + 1]) || ($stack && $stack[count($stack) - 1] == ($row[$right] + 1))) {
 					$lastChild = true;
 				}
 			}
@@ -226,7 +229,7 @@ class TreeHelper extends AppHelper {
 			} elseif ($callback) {
 				list($content) = array_map($callback, array($elementData));
 			} else {
-				$content = $result[$model][$alias];
+				$content = $row[$alias];
 			}
 			if (!$content) {
 				continue;
@@ -265,7 +268,7 @@ class TreeHelper extends AppHelper {
 					}
 				} elseif ($numberOfTotalChildren) {
 					$__addType = true;
-					$stack[] = $result[$model][$right];
+					$stack[] = $row[$right];
 				}
 			} else {
 				if ($itemType) {
@@ -376,7 +379,7 @@ class TreeHelper extends AppHelper {
  * @access private
  * @return void
  */
-	function __suffix() {
+	function __suffix($reset = false) {
 /**
  * splitCount property
  *
@@ -393,6 +396,10 @@ class TreeHelper extends AppHelper {
  * @access private
  */
 		static $__splitCounter = 0;
+		if ($reset) {
+			$__splitCount = 0;
+			$__splitCounter = 0;
+		}
 		extract($this->__settings);
 		if ($splitDepth || $splitCount) {
 			if (!$splitDepth)  {
@@ -415,6 +422,7 @@ class TreeHelper extends AppHelper {
 			if (!$splitDepth || $depth == $splitDepth) {
 				$__splitCounter++;
 				if ($type && ($__splitCounter % $__splitCount) == 0 && !$lastChild) {
+					unset ($this->__settings['callback']);
 					return '</' . $type . '><' . $type . '>';
 				}
 			}

@@ -62,12 +62,20 @@ if ($session->read('Auth.User.id')) {
 		'rss',
 		$html->url(array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index')) . "/language:*/user:$userName.rss",
 		array('title' => __('My Submissions', true))
-	);
+              );
+        $menu->settings('Feeds', array('order' => 99));
 	$menu->add(array(
-		'section' => 'Feeds',
+		'section' => 'Feeds', // __('Feeds') for the i18n console task
 		'title' => __('My Submissions', true),
 		'url' => $html->url(array('admin' => false, 'plugin' => null, 'controller' => 'changes', 'action' => 'index')) . "/language:*/user:$userName.rss",
 	));
+        if ($session->read('Auth.User.Level') >= EDITOR) {
+         $menu->add(array(
+          'section' => 'Feeds', // __('Feeds') for the i18n console task
+          'title' => __('Pending Submissions', true),
+          'url' => $html->url(array('admin' => false, 'plugin' => null, 'controller' => 'revisions', 'action' => 'pending')) . '.rss',
+         ));
+        }
 }
 ?></cake:nocache><?php
 if (!isset($this->params['lang']) || $this->params['lang'] === $defaultLang) {
@@ -97,7 +105,13 @@ if ($this->params['lang'] != $defaultLang) {
 echo $html->link(sprintf(__('Welcome to %s', true), $app['name']), $link);
 		?></h1>
 		</div>
-		<?php echo $this->element('collections'); ?>
+                <?php
+                if (empty($this->params['admin'])) {
+                 echo $this->element('collections');
+                } else {
+                 echo $this->element('menu/admin');
+                }
+?>
 		<cake:nocache> <?php echo $this->element('secondary_nav'); ?></cake:nocache>
 		<?php
 		echo $this->element('sites_nav');

@@ -15,8 +15,9 @@ if (!$this->name && !empty($this->data['Node'])) {
 			'url' => array('controller' => 'nodes', 'action' => 'complete', $id, $slug)
 		));
 	}
-	$authLevel = $session->read('Auth.User.Level');
-	$authLevel = $authLevel?$authLevel:200;
+        if (!$authLevel = $session->read('Auth.User.Level')) {
+         $authLevel = 200;
+        }
 	if ($edit_level <= $authLevel) {
 		$menu->add(array(
 			'section' => 'Options',
@@ -26,16 +27,8 @@ if (!$this->name && !empty($this->data['Node'])) {
 	}
 	$sections = $menu->sections();
 }
-if (in_array('Options', $sections)) {
-	echo '<div class="context-menu"><h4>' . __('Options', true) . '</h4>';
-	echo $menu->generate('Options');
-	echo '</div>';
-	$keys = array_flip($sections);
-	unset ($sections[$keys['Options']]);
-}
 foreach ($sections as $section) {
-	echo '<div class="context-menu ' . $section . '"><h4>' . $section . '</h4>';
-	$menu->settings($section, array('class' => $section));
+	echo '<div class="context-menu ' . low($section). '"><h4>' . __($section, true) . '</h4>';
 	echo $menu->generate($section);
 	echo '</div>';
 }

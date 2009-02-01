@@ -1,4 +1,5 @@
 <?php
+/* SVN FILE: $Id: menu.php 756 2009-01-29 14:43:24Z ad7six $ */
 /**
  * Short description for menu.php
  *
@@ -17,6 +18,9 @@
  * @package       base
  * @subpackage    base.views.helpers
  * @since         v 1.0
+ * @version       $Revision: 756 $
+ * @modifiedby    $LastChangedBy: ad7six $
+ * @lastmodified  $Date: 2009-01-29 15:43:24 +0100 (Thu, 29 Jan 2009) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -40,7 +44,7 @@ class MenuHelper extends AppHelper {
  * @var array
  * @access public
  */
-	var $helpers = array('Html', 'Tree');
+	var $helpers = array('Html');
 /**
  * defaultSettings property
  *
@@ -48,16 +52,23 @@ class MenuHelper extends AppHelper {
  * @access private
  */
 	var $__defaultSettings = array(
-		'order' => null,
-		'indent' => null,
-		'genericElement' => 'menu/generic',
-		'hereMode' => 'active', // active // text // false[do nothing]
-		'hereKey' => null, // the key for the item to mark as active
 		'activeMode' => 'url', // url // controller[name] // action[and controller name] // false [do nothing]
-		'uniqueKey' => 'title',
-		'onlyActiveChildren' => false,
-		'overwrite' => false,
-		'showWarnings' => true
+		'hereMode' => 'active', // active[mark the li as active] // text[no link just text] // false[do nothing]
+		'hereKey' => null, // the key for the item to mark as active automatic based on activeMode if not specified
+		'order' => null, // the order the whole section should be output. only used if generating many menus at once
+		'genericElement' => 'menu/generic', // use is deprecated
+		'uniqueKey' => 'title', // determins how data is stored internally, and how duplicate items are detected
+		'onlyActiveChildren' => false, // If true will hide child menu items for anything that isn't active
+		'overwrite' => false, // Overwrite the menu item if it already has been defined?
+		'showWarnings' => true, // Trigger an error if trying to redefine a menu item and overwrite is false
+		'headerTag' => false, // used to automatically wrap the section name in a (e.g.) h3 tag on display
+		'typeTag' => 'ul', // The tag used for the menu links as a whole.
+		'itemTag' => 'li', // The tag used for each menu link
+		'wrap' => false, // a sprintf string to wrap the output of the menu e.g. "<div>%s</div>"
+		'class' => 'menu', // the class attribute for the top level
+		'id' => false, // the id attribute for the top level
+		'splitCount' => false, // inject </ul><ul> after this number of menu items
+		'autoI18n' => false // automatically put titles throught __() ?
 	);
 /**
  * settings property
@@ -66,6 +77,15 @@ class MenuHelper extends AppHelper {
  * @access public
  */
 	var $settings = array();
+/**
+ * section property
+ *
+ * The current section
+ *
+ * @var string 'menu'
+ * @access private
+ */
+	var $__section = 'menu';
 /**
  * data property
  *
@@ -79,6 +99,8 @@ class MenuHelper extends AppHelper {
  * flatData property
  *
  * A flat list of menu data
+ *
+ * Used only for nested menu data
  *
  * @var array
  * @access private
@@ -98,6 +120,7 @@ class MenuHelper extends AppHelper {
  *
  * If genericElement is set, 'render' the named element. This can be used to prevent repeating menu logic if
  * for example there are some menu items which don't change based on the specific view file
+ * The result is echoed to display errors even though the element should contain no output
  *
  * @access public
  * @return void
@@ -112,64 +135,11 @@ class MenuHelper extends AppHelper {
 		return true;
 	}
 /**
- * settings method
- *
- * Define "here" and initialize or change settings
- *
- * @param string $section
- * @param array $settings
- * @access public
- * @return void
- */
-	function settings($section = 'main', $settings = array()) {
-		if (!$this->__here) {
-			if (isset($this->params['url']['url'])) {
-				$this->__here = Router::normalize('/' . $this->params['url']['url']);
-			} else {
-				$this->__here = '/';
-			}
-		}
-		if (!isset($this->settings[$section])) {
-			foreach ($settings as $key => $_) {
-				if (!isset($this->__defaultSettings[$key])) {
-					unset ($settings[$key]);
-				}
-			}
-			$settings = array_merge($this->__defaultSettings, $settings);
-			$this->settings[$section] = $settings;
-		} elseif ($settings) {
-			$this->settings[$section] = array_merge($this->settings[$section], $settings);
-		}
-		if (is_null($this->settings[$section]['order'])) {
-			$this->settings[$section]['order'] = count($this->settings);
-		}
-	       return $this->settings[$section];
-	}
-/**
- * addm method
- *
- * Add Multiple menu items at once - use array syntax
- *
- * @param string $section
- * @param array $data
- * @access public
- * @return void
- */
-	function addm($section = 'main', $data = array()) {
-		if (is_array($section)) {
-			$section = 'main';
-			$data = $section;
-		}
-		foreach ($data as $row) {
-			$this->add(array_merge(array('section' => $section), $row));
-		}
-	}
-/**
  * Add a menu item.
  *
  * Add a menu item syntax examples:
- * 	$menu->add($title, $url); adds an entry with $title and $url to the menu named "main"
- * 	$menu->add('main', $title, $url); as above but explicit
+ * 	$menu->add($title, $url); adds an entry with $title and $url to the current menu section
+ * 	$menu->add('menu', $title, $url); add specifically to the 'menu' section
  * 	$menu->add('context', $title, $url); add an entry with $title and $url to the menu named "context"
  * 	$menu->add('context', $title, $url, 'subSection'); add an entry with $title and $url to subsection "subSection for the menu named "context"
  * 	$menu->add(array('url' => $url, 'title' => $title, 'options' => array('escapeTitle' => false))); array syntax, not escaping title
@@ -184,12 +154,19 @@ class MenuHelper extends AppHelper {
  * @access public
  * @return void
  */
-	function add($section = 'main', $title = null, $url = null, $under = null, $options = array(), $settings = array()) {
+	function add($section = null, $title = null, $url = null, $under = null, $options = array(), $settings = array()) {
 		$here = $inPath = $activeChild = $sibling = false;
 		if (is_array($section)) {
-			$settings = $section;
-			extract(array_merge(array('section' => 'main'), $section));
-		} elseif (($section && $url !== false) || (is_string ($url) && $url[0] != 'h' && $url[0] != '/'&& $url[0] != '#') || is_array($under)) {
+			if (isset($section[0]['title'])) {
+				foreach ($section as $row) {
+					$this->add($row);
+				}
+				return;
+			}
+			$settings = array_merge(array('section' => $this->__section, 'settings' => array()), $section);
+			$this->__section = $settings['section'];
+			extract($settings);
+		} elseif (($section && $url !== false) || (is_string ($url) && $url[0] !== 'h' && $url[0] !== '/'&& $url[0] !== '#') || is_array($under)) {
 			if ($under) {
 				$options = $under;
 			}
@@ -198,7 +175,7 @@ class MenuHelper extends AppHelper {
 			$under = $url;
 			$url = $title;
 			$title = $section;
-			$section = 'main';
+			$section = $this->__section;
 		}
 		if (!isset($this->settings[$section])) {
 			$this->settings($section, $settings);
@@ -206,7 +183,7 @@ class MenuHelper extends AppHelper {
 		extract(array_merge($this->settings[$section], $settings));
 		if (isset($$uniqueKey)) {
 			if (is_array($$uniqueKey)) {
-				if ($uniqueKey == 'url') {
+				if ($uniqueKey === 'url') {
 					$key = Router::normalize($$uniqueKey);
 				} else {
 					$key = serialize($$uniqueKey);
@@ -218,14 +195,13 @@ class MenuHelper extends AppHelper {
 			$key = $title;
 		}
 		if (is_array($under)) {
-			if ($uniqueKey == 'url') {
+			if ($uniqueKey === 'url') {
 				$under = Router::normalize($under);
 			} else {
 				$under = serialize($under);
 			}
 		}
 		list($here, $markActive, $url) = $this->__setHere($section, $url, $key, $activeMode, $hereMode, $options);
-		$children = array();
 		if ($under) {
 			if (!isset($this->__flatData[$section][$under])) {
 				$parent = array('title' => null, 'url' => false, 'options' => array(), 'here' => false,
@@ -238,18 +214,39 @@ class MenuHelper extends AppHelper {
 			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling',
 				'markActive', 'children');
 			$this->__flatData[$section][$under]['children'][$key] =& $this->__flatData[$section][$key];
-		} elseif (!isset($this->__flatData[$section][$key]) || $overwrite) {
+		} elseif (!isset($this->__flatData[$section][$key]) || empty($this->__flatData[$section][$key]['url']) || $overwrite) {
 			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling',
 				'markActive', 'children');
 			$this->__data[$section][$key] =& $this->__flatData[$section][$key];
 		} elseif ($showWarnings)  {
-			$altKey = $uniqueKey == 'title'?'url':'title';
-			trigger_error ('MenuHelper::add<br /> Duplicate menu item detected for item "' . $title . '" in menu ' . $section . '.' .
-				'<br />You can change the field used to detect duplicates which is currently set to ' . $uniqueKey . ',' .
-			      	' can be changed to ' . $altKey . '.');
+			if ($uniqueKey === 'title') {
+				$altKey = 'url';
+			} else {
+				$altKey = 'title';
+			}
+			trigger_error ('MenuHelper::add<br /> Duplicate menu item detected for item "' . $title .
+				'" in menu "' . $section . '".<br />You can change the field used to detect duplicates' .
+				' which is currently set to ' . $uniqueKey . ', can be changed to ' . $altKey . '.');
 		}
-		if ($hereMode == 'text' && $here == true) {
+		if ($hereMode === 'text' && $here === true) {
 			$this->__flatData[$section][$key]['url'] = false;
+		}
+	}
+/**
+ * addAttribute method
+ *
+ * @param mixed $tag
+ * @param string $id
+ * @param string $key
+ * @param mixed $value
+ * @return void
+ * @access public
+ */
+	function addAttribute($tag, $id = '', $key = '', $value = null) {
+		if (!is_null($value)) {
+			$this->__attributes[$tag][$id][$key] = $value;
+		} elseif (!(isset($this->__attributes[$tag][$id]) && in_array($key, $this->__attributes[$tag][$id]))) {
+			$this->__attributes[$tag][$id][] = $key;
 		}
 	}
 /**
@@ -257,7 +254,7 @@ class MenuHelper extends AppHelper {
  *
  * Delete a menu item. Specify the section name alone to delete the entire section.
  * Specify the section and key to delete a single menu item.
- * Specify just the key to delete an entry from the main (or only) menu section.
+ * Specify just the key to delete an entry from the currently active menu section
  *
  * @param mixed $section
  * @param mixed $key
@@ -272,15 +269,69 @@ class MenuHelper extends AppHelper {
 				return;
 			}
 			$key = $section;
-			$section = 'main';
+			$section = $this->__section;
 		}
 		unset ($this->__flatData[$section][$key]);
 		unset ($this->__data[$section][$key]);
 	}
 /**
+ * display menu method
+ *
+ * display menu syntax examples:
+ * 	echo $menu->display(); echo the currently active menu
+ * 	echo $menu->displaydisplay('menu'); as above but explicit
+ * 	echo $menu->display('menu', array('element' => 'menus/item'); use an element for each item's content
+ * 	echo $menu->display('menu', array('callback' => 'menuItem'); use loose method menuItem for each item's content
+ * 	echo $menu->display('menu', array('callback' => array(&$object, 'method'); call $object->method($data) for each item's content
+ *
+ * @param mixed $section the section name or the numerical order
+ * @param array $settings to be passed to the tree helper
+ * @param bool $createEmpty
+ * @access public
+ * @return void
+ */
+	function display($section = null, $settings = array(), $createEmpty = true) {
+		if (is_array($section)) {
+			extract(array_merge(array('section' => $this->__section), $section));
+		}
+		$this->settings($section, $settings);
+		if (!$section) {
+			$section = $this->__section;
+		}
+		if (!isset($this->settings[$section]) || empty($this->__data[$section])) {
+			$return = '';
+		} else {
+			$settings = am($this->settings[$section], $settings);
+			$this->__attributes = array();
+			$return = $this->__display($section, $settings, $this->__data[$section]);
+		}
+		if ($this->settings[$section]['wrap']) {
+			$return = sprintf($this->settings[$section]['wrap'], $return);
+		}
+		unset ($this->settings[$section]);
+		unset ($this->__data[$section]);
+		unset ($this->__flatData[$section]);
+		return $return . "\r\n";
+	}
+/**
+ * displayAll method
+ *
+ * @param array $settings
+ * @param bool $createEmpty
+ * @return void
+ * @access public
+ */
+	function displayAll($settings = array(), $createEmpty = true) {
+		$return = '';
+		foreach($this->sections() as $section) {
+			$return .= $this->display($section, $settings, $createEmpty);
+		}
+		return $return;
+	}
+/**
  * sections method
  *
- * Return the names of all sections currently stored by the helper
+ * Return the names of all sections currently stored by the helper, in the order they should be processed
  *
  * @access public
  * @return mixed array of menu sections if no order passed. name of the section name matching the order if passed.
@@ -303,207 +354,232 @@ class MenuHelper extends AppHelper {
 		return $sequence;
 	}
 /**
- * generate menu method
+ * settings method
  *
- * generate menu syntax examples:
- * 	echo $menu->generate(); echo the main menu
- * 	echo $menu->generate('menu'); as above but explicit
- * 	echo $menu->generate('menu', array('element' => 'menus/item'); use an element for each item's content
- * 	echo $menu->generate('menu', array('callback' => 'menuItem'); use loose method menuItem for each item's content
- * 	echo $menu->generate('menu', array('callback' => array(&$object, 'method'); call $object->method($data) for each item's content
- *
- * @param mixed $section the section name or the numerical order
- * @param array $settings to be passed to the tree helper
- * @param bool $createEmpty
- * @access public
+ * @param mixed $section
+ * @param array $settings
  * @return void
+ * @access public
  */
-	function generate ($section = 'main', $settings = array(), $createEmpty = true, $debug = false) {
-		if (is_array($section)) {
-			extract(array_merge(array('section' => 'main'), $section));
+	function settings($section = null, $settings = array()) {
+		if ($section === null) {
+			$section = $this->__section;
+		} elseif (!$section) {
+			$section = $this->__section = 'menu';
+		} else {
+			$this->__section = $section;
+		}
+		if (!$this->__here) {
+			if (isset($this->params['url']['url'])) {
+				$this->__here = Router::normalize('/' . $this->params['url']['url']);
+			} else {
+				$this->__here = '/';
+			}
 		}
 		if (!isset($this->settings[$section])) {
-			if (is_numeric($section)) {
-				$order = $section;
-				$match = false;
-				foreach ($this->settings as $section => $_) {
-					if ($_['order'] == $order) {
-						$match = true;
-						break;
-					}
-				}
-				if (!$match) {
-					return;
-				}
-			}
-			return false;
+			$settings = array_merge($this->__defaultSettings, $settings);
+			$this->settings[$section] = $settings;
+		} elseif ($settings) {
+			$this->settings[$section] = array_merge($this->settings[$section], $settings);
 		}
-		$settings = array_merge($this->settings[$section], $settings);
-		$settings = array_merge(array('callback' => array(&$this, 'menuItem'), 'model' => false, 'class' => 'menu'), $settings);
-		extract ($settings);
-		if (isset($this->__data[$section])) {
-			if ($onlyActiveChildren) {
-				$pkey = false;
-				if (isset($this->settings[$section]['hereKey'])) {
-					$key = $this->settings[$section]['hereKey'];
-					$pkey = $this->__flatData[$section][$key]['under'];
-					unset($this->settings[$section]['hereKey']);
-					if (isset($this->__flatData[$section][$key]['children'])) {
-						foreach ($this->__flatData[$section][$key]['children'] as $i => $_i) {
-							$this->__flatData[$section][$key]['children'][$i]['activeChild'] = true;
-						}
-					}
-					$under = $this->__flatData[$section][$key]['under'];
-					while ($under) {
-						$this->__flatData[$section][$under]['inPath'] = true;
-						$under = $this->__flatData[$section][$under]['under'];
-					}
-				}
-				foreach ($this->__flatData[$section] as $i => $row) {
-					if (!$row['under'] && !$row['here']) {
-						$this->__flatData[$section][$i]['sibling'] = true;
-					} elseif ($row['under'] == $pkey && !$row['activeChild'] && !$row['here']) {
-						$this->__flatData[$section][$i]['sibling'] = true;
-					} elseif (!($row['here'] || $row['inPath']|| $row['activeChild'] || $row['sibling'])) {
-						unset($this->__flatData[$section][$i]);
-					}
-				}
-				$this->__cleanData($this->__data[$section], $section);
-			}
-			$data = $this->__data[$section];
-			if ($debug) {
-				$settings = array(
-					'callback' => array(&$this, 'debugItem'),
-					'debug' => true,
-					'indent' => true,
-					'model' => false,
-					'class' => 'menu',
-					'itemType' => false,
-					'type' => false
-				);
-			} else {
-				unset ($this->settings[$section]);
-				unset ($this->__data[$section]);
-				unset ($this->__flatData[$section]);
-			}
-		} elseif ($createEmpty) {
-			return '<ul><!-- Empty menu --></ul>';
-		} else {
-			return false;
+		if (!is_numeric($this->settings[$section]['order'])) {
+			$this->settings[$section]['order'] = count($this->settings);
 		}
-		$return = $this->Tree->generate($data, $settings);
-		if ($debug) {
-			return '<pre><h2> Menu Section:' . $section . '</h2>' . $return . '</pre>';
+	       return $this->settings[$section];
+	}
+
+/**
+ * attributes method
+ *
+ * @param mixed $rType
+ * @param bool $clear
+ * @return void
+ * @access private
+ */
+	function __attributes($tag, $clear = true) {
+		if (empty($this->__attributes[$tag])) {
+			return '';
+		}
+		foreach ($this->__attributes[$tag] as $i => &$values) {
+			foreach ($values as $j => &$val) {
+				if (is_array($val)) {
+					$_a = '';
+					foreach ($val as $k => &$v) {
+						$_a .= $k . ':' . $v;
+					}
+					$val = implode(';', $_a);
+				}
+				if (is_string($j)) {
+					$val = $j . ':' . $val . ';';
+				}
+			}
+			$values = $i . '="' . implode(' ', $values) . '"';
+		}
+		$return = ' ' . implode(' ', $this->__attributes[$tag]) . ' ';
+		if ($clear) {
+			unset($this->__attributes[$tag]);
 		}
 		return $return;
 	}
 /**
- * debug method
+ * cleanData method
+ *
+ * Ensure that any item(s) which have been suppressed by the "only show active" logic are removed
+ *
+ * @param mixed $array
+ * @param mixed $section
+ * @access private
+ * @return void
+ */
+	function __cleanData(&$array, $section) {
+		foreach ($array as $key => $row) {
+			if (!isset($this->__flatData[$section][$key])) {
+				unset ($array[$key]);
+			} elseif (isset($row['children']) && $row['children']) {
+				$this->__cleanData($array[$key]['children'], $section);
+			}
+		}
+	}
+/**
+ * markActiveChildren method
  *
  * @param mixed $section
  * @return void
- * @access public
+ * @access private
  */
-	function debug($section = null) {
-		if (!$section) {
-			foreach ($this->settings as $section) {
-				$this->debug($section);
+	function __markActiveChildren($section) {
+		$settings =& $this->settings[$section];
+		$data =& $this->__flatData[$section];
+		$pkey = false;
+		if (isset($settings['hereKey'])) {
+			$key = $settings['hereKey'];
+			$pkey = $data[$key]['under'];
+			unset($data['hereKey']);
+			if (isset($data[$key]['children'])) {
+				foreach ($data[$key]['children'] as $i => $_i) {
+					$data[$key]['children'][$i]['activeChild'] = true;
+				}
 			}
-			return;
+			$under = $data[$key]['under'];
+			while ($under) {
+				$data[$under]['inPath'] = true;
+				$under = $data[$under]['under'];
+			}
 		}
-		return $this->generate(array('section' => $section, 'debug' => true));
+		foreach ($data[$section] as $i => &$row) {
+			if (!$row['under'] && !$row['here']) {
+				$row['sibling'] = true;
+			} elseif ($row['under'] == $pkey && !$row['activeChild'] && !$row['here']) {
+				$row['sibling'] = true;
+			} elseif (!($row['here'] || $row['inPath']|| $row['activeChild'] || $row['sibling'])) {
+				unset($data[$section][$i]);
+			}
+		}
+		$this->__cleanData($this->__data[$section], $section);
 	}
 /**
  * internal callback
  *
  * Used to return the output from the html helper using the parameters for this menu option
  *
- * @param array $data
- * @access public
+ * @param mixed $data
  * @return void
+ * @access private
  */
-	function debugItem($data = array()) {
-		foreach (array_keys($data) as $key) {
-			if ($key != 'data') {
-				$debug[$key] = (string)$data[$key];
-			}
-		}
+	function __menuItem(&$data) {
 		$htmlAttributes = array();
 		$markActive = false;
 		$confirmMessage = false;
 		$escapeTitle = true;
 		extract ($data);
-		extract ($data);
-		if ($options) {
+		if (!empty($options)) {
 			extract ($options);
 		}
 		if ($markActive) {
-			$this->Tree->addItemAttribute('class', 'active');
-			if (isset ($htmlAttributes['class'])) {
-				$htmlAttributes['class'] .= ' active';
-			} else {
-				$htmlAttributes['class'] = 'active';
-			}
-		}
-		$return = str_pad('title', 25, ' ') . ':' . $title . "\r\n";
-		$return .= str_pad('url', 25, ' ') . ':' . str_replace(Router::url('/'), '/', Router::url($url)) . "\r\n";
-		$return .= str_pad('here?', 25, ' ') . ':' . ($here?'yes':'no');
-		$return .= "\r\n";
-		//$return .= str_pad('in path?', 25, ' ') . ':' . ($inPath?'yes':'no') . "\r\n";
-		//$return .= str_pad('active child?', 25, ' ') . ':' . ($activeChild?'yes':'no') . "\r\n";
-		//$return .= str_pad('active sibling?', 25, ' ') . ':' . ($sibling?'yes':'no') . "\r\n";
-		$return .= str_pad('first child?', 25, ' ') . ':' . ($firstChild?'yes':'no') . "\r\n";
-		$return .= str_pad('last child?', 25, ' ') . ':' . ($lastChild?'yes':'no') . "\r\n";
-		$return .= str_pad('has children?', 25, ' ') . ':' . ($hasChildren?'yes':'no');
-		if ($hasChildren) {
-			$bits = array();
-			if ($numberOfDirectChildren) {
-				$bits[] = 'direct: ' . $numberOfDirectChildren;
-			}
-			/* Unreachable, but present just incase ported somewhere else */
-			if ($numberOfTotalChildren) {
-				$bits[] = 'total: ' . $numberOfTotalChildren;
-				$bits[] = 'visible?: ' . ($hasVisibleChildren?'yes':'no');
-			}
-			/* Unreachable end */
-			$return .= ' (' . implode(', ', $bits) . ")";
-		}
-		$return .= "\r\n";
-		$return .= str_pad('depth', 25, ' ') . ':' . $depth . "\r\n";
-		return $return;
-	}
-/**
- * internal callback
- *
- * Used to return the output from the html helper using the parameters for this menu option
- *
- * @param array $data
- * @access public
- * @return void
- */
-	function menuItem($data = array()) {
-		$htmlAttributes = array();
-		$markActive = false;
-		$confirmMessage = false;
-		$escapeTitle = true;
-		extract ($data);
-		extract ($data);
-		if ($options) {
-			extract ($options);
-		}
-		if ($markActive) {
-			$this->Tree->addItemAttribute('class', 'active');
-			if (isset ($htmlAttributes['class'])) {
-				$htmlAttributes['class'] .= ' active';
-			} else {
-				$htmlAttributes['class'] = 'active';
-			}
+			$this->addAttribute($this->settings[$this->__section]['itemTag'], 'class', 'active');
 		}
 		if ($url === false) {
 			return $title;
 		} else {
 			return $this->Html->link($title, $url, $htmlAttributes, $confirmMessage, $escapeTitle);
 		}
+	}
+/**
+ * display method
+ *
+ * Generate a 1D menu
+ *
+ * @param mixed $section
+ * @param mixed $settings
+ * @param mixed $data
+ * @return void
+ * @access private
+ */
+	function __display($section, $settings, $data, $header = true, $prefix = "\r\n") {
+		extract($settings);
+		$return = '';
+		$start = true;
+		if ($settings['splitCount']) {
+			$total = count($data);
+			$splitCount = $total / $settings['splitCount'];
+			$rounded = (int)$splitCount;
+			if ($rounded < $splitCount) {
+				$splitCount = $rounded + 1;
+			}
+			$splitCounter = 0;
+		}
+		foreach ($data as $i => &$result) {
+			if ($settings['splitCount']) {
+				if ($splitCounter && !($splitCounter % $splitCount) && $splitCounter != $total) {
+					$return .= "$prefix</$typeTag><$typeTag>";
+				}
+				$splitCounter++;
+			}
+			$contents = $this->menuItem($result);
+			$attributes = $this->__attributes($itemTag);
+			$return .= "$prefix\t<$itemTag{$attributes}>$contents</$itemTag>";
+			if (!empty($result['children'])) {
+				$settings = am($settings, array('class' => false, 'id' => false));
+				$return .= $this->__display($section, $settings, $result['children'], false, $prefix . "\t");
+			}
+			if ($start) {
+				$start = false;
+				$return = $prefix . $this->__displayHead($section, $settings, $header) . $return;
+			}
+		}
+		$return .= "$prefix</$typeTag>";
+		return $return;
+	}
+/**
+ * displayHead method
+ *
+ * Optionally announce the start of this menu (create <h3>name of menu</h3>)
+ * Generate a ul tag with appropriate attributes
+ *
+ * @param mixed $section
+ * @param mixed $settings
+ * @param bool $header
+ * @return void
+ * @access private
+ */
+	function __displayHead($section, $settings, $header = false) {
+		$return = '';
+		if ($header) {
+			if (!empty($settings['headerTag'])) {
+				$tag = $settings['headerTag'];
+				$return .= "<$tag>" . Inflector::humanize(Inflector::underscore($section)) . "</$tag>";
+			}
+			if (!empty($settings['class'])) {
+				$this->addAttribute($settings['typeTag'], 'class', $settings['class']);
+			}
+			if (!empty($settings['id'])) {
+				$this->addAttribute($settings['typeTag'], 'id', $settings['id']);
+			}
+		}
+		$tag = $settings['typeTag'];
+		$attributes = $this->__attributes($tag);
+		$return .= "<$tag{$attributes}>";
+		return $return;
 	}
 /**
  * setHere method
@@ -525,7 +601,7 @@ class MenuHelper extends AppHelper {
 		}
 		$here = $markActive = false;
 		if (!empty($options['markActive'])) {
-			$here = true;
+			$markActive = true;
 		} elseif ($activeMode == 'url' && Router::normalize($url) == $this->__here) {
 			$here = true;
 		} elseif (is_array($url) &&
@@ -542,40 +618,87 @@ class MenuHelper extends AppHelper {
 			$this->settings[$section]['hereKey'] = $key;
 			if ($hereMode == 'text') {
 				$url = false;
-			} elseif ($hereMode == 'active') {
+			} elseif ($hereMode) {
 				$markActive = true;
 			}
 		}
-		if ($here && $hereMode == 'active') {
-			$this->Tree->addItemAttribute('class', 'active');
-			if (isset ($htmlAttributes['class'])) {
-				$htmlAttributes['class'] .= ' active';
-			} else {
-				$htmlAttributes['class'] = 'active';
-			}
-		}
-
 		return array($here, $markActive, $url);
 	}
 /**
- * cleanData method
+ * addm method
  *
- * Shouldn't really be necessary. Ensures that any item(s) which have been suppressed by the "only show active"
- * logic are removed
+ * Add Multiple menu items at once - use array syntax
  *
- * @param mixed $array
- * @param mixed $section
- * @access private
+ * @deprecated
+ * @param string $section
+ * @param array $data
+ * @access public
  * @return void
  */
-	function __cleanData(&$array, $section) {
-		foreach ($array as $key => $row) {
-			if (!isset($this->__flatData[$section][$key])) {
-				unset ($array[$key]);
-			} elseif (isset($row['children']) && $row['children']) {
-				$this->__cleanData($array[$key]['children'], $section);
-			}
+	function addm($section = null, $data = array()) {
+		if (is_array($section)) {
+			return $this->add($section);
 		}
+		foreach ($data as $row) {
+			$this->add(array_merge(array('section' => $section), $row));
+		}
+	}
+/**
+ *
+ * addItemAttribute method
+ *
+ * Add an attribute to a menu item (li)
+ *
+ * @deprecated
+ * @param string $id
+ * @param string $key
+ * @param mixed $value
+ * @return void
+ * @access public
+ */
+	function addItemAttribute($id = '', $key = '', $value = null) {
+		$this->addAttribute($this->settings[$this->__section]['itemTag'], $id, $key, $value);
+	}
+/**
+ * addTypeAttribute method
+ *
+ * Add an attribute to a menu type (ul/ol/div)
+ *
+ * @deprecated
+ * @param string $id
+ * @param string $key
+ * @param mixed $value
+ * @return void
+ * @access public
+ */
+	function addTypeAttribute($id = '', $key = '', $value = null) {
+		$this->addAttribute($this->settings[$this->__section]['typeTag'], $id, $key, $value);
+	}
+/**
+ * internal callback
+ *
+ * Used to return the output from the html helper using the parameters for this menu option
+ *
+ * @deprecated
+ * @param array $data
+ * @access public
+ * @return void
+ */
+	function menuItem(&$data) {
+		return $this->__menuItem($data);
+	}
+/**
+ * generate method
+ *
+ * @deprecated
+ * @param mixed $section
+ * @param array $settings
+ * @param bool $createEmpty
+ * @return void
+ * @access public
+ */
+	function generate($section = null, $settings = array(), $createEmpty = true) {
+		return $this->display($section, $settings, $createEmpty);
 	}
 }
 ?>

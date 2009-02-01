@@ -41,6 +41,8 @@
 //EOF
 // Which node to use for the home page
 Configure::write('Site.homeNode', 3);
+// Which node to use in "Why does this app act like it does?" links
+Configure::write('Site.methodologyNode', 3);
 
 Configure::write('Site.name', 'CakePHP Cookbook');
 

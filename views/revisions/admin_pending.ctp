@@ -1,25 +1,16 @@
 <h1>Pending <?php echo up($language) ?> Submissions</h1>
 <div class="container">
 <?php
-$links = array();
 foreach ($counts as $lang => $count) {
- $menu->add(array(
-  'section' => 'Options' ,
-                'title' => sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)),
+	$menu->add(array(
+		'section' => 'Options' ,
+		'title' => sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)),
 		'url' => array('language' => $lang),
 		'under' => 'Pending'
 	));
 }
-if ($links) {
-	echo '<p>' . implode($links, ', ') . '</p>';
-}
 $this->set('modelClass', 'Revision');
-$this->element('filter', array('filters' => array(
-	'Node.sequence',
-	'title',
-	'lang',
-	'status'
-))); ?>
+?>
 <table>
 <?php
 $pass = $this->passedArgs;

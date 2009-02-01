@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id: menu.php 756 2009-01-29 14:43:24Z ad7six $ */
+/* SVN FILE: $Id: menu.php 769 2009-02-01 15:48:55Z ad7six $ */
 /**
  * Short description for menu.php
  *
@@ -18,9 +18,9 @@
  * @package       base
  * @subpackage    base.views.helpers
  * @since         v 1.0
- * @version       $Revision: 756 $
+ * @version       $Revision: 769 $
  * @modifiedby    $LastChangedBy: ad7six $
- * @lastmodified  $Date: 2009-01-29 15:43:24 +0100 (Thu, 29 Jan 2009) $
+ * @lastmodified  $Date: 2009-02-01 16:48:55 +0100 (Sun, 01 Feb 2009) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -214,9 +214,11 @@ class MenuHelper extends AppHelper {
 			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling',
 				'markActive', 'children');
 			$this->__flatData[$section][$under]['children'][$key] =& $this->__flatData[$section][$key];
-		} elseif (!isset($this->__flatData[$section][$key]) || empty($this->__flatData[$section][$key]['url']) || $overwrite) {
-			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling',
-				'markActive', 'children');
+		} elseif (isset($this->__flatData[$section][$key]) && empty($this->__flatData[$section][$key]['url'])) {
+			$children =& $this->__flatData[$section][$key]['children'];
+			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling', 'markActive', 'children');
+		} elseif (!isset($this->__flatData[$section][$key]) || $overwrite) {
+			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling', 'markActive', 'children');
 			$this->__data[$section][$key] =& $this->__flatData[$section][$key];
 		} elseif ($showWarnings)  {
 			if ($uniqueKey === 'title') {
@@ -487,21 +489,19 @@ class MenuHelper extends AppHelper {
  * @access private
  */
 	function __menuItem(&$data) {
-		$htmlAttributes = array();
-		$markActive = false;
-		$confirmMessage = false;
-		$escapeTitle = true;
-		extract ($data);
-		if (!empty($options)) {
-			extract ($options);
-		}
-		if ($markActive) {
+		if ($data['markActive']) {
 			$this->addAttribute($this->settings[$this->__section]['itemTag'], 'class', 'active');
 		}
-		if ($url === false) {
-			return $title;
+		if ($data['url'] === false) {
+			return $data['title'];
 		} else {
-			return $this->Html->link($title, $url, $htmlAttributes, $confirmMessage, $escapeTitle);
+			$htmlAttributes = array();
+			$confirmMessage = false;
+			$escapeTitle = true;
+			if (!empty($data['options'])) {
+				extract ($data['options']);
+			}
+			return $this->Html->link($data['title'], $data['url'], $htmlAttributes, $confirmMessage, $escapeTitle);
 		}
 	}
 /**
@@ -516,7 +516,6 @@ class MenuHelper extends AppHelper {
  * @access private
  */
 	function __display($section, $settings, $data, $header = true, $prefix = "\r\n") {
-		extract($settings);
 		$return = '';
 		$start = true;
 		if ($settings['splitCount']) {
@@ -528,6 +527,8 @@ class MenuHelper extends AppHelper {
 			}
 			$splitCounter = 0;
 		}
+		$typeTag = $settings['typeTag'];
+		$itemTag = $settings['itemTag'];
 		foreach ($data as $i => &$result) {
 			if ($settings['splitCount']) {
 				if ($splitCounter && !($splitCounter % $splitCount) && $splitCounter != $total) {

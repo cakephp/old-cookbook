@@ -1,11 +1,5 @@
 <h1>Revisions</h1>
 <div class="container">
-<?php echo $this->element('filter', array(
-	'Node.sequence',
-	'title',
-	'lang',
-	'status'
-)); ?>
 <table>
 <?php
 $pass = $this->passedArgs;
@@ -24,7 +18,6 @@ $th = array(
 	$paginator->sort('status'),
 	$paginator->sort('created'),
 	//$paginator->sort('modified'),
-	'actions'
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
@@ -43,20 +36,6 @@ foreach ($data as $row) {
 			break;
 		}
 	}
-	$actions = array();
-	$actions[] = $html->link('V', array('action' => 'view', $Revision['id']), array('title' => 'view'));
-	$actions[] = $html->link('E', array('action' => 'edit', $Revision['id']), array('title' => 'edit'));
-	//$actions[] = $html->link('X', array('action' => 'delete', $Revision['id']), array('title' => 'delete'));
-	/*
-	if ($Revision['status'] == 'current') {
-		$actions[] = $html->link('Hide', array('action' => 'hide', $Revision['id']));
-	} elseif ($Revision['status'] == 'pending') {
-		$actions[] = $html->link('Approve', array('action' => 'approve', $Revision['id']));
-	} elseif ($Revision['status'] == 'previous') {
-		$actions[] = $html->link('Revert', array('action' => 'approve', $Revision['id']));
-	}
-	 */
-	$actions = implode(' - ', $actions);
 	$tr = array(
 		$html->link($Revision['id'], array('action' => 'view', $Revision['id'])),
 		$book . ' (' . $collection . ')',
@@ -69,8 +48,6 @@ foreach ($data as $row) {
 		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
 		$html->link($Revision['status'], am($pass, array('page' => 1, 'status' => $Revision['status']))),
 		$html->link($Revision['created'], am($pass, array('page' => 1, 'created' => $Revision['created']))),
-		//$html->link($Revision['modified'], am($pass, array('page' => 1, 'modified' => $Revision['modified']))),
-		$actions
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

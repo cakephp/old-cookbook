@@ -44,7 +44,7 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	var $helpers = array('Tree', 'Menu', 'Html', 'Form', 'Time', 'Javascript', 'Cache');
+	var $helpers = array('Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false), 'Html', 'Form', 'Time', 'Javascript', 'Cache');
 /**
  * currentNode variable
  *

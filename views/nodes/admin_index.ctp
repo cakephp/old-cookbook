@@ -10,20 +10,10 @@ $paginator->options(array('url' => $pass));
 $th = array(
 	$paginator->sort('id'),
 	'Book',
-	//$paginator->sort('lft'),
-	//$paginator->sort('rght'),
-	//$paginator->sort('parent_id'),
-	//$paginator->sort('comment_level'),
-	//$paginator->sort('edit_level'),
-	//$paginator->sort('view_level'),
-	//$paginator->sort('depth'),
 	$paginator->sort('sequence'),
 	$paginator->sort('Title', 'Revision.title'),
-	//$paginator->sort('created'),
-	//$paginator->sort('modified'),
 	'last Author',
 	'flags',
-	'actions'
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
@@ -49,31 +39,13 @@ foreach ($data as $row) {
 			'pending'));
 	}
 	$status = implode ($status, ' ');
-	$actions = array();
-	$actions[] = $html->link('P', array('admin' => false, 'action' => 'view', $Node['id'], $Revision['title']), array('title' => 'see public
-		version'));
-	$actions[] = $html->link('V', array('action' => 'view', $Node['id']), array('title' => 'view'));
-	$actions[] = $html->link('E', array('admin' => false, 'action' => 'edit', $Node['id']), array('title' => 'edit'));
-	$actions[] = $html->link('X', array('action' => 'delete', $Node['id']), array('title' => 'delete'));
-	$actions = implode(' - ', $actions);
 	$tr = array(
 		$html->link($Node['id'], array('action' => 'view', $Node['id'])),
 		$book . ' (' . $collection . ')',
-		//$html->link($Node['lft'], am($pass, array('page' => 1, 'lft' => $Node['lft']))),
-		//$html->link($Node['rght'], am($pass, array('page' => 1, 'rght' => $Node['rght']))),
-		//$html->link($Node['parent_id'], am($pass, array('page' => 1, 'parent_id' => $Node['parent_id']))),
-		//$html->link($Node['status'], am($pass, array('page' => 1, 'status' => $Node['status']))),
-		//$html->link($Node['comment_level'], am($pass, array('page' => 1, 'comment_level' => $Node['comment_level']))),
-		//$html->link($Node['edit_level'], am($pass, array('page' => 1, 'edit_level' => $Node['edit_level']))),
-		//$html->link($Node['view_level'], am($pass, array('page' => 1, 'view_level' => $Node['view_level']))),
-		//$html->link($Node['depth'], am($pass, array('page' => 1, 'depth' => $Node['depth']))),
 		$html->link($Node['sequence'], am($pass, array('restrict_to' => $Node['id']))),
 		$html->link($Revision['title'], array('action' => 'view', $Node['id'])),
-		//$html->link($Node['created'], am($pass, array('page' => 1, 'created' => $Node['created']))),
-		//$html->link($Node['modified'], am($pass, array('page' => 1, 'modified' => $Node['modified']))),
 		$author,
 		$status,
-		$actions
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

@@ -216,7 +216,10 @@ class MenuHelper extends AppHelper {
 			$this->__flatData[$section][$under]['children'][$key] =& $this->__flatData[$section][$key];
 		} elseif (isset($this->__flatData[$section][$key]) && empty($this->__flatData[$section][$key]['url'])) {
 			$children =& $this->__flatData[$section][$key]['children'];
+			unset($this->__data[$section][$key]);
+			unset($this->__flatData[$section][$key]);
 			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling', 'markActive', 'children');
+			$this->__data[$section][$key] =& $this->__flatData[$section][$key];
 		} elseif (!isset($this->__flatData[$section][$key]) || $overwrite) {
 			$this->__flatData[$section][$key] = compact('title', 'url', 'options', 'under', 'here', 'inPath', 'activeChild', 'sibling', 'markActive', 'children');
 			$this->__data[$section][$key] =& $this->__flatData[$section][$key];

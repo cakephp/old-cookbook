@@ -23,7 +23,6 @@ $th = array(
 	$paginator->sort('email'),
 	$paginator->sort('published'),
 	$paginator->sort('created'),
-	'actions'
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
@@ -42,11 +41,6 @@ foreach ($data as $row) {
 			break;
 		}
 	}
-	$actions = array();
-	$actions[] = $html->link('V', array('action' => 'view', $Comment['id']), array('title' => 'view'));
-	$actions[] = $html->link('E', array('action' => 'edit', $Comment['id']), array('title' => 'edit'));
-	$actions[] = $html->link('X', array('action' => 'delete', $Comment['id']), array('title' => 'delete'));
-	$actions = implode(' - ', $actions);
 	$tr = array(
 		$book . ' (' . $collection . ')',
 		$Node?$html->link($Node['sequence'] . ' ' . $Revision['title'], am($pass, array('page' => 1, 'node_id' => $Comment['node_id']))):'',
@@ -55,7 +49,6 @@ foreach ($data as $row) {
 		$html->link($Comment['email'], am($pass, array('page' => 1, 'email' => $Comment['email']))),
 		$html->link($Comment['published'], am($pass, array('page' => 1, 'published' => $Comment['published']))),
 		$html->link($Comment['created'], am($pass, array('page' => 1, 'created' => $Comment['created']))),
-		$actions
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

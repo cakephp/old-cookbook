@@ -36,6 +36,7 @@ Router::parseExtensions('rss', 'xml');
 // Legacy
 Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'process', 'chapter'));
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
+// Router::connect('/:section/*', array('controller' => 'redirect', 'action' => 'process'), array('pass' => array('section'), 'section' => 'chapter|index'));
 // missing images
 Router::connect('/img/*', array('controller' => 'attachments', 'action' => 'view'), array('lang' => $defaultLang));
 
@@ -43,7 +44,7 @@ $routes = array(
 	array('/', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/comments/:id/*', array('controller' => 'comments', 'action' => 'index'), array('pass' => array('id'), 'id' => '[0-9]+')),
 	array('/comments/:action/*', array('controller' => 'comments', 'action' => 'index'), array()),
-	/* array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')), */
+	// array('/:action/*', array('controller' => 'nodes'), array('action' => 'add|compare|complete|edit|history|stats|toc|todo|view')),
 	array('/add/*', array('controller' => 'nodes', 'action' => 'add'), array()),
 	array('/compare/*', array('controller' => 'nodes', 'action' => 'compare'), array()),
 	array('/complete/*', array('controller' => 'nodes', 'action' => 'complete'), array()),
@@ -53,7 +54,7 @@ $routes = array(
 	array('/toc/*', array('controller' => 'nodes', 'action' => 'toc'), array()),
 	array('/todo/*', array('controller' => 'nodes', 'action' => 'todo'), array()),
 	array('/view/*', array('controller' => 'nodes', 'action' => 'view'), array()),
-	/* array('/:action/*', array('controller' => 'revisions'), array('action' => 'search|results')), */
+	// array('/:action/*', array('controller' => 'revisions'), array('action' => 'search|results')),
 	array('/search/*', array('controller' => 'revisions', 'action' => 'search'), array()),
 	array('/results/*', array('controller' => 'revisions', 'action' => 'results'), array()),
 	array('/changes/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
@@ -66,15 +67,14 @@ $routes = array(
 	array('/:controller/:action/*', array('controller' => 'nodes', 'action' => 'index'), array())
 );
 foreach ($routes as $route) {
-	$route[1]['lang'] = $defaultLang;
-	$route[1]['theme'] = 'mobile';
-	Router::connect('/m' . $route[0], $route[1], $route[2]);
-	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
+        $route[1]['theme'] = 'default'; // default layout
+        $route[1]['lang'] = $defaultLang;
+        $route[2]['lang'] = '[a-z]{2}';
+        Router::connect($route[0], $route[1], $route[2]);
+        Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 
-	$route[1]['theme'] = 'default'; // default layout
-
-	$route[2]['lang'] = '[a-z]{2}';
-	Router::connect($route[0], $route[1], $route[2]);
-	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
+        $route[1]['theme'] = 'mobile';
+        Router::connect('/m' . $route[0], $route[1], $route[2]);
+        Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
 }
 ?>

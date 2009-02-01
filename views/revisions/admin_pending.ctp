@@ -24,7 +24,6 @@ $th = array(
 	$paginator->sort('User','User.username'),
 	$paginator->sort('Email', 'User.email'),
 	$paginator->sort('created'),
-	'actions'
 );
 echo $html->tableHeaders($th);
 
@@ -44,11 +43,6 @@ foreach ($data as $row) {
 			break;
 		}
 	}
-	$actions = array();
-	$actions[] = $html->link('Approve', array('action' => 'approve', $Revision['id']));
-	$actions[] = $html->link('Reject', array('action' => 'reject', $Revision['id']));
-	$actions[] = $html->link('Edit', array('action' => 'edit', $Revision['id']));
-	//$actions[] = $html->link('Delete', array('action' => 'delete', $Revision['id']));
 	if(empty($Revision['node_id']) && !empty($UnderNode['sequence']) ){
 	$sequence = $html->link('{'.$UnderNode['sequence'].'}', am($pass, array('page' => 1, 'node_id' => $UnderNode['id'])), array('title' => 'New Section: under - '.$UnderNode['sequence'].' after: '.$AfterNode['sequence'] ));
 	} else {
@@ -62,7 +56,6 @@ foreach ($data as $row) {
 		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Revision['user_id']))):'',
 		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
 		$html->link($Revision['created'], am($pass, array('page' => 1, 'created' => $Revision['created']))),
-		implode($actions, ' - ')
 	);
 	echo $html->tableCells($tr);
 }

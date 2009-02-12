@@ -803,13 +803,6 @@ class NodesController extends AppController {
  * @return void
  */
 	function add($parentId = null) {
-		if ($this->params['lang'] !== Configure::read('Languages.default')) {
-			$this->Session->setFlash(__('New content needs to be added in the site\'s default language.', true),
-				'flash/new_content_default_language',
-				array('lang' => $this->params['lang'])
-			);
-			return $this->redirect(array_merge($this->passedArgs, array('lang' => Configure::read('Languages.default'))));
-		}
 		if (!isset($this->params['admin']) && !$parentId && $this->Node->hasAny(array('Node.depth' => '> 0'))) {
 			$this->Session->setFlash(__('Invalid Collection', true));
 			return $this->redirect($this->Session->read('referer'), null, true);

@@ -13,36 +13,37 @@ if (isset($this->data['Revision']['content'])) {
 		}
 	}
 }
-echo $html->link(__('Please review the guidelines for submitting to the Cookbook to ensure consistency.', true),
-	array('controller' => 'nodes', 'action' => 'view', 482, 'contributing-to-the-cookbook'));
 echo $this->element('preview');
 echo $form->create(null, array('url' => '/' .$this->params['url']['url']));
+$inputs['fieldset'] = false;
 
-	$inputs['legend'] = __('Add a new section', true);
+if ($session->read('Auth.User.Level') == ADMIN) {
+	$inputs['Node.show_in_toc'] = array('type' => 'checkbox');
+}
 
-	if ($session->read('Auth.User.Level') == ADMIN) {
-		$inputs['Node.show_in_toc'] = array('type' => 'checkbox');
-	}
+$inputs['Revision.preview'] = array('type'=>'checkbox', 'label' => __('Show me a preview before submitting', true), 'error' => false);
 
-	$inputs['Revision.preview'] = array('type'=>'checkbox', 'label' => __('Show me a preview before submitting', true), 'error' => false);
+$inputs['Revision.under_node_id'] = array('label'=> __('under', true), 'options' => $parents);
 
-	$inputs['Revision.under_node_id'] = array('label'=> __('under', true), 'options' => $parents);
+if (isset($afters)) {
+	$inputs['Revision.after_node_id'] = array('label'=> __('after', true), 'options' => $afters);
+}
 
-	if (isset($afters)) {
-		$inputs['Revision.after_node_id'] = array('label'=> __('after', true), 'options' => $afters);
-	}
+$inputs[] = 'Revision.title';
 
-	$inputs[] = 'Revision.title';
+$inputs['Revision.content'] = array(
+	'label' => __('Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically', true),
+	'cols' => 100, 'rows' => 30,
+	'value' => $contents
+);
 
-	$inputs['Revision.content'] = array(
-		'label' => __('Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically', true),
-		'cols' => 100, 'rows' => 30,
-		'value' => $contents
-	);
+$inputs['Revision.reason'] = array('label' => __('Optionally explain in brief why you are proposing this addition (In English Please) :)', true));
 
-	$inputs['Revision.reason'] = array('label' => __('Optionally explain in brief why you are proposing this addition (In English Please) :)', true));
 
-	echo $form->inputs($inputs);
+$note = $this->element('content_form_note');
+$legend = sprintf($html->tags['legend'], __('Add a new section', true));
+$contents = $form->inputs($inputs);
+echo sprintf($html->tags['fieldset'], '', $legend . $note . $contents);
 
 echo $form->end('save');
 ?>

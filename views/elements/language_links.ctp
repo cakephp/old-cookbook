@@ -1,8 +1,8 @@
 <span><?php
 $defaultLang = Configure::read('Languages.default');
 $defaultUrl = $this->passedArgs;
-if (isset($slugs['en'])) {
- $defaultUrl[1] = $slugs[$defaultLang]['Revision']['slug'];
+if ($this->action !== 'index' && isset($slugs['en'])) {
+	 $defaultUrl[1] = $slugs[$defaultLang]['Revision']['slug'];
 }
 foreach (Configure::read('Languages.all') as $lang) {
 	if ($lang === $this->params['lang']) {
@@ -12,7 +12,9 @@ foreach (Configure::read('Languages.all') as $lang) {
 	$options = array();
 	if (isset($slugs)) {
 		if (isset($slugs[$lang])) {
-			$url[1] = $slugs[$lang]['Revision']['slug'];
+			if ($this->action !== 'index') {
+				$url[1] = $slugs[$lang]['Revision']['slug'];
+			}
 			$options['title'] = $slugs[$lang]['Revision']['title'];
 		} else {
 			$options['class'] = 'lowlight';

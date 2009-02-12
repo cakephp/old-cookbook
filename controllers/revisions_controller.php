@@ -91,33 +91,23 @@ class RevisionsController extends AppController {
 /**
  * search function
  *
- * @access public
- * @return void
- */
-	function search(){
-		$this->set('query' , '');
-		if(!empty($this->data)){
-			$params['collection'] = $this->data['Search']['collection'];
-			$params['action'] = 'results';
-			$params[] = $this->data['Search']['query'];
-			$this->redirect($params);
-		}
-	}
-
-/**
- * results function
- *
  * updated to self correct if the url the index has does not match the current content's url and cache
  * results pages
  * Caching is enabled if the passed term contains a single sluggable character. This partially, but not completely,
  * prevents utf8 search results overwritting themselves
- *
+
  * @access public
  * @return void
  */
-	function results($query = ''){
-		if(!$query) {
-			$this->redirect($this->referer());
+	function search($query = ''){
+		if(!empty($this->data)){
+			$params['collection'] = $this->data['Search']['collection'];
+			$params[] = $this->data['Search']['query'];
+			$this->redirect($params);
+		}
+		if (!$query) {
+			$this->set('query' , '');
+			return $this->render('search');
 		}
 		$this->helpers[] ='Searchable.Search';
 		$this->helpers[] ='Paginator';
@@ -186,6 +176,7 @@ class RevisionsController extends AppController {
 		if (Inflector::slug($query)) {
 			$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		}
+		$this->render('results');
 	}
 /**
  * admin_build_index method

@@ -659,15 +659,19 @@ class NodesController extends AppController {
 			return $this->data;
 		} else {
 			$book = array_shift($path);
+			if ($nodeId !== $book['Node']['id']) {
+				return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
+			}
 			$conditions['Node.show_in_toc'] = 1;
 			$conditions['Node.lft >='] = $book['Node']['lft'];
 			$conditions['Node.rght <='] = $book['Node']['rght'];
 			$conditions['Node.depth BETWEEN ? AND ?'] = array(3,4);
-			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+			$this->data = $this->Node->find('threaded', compact('conditions', 'fields', 'recursive', 'order'));
 		}
 		$this->set('data', $this->data);
+		$this->set('book', $book);
 		$this->data = false;
-		//$this->render('cloud');
+		$this->render('cloud');
 	}
 /**
  * todo method

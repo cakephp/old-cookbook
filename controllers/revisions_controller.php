@@ -106,7 +106,8 @@ class RevisionsController extends AppController {
 			$this->redirect($params);
 		}
 		if (!$query) {
-			$this->set('query' , '');
+			$collections = $this->Revision->Node->find('list', array('conditions' => array('depth' => 1)));
+			$this->set(compact('query', 'collections'));
 			return $this->render('search');
 		}
 		$this->helpers[] ='Searchable.Search';

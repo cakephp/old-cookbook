@@ -662,11 +662,12 @@ class NodesController extends AppController {
 			$conditions['Node.show_in_toc'] = 1;
 			$conditions['Node.lft >='] = $book['Node']['lft'];
 			$conditions['Node.rght <='] = $book['Node']['rght'];
-			//$conditions['Node.depth <'] = 7;
+			$conditions['Node.depth BETWEEN ? AND ?'] = array(3,4);
 			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
 		}
 		$this->set('data', $this->data);
 		$this->data = false;
+		//$this->render('cloud');
 	}
 /**
  * todo method

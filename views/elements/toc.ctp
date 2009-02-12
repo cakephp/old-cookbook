@@ -10,11 +10,8 @@ $i = false;
 $title = '';
 if (isset($currentPath[2])) {
 	$i = 2;
-	$j = count($currentPath) - 1;
-	$k = max($j -1, 2);
 	$title .= $html->link(__('Table of Contents', true), array(
-		'action' => 'toc', $currentPath[$j]['Node']['id'], $currentPath[$j]['Revision']['slug'],
-		'#' => $currentPath[$k]['Revision']['slug'] . '-' . $currentPath[$k]['Node']['id']
+		'action' => 'toc', $currentPath[2]['Node']['id'], $currentPath[2]['Revision']['slug'],
 	), array('title' => __('see fully expanded table of contents (only)', true))) . ' : ';
 } elseif (isset($currentPath[1])) {
 	$i = 1;

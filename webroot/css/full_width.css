@@ -17,3 +17,7 @@ div#body ul li ul li {
 	font-weight:normal;
 	font-size: 80%;
 }
+div.column {
+	width: 24%;
+	float: left;
+}

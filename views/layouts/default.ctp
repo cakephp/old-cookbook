@@ -140,17 +140,9 @@ if ($this->name == 'Nodes' && isset($data['Node']['Node']) && !$isAdmin) {
 			</div>
 			<div class="clear"></div>
 		</div>
-
 		<div id="footer">
-			<p><span><?php
-			$url = $this->passedArgs;
-			foreach (Configure::read('Languages.all') as $lang) {
-				$url['lang'] = $lang;
-				$languages[] = $html->link($lang, $url);
-			}
-			echo sprintf(__('Also available in %s', true), implode (' &middot; ', $languages));
-			?></span>
-			<?php echo ' &nbsp; ';
+			<p>
+			<?php echo $this->element('language_links') . ' &nbsp; ';
 			echo $html->link(
 							$html->image('cake.power.gif', array('alt'=>"CakePHP: the PHP Rapid Development Framework")),
 							'http://www.cakephp.org/',

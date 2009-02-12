@@ -411,3 +411,6 @@ ul.navigation li.active a {
 	text-decoration:none;
 	white-space:nowrap;
 }
+#footer a.lowlight {
+	color: grey;
+}

@@ -1068,7 +1068,12 @@ class NodesController extends AppController {
 		$fields = array('DISTINCT node_id');
 		$pendingUpdates = $this->Node->Revision->find('all', compact('conditions', 'recursive', 'fields'));
 		$pendingUpdates = Set::extract($pendingUpdates, '{n}.Revision.node_id');
-		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates'));
+		$slugs = $this->Node->Revision->find('all', array('fields' => array('lang', 'slug', 'title'),
+			'conditions' => array('Revision.status' => 'current', 'Revision.node_id' => $this->currentNode)));
+		if ($slugs) {
+			$slugs = Set::combine($slugs, '/Revision/lang', '/Revision');
+		}
+		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates', 'slugs'));
 		$this->set('loginFields', $this->Auth->fields);
 		$this->helpers[] = 'Highlight';
 		$this->helpers[] = 'Text';

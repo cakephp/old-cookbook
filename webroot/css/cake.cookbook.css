@@ -430,3 +430,24 @@ div#inlineToc {
 	padding: 1em;
 	width: 80%;
 }
+/* move menu to the left */
+div#content {
+	background: #fff;
+}
+div#body {
+	float: right;
+	margin: 0 0 2em 0;
+}
+div#side {
+	margin: 0;
+	max-width: 370px;
+}
+div#toc {
+	margin-top: 0;
+}
+div.options,
+div.nodes h2,
+div.nodes h3,
+div.nodes h4,
+div.nodes h5,
+div.nodes h6                            {margin-left: 24px}

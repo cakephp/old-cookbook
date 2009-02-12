@@ -97,10 +97,9 @@ class RevisionsController extends AppController {
 	function search(){
 		$this->set('query' , '');
 		if(!empty($this->data)){
-			$params['query'] = $this->data['Search']['query'];
 			$params['collection'] = $this->data['Search']['collection'];
-			$params['lang'] = $this->data['Search']['lang'];
 			$params['action'] = 'results';
+			$params[] = $this->data['Search']['query'];
 			$this->redirect($params);
 		}
 	}
@@ -116,8 +115,8 @@ class RevisionsController extends AppController {
  * @access public
  * @return void
  */
-	function results(){
-		if(empty($this->passedArgs['query'])){
+	function results($query = ''){
+		if(!$query) {
 			$this->redirect($this->referer());
 		}
 		$this->helpers[] ='Searchable.Search';
@@ -128,7 +127,6 @@ class RevisionsController extends AppController {
 		$collection = !empty($this->passedArgs['collection']) ? $this->passedArgs['collection'] : 2;
 
 		// we should make a query object and use Zend_Search_Lucene api to construct it
-		$query = $this->passedArgs['query'];
 		$langQuery = ' AND lang:'. $lang;
 		$collectionQuery = ' AND collection:'. $collection;
 		$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
@@ -165,13 +163,13 @@ class RevisionsController extends AppController {
 		} else {
 			// fallback
 			$conditions = array('OR' => array(
-				'Revision.title LIKE' => '%' . $this->passedArgs['query'] . '%',
-				'Revision.content LIKE' => '%' . $this->passedArgs['query'] . '%'
+				'Revision.title LIKE' => '%' . $query . '%',
+				'Revision.content LIKE' => '%' . $query . '%'
 			));
 			$nodes = $this->paginate('Node', $conditions);
 			if (Configure::read() && $nodes) {
 				$this->Session->setFlash('Search Index needs rebuilding - the index returned no results, ' .
-				       'but a simple LIKE %' . $this->passedArgs['query'] . '% search did.');
+				       'but a simple LIKE %' . $query . '% search did.');
 			}
 			foreach ($nodes as $row) {
 				$this->Revision->id = $row['Revision']['id'];
@@ -185,7 +183,7 @@ class RevisionsController extends AppController {
 			}
 			$this->set(compact('results', 'terms'));
 		}
-		if (Inflector::slug($this->passedArgs['query'])) {
+		if (Inflector::slug($query)) {
 			$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		}
 	}

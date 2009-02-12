@@ -10,7 +10,7 @@ $query = isset($this->params['named']['query'])?$this->params['named']['query']:
 if (isset($this->params['admin'])) {
 	echo $form->create(null, array('action' => 'search', 'id' => 'search'));
 } else {
-	echo $form->create('Search', array('url' => '/search', 'id' => 'search'));
+	echo $form->create('Search', array('url' => array('controller' => 'revisions', 'action' => 'search', 'plugin' => null), 'id' => 'search'));
 }
 echo $form->inputs(array(
 	'legend' => false,

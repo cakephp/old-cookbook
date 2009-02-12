@@ -29,7 +29,7 @@ if (!empty($fromUrl)) {
        	if (strpos($fromUrl, 'admin') === 0) {
 		Router::connectNamed(true);
 	} else {
-		Router::connectNamed(array('node', 'user', 'language', 'status'), array('default' => true));
+		Router::connectNamed(array('node', 'user', 'language', 'status', 'query', 'collection'), array('default' => true));
 	}
 }
 Router::parseExtensions('rss', 'xml');
@@ -56,7 +56,7 @@ $routes = array(
 	array('/view/*', array('controller' => 'nodes', 'action' => 'view'), array()),
 	// array('/:action/*', array('controller' => 'revisions'), array('action' => 'search|results')),
 	array('/search/*', array('controller' => 'revisions', 'action' => 'search'), array()),
-	array('/results/*', array('controller' => 'revisions', 'action' => 'results'), array()),
+	array('/results/*', array('controller' => 'revisions', 'action' => 'results', 'collection' => 2), array()),
 	array('/changes/:action/*', array('controller' => 'changes', 'action' => 'index'), array()),
 	array('/nodes/:action/*', array('controller' => 'nodes', 'action' => 'index'), array()),
 	array('/revisions/:action/*', array('controller' => 'revisions', 'action' => 'index'), array()),

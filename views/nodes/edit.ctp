@@ -22,11 +22,10 @@ if ($session->read('Auth.User.Level') == ADMIN && $this->action == 'edit') {
 		array('title' => 'Upload Image/File', 'url' => array('admin' => true, 'controller' => 'attachments', 'action' => 'add', 'Node', $this->data['Revision']['node_id'])),
 	));
 }
-echo $html->link(__('Please review the guidelines for submitting to the Cookbook to ensure consistency.', true),
-	array('controller' => 'nodes', 'action' => 'view', 482, 'contributing-to-the-cookbook'));
 echo $this->element('preview');
 echo $form->create(null, array('url' => '/' . $this->params['url']['url']));
 $inputs = array (
+	'fieldset' => false,
 	'Revision.node_id' => array('type' => 'hidden'),
 	'Revision.preview' => array('type' => 'checkbox', 'label' => __('Show me a preview before submitting', true), 'error' => false),
 	'Revision.title',
@@ -41,7 +40,11 @@ $inputs = array (
 if ($session->read('Auth.User.Level') == ADMIN) {
 	$inputs = am(array('Node.show_in_toc' => array('type' => 'checkbox')), $inputs);
 }
-echo $form->inputs($inputs);
+$note = $this->element('content_form_note');
+$legend = sprintf($html->tags['legend'], sprintf(__('Edit %s', true), $this->data['Revision']['title']));
+$contents = $form->inputs($inputs);
+echo sprintf($html->tags['fieldset'], '', $legend . $note . $contents);
+
 echo $form->submit('save');
 echo $form->end();
 ?>

@@ -944,7 +944,11 @@ class NodesController extends AppController {
 			}
 		} else {
 			$this->data = $this->Node->read(null);
-			$this->data['Revision']['reason'] = '';
+			if ($this->data['Revision']['id']) {
+				$this->data['Revision']['reason'] = __('Edit/Correction', true);
+			} else {
+				$this->data['Revision']['reason'] = sprintf(__('Translation to %s', true), $this->params['lang']);
+			}
 			$this->data['Revision']['preview'] = true;
 			$this->data['Node']['show_in_toc'] = true;
 		}

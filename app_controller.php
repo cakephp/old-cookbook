@@ -101,7 +101,7 @@ class AppController extends Controller {
 			$this->Auth->authError = __('Please login to continue', true);
 		}
 		$this->Auth->loginAction = array('lang' => $this->params['lang'], 'theme' => $this->params['theme'],
-			'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
+			'admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 		$this->Auth->autoRedirect = false;
 		$this->Auth->allow('display');
 		$this->{$this->modelClass}->currentUserId = $this->Auth->user('id');

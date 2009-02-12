@@ -22,6 +22,9 @@ if ($this->params['isAjax']) {
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $currentNode));
 	echo '</div>';
+	if ($directChildren) {
+		echo $this->element('inline_toc');
+	}
 	if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $currentNode['Revision']['content'])))) != '') {
 		echo '<div class="summary">';
 			echo $theme->out($currentNode['Revision']['content']);

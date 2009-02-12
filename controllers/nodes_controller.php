@@ -1034,8 +1034,7 @@ class NodesController extends AppController {
 		$count = ($this->data['Node']['rght'] - $this->data['Node']['lft']) / 2;
 		set_time_limit(max(30, $count / 10));
 		$order = 'Node.lft';
-		$children = array();
-
+		$directChildren = $children = array();
 		if ($viewAll) {
 			$children = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
 		} else {
@@ -1044,6 +1043,11 @@ class NodesController extends AppController {
 				'Node.parent_id' => $this->data['Node']['id']
 			);
 			$children = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
+			if ($this->action === 'view') {
+				$conditions['Node.show_in_toc'] = true;
+				// Disabled
+				// $directChildren = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
+			}
 			$conditions = array();
 			if ($children) {
 				foreach ($children as $child) {
@@ -1073,7 +1077,7 @@ class NodesController extends AppController {
 		if ($slugs) {
 			$slugs = Set::combine($slugs, '/Revision/lang', '/Revision');
 		}
-		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates', 'slugs'));
+		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates', 'slugs', 'directChildren'));
 		$this->set('loginFields', $this->Auth->fields);
 		$this->helpers[] = 'Highlight';
 		$this->helpers[] = 'Text';

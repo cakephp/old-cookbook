@@ -354,14 +354,17 @@ dl#results dt,
 div.nodes h2,
 div.nodes h3,
 div.nodes h4,
-div.nodes h5                            {background-color:#f1f1f1;padding:7px 20px;border-top:1px solid #036;font-weight:normal;margin-top:0;}
+div.nodes h5,
+div.nodes h6                            {background-color:#f1f1f1;padding:7px 20px;border-top:1px solid #036;font-weight:normal;margin-top:0;}
 
 .nodes .body h3,
 .nodes .summary h3,
 .nodes .body h4,
 .nodes .summary h4,
 .nodes .body h5,
-.nodes .summary h5                      {background-color:transparent;padding:0;border:0;}
+.nodes .summary h5,
+.nodes .body h6,
+.nodes .summary h6                      {background-color:transparent;padding:0;border:0;}
 
 .summary, .body                         {margin-bottom:1em;}
 div.crumbs					            {padding:10px 20px;}
@@ -420,4 +423,10 @@ ul.navigation li.active a {
 a.contribute {
 	color: #EE3322 !important;
 	font-weight: bold;
+}
+div#inlineToc {
+	background: #F1F1F1;
+	margin: 0 10% 1em 10%;
+	padding: 1em;
+	width: 80%;
 }

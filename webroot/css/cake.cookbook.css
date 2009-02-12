@@ -377,7 +377,6 @@ div.comment p.commentmeta               {padding-right:10px;font-size:11px;}
 
 div#body                                {text-align:left;}
 div.nodes .options                      {background-color:#f6f6ff;padding:5px 20px;font-size:11px;}
-a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em}
 div.flags                               {position:relative;top:25px;right:10px;height:auto;float:none;text-align:right;}
 
 .summary a, .body a {
@@ -386,6 +385,7 @@ div.flags                               {position:relative;top:25px;right:10px;h
 .summary a:hover, .body a:hover {
 	border-bottom: none;
 }
+a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em; border:none;}
 div.view                                {padding-left:0;}
 div#body div.revisions,
 div.view div.summary,

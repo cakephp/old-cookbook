@@ -431,23 +431,21 @@ div#inlineToc {
 	width: 80%;
 }
 /* move menu to the left */
-div#content {
-	background: #fff;
-}
 div#body {
 	float: right;
-	margin: 0 0 2em 0;
+	margin: 0;
+	border-left: 2px solid #E4E4E4;
+	padding: 0 0 2em 24px;
 }
 div#side {
 	margin: 0;
-	max-width: 370px;
+	width: 350px;
+	border-right: 2px solid #E4E4E4;
+	padding-bottom: 2em;
 }
 div#toc {
 	margin-top: 0;
 }
-div.options,
-div.nodes h2,
-div.nodes h3,
-div.nodes h4,
-div.nodes h5,
-div.nodes h6                            {margin-left: 24px}
+div#body div.summary {
+	padding: 0;
+}

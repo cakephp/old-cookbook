@@ -449,3 +449,6 @@ div#toc {
 div#body div.summary {
 	padding: 0;
 }
+div.crumbs {
+	padding: 10px 0;
+}

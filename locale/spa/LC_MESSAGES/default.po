@@ -289,12 +289,12 @@ msgid "Page %s"
 msgstr "Página %s"
 
 #: views/elements/paging.ctp:5
-msgid "<< previous"
-msgstr "<< anterior"
+msgid "« previous"
+msgstr "« anterior"
 
 #: views/elements/paging.ctp:8
-msgid "Next >>"
-msgstr "Siguiente >>"
+msgid "Next »"
+msgstr "Siguiente »"
 
 #: views/elements/preview.ctp:6
 msgid "How'd you like them apples?"
@@ -512,4 +512,3 @@ msgstr "Buscar en book.cakephp.org"
 #~ msgstr "CakePHP: el framework de desarrollo rápido"
 #~ msgid "Debug setting does not allow access to this url."
 #~ msgstr "Debug setting does not allow access to this url."
-

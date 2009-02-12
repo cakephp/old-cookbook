@@ -264,12 +264,12 @@ msgid "Page %s"
 msgstr "Page %s"
 
 #: views/elements/paging.ctp:5
-msgid "<< previous"
-msgstr "<< précédent"
+msgid "« previous"
+msgstr "« précédent"
 
 #: views/elements/paging.ctp:8
-msgid "Next >>"
-msgstr "Suivant >>"
+msgid "Next »"
+msgstr "Suivant »"
 
 #: views/elements/preview.ctp:6
 msgid "How'd you like them apples?"
@@ -482,5 +482,4 @@ msgstr "Aucun résultat"
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr "Chercher dans book.cakephp.org"
-
 

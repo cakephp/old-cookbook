@@ -6,9 +6,11 @@ extract($data);
 $options = array();
 if ($Node['edit_level'] <= $auth['User']['Level']) {
 	if (!$Revision['id']) {
-		$out[] = $html->link(__('Translate', true), array('action'=>'edit',$Node['id'], $Revision['slug']));
+		$out[] = $html->link(__('Translate', true), array('action'=>'edit',$Node['id'], $Revision['slug']), array('title' =>
+			__('There is no translation for this section please submit one', true), 'class' => 'contribute'));
 	} else {
-		$out[] = $html->link(__('Edit', true), array('action'=>'edit',$Node['id'], $Revision['slug']));
+		$out[] = $html->link(__('Edit', true), array('action'=>'edit',$Node['id'], $Revision['slug']), array('title' =>
+			__('Don\'t like this text? Submit your thoughts', true), 'class' => 'contribute'));
 	}
 }
 if ($Node['depth'] >= $viewAllLevel) {

@@ -290,12 +290,12 @@ msgid "Page %s"
 msgstr "Halaman %s"
 
 #: views/elements/paging.ctp:5
-msgid "<< previous"
-msgstr "<< sebelum"
+msgid "« previous"
+msgstr "« sebelum"
 
 #: views/elements/paging.ctp:8
-msgid "Next >>"
-msgstr "Seterusnya >>"
+msgid "Next »"
+msgstr "Seterusnya »"
 
 #: views/elements/search.ctp:22
 #: views/elements/search_form.ctp:12
@@ -488,4 +488,3 @@ msgstr "Tiada hasil"
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr "Cari book.cakephp.org"
-

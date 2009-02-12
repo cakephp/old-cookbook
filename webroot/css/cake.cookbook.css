@@ -380,9 +380,12 @@ div.nodes .options                      {background-color:#f6f6ff;padding:5px 20
 a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em}
 div.flags                               {position:relative;top:25px;right:10px;height:auto;float:none;text-align:right;}
 
-.summary a                              {text-decoration:underline;}
-.summary a:hover                        {color:#C00;}
-
+.summary a, .body a {
+	border-bottom: 1px dashed;
+}
+.summary a:hover, .body a:hover {
+	border-bottom: none;
+}
 div.view                                {padding-left:0;}
 div#body div.revisions,
 div.view div.summary,
@@ -413,4 +416,8 @@ ul.navigation li.active a {
 }
 #footer a.lowlight {
 	color: grey;
+}
+a.contribute {
+	color: #EE3322 !important;
+	font-weight: bold;
 }

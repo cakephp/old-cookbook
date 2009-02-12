@@ -14,7 +14,7 @@ foreach ($data as $row) {
 $split = $count / 4;
 $counter = 0;
 foreach ($data as $row) {
-	if ($counter == $split) {
+	if ($counter >= $split) {
 		$counter = 0;
 		echo '</ul></div><div class="column"><ul>';
 	}
@@ -26,7 +26,7 @@ foreach ($data as $row) {
 	if ($row['children']) {
 		foreach ($row['children'] as $i => $row) {
 			if (!$i) {
-				if ($counter == $split) {
+				if ($counter >= $split) {
 					$close = false;
 					echo '</li>';
 					echo '</ul></div><div class="column"><ul><li><ul>';
@@ -35,7 +35,7 @@ foreach ($data as $row) {
 					echo '<ul>';
 				}
 			} else {
-				if ($counter == $split) {
+				if ($counter >= $split) {
 					echo '</ul></ul></div><div class="column"><ul><li><ul>';
 					$counter = 0;
 				}

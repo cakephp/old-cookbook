@@ -2,6 +2,7 @@
 <div class="summary">
 <?php
 $i18n = I18n::getInstance();
+
 if (file_exists(APP . 'locale' . DS . $i18n->l10n->locale . DS . 'LC_MESSAGES' . DS . 'default.po')) {
 	echo '<p class="note">' . sprintf(__('Want to check or update the <a href="%s">po file</a> for %s?', true),
 		'http://thechaw.com/cakebook/source/locale/' . $i18n->l10n->locale . '/LC_MESSAGES/default.po', $i18n->l10n->language);

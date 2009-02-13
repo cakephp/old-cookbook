@@ -284,11 +284,11 @@ abstract class MiCompressor {
 		MiCompressor::log('Request String: ' . $request);
 		$start = getMicrotime();
 		ob_start();
-		if (@ini_get("zlib.output_compression") != true && extension_loaded("zlib") &&
+		if (Configure::read('Asset.compress') && @ini_get("zlib.output_compression") != true && extension_loaded("zlib") &&
 			(strpos(env('HTTP_ACCEPT_ENCODING'), 'gzip') !== false)) {
 			MiCompressor::log('Enabling compression, turn on zlib.output_compression if possible');
 			ob_start('ob_gzhandler');
-			}
+		}
 		$requests = MiCompressor::parse($request, $hash);
 		if (!$requests) {
 			header('HTTP/1.0 404 Not Found');

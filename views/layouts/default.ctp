@@ -155,7 +155,6 @@ if ($this->name == 'Nodes' && isset($data['Node']['Node']) && !$isAdmin) {
 		</div>
 	</div>
 <?php
-                        debug ('here');
 echo $miJavascript->link(array('jquery' => array()), false);
 echo $miJavascript->link('scripts', false);
 echo $miJavascript->link();

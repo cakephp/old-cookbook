@@ -648,3 +648,11 @@ div.paging div.disabled {
 	color: #ddd;
 	display: inline;
 }
+body{font-size:40px}
+#ft #copy p, #ft #secondary_nav ul, #ft #csf, #ft #img {float: none; display:block; text-align:center }
+#ft #img {padding-top: 0;}
+#ft #img a {display: block; text-align: center; }
+#ft #img img { width: 28%; margin: 0 auto;  display:block}
+#ft #csf { padding: 1em 0; }
+#search_row fieldset { width: 70%; padding-top: 0.2em; padding-right: 0.4em }
+#search_row input.query { padding: 0.2em }

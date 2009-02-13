@@ -646,19 +646,24 @@ class NodesController extends AppController {
 		} else {
 			$direct = true;
 		}
+		$book = array_shift($path);
 		if (isset($this->params['requested'])) {
 			if ($direct) {
 				$conditions['Node.parent_id'] = $this->currentNode['id'];
 				return $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
 			}
 			$conditions['Node.show_in_toc'] = 1;
-			$conditions['Node.parent_id'] = $ids;
+			$conditions['Node.lft >='] = $book['Node']['lft'];
+			$conditions['Node.rght <='] = $book['Node']['rght'];
+			$conditions['OR']['Node.parent_id'] = $ids;
+			if (!empty($this->params['complete'])) {
+				$conditions['OR']['Node.depth BETWEEN ? AND ?'] = array(3,4);
+			}
 			$recursive = 0;
 			$order = 'Node.lft ASC';
 			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
 			return $this->data;
 		} else {
-			$book = array_shift($path);
 			if ($nodeId !== $book['Node']['id']) {
 				return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
 			}

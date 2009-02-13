@@ -4,7 +4,7 @@ $url = array('plugin' => null, 'prefix' => null, 'controller' => 'nodes', 'actio
 //$url = str_replace($this->base, '', Router::url($url));
 $__cache = Configure::read('Cache.check');
 Configure::write('Cache.check', false);
-$data = $this->requestAction($url, array('currentPath' => $currentPath, 'currentNode' => $currentNode));
+$data = $this->requestAction($url, array('currentPath' => $currentPath, 'currentNode' => $currentNode, 'complete' => $this->action=='complete'));
 Configure::write('Cache.check', $__cache);
 $i = false;
 $title = '';

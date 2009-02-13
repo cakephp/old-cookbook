@@ -32,35 +32,36 @@ color:#009900;
 	color: #993;
 }
 #content {
+	background: #f4f4f4;
 	padding: 0px 0px;
-	background: #F4F4F4;
 	overflow: hidden;
 }
 #side {
-	margin: 0 0 0em 70%;
-	border-left: 2px #e4e4e4 solid;
-	background: #F4F4F4;
-	min-width: 200px;
-	min-height: 200px;
+	border-right: 0.2em #e4e4e4 solid;
+	float: left;
+	width: 300px;
+	min-width: 300px;
+	height: 100%;
+	margin: 0;
+	padding-bottom: 40px;
 }
 #side h4 {
 	padding-top: 20px;
 }
 #body {
-	float: left;
-	width: 70%;
 	text-align: justify;
 	background: #fff;
-	padding: 0 0px 20px 0px;
-	margin: 0 2em 0 0;
-	border-right: 2px #e4e4e4 solid;
+	border-left: 0.2em #e4e4e4 solid;
+	min-width: 600px;
 	min-height: 200px;
+	padding: 0 0px 20px 0;
+	margin: 0 0 2px 300px;
 }
 div.form {
 	padding: 0 24px;
 }
 div.view {
-	padding: 0 24px;
+	padding: 0 24px 0 0;
 }
 div.view ul {
 	margin-left: 2em;
@@ -180,10 +181,8 @@ div.toc li.active a {
 div.view h2 {
 	margin-bottom: 0;
 	font-size: 240%;
-	clear:left;
 }
 div.view h3 {
-	clear: left;
 	margin-top: 20px;
 	margin-bottom: 0;
 	font-size: 210%;
@@ -238,7 +237,6 @@ div.userstats ul {
 	float: left;
 }
 div.node-nav {
-	clear: left;
 	padding: 40px 20px 20px 24px;
 }
 table {
@@ -275,7 +273,6 @@ ol.code {
 }
 ol.code li {
 	float: left;
-	clear: both;
 	width: 99%;
 	white-space: nowrap;
 	margin: 0;
@@ -292,7 +289,6 @@ ol.code li code {
 .code .default { color: #44c; }
 .code .keyword { color: #373; }
 .code .string { color: #c30; }
-
 
 #main_nav ul.navigation{
 	margin-right: 280px;
@@ -389,7 +385,6 @@ div.flags                               {position:relative;top:25px;right:10px;h
 	border-bottom: none;
 }
 a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em; border:none;}
-div.view                                {padding-left:0;}
 div#body div.revisions,
 div.view div.summary,
 div.view div.body                       {padding-left:20px;}
@@ -430,24 +425,8 @@ div#inlineToc {
 	padding: 1em;
 	width: 80%;
 }
-/* move menu to the left */
-div#body {
-	float: right;
-	margin: 0;
-	border-left: 2px solid #E4E4E4;
-	padding: 0 0 2em 24px;
-}
-div#side {
-	margin: 0;
-	width: 350px;
-	border-right: 2px solid #E4E4E4;
-	padding-bottom: 2em;
-}
 div#toc {
 	margin-top: 0;
-}
-div#body div.summary {
-	padding: 0;
 }
 div.crumbs {
 	padding: 10px 0;

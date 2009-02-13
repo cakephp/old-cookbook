@@ -49,6 +49,25 @@ class MiJavascriptHelper extends JavascriptHelper {
  */
 	var $__js = array();
 /**
+ * viewJs property
+ *
+ * @var array
+ * @access private
+ */
+	var $__viewJs = array();
+/**
+ * beforeLayout method
+ *
+ * Shuffle the vars so js added in view files are after js added in thelayout
+ *
+ * @return void
+ * @access public
+ */
+	function beforeLayout () {
+		$this->__viewJs = $this->__js;
+		$this->__js = array();
+	}
+/**
  * link method
  *
  * Example usage, from anywhere at all:
@@ -82,6 +101,8 @@ class MiJavascriptHelper extends JavascriptHelper {
 			return parent::link($url, $inline);
 		}
 		if ($url === null) {
+			$this->__js = Set::merge($this->__js, $this->__viewJs);
+			$this->__viewJs = array();
 			if (!$this->__js) {
 				return;
 			}

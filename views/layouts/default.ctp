@@ -83,14 +83,10 @@ if (!isset($this->params['lang']) || $this->params['lang'] === $defaultLang) {
 } else {
 	$base = $html->url('/' . $this->params['lang'] . '/');
 }
-echo $javascript->codeBlock("var baseUrl = '{$base}';"); ?>
-<?php
-echo $html->css(array('cake.generic.css?v=537', 'cake.cookbook.css?v=537'), 'stylesheet', array('media' => 'screen'));
-echo $html->css('print.css?v=537', 'stylesheet', array('media' => 'print'));
-if (isset ($javascript)) {
-	echo $javascript->link('jquery/jquery.min.js');
-	echo $javascript->link('scripts.js?v=537');
-}
+echo $javascript->codeBlock("var baseUrl = '{$base}';");
+echo $miHtml->css(array('cake.generic', 'cake.cookbook'), 'stylesheet', array('media' => 'screen'), false);
+echo $miHtml->css('print', 'stylesheet', array('media' => 'print'), false);
+echo $miHtml->css();
 echo $scripts_for_layout;
 ?>
 </head>
@@ -159,6 +155,10 @@ if ($this->name == 'Nodes' && isset($data['Node']['Node']) && !$isAdmin) {
 		</div>
 	</div>
 <?php
+                        debug ('here');
+echo $miJavascript->link(array('jquery' => array()), false);
+echo $miJavascript->link('scripts', false);
+echo $miJavascript->link();
 if(env('SERVER_ADDR') != '127.0.0.1'):?>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

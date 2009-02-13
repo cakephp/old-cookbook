@@ -1,5 +1,5 @@
 <?php
-$html->css('full_width', null, array(), false);
+$miHtml->css('full_width', null, array('media' => 'screen'), false);
 echo '<h2>' . $book['Revision']['title'] . '</h2>';
 //echo '<h3>' . __('Table of Contents', true) . '</h3>'
 echo '<div class="column"><ul>';

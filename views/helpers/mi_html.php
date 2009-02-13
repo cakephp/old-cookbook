@@ -49,6 +49,25 @@ class MiHtmlHelper extends HtmlHelper {
  */
 	var $__css = array();
 /**
+ * viewCss property
+ *
+ * @var array
+ * @access private
+ */
+	var $__viewCss = array();
+/**
+ * beforeLayout method
+ *
+ * Shuffle the vars so css added in view files are after css added in thelayout
+ *
+ * @return void
+ * @access public
+ */
+	function beforeLayout () {
+		$this->__viewCss = $this->__css;
+		$this->__css = array();
+	}
+/**
  * css method
  *
  * Example usage, from anywhere at all:
@@ -82,6 +101,8 @@ class MiHtmlHelper extends HtmlHelper {
 			return parent::css($path, $rel, $htmlAttributes, $inline);
 		}
 		if ($path === null) {
+			$this->__css = Set::merge($this->__css, $this->__viewCss);
+			$this->__viewCss = array();
 			if (!$this->__css) {
 				return;
 			}

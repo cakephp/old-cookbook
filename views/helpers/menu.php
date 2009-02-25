@@ -187,31 +187,28 @@ class MenuHelper extends AppHelper {
 			$title = $section;
 			$section = $this->__section;
 		}
-		if (!isset($this->settings[$section])) {
-			$this->settings($section, $settings);
-		}
-		extract(array_merge($this->settings[$section], $settings));
-		if (isset($$uniqueKey)) {
-			if (is_array($$uniqueKey)) {
-				if ($uniqueKey === 'url') {
-					$key = Router::normalize($$uniqueKey);
-				} else {
-					$key = serialize($$uniqueKey);
-				}
+		$settings = $this->settings($section, $settings);
+		if ($settings['uniqueKey'] === 'url') {
+			if (is_array($url)) {
+				$key = Router::normalize($url);
 			} else {
-				$key = $$uniqueKey;
+				$key = serialize($url);
 			}
 		} else {
 			$key = $title;
 		}
 		if (is_array($under)) {
 			if ($uniqueKey === 'url') {
-				$under = Router::normalize($under);
+				if (is_array($under)) {
+					$under = Router::normalize($under);
+				} else {
+					$under = serialize($under);
+				}
 			} else {
 				$under = serialize($under);
 			}
 		}
-		list($here, $markActive, $url) = $this->__setHere($section, $url, $key, $activeMode, $hereMode, $options);
+		list($here, $markActive, $url) = $this->__setHere($section, $url, $key, $settings['activeMode'], $settings['hereMode'], $options);
 		if ($options) {
 			extract($options);
 		}
@@ -256,7 +253,7 @@ class MenuHelper extends AppHelper {
 			unset($this->__flatData[$section][$key]);
 			$this->__flatData[$section][$key] = $item;
 			$this->__data[$section][$key] =& $this->__flatData[$section][$key];
-		} elseif (!isset($this->__flatData[$section][$key]) || $overwrite) {
+		} elseif (!isset($this->__flatData[$section][$key]) || $settings['overwrite']) {
 			$this->__flatData[$section][$key] = $item;
 			$this->__data[$section][$key] =& $this->__flatData[$section][$key];
 		} elseif ($showWarnings)  {
@@ -269,7 +266,7 @@ class MenuHelper extends AppHelper {
 				'" in menu "' . $section . '".<br />You can change the field used to detect duplicates' .
 				' which is currently set to ' . $uniqueKey . ', can be changed to ' . $altKey . '.');
 		}
-		if ($hereMode === 'text' && $here === true) {
+		if ($settings['hereMode'] === 'text' && $here === true) {
 			$this->__flatData[$section][$key]['url'] = false;
 		}
 	}

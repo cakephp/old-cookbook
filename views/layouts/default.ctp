@@ -163,7 +163,7 @@ echo $html->meta('keywords',
 				</cake:nocache>
 
 				<?php echo $content_for_layout; ?>
-				
+
 				<div class="clear"></div>
 			</div>
 
@@ -192,7 +192,7 @@ echo $miJavascript->link(array('jquery' => array()), false);
 echo $miJavascript->link('scripts', false);
 echo $miJavascript->link();
 
-if(env('SERVER_ADDR') != '127.0.0.1'):?>
+if(isProduction()): ?>
 	<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

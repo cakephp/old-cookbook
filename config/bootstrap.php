@@ -67,4 +67,16 @@ if (Configure::read()) {
 	define('CACHE_DURATION', '+99 days');
 	ob_start('ob_gzhandler');
 }
+/**
+ * isProduction method
+ *
+ * @return void
+ * @access public
+ */
+function isProduction() {
+	if (!isset($_SERVER['HTTP_HOST'])) {
+		return false;
+	}
+	return ($_SERVER['HTTP_HOST'] === 'book.cakephp.org');
+}
 ?>

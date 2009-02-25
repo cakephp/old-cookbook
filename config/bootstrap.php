@@ -41,8 +41,6 @@
 //EOF
 // Which node to use for the home page
 Configure::write('Site.homeNode', 3);
-// Which node to use in "Why does this app act like it does?" links
-Configure::write('Site.methodologyNode', 3);
 
 Configure::write('Site.name', 'CakePHP Cookbook');
 
@@ -51,7 +49,8 @@ Configure::write('Site.email', 'team@cakefoundation.org');
 Configure::write('Site.database', 'bakery');
 
 Configure::write('Languages.default', 'en');
-$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko', 'ro', 'ms', 'tw', 'ru');
+$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko',
+       	'ro', 'ms', 'tw', 'ru', 'el', 'tr');
 sort($langs);
 Configure::write('Languages.all', $langs);
 

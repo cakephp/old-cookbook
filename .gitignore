@@ -5,3 +5,4 @@ errors.err
 config/core.php
 config/database.php
 tmp/*
+.svn

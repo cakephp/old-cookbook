@@ -41,6 +41,14 @@ class MiJavascriptHelper extends JavascriptHelper {
  * @access public
  */
 	var $name = 'MiJavascript';
+	var $helpers = array('Javascript');
+/**
+ * scripts property
+ *
+ * @var string
+ * @access private
+ */
+	var $__scripts = null;
 /**
  * js property
  *
@@ -66,6 +74,28 @@ class MiJavascriptHelper extends JavascriptHelper {
 	function beforeLayout () {
 		$this->__viewJs = $this->__js;
 		$this->__js = array();
+	}
+/**
+ * Returns a JavaScript script tag.
+ *
+ * @param string $script The JavaScript to be wrapped in SCRIPT tags.
+ * @param array $options Set of options:
+ * - allowCache: boolean, designates whether this block is cacheable using the
+ * current cache settings.
+ * - safe: boolean, whether this block should be wrapped in CDATA tags.  Defaults
+ * to helper's object configuration.
+ * - inline: whether the block should be printed inline, or written
+ * to cached for later output (i.e. $scripts_for_layout).
+ *
+ * @return string The full SCRIPT element, with the JavaScript inside it, or null,
+ *   if 'inline' is set to false.
+ */
+	function codeBlock($script = null, $options = array()) {
+		if (isset($options['inline']) && $options['inline'] === false) {
+			$options['inline'] = true;
+			$this->__scripts .= $this->Javascript->codeBlock($script, $options);
+		}
+		return $this->Javascript->codeBlock($script, $options);
 	}
 /**
  * link method
@@ -104,7 +134,8 @@ class MiJavascriptHelper extends JavascriptHelper {
 			$this->__js = Set::merge($this->__js, $this->__viewJs);
 			$this->__viewJs = array();
 			if (!$this->__js) {
-				return;
+				$this->__scripts = '';
+				return $this->__scripts;
 			}
 			if ($sendAlone === null) {
 				$sendAlone = Configure::read();
@@ -127,6 +158,8 @@ class MiJavascriptHelper extends JavascriptHelper {
 			foreach((array)$url as $u) {
 				$return .= parent::link($u);
 			}
+			$return .= $this->__scripts;
+			$this->__scripts = '';
 			return $return;
 		}
 		if (is_array($url)) {

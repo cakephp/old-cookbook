@@ -58,7 +58,7 @@ $(document).ready(function() {
 		height: 550,
 		modal: false,
 		buttons: {
-			"Ok": function() {
+			"OK": function() {
 				$(this).dialog("close");
 			},
 		}

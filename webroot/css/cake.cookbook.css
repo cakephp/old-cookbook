@@ -449,3 +449,6 @@ div.column {
 	width: 24%;
 	float: left;
 }
+input, textarea {
+	clear:none;
+}

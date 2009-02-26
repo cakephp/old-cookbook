@@ -431,3 +431,21 @@ div#toc {
 div.crumbs {
 	padding: 10px 0;
 }
+div#tocFull {
+	display:none;
+}
+div#tocFull ul li {
+	list-style: none;
+	margin: 1em 0 0.6em 0;
+	font-weight:bold;
+}
+div#tocFull ul li ul li {
+	list-style-image: url(images/arrow.gif);
+	margin: 0.6em 0 0.6em 1em;
+	font-weight:normal;
+	font-size: 80%;
+}
+div.column {
+	width: 24%;
+	float: left;
+}

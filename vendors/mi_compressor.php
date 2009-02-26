@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id: mi_compressor.php 736 2009-01-16 16:54:44Z ad7six $ */
+/* SVN FILE: $Id: mi_compressor.php 800 2009-02-26 18:49:55Z ad7six $ */
 /**
  * Short description for mi_compressor.php
  *
@@ -18,9 +18,9 @@
  * @package       base
  * @subpackage    base.vendors
  * @since         v 1.0
- * @version       $Revision: 736 $
+ * @version       $Revision: 800 $
  * @modifiedby    $LastChangedBy: ad7six $
- * @lastmodified  $Date: 2009-01-16 17:54:44 +0100 (Fri, 16 Jan 2009) $
+ * @lastmodified  $Date: 2009-02-26 19:49:55 +0100 (Thu, 26 Feb 2009) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -418,6 +418,14 @@ abstract class MiCompressor {
 				MiCompressor::log("PROBLEM: No file for $type/$filename.{$type} could be found");
 			}
 			$return = ob_get_clean();
+		}
+		if ($type === 'css') {
+			preg_match_all('/@import\s*(?:url\()?(?:["\'])([^"\']*)\.css(?:["\'])\)?;/', $return, $matches);
+			foreach ($matches[1] as $i => $cssFile) {
+				$cssFile = dirname($filename) . '/' . $cssFile;
+				$import = MiCompressor::loadFile($cssFile, $params, false, 'css');
+				$return = str_replace($matches[0][$i], $import, $return);
+			}
 		}
 		if ($compress) {
 			$compressMethod = 'compress' . Inflector::camelize($type);

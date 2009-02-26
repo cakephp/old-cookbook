@@ -52,4 +52,19 @@ $(document).ready(function() {
 		}
 		return false;
 	});
+	$('#tocFull').dialog({
+		autoOpen: false,
+		width: 1000,
+		height: 550,
+		modal: false,
+		buttons: {
+			"Ok": function() {
+				$(this).dialog("close");
+			},
+		}
+	});
+	$('a#tocLink').click(function(){
+		$('#tocFull').dialog('open');
+		return false;
+	});;
 });

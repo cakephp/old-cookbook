@@ -630,11 +630,6 @@ class NodesController extends AppController {
  */
 	function toc($nodeId = null) {
 		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
-		if (isset($this->params['requested'])) {
-			$this->currentPath = $this->params['currentPath'];
-			$this->currentNode = $this->params['currentNode'];
-			$this->set(array('currentPath' => $this->currentPath, 'currentNode' => $this->currentNode));
-		}
 		$this->Node->recursive = 0;
 		$fields = array('Node.*', 'Revision.id', 'Revision.status', 'Revision.lang', 'Revision.title', 'Revision.slug');
 		$path = $this->currentPath;
@@ -647,36 +642,13 @@ class NodesController extends AppController {
 			$direct = true;
 		}
 		$book = array_shift($path);
-		if (isset($this->params['requested'])) {
-			if ($direct) {
-				$conditions['Node.parent_id'] = $this->currentNode['id'];
-				return $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
-			}
-			$conditions['Node.show_in_toc'] = 1;
-			$conditions['Node.lft >='] = $book['Node']['lft'];
-			$conditions['Node.rght <='] = $book['Node']['rght'];
-			$conditions['OR']['Node.parent_id'] = $ids;
-			if (!empty($this->params['complete'])) {
-				$conditions['OR']['Node.depth BETWEEN ? AND ?'] = array(3,4);
-			}
-			$recursive = 0;
-			$order = 'Node.lft ASC';
-			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
-			return $this->data;
-		} else {
-			if ($nodeId !== $book['Node']['id']) {
-				return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
-			}
-			$conditions['Node.show_in_toc'] = 1;
-			$conditions['Node.lft >='] = $book['Node']['lft'];
-			$conditions['Node.rght <='] = $book['Node']['rght'];
-			$conditions['Node.depth BETWEEN ? AND ?'] = array(3,4);
-			$this->data = $this->Node->find('threaded', compact('conditions', 'fields', 'recursive', 'order'));
+		if ($nodeId !== $book['Node']['id']) {
+			return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
 		}
-		$this->set('data', $this->data);
 		$this->set('book', $book);
+		$this->set('data', $this->_setTocData(true));
 		$this->data = false;
-		$this->render('cloud');
+		$this->render('/elements/toc_cloud');
 	}
 /**
  * todo method
@@ -1013,6 +985,47 @@ class NodesController extends AppController {
 		}
 		$this->set(compact('users'));
 	}
+	function _setTocData($return = false) {
+		$this->Node->recursive = 0;
+		$fields = array('Node.*', 'Revision.id', 'Revision.status', 'Revision.lang', 'Revision.title', 'Revision.slug');
+		$path = $this->currentPath;
+		if (count($path) > 2) {
+			$direct = false;
+			array_shift($path);
+			array_shift($path);
+			$ids = Set::extract($path, '/Node/id');
+		} else {
+			$direct = true;
+		}
+		$book = array_shift($path);
+		if (!$return) {
+			if ($direct) {
+				$conditions['Node.parent_id'] = $this->currentNode['id'];
+				$sideToc = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+			} else {
+				$conditions['Node.show_in_toc'] = 1;
+				$conditions['Node.lft >='] = $book['Node']['lft'];
+				$conditions['Node.rght <='] = $book['Node']['rght'];
+				$conditions['OR']['Node.parent_id'] = $ids;
+				if (!empty($this->params['complete'])) {
+					$conditions['OR']['Node.depth BETWEEN ? AND ?'] = array(3,4);
+				}
+				$recursive = 0;
+				$order = 'Node.lft ASC';
+				$sideToc = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+			}
+		}
+		$conditions = array();
+		$conditions['Node.show_in_toc'] = 1;
+		$conditions['Node.lft >='] = $book['Node']['lft'];
+		$conditions['Node.rght <='] = $book['Node']['rght'];
+		$conditions['Node.depth BETWEEN ? AND ?'] = array(3,4);
+		$fullToc = $this->Node->find('threaded', compact('conditions', 'fields', 'recursive', 'order'));
+		if ($return) {
+			return $fullToc;
+		}
+		$this->set(compact('fullToc', 'sideToc', 'book'));
+	}
 /**
  * view function
  *
@@ -1088,6 +1101,7 @@ class NodesController extends AppController {
 		$this->set('loginFields', $this->Auth->fields);
 		$this->helpers[] = 'Highlight';
 		$this->helpers[] = 'Text';
+		$this->_setTocData();
 		$this->render('view_all');
 	}
 }

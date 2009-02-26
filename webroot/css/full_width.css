@@ -1,6 +1,10 @@
+div#content {
+	text-align: center;
+}
 div#body {
 	width: 100%;
-	float: none;
+	margin:auto;
+	padding: 0 2em;
 }
 div#side {
 	display: none;

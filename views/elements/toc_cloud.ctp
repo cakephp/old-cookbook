@@ -1,7 +1,8 @@
 <?php
-$miHtml->css('full_width', null, array('media' => 'screen'), false);
-echo '<h2>' . $book['Revision']['title'] . '</h2>';
-//echo '<h3>' . __('Table of Contents', true) . '</h3>'
+echo $miHtml->css('full_width', null, array('media' => 'screen'), false);
+if (!empty($title)) {
+	echo '<h2>' . $book['Revision']['title'] . '</h2>';
+ }
 echo '<div class="column"><ul>';
 $depth = $data[0]['Node']['depth'];
 $count = 0;

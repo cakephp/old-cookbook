@@ -99,10 +99,11 @@ echo $html->meta('keywords',
 	} else {
 		$base = $html->url('/' . $this->params['lang'] . '/');
 	}
-	echo $javascript->codeBlock("var baseUrl = '{$base}';");
-	echo $miHtml->css(array('cake.generic', 'cake.cookbook'), 'stylesheet', array('media' => 'screen'), false);
-	echo $miHtml->css('print', 'stylesheet', array('media' => 'print'), false);
-	echo $miHtml->css();
+        echo $javascript->codeBlock("var baseUrl = '{$base}';");
+        echo $miHtml->css(array('cake.generic', 'cake.cookbook', 'theme/ui.core', 'theme/ui.dialog', 'theme/ui.resizable', 'theme/ui.theme'),
+         'stylesheet', array('media' => 'screen'), false);
+        echo $miHtml->css('print', 'stylesheet', array('media' => 'print'), false);
+        echo $miHtml->css();
 	echo $scripts_for_layout;
 ?>
 </head>
@@ -189,6 +190,7 @@ echo $html->meta('keywords',
 	</div>
 <?php
 echo $miJavascript->link(array('jquery' => array()), false);
+echo $miJavascript->link('jquery-ui', false);
 echo $miJavascript->link('scripts', false);
 echo $miJavascript->link();
 

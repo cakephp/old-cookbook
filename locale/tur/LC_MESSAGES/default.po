@@ -2,13 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
 "POT-Creation-Date: 2009-02-26 00:33+0100\n"
-"PO-Revision-Date: 2009-02-26 00:38+0100\n"
-"Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
+"PO-Revision-Date: 2009-02-26 04:05+0200\n"
+"Last-Translator: Serhat Artun <sartun@gmail.com>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: ../../../\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: controllers/attachments_controller.php:81
 msgid "Attachment controller - no class or foreignKey error."
@@ -102,11 +103,11 @@ msgstr "Bu fonksiyon değişik (genel) dil içeriğini karşılaştırmak için"
 
 #: controllers/nodes_controller.php:958
 msgid "Edit/Correction"
-msgstr ""
+msgstr "Düzenle/Düzeltme"
 
 #: controllers/nodes_controller.php:960
 msgid "Translation to %s"
-msgstr ""
+msgstr "%s ye tercüme"
 
 #: controllers/revisions_controller.php:619;624;676
 msgid "Only current and previous revisions can be viewed"
@@ -118,7 +119,7 @@ msgstr "Sadece aynı nod üzerinde revizyon karşılaştırması mümkün"
 
 #: controllers/revisions_controller.php:658
 msgid "Current Pending revisions "
-msgstr ""
+msgstr "Şuan ki Bekleyen revizyonlar"
 
 #: controllers/revisions_controller.php:680
 msgid "Please login to access this revision"
@@ -165,11 +166,9 @@ msgid "Comment: %s"
 msgstr "Yorum: %s"
 
 #: views/comments/admin_index.ctp:8
-#, fuzzy
 msgid "%s %s comment"
 msgid_plural "%s %s comments"
-msgstr[0] "%s (%s yürürlükte)"
-msgstr[1] "%s (%s yürürlükte)"
+msgstr[0] "%s %s yorumlar"
 
 #: views/comments/index.ctp:3
 msgid "Comments: %s"
@@ -185,7 +184,7 @@ msgstr "Besleme olarak bur sayfa"
 
 #: views/elements/attachments.ctp:1
 msgid "Images/Files associated with this content"
-msgstr "Bu içerik ile ilgili Resimler / Dosyalar"
+msgstr "Bu içerik ile ilgili Resimler/Dosyalar"
 
 #: views/elements/comment.ctp:9
 msgid "unknown"
@@ -208,79 +207,76 @@ msgid "Comment on %s"
 msgstr "%s üzerindeki yorumlar"
 
 #: views/elements/comment_form.ctp:24
-#, fuzzy
 msgid "add comment"
-msgstr "Geçersiz Yorum."
+msgstr "yorum ekle"
 
 #: views/elements/comment_form_note.ctp:2
 msgid "Is a comment appropriate?"
-msgstr ""
+msgstr "Bir yorum yerindemi?"
 
 #: views/elements/comment_form_note.ctp:5
 msgid "Do you want to highlight a problem in the text? %s"
-msgstr ""
+msgstr "Metin deki bir problemi vurgulamak mı istiyorsunuz? %s"
 
 #: views/elements/comment_form_note.ctp:6
 msgid "You can change it"
-msgstr ""
+msgstr "Değiştirebilirsiniz"
 
 #: views/elements/comment_form_note.ctp:8
 msgid "Do you want help with this topic? There are ways to %s and more appropriate places to %s for %s"
-msgstr ""
+msgstr "Bu başlığa yardımcımı olmak istiyorsunuz? %s ye her zaman yollar vardır ve %s ye daha uygun olan %s için"
 
 #: views/elements/comment_form_note.ctp:9
 msgid "help yourself"
-msgstr ""
+msgstr "kendinize yardımcı olun"
 
 #: views/elements/comment_form_note.ctp:10
 msgid "ask"
-msgstr ""
+msgstr "sorun"
 
 #: views/elements/comment_form_note.ctp:11
 msgid "help"
-msgstr ""
+msgstr "yardım"
 
 #: views/elements/comment_form_note.ctp:13
 msgid "Do you want to highlight a problem with the application? %s or %s"
-msgstr ""
+msgstr "Uygulamadaki bir problemi vurgulamak mı istiyorsunuz? %s veya %s"
 
 #: views/elements/comment_form_note.ctp:14
 msgid "You can ticket it"
-msgstr ""
+msgstr "Onu etiketleyebilirsiniz"
 
 #: views/elements/comment_form_note.ctp:15
 msgid "You can fix it"
-msgstr ""
+msgstr "Onu onarabilirsiniz"
 
 #: views/elements/content_form_note.ctp:2
 msgid "Tips"
-msgstr ""
+msgstr "İpuçları"
 
 #: views/elements/content_form_note.ctp:5
-#, fuzzy
 msgid "Please review the %s for submitting to the Cookbook to ensure consistency."
-msgstr "Lütfen tutarlılığını sağlamak için Cookbook'a gönderme yönergelerini gözden geçirin"
+msgstr "Cookbook'un tutarlılığını sağlamak için lütfen %s yi gözden geçirin"
 
 #: views/elements/content_form_note.ctp:6
 msgid "Guidelines"
-msgstr ""
+msgstr "Yönergeler"
 
 #: views/elements/content_form_note.ctp:9
 msgid "Before being accepted, new content must be available in %s. Please submit your suggestion in %s if possible"
-msgstr ""
+msgstr "Kabul edilmeden önce, yeni içerik %s içinde mevcut olmalıdır. Mümkün ise lütfen önerinizi %s içine gönderin"
 
 #: views/elements/content_form_note.ctp:10;11
 msgid "English"
-msgstr ""
+msgstr "İngilizce"
 
 #: views/elements/language_links.ctp:21
 msgid "No %s translation yet for %s"
-msgstr ""
+msgstr "%s için %s tercümesi henüz yok"
 
 #: views/elements/language_links.ctp:27
-#, fuzzy
 msgid "Also available in %s"
-msgstr "Mevcut koleksiyonlar"
+msgstr "%s 'de mevcut"
 
 #: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
@@ -291,13 +287,12 @@ msgid "Not got one? Hop on over to %s and sign up"
 msgstr "Bir tane yokmu? Hemen %s ye atlayın ve kayıt olun"
 
 #: views/elements/node_options.ctp:9
-#, fuzzy
 msgid "Translate"
-msgstr "%s%% tercüme edildi"
+msgstr "Tercüme et"
 
 #: views/elements/node_options.ctp:10
 msgid "There is no translation for this section please submit one"
-msgstr ""
+msgstr "Bu bölüm için tercüme yok lütfen bir tane gönderin"
 
 #: views/elements/node_options.ctp:12
 msgid "Edit"
@@ -305,7 +300,7 @@ msgstr "Düzenle"
 
 #: views/elements/node_options.ctp:13
 msgid "Don't like this text? Submit your thoughts"
-msgstr ""
+msgstr "Bu metinden hoşlanmadınız mı? Kendi görüşünüzü gönderin"
 
 #: views/elements/node_options.ctp:17
 msgid "View just this section"
@@ -369,14 +364,12 @@ msgid "Search"
 msgstr "Ara"
 
 #: views/elements/search_form.ctp:4
-#, fuzzy
 msgid "Collection"
-msgstr "Geçersiz Koleksiyon"
+msgstr "Koleksiyon"
 
 #: views/elements/search_form.ctp:5
-#, fuzzy
 msgid "Search term"
-msgstr "Ara"
+msgstr "Arama koşulu"
 
 #: views/elements/secondary_nav.ctp:5
 msgid "Logged in as %s"
@@ -435,7 +428,7 @@ msgstr "Mevcut koleksiyonlar"
 
 #: views/layouts/default.ctp:37
 msgid "Mobile version"
-msgstr ""
+msgstr "Mobil versiyonu"
 
 #: views/layouts/default.ctp:57
 msgid "Recent comments"
@@ -446,9 +439,8 @@ msgid "My Submissions"
 msgstr "Submissions"
 
 #: views/layouts/default.ctp:87
-#, fuzzy
 msgid "Pending Submissions"
-msgstr "Submissions"
+msgstr "Bekleyen Sunuşlar"
 
 #: views/layouts/default.ctp:118
 msgid "Welcome to %s"
@@ -460,7 +452,7 @@ msgstr "CakePHP: hızlı geliştirme php framework"
 
 #: views/layouts/flash/new_content_default_language.ctp:5
 msgid "Want to know why?"
-msgstr ""
+msgstr "Neden olduğunu bilmek istermisiniz?"
 
 #: views/nodes/add.ctp:24
 #: views/nodes/edit.ctp:30
@@ -502,9 +494,8 @@ msgid "What is the reason for the edit? (In English Please) :)"
 msgstr "Düzenleme sebebiniz nedir? (İngilizce lütfen) :)"
 
 #: views/nodes/edit.ctp:44
-#, fuzzy
 msgid "Edit %s"
-msgstr "Düzenle"
+msgstr "Düzenle %s"
 
 #: views/nodes/history.ctp:5
 msgid "See English edits too"
@@ -569,8 +560,7 @@ msgstr "%s için değişiklik geçmişi"
 #: views/revisions/admin_pending.ctp:7
 msgid "%s pending %s submission"
 msgid_plural "%s pending %s submissions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s beklemede %s sunulmuş"
 
 #: views/revisions/results.ctp:8
 msgid "Search Results"

@@ -61,5 +61,30 @@ $(document).ready(function() {
 	$('a#tocLink').click(function(){
 		$('#tocFull').dialog('open');
 		return false;
-	});;
+	});
+	$('ul.dialogs a')
+		.click(function(){
+			$('<div class="dialog" style="display;none">Loading...</div>')
+				.attr('title', $(this).text())
+				.appendTo('body')
+				.load($(this).attr('href') + '?ajax', function(){
+					containLinks(this);
+				}).dialog({
+					autoOpen: false,
+					width: 500,
+					height: 300,
+					modal: false
+				})
+				.dialog('open');
+			return false;
+		})
+	function containLinks (base) {
+		var base = $(base);
+		$('a', base).click(function() {
+			base.load($(this).attr('href') + '?ajax', function() {
+				containLinks(base);
+			});
+			return false;
+		});
+	}
 });

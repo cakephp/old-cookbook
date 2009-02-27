@@ -49,4 +49,28 @@ echo $form->submit('save');
 echo $form->end();
 ?>
 </div>
-<?php echo $this->element('markitup', array('process' => 'textarea')); ?>
+<?php
+$menu->settings(__('Resources', true), array('class' => 'dialogs'));
+$lang = Configure::read('Languages.default');
+if ($data['Revision']['lang'] == $lang) {
+	$menu->add(array(
+		array('section' => __('Resources', true), 'title' => __('Current Version', true), 'url' => array('action' => 'view',
+			$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
+	));
+	$menu->add(array(
+		array('title' => __('History', true), 'url' => array('action' => 'history',
+			$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
+	));
+} else {
+	$menu->add(array(
+		array('section' => __('Resources', true), 'title' => 'Original', 'url' => array('action' => 'view',
+			$this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+	$menu->add(array(
+		array('title' => 'History', 'url' => array('action' => 'history',
+			$this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+}
+
+echo $this->element('markitup', array('process' => 'textarea'));
+?>

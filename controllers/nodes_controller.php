@@ -642,9 +642,10 @@ class NodesController extends AppController {
 			$direct = true;
 		}
 		$book = array_shift($path);
-		if ($nodeId !== $book['Node']['id']) {
+		if ($nodeId !== $book['Node']['id'] && empty($this->params['isAjax'])) {
 			return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
 		}
+		$nodeId = $book['Node']['id'];
 		$this->set('book', $book);
 		$this->set('data', $this->_setTocData(true));
 		$this->data = false;
@@ -939,6 +940,13 @@ class NodesController extends AppController {
 		$conditions = array('Attachment.class' => 'Node', 'Attachment.foreign_id' => $id);
 		$this->set('attachments', $Attachment->find('all', compact('conditions', 'recursive')));
 		$this->helpers[] = 'Highlight';
+		$contentSlugs = $this->Node->Revision->find('list', array('fields' => array('lang', 'slug'),
+			'conditions' => array(
+				'Revision.status' => 'current',
+				'Revision.node_id' => $this->currentNode,
+				'Revision.lang' => array($this->params['lang'], Configure::read('Languages.default'))
+			)));
+		$this->set('contentSlugs', $contentSlugs);
 		$this->render('edit');
 	}
 /**
@@ -985,6 +993,13 @@ class NodesController extends AppController {
 		}
 		$this->set(compact('users'));
 	}
+/**
+ * setTocData method
+ *
+ * @param bool $return false
+ * @return void
+ * @access protected
+ */
 	function _setTocData($return = false) {
 		$this->Node->recursive = 0;
 		$fields = array('Node.*', 'Revision.id', 'Revision.status', 'Revision.lang', 'Revision.title', 'Revision.slug');

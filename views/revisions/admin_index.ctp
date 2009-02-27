@@ -21,33 +21,30 @@ $th = array(
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
-	extract($row);
 	$collection = $book = '-';
 	foreach ($collections as $c) {
-		if ($c['Node']['lft'] <= $Node['lft'] && $c['Node']['rght'] >= $Node['rght']) {
+		if ($c['Node']['lft'] <= $row['Node']['lft'] && $c['Node']['rght'] >= $row['Node']['rght']) {
 			$collection = $html->link($c['Revision']['title'], am($pass, array('restrict_to' => $c['Node']['id'])));
 			$collection = $html->link($c['Revision']['title'], array('restrict_to' => $c['Node']['id']));
 			break;
 		}
 	}
 	foreach ($books as $b) {
-		if ($b['Node']['lft'] <= $Node['lft'] && $b['Node']['rght'] >= $Node['rght']) {
+		if ($b['Node']['lft'] <= $row['Node']['lft'] && $b['Node']['rght'] >= $row['Node']['rght']) {
 			$book = $html->link($b['Revision']['title'], am($pass, array('restrict_to' => $b['Node']['id'])));
 			break;
 		}
 	}
 	$tr = array(
-		$html->link($Revision['id'], array('action' => 'view', $Revision['id'])),
+		$html->link($row['Revision']['id'], array('action' => 'view', $row['Revision']['id'])),
 		$book . ' (' . $collection . ')',
-		$Node?$html->link($Node['sequence'], am($pass, array('page' => 1, 'node_id' => $Revision['node_id']))):'',
-		//$html->link($Revision['under_node_id'], am($pass, array('page' => 1, 'under_node_id' => $Revision['under_node_id']))),
-		//$html->link($Revision['after_node_id'], am($pass, array('page' => 1, 'after_node_id' => $Revision['after_node_id']))),
-		$html->link($Revision['title'], array('action' => 'view', $Revision['id'])),
-		$html->link($Revision['lang'], am($pass, array('page' => 1, 'lang:' . $Revision['lang']))),
-		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Revision['user_id']))):'',
+		$row['Node']?$html->link($row['Node']['sequence'], am($pass, array('page' => 1, 'node_id' => $row['Revision']['node_id']))):'',
+		$html->link($row['Revision']['title'], array('action' => 'view', $row['Revision']['id'])),
+		$html->link($row['Revision']['lang'], am($pass, array('page' => 1, 'lang:' . $row['Revision']['lang']))),
+		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
 		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
-		$html->link($Revision['status'], am($pass, array('page' => 1, 'status' => $Revision['status']))),
-		$html->link($Revision['created'], am($pass, array('page' => 1, 'created' => $Revision['created']))),
+		$html->link($row['Revision']['status'], am($pass, array('page' => 1, 'status' => $row['Revision']['status']))),
+		$html->link($row['Revision']['created'], am($pass, array('page' => 1, 'created' => $row['Revision']['created']))),
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

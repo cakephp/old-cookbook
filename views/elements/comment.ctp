@@ -4,8 +4,7 @@ if (1==2 && $data['user_id']==$data['Revision']['user_id']) {
 } else {
 	$class = "";
 }
-extract($data);
-extract($Comment);
+extract($data['Comment']);
 $name = __('unknown', true);
 if (isset($commenters[$user_id])) {
 	$name = $commenters[$user_id];
@@ -20,13 +19,13 @@ if (!empty($fixedDates)) {
 echo "</p>";
 echo "<p class=\"commenttitle\">";
 if ($this->action == 'recent') {
-	echo $html->link('#', array('action' => 'index', $Node['id'], $Revision['slug'], '#' => "comment_{$id}")) . ' - ';
+	echo $html->link('#', array('action' => 'index', $data['Node']['id'], $data['Revision']['slug'], '#' => "comment_{$id}")) . ' - ';
 } elseif(!empty($count)) {
 	echo $html->link($count, "#comment_{$id}") . ' - ';
 }
 if ($this->action == 'recent') {
-	echo $html->link($Node['sequence'] . ' ' . $Revision['title'], array('controller' => 'nodes', 'action' => 'view', $Node['id'],
-		$Revision['slug'], 'lang' => $lang)) . ' - ';
+	echo $html->link($data['Node']['sequence'] . ' ' . $data['Revision']['title'], array('controller' => 'nodes', 'action' => 'view', $data['Node']['id'],
+		$data['Revision']['slug'], 'lang' => $lang)) . ' - ';
 }
 	echo htmlspecialchars($title);
 echo "</p>";

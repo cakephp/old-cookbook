@@ -67,7 +67,7 @@ $(document).ready(function() {
 			$('<div class="dialog" style="display;none">Loading...</div>')
 				.attr('title', $(this).text())
 				.appendTo('body')
-				.load($(this).attr('href') + '?ajax', function(){
+				.load($(this).attr('href') + '/.ajax', function(){
 					containLinks(this);
 				}).dialog({
 					autoOpen: false,
@@ -81,7 +81,7 @@ $(document).ready(function() {
 	function containLinks (base) {
 		var base = $(base);
 		$('a', base).click(function() {
-			base.load($(this).attr('href') + '?ajax', function() {
+			base.load($(this).attr('href') + '/.ajax', function() {
 				containLinks(base);
 			});
 			return false;

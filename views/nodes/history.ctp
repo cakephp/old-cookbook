@@ -20,23 +20,23 @@ $th = array(
 $firstTranslation = true;
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
-	extract($row);
 	$defaultReason = 'edit';
-	if ($Revision['lang'] != $defaultLang) {
+	if ($row['Revision']['lang'] != $defaultLang) {
 		$defaultReason = 'edit/translation';
 	}
-	if ($Revision['status'] == 'pending') {
-		$link = $Revision['id'];
+	if ($row['Revision']['status'] == 'pending') {
+		$link = $row['Revision']['id'];
 	} else {
-		$link = $html->link($Revision['id'], array('controller' => 'revisions', 'action' => 'view', $Revision['id']));
+		$link = $html->link($row['Revision']['id'], array('controller' => 'revisions', 'action' => 'view',
+			$row['Revision']['id'], $row['Revision']['slug']));
 	}
 	$tr = array(
 		$link,
-		$Revision['lang'],
-		isset($users[$Revision['user_id']])?$users[$Revision['user_id']]:'-',
-		$Revision['reason']?$Revision['reason']:$defaultReason,
-		$Revision['status'],
-		$time->niceShort($Revision['created'])
+		$row['Revision']['lang'],
+		isset($users[$row['Revision']['user_id']])?$users[$row['Revision']['user_id']]:'-',
+		$row['Revision']['reason']?$row['Revision']['reason']:$defaultReason,
+		$row['Revision']['status'],
+		$time->niceShort($row['Revision']['created'])
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

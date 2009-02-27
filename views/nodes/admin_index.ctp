@@ -17,33 +17,32 @@ $th = array(
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
-	extract($row);
 	$collection = $book = '-';
 	foreach ($collections as $c) {
-		if ($c['Node']['lft'] <= $Node['lft'] && $c['Node']['rght'] >= $Node['rght']) {
+		if ($c['Node']['lft'] <= $row['Node']['lft'] && $c['Node']['rght'] >= $row['Node']['rght']) {
 			$collection = $html->link($c['Revision']['title'], am($pass, array('restrict_to' => $c['Node']['id'])));
 			$collection = $html->link($c['Revision']['title'], array('restrict_to' => $c['Node']['id']));
 			break;
 		}
 	}
 	foreach ($books as $b) {
-		if ($b['Node']['lft'] <= $Node['lft'] && $b['Node']['rght'] >= $Node['rght']) {
+		if ($b['Node']['lft'] <= $row['Node']['lft'] && $b['Node']['rght'] >= $row['Node']['rght']) {
 			$book = $html->link($b['Revision']['title'], am($pass, array('restrict_to' => $b['Node']['id'])));
 			break;
 		}
 	}
-	$author = isset($users[$Revision['user_id']])?$html->link($users[$Revision['user_id']], am($pass, array('Revision.user_id' => $Revision['user_id']))):'';
+	$author = isset($users[$row['Revision']['user_id']])?$html->link($users[$row['Revision']['user_id']], am($pass, array('Revision.user_id' => $row['Revision']['user_id']))):'';
 	$status = array();
-	if (in_array($Node['id'], $pendingUpdates)) {
-		$status[] = $html->link('change pending', array('controller' => 'revisions', 'action' => 'history', $Node['id'], 'status' =>
+	if (in_array($row['Node']['id'], $pendingUpdates)) {
+		$status[] = $html->link('change pending', array('controller' => 'revisions', 'action' => 'history', $row['Node']['id'], 'status' =>
 			'pending'));
 	}
 	$status = implode ($status, ' ');
 	$tr = array(
-		$html->link($Node['id'], array('action' => 'view', $Node['id'])),
+		$html->link($row['Node']['id'], array('action' => 'view', $row['Node']['id'])),
 		$book . ' (' . $collection . ')',
-		$html->link($Node['sequence'], am($pass, array('restrict_to' => $Node['id']))),
-		$html->link($Revision['title'], array('action' => 'view', $Node['id'])),
+		$html->link($row['Node']['sequence'], am($pass, array('restrict_to' => $row['Node']['id']))),
+		$html->link($row['Revision']['title'], array('action' => 'view', $row['Node']['id'])),
 		$author,
 		$status,
 	);

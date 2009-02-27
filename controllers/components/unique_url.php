@@ -21,6 +21,13 @@
  */
 class UniqueUrlComponent extends Object {
 /**
+ * components property
+ *
+ * @var array
+ * @access public
+ */
+	var $components = array('RequestHandler');
+/**
  * here property
  *
  * @var mixed null
@@ -50,7 +57,7 @@ class UniqueUrlComponent extends Object {
  */
 	function check () {
 		if (isset($this->controller->params['requested']) || isset($this->controller->params['admin']) ||
-			isset($this->controller->params['isAjax']) || $this->controller->data) {
+			$this->RequestHandler->isAjax() || $this->controller->data) {
 			return;
 		}
 		$this->here = $here = '/' . trim($this->controller->params['url']['url'], '/');

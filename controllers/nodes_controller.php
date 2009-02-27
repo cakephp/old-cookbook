@@ -98,7 +98,6 @@ class NodesController extends AppController {
 			if (isset($this->passedArgs[0])) {
 				$this->Node->id = $this->currentNode = $this->passedArgs[0];
 			}
-			$this->UniqueUrl->check();
 			$fields = array ('Node.id', 'Node.depth', 'Node.id', 'Node.lft', 'Node.rght', 'Node.comment_level', 'Node.edit_level', 'Revision.id', 'Revision.slug', 'Revision.title', 'Revision.content');
 			if (!isset($this->currentNode)) {
 				$topNode = $this->Node->find(array('Node.depth' => '0'), array('Node.id'), null, 0);
@@ -973,6 +972,7 @@ class NodesController extends AppController {
 		$this->paginate['order'] = 'Revision.created desc';
 		$this->paginate['fields'] = array(
 			'Revision.id',
+			'Revision.slug',
 			'Revision.user_id',
 			'Revision.lang',
 			'Revision.status',

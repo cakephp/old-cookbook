@@ -5,20 +5,19 @@
 $pass = $this->passedArgs;
 $paginator->options(array('url' => $pass));
 foreach ($data as $row) {
-	extract($row);
 	echo '<li>';
-	if (in_array($Revision['status'], array('current', 'previous'))) {
-		echo '<h3>' . $html->link($Revision['title'], array('controller' => 'revisions', 'action' => 'view', $Revision['id'])) . '</h3>';
+	if (in_array($row['Revision']['status'], array('current', 'previous'))) {
+		echo '<h3>' . $html->link($row['Revision']['title'], array('controller' => 'revisions', 'action' => 'view', $row['Revision']['id'])) . '</h3>';
 	} else {
-		echo '<h3>' . $Revision['title'] . '</h3>';
+		echo '<h3>' . $row['Revision']['title'] . '</h3>';
 	}
 	echo '<ul>';
-	if ($Change['status_from'] == 'new') {
+	if ($row['Change']['status_from'] == 'new') {
 		echo '<li>' . sprintf(__('change submitted by %s, %s', true),
-			isset($User['username'])?$User['username']:'unknown',
-			$time->niceShort($Change['created'])) . '</li>';
+			isset($row['User']['username'])?$row['User']['username']:'unknown',
+			$time->niceShort($row['Change']['created'])) . '</li>';
 	} else {
-		switch ($Change['status_to']) {
+		switch ($row['Change']['status_to']) {
 			case 'accepted';
 				$to = __('accepted', true);
 				break;
@@ -29,17 +28,17 @@ foreach ($data as $row) {
 				$to = __('pending', true);
 				break;
 			default:
-				$to = __($Change['status_to'], true);
+				$to = __($row['Change']['status_to'], true);
 		}
 		echo '<li>' . sprintf(__('changed from %s to %s by %s, %s', true),
-			$Change['status_from'],
+			$row['Change']['status_from'],
 			$to,
-			isset($User['username'])?$User['username']:'unknown',
-			$time->niceShort($Change['created'])) . '</li>';
-		$author = isset($Author['username'])?$Author['username']:'unknown';
+			isset($row['User']['username'])?$row['User']['username']:'unknown',
+			$time->niceShort($row['Change']['created'])) . '</li>';
+		$author = isset($row['Author']['username'])?$row['Author']['username']:'unknown';
 		echo '<li>' . sprintf(__('submitted by %s', true), $author) . '</li>';
 	}
-	echo '<li>' . $html->clean($Change['comment']) . '</li>';
+	echo '<li>' . $html->clean($row['Change']['comment']) . '</li>';
 	echo '</ul></li>';
 }
 ?>

@@ -10,12 +10,11 @@
 			$_this = $_view;
 			return;
 		}
-		extract($row);
 		return array(
-			'title'		=> $Comment['title'],
-			'link'		=> array('controller' => 'comments', 'action' => 'view', $Comment['id']),
+			'title'		=> $row['Comment']['title'],
+			'link'		=> array('controller' => 'comments', 'action' => 'view', $row['Comment']['id']),
 			'description'	=> $_this->element('comment', array('data' => $row['Comment'], 'fixedDates' => true)),
-			'pubDate'	=> date('r', strtotime($Comment['created'])),
+			'pubDate'	=> date('r', strtotime($row['Comment']['created'])),
 		);
 	}
 ?>

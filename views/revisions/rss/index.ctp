@@ -8,25 +8,24 @@
 			$html = $_html;
 			return;
 		}
-		extract($row);
 		$desc = '<ul>';
-		$author = isset($User['username'])?$User['username']:'unknown';
+		$author = isset($row['User']['username'])?$row['User']['username']:'unknown';
 		$desc .= '<li>' . sprintf(__('Submitted by: %s', true), $author) . '</li>';
-		$comment = $html->clean(trim($Revision['reason']));
+		$comment = $html->clean(trim($row['Revision']['reason']));
 		if ($comment) {
 			$desc .= '<li>' . $comment . '</li>';
 		}
 		$desc .= '</ul>';
-		if ($Node['sequence']) {
-			$title = $Node['sequence'] . ' - ' . $Revision['title'];
+		if ($row['Node']['sequence']) {
+			$title = $row['Node']['sequence'] . ' - ' . $row['Revision']['title'];
 		} else {
-			$title = $Revision['title'];
+			$title = $row['Revision']['title'];
 		}
 		return array(
 			'title'		=> $title,
-			'link'		=> array('controller' => 'revisions', 'action' => 'view', $Revision['id'], $Revision['slug']),
+			'link'		=> array('controller' => 'revisions', 'action' => 'view', $row['Revision']['id'], $row['Revision']['slug']),
 			'description'	=> $desc,
-			'pubDate'	=> date('r', strtotime($Revision['created'])),
+			'pubDate'	=> date('r', strtotime($row['Revision']['created'])),
 		);
 	}
 ?>

@@ -10,13 +10,12 @@
 			$_this = $_view;
 			return;
 		}
-		extract($row);
 		return array(
-			'title'		=> $Node['sequence'] . ' ' . $Revision['title'] . ' - ' . $html->clean(htmlspecialchars($Comment['title'])),
-			'link'		=> array('controller' => 'comments', 'action' => 'index', $Comment['node_id'], 'lang' => $Comment['lang'], '#'
-		=> "comment_{$Comment['id']}"),
+			'title'		=> $row['Node']['sequence'] . ' ' . $row['Revision']['title'] . ' - ' . $html->clean(htmlspecialchars($row['Comment']['title'])),
+			'link'		=> array('controller' => 'comments', 'action' => 'index', $row['Comment']['node_id'], 'lang' => $row['Comment']['lang'], '#'
+		=> "comment_{$row['Comment']['id']}"),
 			'description'	=> $_this->element('comment', array('data' => $row, 'fixedDates' => true)),
-			'pubDate'	=> date('r', strtotime($Comment['created'])),
+			'pubDate'	=> date('r', strtotime($row['Comment']['created'])),
 		);
 	}
 ?>

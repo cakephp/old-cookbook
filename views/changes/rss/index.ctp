@@ -8,8 +8,7 @@
 			$html = $_html;
 			return;
 		}
-		extract($row);
-		switch ($Change['status_to']) {
+		switch ($row['Change']['status_to']) {
 			case 'accepted';
 				$to = __('accepted', true);
 				break;
@@ -20,25 +19,25 @@
 				$to = __('pending', true);
 				break;
 			default:
-				$to = __($Change['status_to'], true);
+				$to = __($row['Change']['status_to'], true);
 		}
 
 		$desc = '<ul>';
-		$author = isset($Author['username'])?$Author['username']:'unknown';
+		$author = isset($row['Author']['username'])?$row['Author']['username']:'unknown';
 		$desc .= '<li>' . sprintf(__('Submitted by: %s', true), $author) . '</li>';
-		if ($Change['status_to'] != 'pending'){
-			$desc .= '<li>' . sprintf(__('Changed by: %s', true), $User['username']) . '</li>';
+		if ($row['Change']['status_to'] != 'pending'){
+			$desc .= '<li>' . sprintf(__('Changed by: %s', true), $row['User']['username']) . '</li>';
 		}
-		$comment = $html->clean(trim($Change['comment']));
+		$comment = $html->clean(trim($row['Change']['comment']));
 		if ($comment) {
 			$desc .= '<li>' . $comment . '</li>';
 		}
 		$desc .= '</ul>';
 		return array(
-			'title'		=> $to . ' - ' . $Revision['title'],
-			'link'		=> array('controller' => 'revisions', 'action' => 'view', $Revision['id'], $Revision['slug']),
+			'title'		=> $to . ' - ' . $row['Revision']['title'],
+			'link'		=> array('controller' => 'revisions', 'action' => 'view', $row['Revision']['id'], $row['Revision']['slug']),
 			'description'	=> $desc,
-			'pubDate'	=> date('r', strtotime($Change['created'])),
+			'pubDate'	=> date('r', strtotime($row['Change']['created'])),
 		);
 	}
 ?>

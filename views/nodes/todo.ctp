@@ -16,11 +16,10 @@ echo '</p><p>' . __('These sections either do not have a translation, or the Eng
 </div>
 <?php
 foreach ($data as $id => $row) {
-	extract ($row);
-	$sequence = $Node['sequence'];
+	$sequence = $row['Node']['sequence'];
 	$sequence = $sequence?$sequence:'#';
-	echo "<h2 id=\"{$Revision['slug']}-{$Node['id']}\">" .
-		$html->link($sequence, array('action' => 'view', $Node['id'], $Revision['slug'])) . ' ' . htmlspecialchars($Revision['title']) . "</h2>";
+	echo "<h2 id=\"{$row['Revision']['slug']}-{$row['Node']['id']}\">" .
+		$html->link($sequence, array('action' => 'view', $row['Node']['id'], $row['Revision']['slug'])) . ' ' . htmlspecialchars($row['Revision']['title']) . "</h2>";
 
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $row));

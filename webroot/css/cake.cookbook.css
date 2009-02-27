@@ -431,6 +431,9 @@ div#toc {
 div.crumbs {
 	padding: 10px 0;
 }
+a#tocLink {
+	text-decoration:underline;
+}
 div#tocFull {
 	display:none;
 }

@@ -56,12 +56,7 @@ $(document).ready(function() {
 		autoOpen: false,
 		width: 1000,
 		height: 550,
-		modal: false,
-		buttons: {
-			"OK": function() {
-				$(this).dialog("close");
-			},
-		}
+		modal: false
 	});
 	$('a#tocLink').click(function(){
 		$('#tocFull').dialog('open');

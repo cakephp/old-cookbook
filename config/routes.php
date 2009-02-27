@@ -32,7 +32,7 @@ if (!empty($fromUrl)) {
 		Router::connectNamed(array('node', 'user', 'language', 'status', 'query', 'collection'), array('default' => true));
 	}
 }
-Router::parseExtensions('rss', 'xml');
+Router::parseExtensions('rss', 'xml', 'ajax');
 // Legacy
 Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'process', 'chapter'));
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));

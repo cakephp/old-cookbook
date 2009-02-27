@@ -62,12 +62,15 @@ $(document).ready(function() {
 		$('#tocFull').dialog('open');
 		return false;
 	});
+	/**
+	 * Dialogs - use .ajax suffix to ensure full page view caching doesn't get confused
+	 */
 	$('ul.dialogs a')
 		.click(function(){
 			$('<div class="dialog" style="display;none">Loading...</div>')
 				.attr('title', $(this).text())
 				.appendTo('body')
-				.load($(this).attr('href') + '/.ajax', function(){
+				.load($(this).attr('href') + '.ajax', function(){
 					containLinks(this);
 				}).dialog({
 					autoOpen: false,
@@ -77,11 +80,14 @@ $(document).ready(function() {
 				})
 				.dialog('open');
 			return false;
-		})
+		});
+	/**
+	 * containLinks, for the passed base find any links within it and ajax load into the same container
+	 */
 	function containLinks (base) {
 		var base = $(base);
 		$('a', base).click(function() {
-			base.load($(this).attr('href') + '/.ajax', function() {
+			base.load($(this).attr('href') + '.ajax', function() {
 				containLinks(base);
 			});
 			return false;

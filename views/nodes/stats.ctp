@@ -8,28 +8,29 @@
 	<li><?php echo sprintf(__('Last update: %s', true), $time->niceShort($data[$defaultLang]['last_update'])) ?></li>
 </ul></div>
 <div class="summary">
-<?php
-foreach ($data[$defaultLang]['top_contributors'] as $row) {
-	if (isset($users[$row['Revision']['user_id']])) {
-		$nick = $users[$row['Revision']['user_id']]['User']['username'];
-		if ($users[$row['Revision']['user_id']]['Profile']['url']) {
-			$url = $users[$row['Revision']['user_id']]['Profile']['url'];
+	<?php
+	foreach ($data[$defaultLang]['top_contributors'] as $row) {
+		if (isset($users[$row['Revision']['user_id']])) {
+			$nick = $users[$row['Revision']['user_id']]['User']['username'];
+			if ($users[$row['Revision']['user_id']]['Profile']['url']) {
+				$url = $users[$row['Revision']['user_id']]['Profile']['url'];
+			} else {
+				$url = 'http://bakery.cakephp.org/profiles/view/' . $row['Revision']['user_id'] . '/' . $nick;
+			}
 		} else {
+			$nick = 'user_' . $row['Revision']['user_id'];
 			$url = 'http://bakery.cakephp.org/profiles/view/' . $row['Revision']['user_id'] . '/' . $nick;
 		}
-	} else {
-		$nick = 'user_' . $row['Revision']['user_id'];
-		$url = 'http://bakery.cakephp.org/profiles/view/' . $row['Revision']['user_id'] . '/' . $nick;
+		$menu->add(array(
+			'section' => $defaultLang,
+			'title' => sprintf(__('%s (%s current)', true), $nick, $row[0]['count']),
+			'url' => $url
+		));
 	}
-	$menu->add(array(
-		'section' => $defaultLang,
-		'title' => sprintf(__('%s (%s current)', true), $nick, $row[0]['count']),
-		'url' => $url
-	));
-}
-unset ($counts[$defaultLang]);
-echo '<br style="clear:left" />';
-echo '<div class="userstats">' . $menu->generate($defaultLang, array('class' => 'stats', 'splitCount' => 3)) . '</div>';
+	unset ($counts[$defaultLang]);
+	echo '<br style="clear:left" />';
+	echo '<div class="userstats">' . $menu->generate($defaultLang, array('class' => 'stats', 'splitCount' => 3)) . '</div>';
+	echo '<br style="clear:left" />';
 echo '</div>';
 foreach ($counts as $lang => $count) {
 	$row = $data[$lang];
@@ -65,6 +66,7 @@ foreach ($counts as $lang => $count) {
 	}
 	echo '<div class="userstats">' . $menu->generate($lang, array('class' => 'stats', 'splitCount' => 3)) . '</div>';
 	echo '</div>';
+	echo '<br style="clear:left" />';
 }
 ?>
 </div>

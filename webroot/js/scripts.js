@@ -109,8 +109,5 @@ $(document).ready(function() {
 			}
 			return false;
 		});
-		$('form', base).ajaxForm({
-			target: base,
-		});
 	}
 });

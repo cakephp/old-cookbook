@@ -14,7 +14,9 @@ if (!$data) {
 	}
 }
 if (isset($node)) {
-	echo $this->element('comment_form');
+	echo '<div class="comment"><p class="commenttitle"><em>';
+	echo $html->link(__('Add a comment', true), am($this->passedArgs, array('controller' => 'comments', 'action' => 'add')), array('class' => 'popout'));
+	echo '</em></p></div>';
 }
 $html->meta('rss', $html->url($this->passedArgs) . '.rss', array('title' => __('This page as a feed', true)), false);
 ?>

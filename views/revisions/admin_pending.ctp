@@ -42,8 +42,8 @@ foreach ($data as $row) {
 			break;
 		}
 	}
-	if(empty($row['Revision']['node_id']) && !empty($UnderNode['sequence']) ){
-	$sequence = $html->link('{'.$UnderNode['sequence'].'}', am($pass, array('page' => 1, 'node_id' => $UnderNode['id'])), array('title' => 'New Section: under - '.$UnderNode['sequence'].' after: '.$AfterNode['sequence'] ));
+	if(empty($row['Revision']['node_id']) && !empty($row['UnderNode']['sequence']) ){
+	$sequence = $html->link('{'.$row['UnderNode']['sequence'].'}', am($pass, array('page' => 1, 'node_id' => $row['UnderNode']['id'])), array('title' => 'New Section: under - '.$row['UnderNode']['sequence'].' after: '.$row['AfterNode']['sequence'] ));
 	} else {
 		$sequence = $html->link($row['Node']['sequence'], am($pass, array('page' => 1, 'node_id' => $row['Node']['id'])));
 	}
@@ -52,8 +52,8 @@ foreach ($data as $row) {
 		$book . ' (' . $collection . ')',
 		$sequence,
 		$html->link($row['Revision']['title'],array('action'=>'view',$row['Revision']['id'])),
-		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
-		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
+		$row['User']?$html->link($row['User']['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
+		$row['User']?'<a href="mailto:' . $row['User']['email'] . '">' . $row['User']['email'] . '</a>':'',
 		$html->link($row['Revision']['created'], am($pass, array('page' => 1, 'created' => $row['Revision']['created']))),
 	);
 	echo $html->tableCells($tr);

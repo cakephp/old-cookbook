@@ -382,8 +382,11 @@ div.flags                               {position:relative;top:25px;right:10px;h
 	border-bottom: 1px dashed;
 }
 .summary a:hover, .body a:hover {
-	border-bottom: none;
+	border-bottom: 1px solid;
+	text-decoration: none;
 }
+.summary a.codeToggle:hover, .body acodeToggle:hover
+				      {border-bottom: none}
 a.codeToggle                            {font-size:11px; background: #f3f3f0; display:block; padding: 0.1em 1em; border:none;}
 div#body div.revisions,
 div.view div.summary,

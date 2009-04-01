@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2008-12-04 15:20-0200\n"
-"PO-Revision-Date: 2008-12-09 14:38-0300\n"
+"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
 "MIME-Version: 1.0\n"
@@ -11,207 +11,192 @@ msgstr ""
 "X-Poedit-Language: Persian\n"
 "X-Poedit-Basepath: ../../../\n"
 
-#: app_controller.php:93
-msgid "Whoops, not a valid language."
-msgstr "اوپس! زبان معتبر نیست"
-
-#: app_controller.php:109
-msgid "Please login to continue"
-msgstr "لطفاً برای ادامه به سیستم وارد شوید"
-
-#: app_controller.php:293
-msgid "All %s matching the term \"%s\""
-msgstr "تمام %s هایی که شامل عبارت \"%s\"  ستند"
-
-#: controllers/attachments_controller.php:85
+#: controllers/attachments_controller.php:81
 msgid "Attachment controller - no class or foreignKey error."
 msgstr "کنترل‌کننده‌ی پیوست‌ها - خطای نبود کلاس یا کلیدخارجی"
 
-#: controllers/attachments_controller.php:110
+#: controllers/attachments_controller.php:106
 msgid "Existing Attachment for %s, id %s updated"
 msgstr "پیوست جدید برای %s, شناسه %s اضافه شد"
 
-#: controllers/attachments_controller.php:112
+#: controllers/attachments_controller.php:108
 msgid "New Attachment for %s, id %s added"
 msgstr "پیوست جدید برای %s, شناسه %s اضافه شد"
 
-#: controllers/attachments_controller.php:137
+#: controllers/attachments_controller.php:133
 msgid "%s with id %s updated"
 msgstr "%s با شناسه %s به روز شد"
 
-#: controllers/attachments_controller.php:140
+#: controllers/attachments_controller.php:136
 msgid "errors in form"
 msgstr "خطا در فرم"
 
-#: controllers/changes_controller.php:130
+#: controllers/changes_controller.php:127
 msgid "Recent Changes for %s"
 msgstr "تغییرات اخیر برای %s"
 
-#: controllers/changes_controller.php:134
-#: views/layouts/default.ctp:33
+#: controllers/changes_controller.php:131 views/layouts/default.ctp:52
 msgid "Recent Changes for all languages"
 msgstr "تغییرات اخیر برای تمام زبان‌ها"
 
-#: controllers/changes_controller.php:136
-#: views/layouts/default.ctp:28
+#: controllers/changes_controller.php:133 views/layouts/default.ctp:46
 msgid "Recent Changes"
 msgstr "تغییرات اخیر"
 
-#: controllers/changes_controller.php:144
-#: controllers/comments_controller.php:191
+#: controllers/changes_controller.php:141
+#: controllers/comments_controller.php:199
 msgid "by %s"
 msgstr "به‌وسیله‌ی %s"
 
-#: controllers/changes_controller.php:149
+#: controllers/changes_controller.php:146
 msgid "restricted to status: %s"
 msgstr "محدود به وضعیت: %s"
 
-#: controllers/comments_controller.php:84;116
+#: controllers/comments_controller.php:92;124
 msgid "Invalid Node."
 msgstr "گره نامعتبر."
 
-#: controllers/comments_controller.php:93
+#: controllers/comments_controller.php:101
 msgid "Your comment has been added"
 msgstr "نظر شما مطرح شد."
 
-#: controllers/comments_controller.php:96
+#: controllers/comments_controller.php:104
 msgid "Please correct errors below."
 msgstr "لطفاً خطاهای زیر را تصحیح کنید."
 
-#: controllers/comments_controller.php:120
+#: controllers/comments_controller.php:128
 msgid "No permissions to see comments for that section"
 msgstr "دسترسی‌ای برای نظرات آن بخش وجود ندارد"
 
-#: controllers/comments_controller.php:128
-#: views/nodes/view_all.ctp:110;120
+#: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
 msgid "Comments for %s"
 msgstr "نظرات %s"
 
-#: controllers/comments_controller.php:161
+#: controllers/comments_controller.php:169
 msgid "Invalid Comment."
 msgstr "نظر نامعتبر"
 
-#: controllers/comments_controller.php:180
-#: views/comments/index.ctp:6
+#: controllers/comments_controller.php:188 views/comments/index.ctp:5
 msgid "Recent Comments"
 msgstr "نظرات اخیر"
 
-#: controllers/comments_controller.php:182
-#: views/layouts/default.ctp:43
+#: controllers/comments_controller.php:190 views/layouts/default.ctp:63
 msgid "Recent Comments for all languages"
 msgstr "نظرات اخیر در تمام زبان‌ها"
 
-#: controllers/nodes_controller.php:848
+#: controllers/nodes_controller.php:789
 msgid "Invalid Collection"
 msgstr "مجموعه نامعتبر"
 
-#: controllers/nodes_controller.php:873;978
-msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+#: controllers/nodes_controller.php:814;922
+msgid ""
+"Thanks for your contribution! Your suggestion has been submitted for review."
 msgstr "از همکاری‌تان ممنونیم! پیشنهاد شما برای بررسی ثبت گردید."
 
-#: controllers/nodes_controller.php:933
+#: controllers/nodes_controller.php:877
 msgid "This function is for comparing different (public) language content"
 msgstr "این تابع برای ماقیسه‌ی زبان‌های مختلف (عمومی) است."
 
-#: controllers/revisions_controller.php:616;621;647
+#: controllers/nodes_controller.php:930
+msgid "Edit/Correction"
+msgstr ""
+
+#: controllers/nodes_controller.php:932
+msgid "Translation to %s"
+msgstr ""
+
+#: controllers/revisions_controller.php:619;624;676
 msgid "Only current and previous revisions can be viewed"
 msgstr "فقط نسخه‌های فعلی و قبلی می‌توانند نشان داده شوند. "
 
-#: controllers/revisions_controller.php:625
+#: controllers/revisions_controller.php:628
 msgid "Only possible to compare revisions of the same node"
 msgstr ""
 
-#: controllers/revisions_controller.php:651
+#: controllers/revisions_controller.php:658
+msgid "Current Pending revisions "
+msgstr ""
+
+#: controllers/revisions_controller.php:680
 msgid "Please login to access this revision"
 msgstr ""
 
-#: models/node.php:170
+#: models/node.php:168
 msgid "Default Title"
 msgstr "عنوان پیش‌فرض"
 
-#: models/node.php:173
+#: models/node.php:171
 msgid "default_slug"
 msgstr "slug پیش‌فرض"
 
-#: models/node.php:176
+#: models/node.php:174
 msgid "Default Content"
 msgstr "<p>محتوای پیش‌فرض</p>"
 
-#: plugins/users/views/users/login.ctp:8;20
-#: views/elements/secondary_nav.ctp:12
-msgid "Login"
-msgstr ""
-
-#: plugins/users/views/users/login.ctp:13
-msgid "Forgot your password?"
-msgstr ""
-
-#: views/changes/index.ctp:18
+#: views/changes/index.ctp:16
 msgid "change submitted by %s, %s"
 msgstr "تغییرات توسط %s، %s ثبت گردید"
 
-#: views/changes/index.ctp:24
-#: views/changes/rss/index.ctp:14
+#: views/changes/index.ctp:22
 msgid "accepted"
 msgstr "قبول شده"
 
-#: views/changes/index.ctp:27
-#: views/changes/rss/index.ctp:17
+#: views/changes/index.ctp:25
 msgid "not accepted"
 msgstr "رد شده"
 
-#: views/changes/index.ctp:30
-#: views/changes/rss/index.ctp:20
+#: views/changes/index.ctp:28
 msgid "pending"
 msgstr "معلق"
 
-#: views/changes/index.ctp:35
+#: views/changes/index.ctp:33
 msgid "changed from %s to %s by %s, %s"
 msgstr "تغییرات از %s تا %s توسط  %s، %s"
 
-#: views/changes/index.ctp:41
+#: views/changes/index.ctp:39
 msgid "submitted by %s"
 msgstr "ثبت کننده: %s"
-
-#: views/changes/rss/index.ctp:28
-#, fuzzy
-msgid "Submitted by: %s"
-msgstr "ثبت کننده: %s"
-
-#: views/changes/rss/index.ctp:30
-#, fuzzy
-msgid "Changed by: %s"
-msgstr "تاریخ‌چه ویرایش برای %s"
 
 #: views/comments/add.ctp:6
 msgid "Comment: %s"
 msgstr "نظر: %s"
 
-#: views/comments/index.ctp:4
+#: views/comments/admin_index.ctp:8
+msgid "%s %s comment"
+msgid_plural "%s %s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: views/comments/index.ctp:3
 msgid "Comments: %s"
 msgstr "نظر: %s"
 
-#: views/comments/index.ctp:11
+#: views/comments/index.ctp:10
 msgid "No Comments yet!"
 msgstr "هیچ نظری داده نشده!"
 
-#: views/comments/index.ctp:20
+#: views/comments/index.ctp:18
+#, fuzzy
+msgid "Add a comment"
+msgstr "با حساب نانوایی (Bakery) خود وارد شوید"
+
+#: views/comments/index.ctp:21
 msgid "This page as a feed"
 msgstr "این صفحه به عنوان یک منبع"
 
-#: views/elements/attachments.ctp:2
+#: views/elements/attachments.ctp:1
 msgid "Images/Files associated with this content"
 msgstr "تصاویر/فایل‌های مرتبط با این محتوا"
 
-#: views/elements/comment.ctp:9
+#: views/elements/comment.ctp:8
 msgid "unknown"
 msgstr ""
 
-#: views/elements/comment.ctp:16
+#: views/elements/comment.ctp:15
 msgid "By %s on %s"
 msgstr ""
 
-#: views/elements/comment.ctp:18
+#: views/elements/comment.ctp:17
 msgid "By %s %s"
 msgstr ""
 
@@ -223,51 +208,143 @@ msgstr "با حساب نانوایی (Bakery) خود وارد شوید"
 msgid "Comment on %s"
 msgstr ""
 
-#: views/elements/login_hint.ctp:3
+#: views/elements/comment_form.ctp:24
+#, fuzzy
+msgid "add comment"
+msgstr "نظر نامعتبر"
+
+#: views/elements/comment_form_note.ctp:2
+msgid "Is a comment appropriate?"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:5
+msgid "Do you want to highlight a problem in the text? %s"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:6
+msgid "You can change it"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:8
+msgid ""
+"Do you want help with this topic? There are ways to %s and more appropriate "
+"places to %s for %s"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:9
+msgid "help yourself"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:10
+msgid "ask"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:11
+msgid "help"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:13
+msgid "Do you want to highlight a problem with the application? %s or %s"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:14
+msgid "You can ticket it"
+msgstr ""
+
+#: views/elements/comment_form_note.ctp:15
+msgid "You can fix it"
+msgstr ""
+
+#: views/elements/content_form_note.ctp:2
+msgid "Tips"
+msgstr ""
+
+#: views/elements/content_form_note.ctp:5
+#, fuzzy
+msgid ""
+"Please review the %s for submitting to the Cookbook to ensure consistency."
+msgstr "لطفاً راهنماهای لازم برای ارسال به کتاب آشپزی را مطالعه کنید."
+
+#: views/elements/content_form_note.ctp:6
+msgid "Guidelines"
+msgstr ""
+
+#: views/elements/content_form_note.ctp:9
+msgid ""
+"Before being accepted, new content must be available in %s. Please submit "
+"your suggestion in %s if possible"
+msgstr ""
+
+#: views/elements/content_form_note.ctp:10;11
+msgid "English"
+msgstr ""
+
+#: views/elements/language_links.ctp:21
+msgid "No %s translation yet for %s"
+msgstr ""
+
+#: views/elements/language_links.ctp:27
+#, fuzzy
+msgid "Also available in %s"
+msgstr "مجموعه‌های موجود"
+
+#: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
 msgstr "با حساب نانوایی (Bakery) خود وارد شوید"
 
-#: views/elements/login_hint.ctp:4
+#: views/elements/login_hint.ctp:3
 msgid "Not got one? Hop on over to %s and sign up"
 msgstr "هنوز حساب باز نکردید؟ یک سر به %s بزنید و ثبت نام کنید"
 
 #: views/elements/node_options.ctp:8
+msgid "Translate"
+msgstr ""
+
+#: views/elements/node_options.ctp:9
+msgid "There is no translation for this section please submit one"
+msgstr ""
+
+#: views/elements/node_options.ctp:11
 msgid "Edit"
 msgstr "ویرایش"
 
-#: views/elements/node_options.ctp:11
+#: views/elements/node_options.ctp:12
+msgid "Don't like this text? Submit your thoughts"
+msgstr ""
+
+#: views/elements/node_options.ctp:16
 msgid "View just this section"
 msgstr "فقط این بخش را نمایش بده"
 
-#: views/elements/node_options.ctp:14
+#: views/elements/node_options.ctp:20
 msgid "Comments (%s)"
 msgstr "نظرات (%s)"
 
-#: views/elements/node_options.ctp:19
+#: views/elements/node_options.ctp:25
 msgid "there is a pending change for this section"
 msgstr "یک تغییر برای این مطلب موجود است"
 
-#: views/elements/node_options.ctp:22
+#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
 msgid "History"
 msgstr ""
 
-#: views/elements/node_options.ctp:32
+#: views/elements/node_options.ctp:38
 msgid "This text may be out of sync with the English version"
 msgstr "این متن احتمالاً با نسخه‌ی انگلیسی همخوان نیست."
 
-#: views/elements/node_options.ctp:39
+#: views/elements/node_options.ctp:45
 msgid "Compare to original content"
 msgstr "مقایسه با محتوای اصلی"
 
-#: views/elements/paging.ctp:4
+#: views/elements/paging.ctp:3
 msgid "Page %s"
 msgstr ""
 
-#: views/elements/paging.ctp:5
+#: views/elements/paging.ctp:4
 msgid "« previous"
 msgstr " قبلی«"
 
-#: views/elements/paging.ctp:8
+#: views/elements/paging.ctp:7
 msgid "Next »"
 msgstr " بعدی »"
 
@@ -291,159 +368,207 @@ msgstr ""
 msgid "Save it"
 msgstr ""
 
-#: views/elements/search.ctp:22
-#: views/elements/search_form.ctp:12
+#: views/elements/search.ctp:21 views/elements/search_form.ctp:6
 msgid "Search"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:6
+#: views/elements/search_form.ctp:4
+#, fuzzy
+msgid "Collection"
+msgstr "مجموعه نامعتبر"
+
+#: views/elements/search_form.ctp:5
+#, fuzzy
+msgid "Search term"
+msgstr "نتایج جستجو"
+
+#: views/elements/secondary_nav.ctp:5
 msgid "Logged in as %s"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:7
+#: views/elements/secondary_nav.ctp:6
 msgid "Logout"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:21
+#: views/elements/secondary_nav.ctp:11
+msgid "Login"
+msgstr ""
+
+#: views/elements/secondary_nav.ctp:15
 msgid "Top Contributors"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:28
+#: views/elements/secondary_nav.ctp:18
 msgid "Todo"
 msgstr ""
 
-#: views/elements/secondary_nav.ctp:30
+#: views/elements/secondary_nav.ctp:20
 msgid "About CakePHP"
 msgstr "درباره‌ی کیک پی‌اچ‌پی (CakePHP)"
 
-#: views/elements/secondary_nav.ctp:31
+#: views/elements/secondary_nav.ctp:21
 msgid "Donate"
 msgstr "کمک مالی"
 
-#: views/elements/side_menu.ctp:14
-#: views/nodes/view_all.ctp:95
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:92
 msgid "All in one page"
 msgstr "همه با هم"
 
-#: views/elements/side_menu.ctp:23
-#: views/nodes/view_all.ctp:102
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:99
 msgid "Suggest a new section here"
 msgstr "پیشنهاد بخش جدیدی در اینجا بدهید"
 
-#: views/elements/side_menu.ctp:30
-msgid "Options"
-msgstr ""
-
-#: views/elements/toc.ctp:13
-#: views/nodes/toc.ctp:5
+#: views/elements/toc.ctp:7 views/nodes/toc.ctp:4
 msgid "Table of Contents"
 msgstr "فهرست محتوا"
 
-#: views/elements/toc.ctp:16
+#: views/elements/toc.ctp:9
 msgid "see fully expanded table of contents (only)"
 msgstr "نمایش تمام فهرست محتوا "
 
-#: views/elements/toc.ctp:19
+#: views/elements/toc.ctp:12
 msgid "Books in "
 msgstr "کتاب‌های موجود در "
 
-#: views/elements/toc.ctp:21
+#: views/elements/toc.ctp:14
 msgid "Available collections"
 msgstr "مجموعه‌های موجود"
 
-#: views/layouts/default.ctp:38
+#: views/layouts/default.ctp:37
+msgid "Mobile version"
+msgstr ""
+
+#: views/layouts/default.ctp:57
 msgid "Recent comments"
 msgstr "نظرات اخیر"
 
-#: views/layouts/default.ctp:51;55
+#: views/layouts/default.ctp:74;79
 msgid "My Submissions"
 msgstr "ارسال‌های من"
 
-#: views/layouts/default.ctp:88
+#: views/layouts/default.ctp:87
+#, fuzzy
+msgid "Pending Submissions"
+msgstr "ارسال‌های من"
+
+#: views/layouts/default.ctp:119
 msgid "Welcome to %s"
 msgstr "به %s خوش آمدید"
 
-#: views/layouts/error.ctp:6;34
+#: views/layouts/error.ctp:5;33
 msgid "CakePHP: the rapid development php framework"
 msgstr "کیک‌‌پی‌اچ‌پی: توسعه‌ی فرز سکوی پی‌اچ‌پی"
 
-#: views/nodes/add.ctp:17
-#: views/nodes/edit.ctp:26
-msgid "Please review the guidelines for submitting to the Cookbook to ensure consistency."
-msgstr "لطفاً راهنماهای لازم برای ارسال به کتاب آشپزی را مطالعه کنید."
+#: views/layouts/flash/new_content_default_language.ctp:5
+msgid "Want to know why?"
+msgstr ""
 
-#: views/nodes/add.ctp:22
-msgid "Add a new section"
-msgstr "ایجاد بخش جدید"
-
-#: views/nodes/add.ctp:28
-#: views/nodes/edit.ctp:32
+#: views/nodes/add.ctp:24 views/nodes/edit.ctp:30
 msgid "Show me a preview before submitting"
 msgstr "قبل از ارسال یک پیشنمایش نشان من بده"
 
-#: views/nodes/add.ctp:30
+#: views/nodes/add.ctp:26
 msgid "under"
 msgstr "تحت"
 
-#: views/nodes/add.ctp:33
+#: views/nodes/add.ctp:29
 msgid "after"
 msgstr "بعد از"
 
-#: views/nodes/add.ctp:39
-#: views/nodes/edit.ctp:35
-msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
-msgstr "محتویات. کدها فقط در تگ pre قبول می‌شوند. ارسال‌هایی که ساختار فرمت html ندارند اتوماتیک فرمت می‌شوند."
+#: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
+msgid ""
+"Contents. Code in pre tags will be escaped. Submissions with no html "
+"formatting will be formatted automatically"
+msgstr ""
+"محتویات. کدها فقط در تگ pre قبول می‌شوند. ارسال‌هایی که ساختار فرمت html "
+"ندارند اتوماتیک فرمت می‌شوند."
+
+#: views/nodes/add.ctp:40
+msgid ""
+"Optionally explain in brief why you are proposing this addition (In English "
+"Please) :)"
+msgstr ""
+"لطفاً به انگلیسی و به‌طور خلاصه بگویید که چرا دارید این مطلب را اضافه می‌کنید :)"
 
 #: views/nodes/add.ctp:44
-msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
-msgstr "لطفاً به انگلیسی و به‌طور خلاصه بگویید که چرا دارید این مطلب را اضافه می‌کنید :)"
+msgid "Add a new section"
+msgstr "ایجاد بخش جدید"
 
 #: views/nodes/admin_merge.ctp:18
 msgid "You are sure? Please check the preview"
 msgstr "مطمئنید؟ پیش نمایش را لطفاً ببینید."
 
-#: views/nodes/compare.ctp:11
-#: views/revisions/view.ctp:12
+#: views/nodes/compare.ctp:10 views/revisions/view.ctp:11
 msgid "Differences"
 msgstr "تفاوت‌ها"
 
-#: views/nodes/edit.ctp:40
+#: views/nodes/edit.ctp:38
 msgid "What is the reason for the edit? (In English Please) :)"
 msgstr "منطق این ویرایش چیست؟ (لطفاً انگلیسی بنویسید) :)"
 
-#: views/nodes/history.ctp:6
+#: views/nodes/edit.ctp:44
+#, fuzzy
+msgid "Edit %s"
+msgstr "ویرایش"
+
+#: views/nodes/edit.ctp:53;56
+msgid "Resources"
+msgstr ""
+
+#: views/nodes/edit.ctp:56
+msgid "Current Version"
+msgstr ""
+
+#: views/nodes/edit.ctp:65
+#, fuzzy
+msgid "English Version"
+msgstr "ویرایش‌های انگلیسی را هم ببینید."
+
+#: views/nodes/edit.ctp:69
+msgid "Compare to English"
+msgstr ""
+
+#: views/nodes/edit.ctp:73
+#, fuzzy
+msgid "English History"
+msgstr "ویرایش‌های انگلیسی را هم ببینید."
+
+#: views/nodes/history.ctp:5
 msgid "See English edits too"
 msgstr "ویرایش‌های انگلیسی را هم ببینید."
 
-#: views/nodes/stats.ctp:5
-msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+#: views/nodes/stats.ctp:4
+msgid ""
+"Here's a shout out to those who have dedicated time, sweat and tears to "
+"write, translate and edit the cookbook contents."
 msgstr ""
 
-#: views/nodes/stats.ctp:7;37
+#: views/nodes/stats.ctp:6;36
 msgid "Top %s Contributors"
 msgstr ""
 
-#: views/nodes/stats.ctp:9;38
+#: views/nodes/stats.ctp:8;37
 msgid "Last update: %s"
 msgstr ""
 
-#: views/nodes/stats.ctp:27;63
+#: views/nodes/stats.ctp:26;62
 msgid "%s (%s current)"
 msgstr ""
 
-#: views/nodes/stats.ctp:39
+#: views/nodes/stats.ctp:38
 msgid "%s%% translated"
 msgstr ""
 
-#: views/nodes/stats.ctp:41
+#: views/nodes/stats.ctp:40
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr ""
 
-#: views/nodes/stats.ctp:44
-msgid "The cookbook needs you! This language will soon be removed if not updated."
+#: views/nodes/stats.ctp:43
+msgid ""
+"The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 
-#: views/nodes/stats.ctp:46
+#: views/nodes/stats.ctp:45
 msgid "The cookbook needs you! No updates for one month."
 msgstr ""
 
@@ -456,20 +581,30 @@ msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr ""
 
 #: views/nodes/todo.ctp:13
-msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgid ""
+"Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po "
+"files"
 msgstr ""
 
 #: views/nodes/todo.ctp:14
-msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgid ""
+"These sections either do not have a translation, or the English text has "
+"changed since it was translated"
 msgstr ""
 
-#: views/nodes/view_all.ctp:40;67
+#: views/nodes/view_all.ctp:41;65
 msgid "See comments for this section"
 msgstr "نظرات این بخش را ببینید."
 
-#: views/nodes/view_all.ctp:114;126
+#: views/nodes/view_all.ctp:112;124
 msgid "Change history for %s"
 msgstr "تاریخ‌چه ویرایش برای %s"
+
+#: views/revisions/admin_pending.ctp:7
+msgid "%s pending %s submission"
+msgid_plural "%s pending %s submissions"
+msgstr[0] ""
+msgstr[1] ""
 
 #: views/revisions/results.ctp:8
 msgid "Search Results"
@@ -479,9 +614,27 @@ msgstr "نتایج جستجو"
 msgid "No results"
 msgstr ""
 
+#: views/revisions/rss/index.ctp:13
+#, fuzzy
+msgid "Submitted by: %s"
+msgstr "ثبت کننده: %s"
+
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr "book.cakephp.org را بگردید."
+
+#~ msgid "Whoops, not a valid language."
+#~ msgstr "اوپس! زبان معتبر نیست"
+
+#~ msgid "Please login to continue"
+#~ msgstr "لطفاً برای ادامه به سیستم وارد شوید"
+
+#~ msgid "All %s matching the term \"%s\""
+#~ msgstr "تمام %s هایی که شامل عبارت \"%s\"  ستند"
+
+#, fuzzy
+#~ msgid "Changed by: %s"
+#~ msgstr "تاریخ‌چه ویرایش برای %s"
 
 #~ msgid "Debug setting does not allow access to this url."
 #~ msgstr "Debug setting does not allow access to this url."

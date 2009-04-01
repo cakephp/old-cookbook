@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2009-02-26 00:33+0100\n"
-"PO-Revision-Date: 2009-02-26 00:35+0100\n"
+"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"PO-Revision-Date: 2009-04-01 21:39+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgid "No permissions to see comments for that section"
 msgstr ""
 
 #: controllers/comments_controller.php:136
-#: views/nodes/view_all.ctp:109;119
+#: views/nodes/view_all.ctp:107;117
 msgid "Comments for %s"
 msgstr ""
 
@@ -88,23 +88,23 @@ msgstr ""
 msgid "Recent Comments for all languages"
 msgstr ""
 
-#: controllers/nodes_controller.php:817
+#: controllers/nodes_controller.php:789
 msgid "Invalid Collection"
 msgstr ""
 
-#: controllers/nodes_controller.php:842;950
+#: controllers/nodes_controller.php:814;922
 msgid "Thanks for your contribution! Your suggestion has been submitted for review."
 msgstr ""
 
-#: controllers/nodes_controller.php:905
+#: controllers/nodes_controller.php:877
 msgid "This function is for comparing different (public) language content"
 msgstr ""
 
-#: controllers/nodes_controller.php:958
+#: controllers/nodes_controller.php:930
 msgid "Edit/Correction"
 msgstr ""
 
-#: controllers/nodes_controller.php:960
+#: controllers/nodes_controller.php:932
 msgid "Translation to %s"
 msgstr ""
 
@@ -136,27 +136,27 @@ msgstr "missing"
 msgid "Default Content"
 msgstr "<p>This section has yet to be written, if you have an idea of what to put here please use the links and let us know your suggestion!</p>"
 
-#: views/changes/index.ctp:17
+#: views/changes/index.ctp:16
 msgid "change submitted by %s, %s"
 msgstr ""
 
-#: views/changes/index.ctp:23
+#: views/changes/index.ctp:22
 msgid "accepted"
 msgstr ""
 
-#: views/changes/index.ctp:26
+#: views/changes/index.ctp:25
 msgid "not accepted"
 msgstr ""
 
-#: views/changes/index.ctp:29
+#: views/changes/index.ctp:28
 msgid "pending"
 msgstr ""
 
-#: views/changes/index.ctp:34
+#: views/changes/index.ctp:33
 msgid "changed from %s to %s by %s, %s"
 msgstr ""
 
-#: views/changes/index.ctp:40
+#: views/changes/index.ctp:39
 msgid "submitted by %s"
 msgstr ""
 
@@ -178,7 +178,11 @@ msgstr ""
 msgid "No Comments yet!"
 msgstr ""
 
-#: views/comments/index.ctp:19
+#: views/comments/index.ctp:18
+msgid "Add a comment"
+msgstr ""
+
+#: views/comments/index.ctp:21
 msgid "This page as a feed"
 msgstr ""
 
@@ -186,15 +190,15 @@ msgstr ""
 msgid "Images/Files associated with this content"
 msgstr ""
 
-#: views/elements/comment.ctp:9
+#: views/elements/comment.ctp:8
 msgid "unknown"
 msgstr ""
 
-#: views/elements/comment.ctp:16
+#: views/elements/comment.ctp:15
 msgid "By %s on %s"
 msgstr ""
 
-#: views/elements/comment.ctp:18
+#: views/elements/comment.ctp:17
 msgid "By %s %s"
 msgstr ""
 
@@ -286,23 +290,23 @@ msgstr ""
 msgid "Not got one? Hop on over to %s and sign up"
 msgstr ""
 
-#: views/elements/node_options.ctp:9
+#: views/elements/node_options.ctp:8
 msgid "Translate"
 msgstr ""
 
-#: views/elements/node_options.ctp:10
+#: views/elements/node_options.ctp:9
 msgid "There is no translation for this section please submit one"
 msgstr ""
 
-#: views/elements/node_options.ctp:12
+#: views/elements/node_options.ctp:11
 msgid "Edit"
 msgstr ""
 
-#: views/elements/node_options.ctp:13
+#: views/elements/node_options.ctp:12
 msgid "Don't like this text? Submit your thoughts"
 msgstr ""
 
-#: views/elements/node_options.ctp:17
+#: views/elements/node_options.ctp:16
 msgid "View just this section"
 msgstr ""
 
@@ -315,6 +319,7 @@ msgid "there is a pending change for this section"
 msgstr ""
 
 #: views/elements/node_options.ctp:28
+#: views/nodes/edit.ctp:60
 msgid "History"
 msgstr ""
 
@@ -400,29 +405,29 @@ msgid "Donate"
 msgstr ""
 
 #: views/elements/side_menu.ctp:14
-#: views/nodes/view_all.ctp:94
+#: views/nodes/view_all.ctp:92
 msgid "All in one page"
 msgstr ""
 
 #: views/elements/side_menu.ctp:24
-#: views/nodes/view_all.ctp:101
+#: views/nodes/view_all.ctp:99
 msgid "Suggest a new section here"
 msgstr ""
 
-#: views/elements/toc.ctp:13
+#: views/elements/toc.ctp:7
 #: views/nodes/toc.ctp:4
 msgid "Table of Contents"
 msgstr "Table of Contents"
 
-#: views/elements/toc.ctp:15
+#: views/elements/toc.ctp:9
 msgid "see fully expanded table of contents (only)"
 msgstr ""
 
-#: views/elements/toc.ctp:18
+#: views/elements/toc.ctp:12
 msgid "Books in "
 msgstr ""
 
-#: views/elements/toc.ctp:20
+#: views/elements/toc.ctp:14
 msgid "Available collections"
 msgstr ""
 
@@ -442,7 +447,7 @@ msgstr ""
 msgid "Pending Submissions"
 msgstr ""
 
-#: views/layouts/default.ctp:118
+#: views/layouts/default.ctp:119
 msgid "Welcome to %s"
 msgstr ""
 
@@ -484,8 +489,8 @@ msgstr ""
 msgid "You are sure? Please check the preview"
 msgstr ""
 
-#: views/nodes/compare.ctp:11
-#: views/revisions/view.ctp:12
+#: views/nodes/compare.ctp:10
+#: views/revisions/view.ctp:11
 msgid "Differences"
 msgstr ""
 
@@ -495,6 +500,26 @@ msgstr ""
 
 #: views/nodes/edit.ctp:44
 msgid "Edit %s"
+msgstr ""
+
+#: views/nodes/edit.ctp:53;56
+msgid "Resources"
+msgstr ""
+
+#: views/nodes/edit.ctp:56
+msgid "Current Version"
+msgstr ""
+
+#: views/nodes/edit.ctp:65
+msgid "English Version"
+msgstr ""
+
+#: views/nodes/edit.ctp:69
+msgid "Compare to English"
+msgstr ""
+
+#: views/nodes/edit.ctp:73
+msgid "English History"
 msgstr ""
 
 #: views/nodes/history.ctp:5
@@ -549,11 +574,11 @@ msgstr ""
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 
-#: views/nodes/view_all.ctp:41;66
+#: views/nodes/view_all.ctp:41;65
 msgid "See comments for this section"
 msgstr ""
 
-#: views/nodes/view_all.ctp:113;125
+#: views/nodes/view_all.ctp:112;124
 msgid "Change history for %s"
 msgstr ""
 
@@ -571,7 +596,7 @@ msgstr ""
 msgid "No results"
 msgstr ""
 
-#: views/revisions/rss/index.ctp:14
+#: views/revisions/rss/index.ctp:13
 msgid "Submitted by: %s"
 msgstr ""
 

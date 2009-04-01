@@ -26,8 +26,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-02-26 00:33+0100\n"
-"PO-Revision-Date: 2009-02-26 00:37+0100\n"
+"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -59,13 +59,11 @@ msgstr "errores en el formulario"
 msgid "Recent Changes for %s"
 msgstr "Cambios recientes para %s"
 
-#: controllers/changes_controller.php:131
-#: views/layouts/default.ctp:52
+#: controllers/changes_controller.php:131 views/layouts/default.ctp:52
 msgid "Recent Changes for all languages"
 msgstr "Cambios recientes para todos los lenguajes"
 
-#: controllers/changes_controller.php:133
-#: views/layouts/default.ctp:46
+#: controllers/changes_controller.php:133 views/layouts/default.ctp:46
 msgid "Recent Changes"
 msgstr "Cambios Recientes"
 
@@ -94,8 +92,7 @@ msgstr "Por favor corrija los siguientes errores"
 msgid "No permissions to see comments for that section"
 msgstr "No tiene privilegios para ver los comentarios de esa sección"
 
-#: controllers/comments_controller.php:136
-#: views/nodes/view_all.ctp:109;119
+#: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
 msgid "Comments for %s"
 msgstr "Comentarios para %s"
 
@@ -103,33 +100,34 @@ msgstr "Comentarios para %s"
 msgid "Invalid Comment."
 msgstr "Comentario inválido"
 
-#: controllers/comments_controller.php:188
-#: views/comments/index.ctp:5
+#: controllers/comments_controller.php:188 views/comments/index.ctp:5
 msgid "Recent Comments"
 msgstr "Comentarios Recientes"
 
-#: controllers/comments_controller.php:190
-#: views/layouts/default.ctp:63
+#: controllers/comments_controller.php:190 views/layouts/default.ctp:63
 msgid "Recent Comments for all languages"
 msgstr "Comentarios Recientes para todos los lenguajes"
 
-#: controllers/nodes_controller.php:817
+#: controllers/nodes_controller.php:789
 msgid "Invalid Collection"
 msgstr "Colección inválida"
 
-#: controllers/nodes_controller.php:842;950
-msgid "Thanks for your contribution! Your suggestion has been submitted for review."
-msgstr "¡Gracias por tu contribución! Tu sugerencia ha sido enviada para revisarse"
+#: controllers/nodes_controller.php:814;922
+msgid ""
+"Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr ""
+"¡Gracias por tu contribución! Tu sugerencia ha sido enviada para revisarse"
 
-#: controllers/nodes_controller.php:905
+#: controllers/nodes_controller.php:877
 msgid "This function is for comparing different (public) language content"
-msgstr "Esta función es para comparar contenidos públicos de lenguajes distintos"
+msgstr ""
+"Esta función es para comparar contenidos públicos de lenguajes distintos"
 
-#: controllers/nodes_controller.php:958
+#: controllers/nodes_controller.php:930
 msgid "Edit/Correction"
 msgstr ""
 
-#: controllers/nodes_controller.php:960
+#: controllers/nodes_controller.php:932
 msgid "Translation to %s"
 msgstr ""
 
@@ -162,27 +160,27 @@ msgstr "default_slug"
 msgid "Default Content"
 msgstr "Contenido por omisión"
 
-#: views/changes/index.ctp:17
+#: views/changes/index.ctp:16
 msgid "change submitted by %s, %s"
 msgstr "cambio enviado por %s, %s"
 
-#: views/changes/index.ctp:23
+#: views/changes/index.ctp:22
 msgid "accepted"
 msgstr "aceptado"
 
-#: views/changes/index.ctp:26
+#: views/changes/index.ctp:25
 msgid "not accepted"
 msgstr "no aceptado"
 
-#: views/changes/index.ctp:29
+#: views/changes/index.ctp:28
 msgid "pending"
 msgstr "pendiente"
 
-#: views/changes/index.ctp:34
+#: views/changes/index.ctp:33
 msgid "changed from %s to %s by %s, %s"
 msgstr "cambiado de %s a %s por %s, %s"
 
-#: views/changes/index.ctp:40
+#: views/changes/index.ctp:39
 msgid "submitted by %s"
 msgstr "enviado por %s"
 
@@ -205,7 +203,12 @@ msgstr "Comentarios: %s"
 msgid "No Comments yet!"
 msgstr "¡Aún no hay comentarios!"
 
-#: views/comments/index.ctp:19
+#: views/comments/index.ctp:18
+#, fuzzy
+msgid "Add a comment"
+msgstr "Comentario inválido"
+
+#: views/comments/index.ctp:21
 msgid "This page as a feed"
 msgstr "Esta página tiene un canal"
 
@@ -213,15 +216,15 @@ msgstr "Esta página tiene un canal"
 msgid "Images/Files associated with this content"
 msgstr "Imagenes/Archivos asociados a este contenido"
 
-#: views/elements/comment.ctp:9
+#: views/elements/comment.ctp:8
 msgid "unknown"
 msgstr "desconocido"
 
-#: views/elements/comment.ctp:16
+#: views/elements/comment.ctp:15
 msgid "By %s on %s"
 msgstr "Por %s %s"
 
-#: views/elements/comment.ctp:18
+#: views/elements/comment.ctp:17
 msgid "By %s %s"
 msgstr "por %s %s"
 
@@ -251,7 +254,9 @@ msgid "You can change it"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:8
-msgid "Do you want help with this topic? There are ways to %s and more appropriate places to %s for %s"
+msgid ""
+"Do you want help with this topic? There are ways to %s and more appropriate "
+"places to %s for %s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:9
@@ -284,15 +289,19 @@ msgstr ""
 
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
-msgid "Please review the %s for submitting to the Cookbook to ensure consistency."
-msgstr "Pro favor revisa las recomendacines sobre como contribuir con el cookbook"
+msgid ""
+"Please review the %s for submitting to the Cookbook to ensure consistency."
+msgstr ""
+"Pro favor revisa las recomendacines sobre como contribuir con el cookbook"
 
 #: views/elements/content_form_note.ctp:6
 msgid "Guidelines"
 msgstr ""
 
 #: views/elements/content_form_note.ctp:9
-msgid "Before being accepted, new content must be available in %s. Please submit your suggestion in %s if possible"
+msgid ""
+"Before being accepted, new content must be available in %s. Please submit "
+"your suggestion in %s if possible"
 msgstr ""
 
 #: views/elements/content_form_note.ctp:10;11
@@ -316,24 +325,24 @@ msgstr "Inicia sesión con tu cuenta Bakery"
 msgid "Not got one? Hop on over to %s and sign up"
 msgstr "¿No tienes? Ve a %s e inscríbete"
 
-#: views/elements/node_options.ctp:9
+#: views/elements/node_options.ctp:8
 #, fuzzy
 msgid "Translate"
 msgstr "%s%% translated"
 
-#: views/elements/node_options.ctp:10
+#: views/elements/node_options.ctp:9
 msgid "There is no translation for this section please submit one"
 msgstr ""
 
-#: views/elements/node_options.ctp:12
+#: views/elements/node_options.ctp:11
 msgid "Edit"
 msgstr "Editar"
 
-#: views/elements/node_options.ctp:13
+#: views/elements/node_options.ctp:12
 msgid "Don't like this text? Submit your thoughts"
 msgstr ""
 
-#: views/elements/node_options.ctp:17
+#: views/elements/node_options.ctp:16
 msgid "View just this section"
 msgstr "Ver sólo esta sección"
 
@@ -345,7 +354,7 @@ msgstr "Comentarios (%s)"
 msgid "there is a pending change for this section"
 msgstr "Hay un cambio pendiente para esta sección"
 
-#: views/elements/node_options.ctp:28
+#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
 msgid "History"
 msgstr "Historia"
 
@@ -389,8 +398,7 @@ msgstr ""
 msgid "Save it"
 msgstr ""
 
-#: views/elements/search.ctp:21
-#: views/elements/search_form.ctp:6
+#: views/elements/search.ctp:21 views/elements/search_form.ctp:6
 msgid "Search"
 msgstr "Buscar"
 
@@ -432,30 +440,27 @@ msgstr "Acerca de CakePHP"
 msgid "Donate"
 msgstr "Donar"
 
-#: views/elements/side_menu.ctp:14
-#: views/nodes/view_all.ctp:94
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:92
 msgid "All in one page"
 msgstr "Todo en una página"
 
-#: views/elements/side_menu.ctp:24
-#: views/nodes/view_all.ctp:101
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:99
 msgid "Suggest a new section here"
 msgstr "Sugerir una nueva sessión aquí"
 
-#: views/elements/toc.ctp:13
-#: views/nodes/toc.ctp:4
+#: views/elements/toc.ctp:7 views/nodes/toc.ctp:4
 msgid "Table of Contents"
 msgstr "Tabla de contenidos"
 
-#: views/elements/toc.ctp:15
+#: views/elements/toc.ctp:9
 msgid "see fully expanded table of contents (only)"
 msgstr "ver únicamente la tabla de contenidos expandida"
 
-#: views/elements/toc.ctp:18
+#: views/elements/toc.ctp:12
 msgid "Books in "
 msgstr "Libros en"
 
-#: views/elements/toc.ctp:20
+#: views/elements/toc.ctp:14
 msgid "Available collections"
 msgstr "Colecciones disponibles"
 
@@ -476,7 +481,7 @@ msgstr "Mis contribuciones"
 msgid "Pending Submissions"
 msgstr "Mis contribuciones"
 
-#: views/layouts/default.ctp:118
+#: views/layouts/default.ctp:119
 msgid "Welcome to %s"
 msgstr "Bienvenido a %s"
 
@@ -488,8 +493,7 @@ msgstr "CakePHP: el framework de desarrollo rápido"
 msgid "Want to know why?"
 msgstr ""
 
-#: views/nodes/add.ctp:24
-#: views/nodes/edit.ctp:30
+#: views/nodes/add.ctp:24 views/nodes/edit.ctp:30
 msgid "Show me a preview before submitting"
 msgstr "Muéstrame una vista previa antes de enviar"
 
@@ -501,14 +505,21 @@ msgstr "debajo de"
 msgid "after"
 msgstr "despues de"
 
-#: views/nodes/add.ctp:35
-#: views/nodes/edit.ctp:33
-msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
-msgstr "Contenido. Código en etiquetas pre será escapado. Contribuciones sin formato html seran formateadas automáticamente"
+#: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
+msgid ""
+"Contents. Code in pre tags will be escaped. Submissions with no html "
+"formatting will be formatted automatically"
+msgstr ""
+"Contenido. Código en etiquetas pre será escapado. Contribuciones sin formato "
+"html seran formateadas automáticamente"
 
 #: views/nodes/add.ctp:40
-msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
-msgstr "Opcionalmente explica por qué propones esta adición, se breve. (En inglés por favor ) :)"
+msgid ""
+"Optionally explain in brief why you are proposing this addition (In English "
+"Please) :)"
+msgstr ""
+"Opcionalmente explica por qué propones esta adición, se breve. (En inglés "
+"por favor ) :)"
 
 #: views/nodes/add.ctp:44
 msgid "Add a new section"
@@ -518,8 +529,7 @@ msgstr "Agregar nueva sección"
 msgid "You are sure? Please check the preview"
 msgstr "¿Estás seguro? Por favor verifica."
 
-#: views/nodes/compare.ctp:11
-#: views/revisions/view.ctp:12
+#: views/nodes/compare.ctp:10 views/revisions/view.ctp:11
 msgid "Differences"
 msgstr "Diferencias"
 
@@ -532,12 +542,36 @@ msgstr "¿Cuál es la razón para este cambio? (En inglés por favor) :)"
 msgid "Edit %s"
 msgstr "Editar"
 
+#: views/nodes/edit.ctp:53;56
+msgid "Resources"
+msgstr ""
+
+#: views/nodes/edit.ctp:56
+msgid "Current Version"
+msgstr ""
+
+#: views/nodes/edit.ctp:65
+#, fuzzy
+msgid "English Version"
+msgstr "Ver los cambios en inglés también"
+
+#: views/nodes/edit.ctp:69
+msgid "Compare to English"
+msgstr ""
+
+#: views/nodes/edit.ctp:73
+#, fuzzy
+msgid "English History"
+msgstr "Ver los cambios en inglés también"
+
 #: views/nodes/history.ctp:5
 msgid "See English edits too"
 msgstr "Ver los cambios en inglés también"
 
 #: views/nodes/stats.ctp:4
-msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgid ""
+"Here's a shout out to those who have dedicated time, sweat and tears to "
+"write, translate and edit the cookbook contents."
 msgstr ""
 
 #: views/nodes/stats.ctp:6;36
@@ -561,8 +595,10 @@ msgid "The cookbook needs you! No submissions for this language!"
 msgstr "The cookbook needs you! No submissions for this language!"
 
 #: views/nodes/stats.ctp:43
-msgid "The cookbook needs you! This language will soon be removed if not updated."
-msgstr "The cookbook needs you! This language will soon be removed if not updated."
+msgid ""
+"The cookbook needs you! This language will soon be removed if not updated."
+msgstr ""
+"The cookbook needs you! This language will soon be removed if not updated."
 
 #: views/nodes/stats.ctp:45
 msgid "The cookbook needs you! No updates for one month."
@@ -577,18 +613,24 @@ msgid "These is no <a href=\"%s\">po file</a> for %s"
 msgstr "These is no <a href=\"%s\">po file</a> for %s"
 
 #: views/nodes/todo.ctp:13
-msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+msgid ""
+"Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po "
+"files"
 msgstr ""
 
 #: views/nodes/todo.ctp:14
-msgid "These sections either do not have a translation, or the English text has changed since it was translated"
-msgstr "These sections either do not have a translation, or the English text has changed since it was translated"
+msgid ""
+"These sections either do not have a translation, or the English text has "
+"changed since it was translated"
+msgstr ""
+"These sections either do not have a translation, or the English text has "
+"changed since it was translated"
 
-#: views/nodes/view_all.ctp:41;66
+#: views/nodes/view_all.ctp:41;65
 msgid "See comments for this section"
 msgstr "Ver comentarios para esta sección"
 
-#: views/nodes/view_all.ctp:113;125
+#: views/nodes/view_all.ctp:112;124
 msgid "Change history for %s"
 msgstr "Historia de cambios para %s"
 
@@ -606,7 +648,7 @@ msgstr "Resultados de búsqueda"
 msgid "No results"
 msgstr "Sin resultados"
 
-#: views/revisions/rss/index.ctp:14
+#: views/revisions/rss/index.ctp:13
 #, fuzzy
 msgid "Submitted by: %s"
 msgstr "enviado por %s"
@@ -617,20 +659,25 @@ msgstr "Buscar en book.cakephp.org"
 
 #~ msgid "Whoops, not a valid language."
 #~ msgstr "Lo siento, no es un lenguaje válido"
+
 #~ msgid "Please login to continue"
 #~ msgstr "Por favor inicia la sesión para continuar"
+
 #~ msgid "All %s matching the term \"%s\""
 #~ msgstr "Todos los %s que concuerdan con el término  \"%s\""
+
 #~ msgid "Forgot your password?"
 #~ msgstr "¿Olbidaste tu contraseña?"
 
 #, fuzzy
 #~ msgid "Changed by: %s"
 #~ msgstr "Historia de cambios para %s"
+
 #~ msgid "Options"
 #~ msgstr "opciones"
+
 #~ msgid "CakePHP: the rapid development php framework:"
 #~ msgstr "CakePHP: el framework de desarrollo rápido"
+
 #~ msgid "Debug setting does not allow access to this url."
 #~ msgstr "Debug setting does not allow access to this url."
-

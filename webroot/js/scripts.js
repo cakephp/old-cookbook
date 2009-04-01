@@ -65,7 +65,7 @@ $(document).ready(function() {
 	/**
 	 * Dialogs - use .ajax suffix to ensure full page view caching doesn't get confused
 	 */
-	$('ul.dialogs a')
+	$('ul.dialogs a, a.dialog, a.popout')
 		.click(function(){
 			$('<div class="dialog" style="display;none">Loading...</div>')
 				.attr('title', $(this).text())
@@ -76,7 +76,6 @@ $(document).ready(function() {
 					autoOpen: false,
 					width: 500,
 					height: 300,
-					modal: false
 				})
 				.dialog('open');
 			return false;
@@ -87,10 +86,31 @@ $(document).ready(function() {
 	function containLinks (base) {
 		var base = $(base);
 		$('a', base).click(function() {
-			base.load($(this).attr('href') + '.ajax', function() {
-				containLinks(base);
-			});
+			if ($(this).hasClass('popout')) {
+				$(this)
+					.click(function(){
+						$('<div class="dialog" style="display;none">Loading...</div>')
+							.attr('title', $(this).text())
+							.appendTo('body')
+							.load($(this).attr('href') + '.ajax', function(){
+								containLinks(this);
+							}).dialog({
+								autoOpen: false,
+								width: 500,
+								height: 300,
+							})
+							.dialog('open');
+						return false;
+					});
+			} else {
+				base.load($(this).attr('href') + '.ajax', function() {
+					containLinks(base);
+				});
+			}
 			return false;
+		});
+		$('form', base).ajaxForm({
+			target: base,
 		});
 	}
 });

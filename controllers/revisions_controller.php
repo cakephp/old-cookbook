@@ -91,34 +91,24 @@ class RevisionsController extends AppController {
 /**
  * search function
  *
- * @access public
- * @return void
- */
-	function search(){
-		$this->set('query' , '');
-		if(!empty($this->data)){
-			$params['query'] = $this->data['Search']['query'];
-			$params['collection'] = $this->data['Search']['collection'];
-			$params['lang'] = $this->data['Search']['lang'];
-			$params['action'] = 'results';
-			$this->redirect($params);
-		}
-	}
-
-/**
- * results function
- *
  * updated to self correct if the url the index has does not match the current content's url and cache
  * results pages
  * Caching is enabled if the passed term contains a single sluggable character. This partially, but not completely,
  * prevents utf8 search results overwritting themselves
- *
+
  * @access public
  * @return void
  */
-	function results(){
-		if(empty($this->passedArgs['query'])){
-			$this->redirect($this->referer());
+	function search($query = ''){
+		if(!empty($this->data)){
+			$params['collection'] = $this->data['Search']['collection'];
+			$params[] = $this->data['Search']['query'];
+			$this->redirect($params);
+		}
+		if (!$query) {
+			$collections = $this->Revision->Node->find('list', array('conditions' => array('depth' => 1)));
+			$this->set(compact('query', 'collections'));
+			return $this->render('search');
 		}
 		$this->helpers[] ='Searchable.Search';
 		$this->helpers[] ='Paginator';
@@ -128,7 +118,6 @@ class RevisionsController extends AppController {
 		$collection = !empty($this->passedArgs['collection']) ? $this->passedArgs['collection'] : 2;
 
 		// we should make a query object and use Zend_Search_Lucene api to construct it
-		$query = $this->passedArgs['query'];
 		$langQuery = ' AND lang:'. $lang;
 		$collectionQuery = ' AND collection:'. $collection;
 		$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
@@ -165,13 +154,13 @@ class RevisionsController extends AppController {
 		} else {
 			// fallback
 			$conditions = array('OR' => array(
-				'Revision.title LIKE' => '%' . $this->passedArgs['query'] . '%',
-				'Revision.content LIKE' => '%' . $this->passedArgs['query'] . '%'
+				'Revision.title LIKE' => '%' . $query . '%',
+				'Revision.content LIKE' => '%' . $query . '%'
 			));
 			$nodes = $this->paginate('Node', $conditions);
 			if (Configure::read() && $nodes) {
 				$this->Session->setFlash('Search Index needs rebuilding - the index returned no results, ' .
-				       'but a simple LIKE %' . $this->passedArgs['query'] . '% search did.');
+				       'but a simple LIKE %' . $query . '% search did.');
 			}
 			foreach ($nodes as $row) {
 				$this->Revision->id = $row['Revision']['id'];
@@ -185,9 +174,10 @@ class RevisionsController extends AppController {
 			}
 			$this->set(compact('results', 'terms'));
 		}
-		if (Inflector::slug($this->passedArgs['query'])) {
+		if (Inflector::slug($query)) {
 			$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		}
+		$this->render('results');
 	}
 /**
  * admin_build_index method

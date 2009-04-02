@@ -52,4 +52,62 @@ $(document).ready(function() {
 		}
 		return false;
 	});
+	$('#tocFull').dialog({
+		autoOpen: false,
+		width: 1000,
+		height: 550,
+		modal: false
+	});
+	$('a#tocLink').click(function(){
+		$('#tocFull').dialog('open');
+		return false;
+	});
+	/**
+	 * Dialogs - use .ajax suffix to ensure full page view caching doesn't get confused
+	 */
+	$('ul.dialogs a, a.dialog, a.popout')
+		.click(function(){
+			$('<div class="dialog" style="display;none">Loading...</div>')
+				.attr('title', $(this).text())
+				.appendTo('body')
+				.load($(this).attr('href') + '.ajax', function(){
+					containLinks(this);
+				}).dialog({
+					autoOpen: false,
+					width: 500,
+					height: 300,
+				})
+				.dialog('open');
+			return false;
+		});
+	/**
+	 * containLinks, for the passed base find any links within it and ajax load into the same container
+	 */
+	function containLinks (base) {
+		var base = $(base);
+		$('a', base).click(function() {
+			if ($(this).hasClass('popout')) {
+				$(this)
+					.click(function(){
+						$('<div class="dialog" style="display;none">Loading...</div>')
+							.attr('title', $(this).text())
+							.appendTo('body')
+							.load($(this).attr('href') + '.ajax', function(){
+								containLinks(this);
+							}).dialog({
+								autoOpen: false,
+								width: 500,
+								height: 300,
+							})
+							.dialog('open');
+						return false;
+					});
+			} else {
+				base.load($(this).attr('href') + '.ajax', function() {
+					containLinks(base);
+				});
+			}
+			return false;
+		});
+	}
 });

@@ -5,7 +5,7 @@ $links = array();
 foreach ($counts as $lang => $count) {
 	$menu->add(array(
 		'section' => 'Options',
-		'title' => sprintf(__n('%s %s comment', '%s %s comments', $count, true), $count, up($lang)),
+		'title' => sprintf(__n('%1$s %2$s comment', '%1$s %2$s comments', $count, true), $count, up($lang)),
 		'url' => array('language' => $lang),
 		'under' => 'Comments'
 	));
@@ -26,29 +26,28 @@ $th = array(
 );
 echo $html->tableHeaders($th);
 foreach ($data as $row) {
-	extract($row);
 	$collection = $book = '-';
 	foreach ($collections as $c) {
-		if ($c['Node']['lft'] <= $Node['lft'] && $c['Node']['rght'] >= $Node['rght']) {
+		if ($c['Node']['lft'] <= $row['Node']['lft'] && $c['Node']['rght'] >= $row['Node']['rght']) {
 			$collection = $html->link($c['Revision']['title'], am($pass, array('restrict_to' => $c['Node']['id'])));
 			$collection = $html->link($c['Revision']['title'], array('restrict_to' => $c['Node']['id']));
 			break;
 		}
 	}
 	foreach ($books as $b) {
-		if ($b['Node']['lft'] <= $Node['lft'] && $b['Node']['rght'] >= $Node['rght']) {
+		if ($b['Node']['lft'] <= $row['Node']['lft'] && $b['Node']['rght'] >= $row['Node']['rght']) {
 			$book = $html->link($b['Revision']['title'], am($pass, array('restrict_to' => $b['Node']['id'])));
 			break;
 		}
 	}
 	$tr = array(
 		$book . ' (' . $collection . ')',
-		$Node?$html->link($Node['sequence'] . ' ' . $Revision['title'], am($pass, array('page' => 1, 'node_id' => $Comment['node_id']))):'',
-		$html->link($Comment['title'], array('action' => 'view', $Comment['id'])),
-		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Comment['user_id']))):'',
-		$html->link($Comment['email'], am($pass, array('page' => 1, 'email' => $Comment['email']))),
-		$html->link($Comment['published'], am($pass, array('page' => 1, 'published' => $Comment['published']))),
-		$html->link($Comment['created'], am($pass, array('page' => 1, 'created' => $Comment['created']))),
+		$row['Node']?$html->link($row['Node']['sequence'] . ' ' . $row['Revision']['title'], am($pass, array('page' => 1, 'node_id' => $row['Comment']['node_id']))):'',
+		$html->link($row['Comment']['title'], array('action' => 'view', $row['Comment']['id'])),
+		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $row['Comment']['user_id']))):'',
+		$html->link($row['Comment']['email'], am($pass, array('page' => 1, 'email' => $row['Comment']['email']))),
+		$html->link($row['Comment']['published'], am($pass, array('page' => 1, 'published' => $row['Comment']['published']))),
+		$html->link($row['Comment']['created'], am($pass, array('page' => 1, 'created' => $row['Comment']['created']))),
 	);
 	echo $html->tableCells($tr, array('class' => 'odd'), array('class' => 'even'));
 }

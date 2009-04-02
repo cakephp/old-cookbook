@@ -1,25 +1,21 @@
 <?php
 /**
- * Short description for file.
+ * Short description for app_controller.php
  *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
+ * Long description for app_controller.php
  *
- * PHP versions 4 and 5
+ * PHP version 4 and 5
  *
- * CakePHP :  Rapid Development Framework <http://www.cakephp.org/>
- * Copyright (c)	2006, Cake Software Foundation, Inc.
- *								1785 E. Sahara Avenue, Suite 490-204
- *								Las Vegas, Nevada 89104
+ * Copyright (c) 2009, Rapid Development Framework <http://www.cakephp.org/>
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
  * @filesource
- * @copyright     Copyright (c) 2006, Cake Software Foundation, Inc.
- * @link          http://www.cakefoundation.org/projects/info/cakephp CakePHP Project
- * @package       cake
- * @subpackage    cake.app
+ * @copyright     Copyright (c) 2009, Rapid Development Framework <http://www.cakephp.org/>
+ * @link          http://www.cakephp.org
+ * @package       cakebook
+ * @subpackage    cakebook
  * @since         CakePHP v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
@@ -44,7 +40,10 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	var $helpers = array('Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false), 'Html', 'Form', 'Time', 'Javascript', 'Cache');
+	var $helpers = array(
+		'Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false),
+		'MiHtml', 'MiJavascript',
+		'Form', 'Time', 'Javascript', 'Cache');
 /**
  * currentNode variable
  *
@@ -101,7 +100,7 @@ class AppController extends Controller {
 			$this->Auth->authError = __('Please login to continue', true);
 		}
 		$this->Auth->loginAction = array('lang' => $this->params['lang'], 'theme' => $this->params['theme'],
-			'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
+			'admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 		$this->Auth->autoRedirect = false;
 		$this->Auth->allow('display');
 		$this->{$this->modelClass}->currentUserId = $this->Auth->user('id');
@@ -294,7 +293,7 @@ class AppController extends Controller {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->__conditions = $this->{$this->modelClass}->searchConditions($term);
-		$this->Session->setFlash(sprintf(__('All %s matching the term "%s"', true), Inflector::humanize($this->name), htmlspecialchars($term)));
+		$this->Session->setFlash(sprintf(__('All %1$s matching the term "%2$s"', true), Inflector::humanize($this->name), htmlspecialchars($term)));
 		$this->admin_index();
 		$this->render('admin_index');
 	}
@@ -313,6 +312,5 @@ class AppController extends Controller {
 		$this->Session->setFlash('Whoops! nothing to see there');
 		$this->redirect('/');
 	}
-
 }
 ?>

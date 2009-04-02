@@ -16,28 +16,16 @@
 		if ($this->here == $this->webroot) {
 			$title_for_layout = $app['tag_line'];
 		}
-		echo $html->meta(
-			'keywords',
-				'CakePHP Documentation, ' . str_replace(' :: ', ', ', $title_for_layout)
-		);
+		echo $html->meta('keywords', 'CakePHP Documentation, ' . str_replace(' :: ', ', ', $title_for_layout));
 	?>
 	<title><?php echo ($title_for_layout ? $title_for_layout : $app['tag_line']) . ' :: ' . $app['name']; ?></title>
-	<?php echo $html->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'), 'stylesheet', array('media' => 'screen')); ?>
-	<link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
-	<style type="text/css">
-		body{font-size:40px}
-		#ft #copy p, #ft #secondary_nav ul, #ft #csf, #ft #img {float: none; display:block; text-align:center }
-		#ft #img {padding-top: 0;}
-		#ft #img a {display: block; text-align: center; }
-		#ft #img img { width: 28%; margin: 0 auto;  display:block}
-		#ft #csf { padding: 1em 0; }
-		#search_row fieldset { width: 70%; padding-top: 0.2em; padding-right: 0.4em }
-		#search_row input.query { padding: 0.2em }
-	</style>
+<?php echo $miHtml->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'), null, array(), false);
+	echo $miHtml->css();
+	?>
+        <link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
 </head>
 <body>
 	<div id="doc3">
-
 		<div id="hd">
 			<h1>CakePHP Cookbook <sup>mobile!</sup></h1>
 		</div>
@@ -48,15 +36,12 @@
    			<div class="yui-g" id="search_row">
 				<?php e($this->element('search')); ?>
    			</div>
-
    			<!--
    			<div class="yui-g" id="crumb_row">
    				<?php e($this->element('crumbs')); ?>
    			</div>
    			 -->
-
    			<div class="yui-g" id="document">
-
 				<cake:nocache><?php
 					if($session->check('Message.auth')):
 						$session->flash('auth');
@@ -66,7 +51,6 @@
 						$session->flash();
 					endif;
 				?></cake:nocache>
-
    				<?php e($content_for_layout); ?>
    			</div>
 
@@ -83,14 +67,10 @@
 	            	<cake:nocache>   <?php echo $this->element('side_menu'); ?></cake:nocache>
 	            </div>
 	        </div>
-
-
 			</div>
    		</div>
    		<div id="ft">
-
 			<cake:nocache> <?php echo $this->element('secondary_nav'); ?></cake:nocache>
-
 			<div id="copy">
 				<p id="img"><?php echo ' &nbsp; ';
 					echo $html->link(

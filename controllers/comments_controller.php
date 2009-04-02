@@ -133,7 +133,7 @@ class CommentsController extends AppController {
 			$title .= $Node['Node']['sequence'] . ' - ';
 		}
 		$title .= $Node['Revision']['title'];
-		$this->pageTitle = sprintf(__('Comments for %s', true), $title);
+		$this->pageTitle = sprintf(__('Comments for %1$s', true), $title);
 		$conditions['Comment.node_id'] = $Node['Node']['id'];
 		$conditions['Comment.lang'] = $this->params['lang'];
 		$conditions['Comment.published'] = 1;
@@ -196,7 +196,7 @@ class CommentsController extends AppController {
 			$userId = $this->Comment->User->field('id', array('username' => $this->params['named']['user']));
 			if ($userId) {
 				$conditions['Comment.user_id'] = $userId;
-				$this->pageTitle .= ' ' . sprintf(__('by %s', true), $this->params['named']['user']);
+				$this->pageTitle .= ' ' . sprintf(__('by %1$s', true), $this->params['named']['user']);
 			}
 		}
 		$this->data = $this->paginate($conditions);

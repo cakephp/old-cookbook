@@ -7,7 +7,7 @@ if (isset($neighbours[0]['Node']['depth'])) {
 		} else {
 			$prevUrl = array('action' => 'view', $neighbours[0]['Node']['id'], $neighbours[0]['Revision']['slug']);
 		}
-		$prevTitle = '<< ' . $neighbours[0]['Revision']['title'];
+		$prevTitle = '« ' . $neighbours[0]['Revision']['title'];
 		$prevOptions = array(
 		'title' => $neighbours[0]['Revision']['title']
 		);
@@ -27,7 +27,7 @@ if (isset($neighbours[1]['Node']['depth'])) {
 	} else {
 		$nextUrl = array('action' => 'view', $neighbours[1]['Node']['id'], $neighbours[1]['Revision']['slug']);
 	}
-	$nextTitle = $neighbours[1]['Revision']['title']. ' >>';
+	$nextTitle = $neighbours[1]['Revision']['title']. ' »';
 	$nextOptions = array('title' => $neighbours[1]['Revision']['title']);
 	if ($nextUrl) {
 		echo '<span class="next">';

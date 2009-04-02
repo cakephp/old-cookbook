@@ -4,7 +4,7 @@
 foreach ($counts as $lang => $count) {
 	$menu->add(array(
 		'section' => 'Options' ,
-		'title' => sprintf(__n('%s pending %s submission', '%s pending %s submissions', $count, true), $count, up($lang)),
+		'title' => sprintf(__n('%1$s pending %2$s submission', '%3$s pending %4$s submissions', $count, true), $count, up($lang)),
 		'url' => array('language' => $lang),
 		'under' => 'Pending'
 	));
@@ -28,34 +28,33 @@ $th = array(
 echo $html->tableHeaders($th);
 
 foreach ($data as $row) {
-	extract($row);
 	$collection = $book = '-';
 	foreach ($collections as $c) {
-		if ($c['Node']['lft'] <= $Node['lft'] && $c['Node']['rght'] >= $Node['rght']) {
+		if ($c['Node']['lft'] <= $row['Node']['lft'] && $c['Node']['rght'] >= $row['Node']['rght']) {
 			$collection = $html->link($c['Revision']['title'], am($pass, array('restrict_to' => $c['Node']['id'])));
 			$collection = $html->link($c['Revision']['title'], array('restrict_to' => $c['Node']['id']));
 			break;
 		}
 	}
 	foreach ($books as $b) {
-		if ($b['Node']['lft'] <= $Node['lft'] && $b['Node']['rght'] >= $Node['rght']) {
+		if ($b['Node']['lft'] <= $row['Node']['lft'] && $b['Node']['rght'] >= $row['Node']['rght']) {
 			$book = $html->link($b['Revision']['title'], am($pass, array('restrict_to' => $b['Node']['id'])));
 			break;
 		}
 	}
-	if(empty($Revision['node_id']) && !empty($UnderNode['sequence']) ){
-	$sequence = $html->link('{'.$UnderNode['sequence'].'}', am($pass, array('page' => 1, 'node_id' => $UnderNode['id'])), array('title' => 'New Section: under - '.$UnderNode['sequence'].' after: '.$AfterNode['sequence'] ));
+	if(empty($row['Revision']['node_id']) && !empty($row['UnderNode']['sequence']) ){
+	$sequence = $html->link('{'.$row['UnderNode']['sequence'].'}', am($pass, array('page' => 1, 'node_id' => $row['UnderNode']['id'])), array('title' => 'New Section: under - '.$row['UnderNode']['sequence'].' after: '.$row['AfterNode']['sequence'] ));
 	} else {
-		$sequence = $html->link($Node['sequence'], am($pass, array('page' => 1, 'node_id' => $Node['id'])));
+		$sequence = $html->link($row['Node']['sequence'], am($pass, array('page' => 1, 'node_id' => $row['Node']['id'])));
 	}
 	$tr = array (
-		$html->link($Revision['id'], array('action' => 'view', $Revision['id'])),
+		$html->link($row['Revision']['id'], array('action' => 'view', $row['Revision']['id'])),
 		$book . ' (' . $collection . ')',
 		$sequence,
-		$html->link($Revision['title'],array('action'=>'view',$Revision['id'])),
-		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $Revision['user_id']))):'',
-		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
-		$html->link($Revision['created'], am($pass, array('page' => 1, 'created' => $Revision['created']))),
+		$html->link($row['Revision']['title'],array('action'=>'view',$row['Revision']['id'])),
+		$row['User']?$html->link($row['User']['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
+		$row['User']?'<a href="mailto:' . $row['User']['email'] . '">' . $row['User']['email'] . '</a>':'',
+		$html->link($row['Revision']['created'], am($pass, array('page' => 1, 'created' => $row['Revision']['created']))),
 	);
 	echo $html->tableCells($tr);
 }

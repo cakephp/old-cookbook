@@ -1,0 +1,27 @@
+div#content {
+	text-align: center;
+}
+div#body {
+	width: 100%;
+	margin:auto;
+	padding: 0 2em;
+}
+div#side {
+	display: none;
+}
+div#body ul li {
+	list-style: none;
+	margin: 1em 0 0.6em 0;
+	font-weight:bold;
+	font-size: 120%;
+}
+div#body ul li ul li {
+	list-style-image: url(images/arrow.gif);
+	margin: 0.6em 0 0.6em 1em;
+	font-weight:normal;
+	font-size: 80%;
+}
+div.column {
+	width: 24%;
+	float: left;
+}

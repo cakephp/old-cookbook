@@ -13,14 +13,13 @@ if ($collections) {
 }
 $currentCollection = isset($currentPath[1])?$currentPath[1]:array('Node' => array('id' => false));
 foreach ($collections as $row) {
-	extract($row);
-	if ($currentCollection['Node']['id'] == $Node['id']) {
+	if ($currentCollection['Node']['id'] == $row['Node']['id']) {
 		$options = array('class' => 'active');
 	} else {
 		$options = array();
 	}
-	$links[] = $html->link($Revision['title'],
-		array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'view', $Node['id'], $Revision['slug']),
+	$links[] = $html->link($row['Revision']['title'],
+		array('prefix' => null, 'plugin' => null, 'controller' => 'nodes', 'action' => 'view', $row['Node']['id'], $row['Revision']['slug']),
 		$options
 	);
 }

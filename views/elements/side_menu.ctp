@@ -8,7 +8,7 @@ if (!$this->name && !empty($this->data['Node'])) {
 	include CONFIGS . 'routes.php';
 	extract ($this->data['Node']);
 	$slug = !empty($this->params['pass'][1])?$this->params['pass'][1]:null;
-	if ($depth > 1) {
+	if ($depth > 1 && $this->action !== 'complete') {
 		$menu->add(array(
 			'section' => 'Options',
 			'title' => __('All in one page', true),

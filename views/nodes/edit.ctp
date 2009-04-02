@@ -22,11 +22,10 @@ if ($session->read('Auth.User.Level') == ADMIN && $this->action == 'edit') {
 		array('title' => 'Upload Image/File', 'url' => array('admin' => true, 'controller' => 'attachments', 'action' => 'add', 'Node', $this->data['Revision']['node_id'])),
 	));
 }
-echo $html->link(__('Please review the guidelines for submitting to the Cookbook to ensure consistency.', true),
-	array('controller' => 'nodes', 'action' => 'view', 482, 'contributing-to-the-cookbook'));
 echo $this->element('preview');
 echo $form->create(null, array('url' => '/' . $this->params['url']['url']));
 $inputs = array (
+	'fieldset' => false,
 	'Revision.node_id' => array('type' => 'hidden'),
 	'Revision.preview' => array('type' => 'checkbox', 'label' => __('Show me a preview before submitting', true), 'error' => false),
 	'Revision.title',
@@ -41,9 +40,40 @@ $inputs = array (
 if ($session->read('Auth.User.Level') == ADMIN) {
 	$inputs = am(array('Node.show_in_toc' => array('type' => 'checkbox')), $inputs);
 }
-echo $form->inputs($inputs);
+$note = $this->element('content_form_note');
+$legend = sprintf($html->tags['legend'], sprintf(__('Edit %1$s', true), $this->data['Revision']['title']));
+$contents = $form->inputs($inputs);
+echo sprintf($html->tags['fieldset'], '', $legend . $note . $contents);
+
 echo $form->submit('save');
 echo $form->end();
 ?>
 </div>
-<?php echo $this->element('markitup', array('process' => 'textarea')); ?>
+<?php
+$menu->settings(__('Resources', true), array('class' => 'dialogs'));
+$lang = Configure::read('Languages.default');
+$menu->add(array(
+	array('section' => __('Resources', true), 'title' => __('Current Version', true), 'url' => array('action' => 'view',
+		$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
+));
+$menu->add(array(
+	array('title' => __('History', true), 'url' => array('action' => 'history',
+		$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
+));
+if ($data['Revision']['lang'] != $lang) {
+	$menu->add(array(
+		array('title' => __('English Version', true), 'url' => array('action' => 'view',
+			'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+	$menu->add(array(
+		array('title' => __('Compare to English', true), 'url' => array('action' => 'compare',
+			$this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+	$menu->add(array(
+		array('title' => __('English History', true), 'url' => array('action' => 'history',
+			'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+}
+
+echo $this->element('markitup', array('process' => 'textarea'));
+?>

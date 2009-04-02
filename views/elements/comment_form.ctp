@@ -13,12 +13,15 @@ if (!isset($node)) {
 }
 echo $form->create('Comment',array('id' => 'CommentAddForm' . $node['Node']['id'],
 	'url' => array('controller' => 'comments', 'action' => 'add', $node['Node']['id'], $node['Revision']['slug'])));
-echo $form->inputs(array (
-			'legend' => sprintf(__('Comment on %s', true), $node['Revision']['title']),
-			  'title',
-			  'body' => array ('cols' => 100, 'rows' => 10)
-			 ));
-echo $form->submit('save');
+$note = $this->element('comment_form_note');
+$legend = sprintf($html->tags['legend'], sprintf(__('Comment on %1$s', true), $node['Revision']['title']));
+$contents = $form->inputs(array (
+	'fieldset' => false,
+	'title',
+	'body' => array ('cols' => 100, 'rows' => 10)
+));
+echo sprintf($html->tags['fieldset'], '', $legend . $note . $contents);
+echo $form->submit(__('add comment', true));
 echo $form->end();
 ?>
 </div>

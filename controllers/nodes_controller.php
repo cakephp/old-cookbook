@@ -98,7 +98,6 @@ class NodesController extends AppController {
 			if (isset($this->passedArgs[0])) {
 				$this->Node->id = $this->currentNode = $this->passedArgs[0];
 			}
-			$this->UniqueUrl->check();
 			$fields = array ('Node.id', 'Node.depth', 'Node.id', 'Node.lft', 'Node.rght', 'Node.comment_level', 'Node.edit_level', 'Revision.id', 'Revision.slug', 'Revision.title', 'Revision.content');
 			if (!isset($this->currentNode)) {
 				$topNode = $this->Node->find(array('Node.depth' => '0'), array('Node.id'), null, 0);
@@ -630,11 +629,6 @@ class NodesController extends AppController {
  */
 	function toc($nodeId = null) {
 		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
-		if (isset($this->params['requested'])) {
-			$this->currentPath = $this->params['currentPath'];
-			$this->currentNode = $this->params['currentNode'];
-			$this->set(array('currentPath' => $this->currentPath, 'currentNode' => $this->currentNode));
-		}
 		$this->Node->recursive = 0;
 		$fields = array('Node.*', 'Revision.id', 'Revision.status', 'Revision.lang', 'Revision.title', 'Revision.slug');
 		$path = $this->currentPath;
@@ -646,27 +640,15 @@ class NodesController extends AppController {
 		} else {
 			$direct = true;
 		}
-		if (isset($this->params['requested'])) {
-			if ($direct) {
-				$conditions['Node.parent_id'] = $this->currentNode['id'];
-				return $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
-			}
-			$conditions['Node.show_in_toc'] = 1;
-			$conditions['Node.parent_id'] = $ids;
-			$recursive = 0;
-			$order = 'Node.lft ASC';
-			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
-			return $this->data;
-		} else {
-			$book = array_shift($path);
-			$conditions['Node.show_in_toc'] = 1;
-			$conditions['Node.lft >='] = $book['Node']['lft'];
-			$conditions['Node.rght <='] = $book['Node']['rght'];
-			//$conditions['Node.depth <'] = 7;
-			$this->data = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+		$book = array_shift($path);
+		if ($nodeId !== $book['Node']['id'] && empty($this->params['isAjax'])) {
+			return $this->redirect(array($book['Node']['id'], $book['Revision']['slug']));
 		}
-		$this->set('data', $this->data);
+		$nodeId = $book['Node']['id'];
+		$this->set('book', $book);
+		$this->set('data', $this->_setTocData(true));
 		$this->data = false;
+		$this->render('/elements/toc_cloud');
 	}
 /**
  * todo method
@@ -803,13 +785,6 @@ class NodesController extends AppController {
  * @return void
  */
 	function add($parentId = null) {
-		if ($this->params['lang'] !== Configure::read('Languages.default')) {
-			$this->Session->setFlash(__('New content needs to be added in the site\'s default language.', true),
-				'flash/new_content_default_language',
-				array('lang' => $this->params['lang'])
-			);
-			return $this->redirect(array_merge($this->passedArgs, array('lang' => Configure::read('Languages.default'))));
-		}
 		if (!isset($this->params['admin']) && !$parentId && $this->Node->hasAny(array('Node.depth' => '> 0'))) {
 			$this->Session->setFlash(__('Invalid Collection', true));
 			return $this->redirect($this->Session->read('referer'), null, true);
@@ -951,7 +926,11 @@ class NodesController extends AppController {
 			}
 		} else {
 			$this->data = $this->Node->read(null);
-			$this->data['Revision']['reason'] = '';
+			if ($this->data['Revision']['id']) {
+				$this->data['Revision']['reason'] = __('Edit/Correction', true);
+			} else {
+				$this->data['Revision']['reason'] = sprintf(__('Translation to %1$s', true), $this->params['lang']);
+			}
 			$this->data['Revision']['preview'] = true;
 			$this->data['Node']['show_in_toc'] = true;
 		}
@@ -960,6 +939,13 @@ class NodesController extends AppController {
 		$conditions = array('Attachment.class' => 'Node', 'Attachment.foreign_id' => $id);
 		$this->set('attachments', $Attachment->find('all', compact('conditions', 'recursive')));
 		$this->helpers[] = 'Highlight';
+		$contentSlugs = $this->Node->Revision->find('list', array('fields' => array('lang', 'slug'),
+			'conditions' => array(
+				'Revision.status' => 'current',
+				'Revision.node_id' => $this->currentNode,
+				'Revision.lang' => array($this->params['lang'], Configure::read('Languages.default'))
+			)));
+		$this->set('contentSlugs', $contentSlugs);
 		$this->render('edit');
 	}
 /**
@@ -986,6 +972,7 @@ class NodesController extends AppController {
 		$this->paginate['order'] = 'Revision.created desc';
 		$this->paginate['fields'] = array(
 			'Revision.id',
+			'Revision.slug',
 			'Revision.user_id',
 			'Revision.lang',
 			'Revision.status',
@@ -1005,6 +992,54 @@ class NodesController extends AppController {
 			$users = array();
 		}
 		$this->set(compact('users'));
+	}
+/**
+ * setTocData method
+ *
+ * @param bool $return false
+ * @return void
+ * @access protected
+ */
+	function _setTocData($return = false) {
+		$this->Node->recursive = 0;
+		$fields = array('Node.*', 'Revision.id', 'Revision.status', 'Revision.lang', 'Revision.title', 'Revision.slug');
+		$path = $this->currentPath;
+		if (count($path) > 2) {
+			$direct = false;
+			array_shift($path);
+			array_shift($path);
+			$ids = Set::extract($path, '/Node/id');
+		} else {
+			$direct = true;
+		}
+		$book = array_shift($path);
+		if (!$return) {
+			if ($direct) {
+				$conditions['Node.parent_id'] = $this->currentNode['id'];
+				$sideToc = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+			} else {
+				$conditions['Node.show_in_toc'] = 1;
+				$conditions['Node.lft >='] = $book['Node']['lft'];
+				$conditions['Node.rght <='] = $book['Node']['rght'];
+				$conditions['OR']['Node.parent_id'] = $ids;
+				if (!empty($this->params['complete'])) {
+					$conditions['OR']['Node.depth BETWEEN ? AND ?'] = array(3,4);
+				}
+				$recursive = 0;
+				$order = 'Node.lft ASC';
+				$sideToc = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
+			}
+		}
+		$conditions = array();
+		$conditions['Node.show_in_toc'] = 1;
+		$conditions['Node.lft >='] = $book['Node']['lft'];
+		$conditions['Node.rght <='] = $book['Node']['rght'];
+		$conditions['Node.depth BETWEEN ? AND ?'] = array(3,4);
+		$fullToc = $this->Node->find('threaded', compact('conditions', 'fields', 'recursive', 'order'));
+		if ($return) {
+			return $fullToc;
+		}
+		$this->set(compact('fullToc', 'sideToc', 'book'));
 	}
 /**
  * view function
@@ -1034,8 +1069,7 @@ class NodesController extends AppController {
 		$count = ($this->data['Node']['rght'] - $this->data['Node']['lft']) / 2;
 		set_time_limit(max(30, $count / 10));
 		$order = 'Node.lft';
-		$children = array();
-
+		$directChildren = $children = array();
 		if ($viewAll) {
 			$children = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
 		} else {
@@ -1044,6 +1078,11 @@ class NodesController extends AppController {
 				'Node.parent_id' => $this->data['Node']['id']
 			);
 			$children = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
+			if ($this->action === 'view') {
+				$conditions['Node.show_in_toc'] = true;
+				// Disabled
+				// $directChildren = $this->Node->find('all',compact('conditions', 'fields', 'order', 'recursive'));
+			}
 			$conditions = array();
 			if ($children) {
 				foreach ($children as $child) {
@@ -1068,10 +1107,16 @@ class NodesController extends AppController {
 		$fields = array('DISTINCT node_id');
 		$pendingUpdates = $this->Node->Revision->find('all', compact('conditions', 'recursive', 'fields'));
 		$pendingUpdates = Set::extract($pendingUpdates, '{n}.Revision.node_id');
-		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates'));
+		$slugs = $this->Node->Revision->find('all', array('fields' => array('lang', 'slug', 'title'),
+			'conditions' => array('Revision.status' => 'current', 'Revision.node_id' => $this->currentNode)));
+		if ($slugs) {
+			$slugs = Set::combine($slugs, '/Revision/lang', '/Revision');
+		}
+		$this->set(compact('data', 'neighbours', 'children', 'pendingUpdates', 'slugs', 'directChildren'));
 		$this->set('loginFields', $this->Auth->fields);
 		$this->helpers[] = 'Highlight';
 		$this->helpers[] = 'Text';
+		$this->_setTocData();
 		$this->render('view_all');
 	}
 }

@@ -22,6 +22,9 @@ if ($this->params['isAjax']) {
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $currentNode));
 	echo '</div>';
+	if ($directChildren) {
+		echo $this->element('inline_toc');
+	}
 	if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $currentNode['Revision']['content'])))) != '') {
 		echo '<div class="summary">';
 			echo $theme->out($currentNode['Revision']['content']);
@@ -40,34 +43,32 @@ if ($this->params['isAjax']) {
 
 	array_shift ($data);
 	foreach ($data as $id => $row) {
-		extract ($row);
-		$level = 2 - $currentNode['Node']['depth'] + $Node['depth'];
+		$level = 2 - $currentNode['Node']['depth'] + $row['Node']['depth'];
 		$level = min ($level, 6);
 
-		$sequence = $Node['sequence'];
+		$sequence = $row['Node']['sequence'];
 		$sequence = $sequence?$sequence:'#';
-		echo "<h$level id=\"{$Revision['slug']}-{$Node['id']}\">" .
-			$html->link($sequence, '#' . $Revision['slug'] . '-' . $Node['id']) . ' ' . htmlspecialchars($Revision['title']) . "</h$level>";
+		echo "<h$level id=\"{$row['Revision']['slug']}-{$row['Node']['id']}\">" .
+			$html->link($sequence, '#' . $row['Revision']['slug'] . '-' . $row['Node']['id']) . ' ' . htmlspecialchars($row['Revision']['title']) . "</h$level>";
 
 		echo '<div class="options">';
 			echo $this->element('node_options', array('data' => $row));
 		echo '</div>';
 
-		if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $Revision['content'])))) != '') {
+		if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $row['Revision']['content'])))) != '') {
 			echo '<div class="body">';
-				echo $theme->out($Revision['content']);
+				echo $theme->out($row['Revision']['content']);
 			echo '</div>';
 		}
-		echo '<div class="comments" id="comments-' . $Node['id'] . '">';
+		echo '<div class="comments" id="comments-' . $row['Node']['id'] . '">';
 		echo '<div class="comment">';
-		echo $html->link(__('See comments for this section', true), array('controller' => 'comments', 'action' => 'index', $Node['id']));
+		echo $html->link(__('See comments for this section', true), array('controller' => 'comments', 'action' => 'index', $row['Node']['id']));
 		echo '</div></div>';
 	}
 ?>
 </div>
 <?php echo $this->element('node_navigation');
 if (isset($this->params['admin'])) {
-	extract($currentPath[count($currentPath)-1]);
 	$menu->add(array(
 		'section' => 'Options',
 		'title' => 'History',
@@ -99,27 +100,29 @@ if ($currentNode['Node']['edit_level'] <= $auth['User']['Level']) {
 		'url' => array('admin' => false, 'action' => 'add', $currentNode['Node']['id'], $currentNode['Revision']['slug'])
 	));
 }
-extract($this->data);
 $html->meta(
 	'rss',
-	array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
-	array('title' => sprintf(__('Comments for %s', true), $Revision['title']))
+	array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index',
+		$this->data['Node']['id'], $this->data['Revision']['slug'], 'ext' => 'rss'),
+	array('title' => sprintf(__('Comments for %1$s', true), $this->data['Revision']['title']))
 	, false);
 $html->meta('rss',
-	array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
-	array('title' => sprintf(__('Change history for %s', true), $Revision['title']))
+	array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index',
+		$this->data['Node']['id'], 'ext' => 'rss'),
+	array('title' => sprintf(__('Change history for %1$s', true), $this->data['Revision']['title']))
 	, false);
 ?><cake:nocache>     <?php
-extract($this->data);
 $menu->add(array(
 	'section' => 'Feeds',
-	'title' => sprintf(__('Comments for %s', true), $Revision['title']),
-	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index', $Node['id'], $Revision['slug'], 'ext' => 'rss'),
+	'title' => sprintf(__('Comments for %1$s', true), $this->data['Revision']['title']),
+	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index',
+		$this->data['Node']['id'], $this->data['Revision']['slug'], 'ext' => 'rss'),
 ));
 
 $menu->add(array(
 	'section' => 'Feeds',
-	'title' => sprintf(__('Change history for %s', true), $Revision['title']),
-	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index', $Node['id'], 'ext' => 'rss'),
+	'title' => sprintf(__('Change history for %1$s', true), $this->data['Revision']['title']),
+	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index',
+		$this->data['Node']['id'], 'ext' => 'rss'),
 ));
 ?></cake:nocache>

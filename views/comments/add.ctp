@@ -1,5 +1,6 @@
 <div class="comment">
 <?php
+echo $this->element('comment_form_note');
 echo $form->create('Comment',array('url' => '/' . $this->params['url']['url']));
 echo $form->inputs(array (
 	'legend' => sprintf(__('Comment: %s', true), $node['Revision']['title']),

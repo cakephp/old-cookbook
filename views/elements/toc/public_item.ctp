@@ -1,29 +1,20 @@
 <?php
 $params = array();
-extract($data);
 if (!isset($pathIds) && isset ($currentPath)) {
 	$pathIds = Set::extract($currentPath, '{n}.Node.id');
 	$this->set('pathIds', $pathIds);
 }
-$params['id'] = 'toc-' . $Revision['slug'] . '-' . $Node['id'];
+$params['id'] = 'toc-' . $data['Revision']['slug'] . '-' . $data['Node']['id'];
 if (isset($pathIds)) {
-	if ($Node['id'] == $pathIds[count($pathIds) - 1]) {
-		//$tree->addItemAttribute('class', 'selected');
+	if ($data['Node']['id'] == $pathIds[count($pathIds) - 1]) {
 		$params['class'] = 'selected';
 	}
 }
-if ($this->action == 'complete' && $Node['lft'] >= $currentNode['lft'] && $Node['rght'] <= $currentNode['rght']) {
-	echo $html->link($Node['sequence'] . ' ' . $Revision['title'], '#' . $Revision['slug'] . '-' . $Node['id'],
+if ($this->action == 'complete' && $data['Node']['lft'] >= $currentNode['lft'] && $data['Node']['rght'] <= $currentNode['rght']) {
+	echo $html->link($data['Node']['sequence'] . ' ' . $data['Revision']['title'], '#' . $data['Revision']['slug'] . '-' . $data['Node']['id'],
 		$params);
 	return;
 }
-//if ($Node['depth'] < $viewAllLevel || !isset($lastNode)) {
-	echo $html->link($Node['sequence'] . ' ' . $Revision['title'],
-		array('action'=>'view', $Node['id'], $Revision['slug']), $params);
-/*	$this->set('lastNode', $data);
-} else {
-	echo $html->link($Node['sequence'] . ' ' . $Revision['title'],
-		array('action'=>'view', $lastNode['Node']['id'], $lastNode['Revision']['slug'], '#' => $Revision['slug'] . '-' . $Node['id']), $params);
-}
- */
+echo $html->link($data['Node']['sequence'] . ' ' . $data['Revision']['title'],
+	array('action'=>'view', $data['Node']['id'], $data['Revision']['slug']), $params);
 ?>

@@ -103,9 +103,9 @@ class AttachmentsController extends AppController {
 			}
 			if ($this->Attachment->save($this->data)) {
 				if ($id) {
-					$this->Session->setFlash(sprintf(__('Existing Attachment for %s, id %s updated', true), $class, $this->data[$this->modelClass]['foreign_id']));
+					$this->Session->setFlash(sprintf(__('Existing Attachment for %1$s, id %2$s updated', true), $class, $this->data[$this->modelClass]['foreign_id']));
 				} else {
-					$this->Session->setFlash(sprintf(__('New Attachment for %s, id %s added', true), $class, $this->data[$this->modelClass]['foreign_id']));
+					$this->Session->setFlash(sprintf(__('New Attachment for %1$s, id %2$s added', true), $class, $this->data[$this->modelClass]['foreign_id']));
 				}
 				$this->redirect(array(
 					'controller' => Inflector::underscore(Inflector::Pluralize($class)),
@@ -130,7 +130,7 @@ class AttachmentsController extends AppController {
 		if (!empty($this->data)) {
 			$this->data[$this->modelClass]['user_id'] = $this->Auth->user('id');
 			if ($this->Attachment->save($this->data)) {
-				$this->Session->setFlash(sprintf(__('%s with id %s updated', true), $this->modelClass, $id));
+				$this->Session->setFlash(sprintf(__('%1$s with id %2$s updated', true), $this->modelClass, $id));
 				$this->_back();
 			} else {
 				$this->Session->setFlash(__('errors in form', true));

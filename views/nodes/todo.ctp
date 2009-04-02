@@ -4,10 +4,10 @@
 $i18n = I18n::getInstance();
 
 if (file_exists(APP . 'locale' . DS . $i18n->l10n->locale . DS . 'LC_MESSAGES' . DS . 'default.po')) {
-	echo '<p class="note">' . sprintf(__('Want to check or update the <a href="%s">po file</a> for %s?', true),
+	echo '<p class="note">' . sprintf(__('Want to check or update the <a href="%1$s">po file</a> for %2$s?', true),
 		'http://thechaw.com/cakebook/source/locale/' . $i18n->l10n->locale . '/LC_MESSAGES/default.po', $i18n->l10n->language);
 } else {
-	echo '<p class="warning">' . sprintf(__('These is no <a href="%s">po file</a> for %s', true),
+	echo '<p class="warning">' . sprintf(__('These is no <a href="%1$s">po file</a> for %2$s', true),
 		'http://thechaw.com/cakebook/source/locale/eng/LC_MESSAGES/default.po', $i18n->l10n->language);
 }
 echo '. ' . __('Please use <a href="http://www.poedit.net">Po Edit</a> when editing po files', true);

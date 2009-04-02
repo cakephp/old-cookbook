@@ -116,7 +116,7 @@ echo $html->meta('keywords',
 					if ($this->params['lang'] != $defaultLang) {
 						$link .= $this->params['lang'];
 					}
-					echo $html->link(sprintf(__('Welcome to %s', true), $app['name']), $link);
+					echo $html->link(sprintf(__('Welcome to %1$s', true), $app['name']), $link);
 				?>
 			</h1>
 		</div>

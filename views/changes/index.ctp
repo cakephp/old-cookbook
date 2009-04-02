@@ -13,7 +13,7 @@ foreach ($data as $row) {
 	}
 	echo '<ul>';
 	if ($row['Change']['status_from'] == 'new') {
-		echo '<li>' . sprintf(__('change submitted by %s, %s', true),
+		echo '<li>' . sprintf(__('change submitted by %1$s, %2$s', true),
 			isset($row['User']['username'])?$row['User']['username']:'unknown',
 			$time->niceShort($row['Change']['created'])) . '</li>';
 	} else {
@@ -30,13 +30,13 @@ foreach ($data as $row) {
 			default:
 				$to = __($row['Change']['status_to'], true);
 		}
-		echo '<li>' . sprintf(__('changed from %s to %s by %s, %s', true),
+		echo '<li>' . sprintf(__('changed from %1$s to %2$s by %3$s, %4$s', true),
 			$row['Change']['status_from'],
 			$to,
 			isset($row['User']['username'])?$row['User']['username']:'unknown',
 			$time->niceShort($row['Change']['created'])) . '</li>';
 		$author = isset($row['Author']['username'])?$row['Author']['username']:'unknown';
-		echo '<li>' . sprintf(__('submitted by %s', true), $author) . '</li>';
+		echo '<li>' . sprintf(__('submitted by %1$s', true), $author) . '</li>';
 	}
 	echo '<li>' . $html->clean($row['Change']['comment']) . '</li>';
 	echo '</ul></li>';

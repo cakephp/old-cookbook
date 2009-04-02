@@ -5,7 +5,7 @@ $links = array();
 foreach ($counts as $lang => $count) {
 	$menu->add(array(
 		'section' => 'Options',
-		'title' => sprintf(__n('%s %s comment', '%s %s comments', $count, true), $count, up($lang)),
+		'title' => sprintf(__n('%1$s %2$s comment', '%1$s %2$s comments', $count, true), $count, up($lang)),
 		'url' => array('language' => $lang),
 		'under' => 'Comments'
 	));

@@ -293,7 +293,7 @@ class AppController extends Controller {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->__conditions = $this->{$this->modelClass}->searchConditions($term);
-		$this->Session->setFlash(sprintf(__('All %s matching the term "%s"', true), Inflector::humanize($this->name), htmlspecialchars($term)));
+		$this->Session->setFlash(sprintf(__('All %1$s matching the term "%2$s"', true), Inflector::humanize($this->name), htmlspecialchars($term)));
 		$this->admin_index();
 		$this->render('admin_index');
 	}
@@ -312,6 +312,5 @@ class AppController extends Controller {
 		$this->Session->setFlash('Whoops! nothing to see there');
 		$this->redirect('/');
 	}
-
 }
 ?>

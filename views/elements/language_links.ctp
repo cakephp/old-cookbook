@@ -18,11 +18,11 @@ foreach (Configure::read('Languages.all') as $lang) {
 			$options['title'] = $slugs[$lang]['Revision']['title'];
 		} else {
 			$options['class'] = 'lowlight';
-			$options['title'] = sprintf(__('No %s translation yet for %s', true), $lang, $slugs[$defaultLang]['Revision']['title']);
+			$options['title'] = sprintf(__('No %1$s translation yet for %2$s', true), $lang, $slugs[$defaultLang]['Revision']['title']);
 		}
 	}
 	$url['lang'] = $lang;
 	$languages[] = $html->link($lang, $url, $options);
 }
-echo sprintf(__('Also available in %s', true), implode (' &middot; ', $languages));
+echo sprintf(__('Also available in %1$s', true), implode (' &middot; ', $languages));
 ?></span>

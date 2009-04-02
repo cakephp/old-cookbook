@@ -10,7 +10,7 @@
 		}
 		$desc = '<ul>';
 		$author = isset($row['User']['username'])?$row['User']['username']:'unknown';
-		$desc .= '<li>' . sprintf(__('Submitted by: %s', true), $author) . '</li>';
+		$desc .= '<li>' . sprintf(__('Submitted by: %1$s', true), $author) . '</li>';
 		$comment = $html->clean(trim($row['Revision']['reason']));
 		if ($comment) {
 			$desc .= '<li>' . $comment . '</li>';

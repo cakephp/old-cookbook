@@ -14,7 +14,7 @@ if (!isset($node)) {
 echo $form->create('Comment',array('id' => 'CommentAddForm' . $node['Node']['id'],
 	'url' => array('controller' => 'comments', 'action' => 'add', $node['Node']['id'], $node['Revision']['slug'])));
 $note = $this->element('comment_form_note');
-$legend = sprintf($html->tags['legend'], sprintf(__('Comment on %s', true), $node['Revision']['title']));
+$legend = sprintf($html->tags['legend'], sprintf(__('Comment on %1$s', true), $node['Revision']['title']));
 $contents = $form->inputs(array (
 	'fieldset' => false,
 	'title',

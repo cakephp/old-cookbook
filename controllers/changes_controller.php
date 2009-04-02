@@ -124,7 +124,7 @@ class ChangesController extends AppController {
 				$title .= $node['Node']['sequence'] . ' - ';
 			}
 			$title .= $node['Revision']['title'];
-			$this->pageTitle = sprintf(__('Recent Changes for %s', true), $title);
+			$this->pageTitle = sprintf(__('Recent Changes for %1$s', true), $title);
 			$conditions['Revision.node_id'] = $nodeId;
 		} else {
 			if ($language == '*') {
@@ -138,12 +138,12 @@ class ChangesController extends AppController {
 			$userId = $this->Change->User->field('id', array('username' => $this->params['named']['user']));
 			if ($userId) {
 				$conditions['Change.author_id'] = $userId;
-				$this->pageTitle .= ' ' . sprintf(__('by %s', true), $this->params['named']['user']);
+				$this->pageTitle .= ' ' . sprintf(__('by %1$s', true), $this->params['named']['user']);
 			}
 		}
 		if (isset($this->params['named']['status'])) {
 			$conditions['Change.status_to'] = $this->params['named']['status'];
-			$this->pageTitle .= ' ' . sprintf(__('restricted to status: %s', true), $this->params['named']['status']);
+			$this->pageTitle .= ' ' . sprintf(__('restricted to status: %1$s', true), $this->params['named']['status']);
 		}
 		$this->data = $this->paginate($conditions);
 	}

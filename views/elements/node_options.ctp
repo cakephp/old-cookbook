@@ -17,7 +17,7 @@ if ($data['Node']['depth'] >= $viewAllLevel) {
 	=> 'dialog'));
 }
 if ($data['Node']['comment_level'] <= $auth['User']['Level'] && $this->layout == 'default') {
-	$out[] = $html->link(sprintf(__('Comments (%s)', true), count($data['Comment'])), array('controller' => 'comments', 'action' => 'index', $data['Node']['id']), array('class' => 'dialog'));
+	$out[] = $html->link(sprintf(__('Comments (%1$s)', true), count($data['Comment'])), array('controller' => 'comments', 'action' => 'index', $data['Node']['id']), array('class' => 'dialog'));
 }
 $flags = explode(',', trim($data['Revision']['flags']));
 $flagLis = '';

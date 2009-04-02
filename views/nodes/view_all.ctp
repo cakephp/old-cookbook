@@ -104,24 +104,24 @@ $html->meta(
 	'rss',
 	array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index',
 		$this->data['Node']['id'], $this->data['Revision']['slug'], 'ext' => 'rss'),
-	array('title' => sprintf(__('Comments for %s', true), $this->data['Revision']['title']))
+	array('title' => sprintf(__('Comments for %1$s', true), $this->data['Revision']['title']))
 	, false);
 $html->meta('rss',
 	array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index',
 		$this->data['Node']['id'], 'ext' => 'rss'),
-	array('title' => sprintf(__('Change history for %s', true), $this->data['Revision']['title']))
+	array('title' => sprintf(__('Change history for %1$s', true), $this->data['Revision']['title']))
 	, false);
 ?><cake:nocache>     <?php
 $menu->add(array(
 	'section' => 'Feeds',
-	'title' => sprintf(__('Comments for %s', true), $this->data['Revision']['title']),
+	'title' => sprintf(__('Comments for %1$s', true), $this->data['Revision']['title']),
 	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'comments', 'action' => 'index',
 		$this->data['Node']['id'], $this->data['Revision']['slug'], 'ext' => 'rss'),
 ));
 
 $menu->add(array(
 	'section' => 'Feeds',
-	'title' => sprintf(__('Change history for %s', true), $this->data['Revision']['title']),
+	'title' => sprintf(__('Change history for %1$s', true), $this->data['Revision']['title']),
 	'url' => array('theme' => 'default', 'plugin' => null, 'controller' => 'changes', 'action' => 'index',
 		$this->data['Node']['id'], 'ext' => 'rss'),
 ));

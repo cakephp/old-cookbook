@@ -24,9 +24,9 @@
 
 		$desc = '<ul>';
 		$author = isset($row['Author']['username'])?$row['Author']['username']:'unknown';
-		$desc .= '<li>' . sprintf(__('Submitted by: %s', true), $author) . '</li>';
+		$desc .= '<li>' . sprintf(__('Submitted by: %1$s', true), $author) . '</li>';
 		if ($row['Change']['status_to'] != 'pending'){
-			$desc .= '<li>' . sprintf(__('Changed by: %s', true), $row['User']['username']) . '</li>';
+			$desc .= '<li>' . sprintf(__('Changed by: %1$s', true), $row['User']['username']) . '</li>';
 		}
 		$comment = $html->clean(trim($row['Change']['comment']));
 		if ($comment) {

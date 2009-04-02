@@ -1,6 +1,6 @@
 <h2><?php
 if (isset($node)) {
-	echo $html->link(sprintf(__('Comments: %s', true), htmlspecialchars($node['Revision']['title'])), array('id' => $this->params['id']));
+	echo $html->link(sprintf(__('Comments: %1$s', true), htmlspecialchars($node['Revision']['title'])), array('id' => $this->params['id']));
 } else {
 	__('Recent Comments');
 }

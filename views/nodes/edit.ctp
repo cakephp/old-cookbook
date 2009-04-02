@@ -41,7 +41,7 @@ if ($session->read('Auth.User.Level') == ADMIN) {
 	$inputs = am(array('Node.show_in_toc' => array('type' => 'checkbox')), $inputs);
 }
 $note = $this->element('content_form_note');
-$legend = sprintf($html->tags['legend'], sprintf(__('Edit %s', true), $this->data['Revision']['title']));
+$legend = sprintf($html->tags['legend'], sprintf(__('Edit %1$s', true), $this->data['Revision']['title']));
 $contents = $form->inputs($inputs);
 echo sprintf($html->tags['fieldset'], '', $legend . $note . $contents);
 

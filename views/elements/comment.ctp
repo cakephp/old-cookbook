@@ -12,9 +12,9 @@ if (isset($commenters[$user_id])) {
 echo "<div id='comment_{$id}' class=\"comment$class\">";
 echo "<p class=\"commentmeta\">";
 if (!empty($fixedDates)) {
-	echo sprintf(__('By %s on %s', true),  $name, $time->nice($created));
+	echo sprintf(__('By %1$s on %2$s', true),  $name, $time->nice($created));
 } else {
-	echo sprintf(__('By %s %s', true),  $name, $time->timeAgoInWords($created));
+	echo sprintf(__('By %1$s %2$s', true),  $name, $time->timeAgoInWords($created));
 }
 echo "</p>";
 echo "<p class=\"commenttitle\">";

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cbt\n"
-"POT-Creation-Date: 2009-04-02 10:50+0200\n"
+"POT-Creation-Date: 2009-04-02 20:06+0200\n"
 "PO-Revision-Date: 2009-04-01 21:44+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
@@ -15,15 +15,18 @@ msgid "Attachment controller - no class or foreignKey error."
 msgstr "Attachment controller - tidak ada kesalahan pada class atau foreignKey"
 
 #: controllers/attachments_controller.php:106
-msgid "Existing Attachment for %s, id %s updated"
+#, fuzzy
+msgid "Existing Attachment for %1$s, id %2$s updated"
 msgstr "Lampiran  terdahulu untuk %s, id %s telah diperbaharui."
 
 #: controllers/attachments_controller.php:108
-msgid "New Attachment for %s, id %s added"
+#, fuzzy
+msgid "New Attachment for %1$s, id %2$s added"
 msgstr "Lampiran baru untuk %s, id %s telah ditambahkan."
 
 #: controllers/attachments_controller.php:133
-msgid "%s with id %s updated"
+#, fuzzy
+msgid "%1$s with id %2$s updated"
 msgstr "%s dengan id %s telah diperbaharui."
 
 #: controllers/attachments_controller.php:136
@@ -31,7 +34,8 @@ msgid "errors in form"
 msgstr "kesalahan pada formulir"
 
 #: controllers/changes_controller.php:127
-msgid "Recent Changes for %s"
+#, fuzzy
+msgid "Recent Changes for %1$s"
 msgstr "Perubahan Terkini untuk %s"
 
 #: controllers/changes_controller.php:131 views/layouts/default.ctp:52
@@ -44,11 +48,13 @@ msgstr "Perubahan Terkini"
 
 #: controllers/changes_controller.php:141
 #: controllers/comments_controller.php:199
-msgid "by %s"
+#, fuzzy
+msgid "by %1$s"
 msgstr "oleh %s"
 
 #: controllers/changes_controller.php:146
-msgid "restricted to status: %s"
+#, fuzzy
+msgid "restricted to status: %1$s"
 msgstr "dibatasi atas status: %s"
 
 #: controllers/comments_controller.php:92;124
@@ -68,7 +74,8 @@ msgid "No permissions to see comments for that section"
 msgstr "Tidak berhak melihat komentar untuk bagian tersebut."
 
 #: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
-msgid "Comments for %s"
+#, fuzzy
+msgid "Comments for %1$s"
 msgstr "Komentar untuk %s"
 
 #: controllers/comments_controller.php:169
@@ -103,7 +110,7 @@ msgid "Edit/Correction"
 msgstr ""
 
 #: controllers/nodes_controller.php:932
-msgid "Translation to %s"
+msgid "Translation to %1$s"
 msgstr ""
 
 #: controllers/revisions_controller.php:619;624;676
@@ -136,7 +143,8 @@ msgid "Default Content"
 msgstr "Isi Awal"
 
 #: views/changes/index.ctp:16
-msgid "change submitted by %s, %s"
+#, fuzzy
+msgid "change submitted by %1$s, %2$s"
 msgstr "perubahan dikirim oleh %s, %s"
 
 #: views/changes/index.ctp:22
@@ -152,11 +160,13 @@ msgid "pending"
 msgstr "ditangguhkan"
 
 #: views/changes/index.ctp:33
-msgid "changed from %s to %s by %s, %s"
+#, fuzzy
+msgid "changed from %1$s to %2$s by %3$s, %4$s"
 msgstr "berubah dari %s menjadi %s oleh %s, %s"
 
 #: views/changes/index.ctp:39
-msgid "submitted by %s"
+#, fuzzy
+msgid "submitted by %1$s"
 msgstr "dikirim oleh %s"
 
 #: views/comments/add.ctp:6
@@ -165,13 +175,14 @@ msgstr "Komentar: %s"
 
 #: views/comments/admin_index.ctp:8
 #, fuzzy
-msgid "%s %s comment"
-msgid_plural "%s %s comments"
+msgid "%1$s %2$s comment"
+msgid_plural "%1$s %2$s comments"
 msgstr[0] "%s (terkini adalah %s)"
 msgstr[1] "%s (terkini adalah %s)"
 
 #: views/comments/index.ctp:3
-msgid "Comments: %s"
+#, fuzzy
+msgid "Comments: %1$s"
 msgstr "Komentar: %s"
 
 #: views/comments/index.ctp:10
@@ -196,11 +207,13 @@ msgid "unknown"
 msgstr "tidak diketahui"
 
 #: views/elements/comment.ctp:15
-msgid "By %s on %s"
+#, fuzzy
+msgid "By %1$s on %2$s"
 msgstr "Oleh %s %s"
 
 #: views/elements/comment.ctp:17
-msgid "By %s %s"
+#, fuzzy
+msgid "By %1$s %2$s"
 msgstr "oleh %s %s"
 
 #: views/elements/comment_form.ctp:4
@@ -208,7 +221,8 @@ msgid "Login to add a comment"
 msgstr "Masuk untuk memberikan komentar"
 
 #: views/elements/comment_form.ctp:17
-msgid "Comment on %s"
+#, fuzzy
+msgid "Comment on %1$s"
 msgstr "Komentar pada %s"
 
 #: views/elements/comment_form.ctp:24
@@ -221,7 +235,7 @@ msgid "Is a comment appropriate?"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:5
-msgid "Do you want to highlight a problem in the text? %s"
+msgid "Do you want to highlight a problem in the text? %1$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:6
@@ -230,8 +244,8 @@ msgstr ""
 
 #: views/elements/comment_form_note.ctp:8
 msgid ""
-"Do you want help with this topic? There are ways to %s and more appropriate "
-"places to %s for %s"
+"Do you want help with this topic? There are ways to %1$s and more "
+"appropriate places to %2$s for %3$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:9
@@ -247,7 +261,7 @@ msgid "help"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:13
-msgid "Do you want to highlight a problem with the application? %s or %s"
+msgid "Do you want to highlight a problem with the application? %1$s or %2$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:14
@@ -264,33 +278,35 @@ msgstr ""
 
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
-msgid ""
-"Please review the %s for submitting to the Cookbook to ensure consistency."
+msgid "Please review %1$s to ensure consistency."
 msgstr ""
 "Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep "
 "untuk memastikan konsistensi. %s"
 
 #: views/elements/content_form_note.ctp:6
-msgid "Guidelines"
+#, fuzzy
+msgid "the guidelines for submitting to the Cookbook"
 msgstr ""
+"Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep "
+"untuk memastikan konsistensi. %s"
 
-#: views/elements/content_form_note.ctp:9
+#: views/elements/content_form_note.ctp:11
 msgid ""
-"Before being accepted, new content must be available in %s. Please submit "
-"your suggestion in %s if possible"
+"Before being accepted, new content must be available in %1$s. Please submit "
+"your suggestion in %2$s if possible"
 msgstr ""
 
-#: views/elements/content_form_note.ctp:10;11
+#: views/elements/content_form_note.ctp:12;13
 msgid "English"
 msgstr ""
 
 #: views/elements/language_links.ctp:21
-msgid "No %s translation yet for %s"
+msgid "No %1$s translation yet for %2$s"
 msgstr ""
 
 #: views/elements/language_links.ctp:27
 #, fuzzy
-msgid "Also available in %s"
+msgid "Also available in %1$s"
 msgstr "Koleksi yang tersedia %s"
 
 #: views/elements/login_hint.ctp:2
@@ -323,7 +339,8 @@ msgid "View just this section"
 msgstr "Lihat hanya bagian ini"
 
 #: views/elements/node_options.ctp:20
-msgid "Comments (%s)"
+#, fuzzy
+msgid "Comments (%1$s)"
 msgstr "Komentar (%s)"
 
 #: views/elements/node_options.ctp:25
@@ -389,7 +406,8 @@ msgid "Search term"
 msgstr "Cari"
 
 #: views/elements/secondary_nav.ctp:5
-msgid "Logged in as %s"
+#, fuzzy
+msgid "Logged in as %1$s"
 msgstr "Masuk sebagai %s"
 
 #: views/elements/secondary_nav.ctp:6
@@ -459,7 +477,8 @@ msgid "Pending Submissions"
 msgstr "Kiriman Saya"
 
 #: views/layouts/default.ctp:119
-msgid "Welcome to %s"
+#, fuzzy
+msgid "Welcome to %1$s"
 msgstr "Selamat datang %s"
 
 #: views/layouts/error.ctp:5;33
@@ -516,7 +535,7 @@ msgstr "Apa alasan penyuntingan ini dilakukan? (usahakan dalam bahasa Inggris)"
 
 #: views/nodes/edit.ctp:44
 #, fuzzy
-msgid "Edit %s"
+msgid "Edit %1$s"
 msgstr "Sunting %s"
 
 #: views/nodes/edit.ctp:53;56
@@ -555,19 +574,23 @@ msgstr ""
 "resep."
 
 #: views/nodes/stats.ctp:6;37
-msgid "Top %s Contributors"
+#, fuzzy
+msgid "Top %1$s Contributors"
 msgstr "%s Kontributor Teratas"
 
 #: views/nodes/stats.ctp:8;38
-msgid "Last update: %s"
+#, fuzzy
+msgid "Last update: %1$s"
 msgstr "Pembaharuan terakhir: %s"
 
 #: views/nodes/stats.ctp:26;63
-msgid "%s (%s current)"
+#, fuzzy
+msgid "%1$s (%2$s current)"
 msgstr "%s (terkini adalah %s)"
 
 #: views/nodes/stats.ctp:39
-msgid "%s%% translated"
+#, fuzzy
+msgid "%1$s%% translated"
 msgstr "telah diterjemahkan sebanyak %s%%"
 
 #: views/nodes/stats.ctp:41
@@ -587,11 +610,12 @@ msgstr "Buku resep ini membutuhkanmu! tidak ada pembaharuan selama sebulan!"
 
 #: views/nodes/todo.ctp:7
 #, fuzzy
-msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+msgid "Want to check or update the <a href=\"%1$s\">po file</a> for %2$s?"
 msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
 
 #: views/nodes/todo.ctp:10
-msgid "These is no <a href=\"%s\">po file</a> for %s"
+#, fuzzy
+msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
 msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
 
 #: views/nodes/todo.ctp:13
@@ -614,14 +638,16 @@ msgid "See comments for this section"
 msgstr "Lihat komentar untuk bagian ini"
 
 #: views/nodes/view_all.ctp:112;124
-msgid "Change history for %s"
+#, fuzzy
+msgid "Change history for %1$s"
 msgstr "Sejarah Perubahan untuk %s"
 
 #: views/revisions/admin_pending.ctp:7
-msgid "%s pending %s submission"
-msgid_plural "%s pending %s submissions"
-msgstr[0] ""
-msgstr[1] ""
+#, fuzzy
+msgid "%1$s pending %2$s submission"
+msgid_plural "%3$s pending %4$s submissions"
+msgstr[0] "Kiriman Saya"
+msgstr[1] "Kiriman Saya"
 
 #: views/revisions/results.ctp:8
 msgid "Search Results"
@@ -633,7 +659,7 @@ msgstr "Tidak ada hasil"
 
 #: views/revisions/rss/index.ctp:13
 #, fuzzy
-msgid "Submitted by: %s"
+msgid "Submitted by: %1$s"
 msgstr "dikirim oleh %s"
 
 #: views/revisions/search.ctp:1

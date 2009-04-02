@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-04-02 10:50+0200\n"
+"POT-Creation-Date: 2009-04-02 20:06+0200\n"
 "PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
@@ -40,15 +40,18 @@ msgid "Attachment controller - no class or foreignKey error."
 msgstr "Attachment controller - no existe la clase o error de foreingKey"
 
 #: controllers/attachments_controller.php:106
-msgid "Existing Attachment for %s, id %s updated"
+#, fuzzy
+msgid "Existing Attachment for %1$s, id %2$s updated"
 msgstr "Adjunto para %s, id %s actualizado"
 
 #: controllers/attachments_controller.php:108
-msgid "New Attachment for %s, id %s added"
+#, fuzzy
+msgid "New Attachment for %1$s, id %2$s added"
 msgstr "Nuevo Adjunto para %s, id %s agregado"
 
 #: controllers/attachments_controller.php:133
-msgid "%s with id %s updated"
+#, fuzzy
+msgid "%1$s with id %2$s updated"
 msgstr "%s con id %s actualizado"
 
 #: controllers/attachments_controller.php:136
@@ -56,7 +59,8 @@ msgid "errors in form"
 msgstr "errores en el formulario"
 
 #: controllers/changes_controller.php:127
-msgid "Recent Changes for %s"
+#, fuzzy
+msgid "Recent Changes for %1$s"
 msgstr "Cambios recientes para %s"
 
 #: controllers/changes_controller.php:131 views/layouts/default.ctp:52
@@ -69,11 +73,13 @@ msgstr "Cambios Recientes"
 
 #: controllers/changes_controller.php:141
 #: controllers/comments_controller.php:199
-msgid "by %s"
+#, fuzzy
+msgid "by %1$s"
 msgstr "por %s"
 
 #: controllers/changes_controller.php:146
-msgid "restricted to status: %s"
+#, fuzzy
+msgid "restricted to status: %1$s"
 msgstr "restringido al estado: %s"
 
 #: controllers/comments_controller.php:92;124
@@ -93,7 +99,8 @@ msgid "No permissions to see comments for that section"
 msgstr "No tiene privilegios para ver los comentarios de esa sección"
 
 #: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
-msgid "Comments for %s"
+#, fuzzy
+msgid "Comments for %1$s"
 msgstr "Comentarios para %s"
 
 #: controllers/comments_controller.php:169
@@ -128,7 +135,7 @@ msgid "Edit/Correction"
 msgstr ""
 
 #: controllers/nodes_controller.php:932
-msgid "Translation to %s"
+msgid "Translation to %1$s"
 msgstr ""
 
 #: controllers/revisions_controller.php:619;624;676
@@ -161,7 +168,8 @@ msgid "Default Content"
 msgstr "Contenido por omisión"
 
 #: views/changes/index.ctp:16
-msgid "change submitted by %s, %s"
+#, fuzzy
+msgid "change submitted by %1$s, %2$s"
 msgstr "cambio enviado por %s, %s"
 
 #: views/changes/index.ctp:22
@@ -177,11 +185,13 @@ msgid "pending"
 msgstr "pendiente"
 
 #: views/changes/index.ctp:33
-msgid "changed from %s to %s by %s, %s"
+#, fuzzy
+msgid "changed from %1$s to %2$s by %3$s, %4$s"
 msgstr "cambiado de %s a %s por %s, %s"
 
 #: views/changes/index.ctp:39
-msgid "submitted by %s"
+#, fuzzy
+msgid "submitted by %1$s"
 msgstr "enviado por %s"
 
 #: views/comments/add.ctp:6
@@ -190,13 +200,14 @@ msgstr "Commentario: %s"
 
 #: views/comments/admin_index.ctp:8
 #, fuzzy
-msgid "%s %s comment"
-msgid_plural "%s %s comments"
+msgid "%1$s %2$s comment"
+msgid_plural "%1$s %2$s comments"
 msgstr[0] "%s (%s current)"
 msgstr[1] "%s (%s current)"
 
 #: views/comments/index.ctp:3
-msgid "Comments: %s"
+#, fuzzy
+msgid "Comments: %1$s"
 msgstr "Comentarios: %s"
 
 #: views/comments/index.ctp:10
@@ -221,11 +232,13 @@ msgid "unknown"
 msgstr "desconocido"
 
 #: views/elements/comment.ctp:15
-msgid "By %s on %s"
+#, fuzzy
+msgid "By %1$s on %2$s"
 msgstr "Por %s %s"
 
 #: views/elements/comment.ctp:17
-msgid "By %s %s"
+#, fuzzy
+msgid "By %1$s %2$s"
 msgstr "por %s %s"
 
 #: views/elements/comment_form.ctp:4
@@ -233,7 +246,8 @@ msgid "Login to add a comment"
 msgstr "Inicia sesión para añadir un comentario"
 
 #: views/elements/comment_form.ctp:17
-msgid "Comment on %s"
+#, fuzzy
+msgid "Comment on %1$s"
 msgstr "Comentarios para %s"
 
 #: views/elements/comment_form.ctp:24
@@ -246,7 +260,7 @@ msgid "Is a comment appropriate?"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:5
-msgid "Do you want to highlight a problem in the text? %s"
+msgid "Do you want to highlight a problem in the text? %1$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:6
@@ -255,8 +269,8 @@ msgstr ""
 
 #: views/elements/comment_form_note.ctp:8
 msgid ""
-"Do you want help with this topic? There are ways to %s and more appropriate "
-"places to %s for %s"
+"Do you want help with this topic? There are ways to %1$s and more "
+"appropriate places to %2$s for %3$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:9
@@ -272,7 +286,7 @@ msgid "help"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:13
-msgid "Do you want to highlight a problem with the application? %s or %s"
+msgid "Do you want to highlight a problem with the application? %1$s or %2$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:14
@@ -289,32 +303,31 @@ msgstr ""
 
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
-msgid ""
-"Please review the %s for submitting to the Cookbook to ensure consistency."
-msgstr ""
-"Pro favor revisa %s sobre como contribuir con el cookbook"
+msgid "Please review %1$s to ensure consistency."
+msgstr "Pro favor revisa %s sobre como contribuir con el cookbook"
 
 #: views/elements/content_form_note.ctp:6
-msgid "Guidelines"
-msgstr ""
+#, fuzzy
+msgid "the guidelines for submitting to the Cookbook"
+msgstr "Pro favor revisa %s sobre como contribuir con el cookbook"
 
-#: views/elements/content_form_note.ctp:9
+#: views/elements/content_form_note.ctp:11
 msgid ""
-"Before being accepted, new content must be available in %s. Please submit "
-"your suggestion in %s if possible"
+"Before being accepted, new content must be available in %1$s. Please submit "
+"your suggestion in %2$s if possible"
 msgstr ""
 
-#: views/elements/content_form_note.ctp:10;11
+#: views/elements/content_form_note.ctp:12;13
 msgid "English"
 msgstr ""
 
 #: views/elements/language_links.ctp:21
-msgid "No %s translation yet for %s"
+msgid "No %1$s translation yet for %2$s"
 msgstr ""
 
 #: views/elements/language_links.ctp:27
 #, fuzzy
-msgid "Also available in %s"
+msgid "Also available in %1$s"
 msgstr "Colecciones disponibles %s"
 
 #: views/elements/login_hint.ctp:2
@@ -347,7 +360,8 @@ msgid "View just this section"
 msgstr "Ver sólo esta sección"
 
 #: views/elements/node_options.ctp:20
-msgid "Comments (%s)"
+#, fuzzy
+msgid "Comments (%1$s)"
 msgstr "Comentarios (%s)"
 
 #: views/elements/node_options.ctp:25
@@ -413,7 +427,8 @@ msgid "Search term"
 msgstr "Buscar"
 
 #: views/elements/secondary_nav.ctp:5
-msgid "Logged in as %s"
+#, fuzzy
+msgid "Logged in as %1$s"
 msgstr "Registrado como %s"
 
 #: views/elements/secondary_nav.ctp:6
@@ -482,7 +497,8 @@ msgid "Pending Submissions"
 msgstr "Mis contribuciones"
 
 #: views/layouts/default.ctp:119
-msgid "Welcome to %s"
+#, fuzzy
+msgid "Welcome to %1$s"
 msgstr "Bienvenido a %s"
 
 #: views/layouts/error.ctp:5;33
@@ -539,7 +555,7 @@ msgstr "¿Cuál es la razón para este cambio? (En inglés por favor) :)"
 
 #: views/nodes/edit.ctp:44
 #, fuzzy
-msgid "Edit %s"
+msgid "Edit %1$s"
 msgstr "Editar %s"
 
 #: views/nodes/edit.ctp:53;56
@@ -575,19 +591,23 @@ msgid ""
 msgstr ""
 
 #: views/nodes/stats.ctp:6;37
-msgid "Top %s Contributors"
+#, fuzzy
+msgid "Top %1$s Contributors"
 msgstr "Principales contribuidores %s"
 
 #: views/nodes/stats.ctp:8;38
-msgid "Last update: %s"
+#, fuzzy
+msgid "Last update: %1$s"
 msgstr "Last update: %s"
 
 #: views/nodes/stats.ctp:26;63
-msgid "%s (%s current)"
+#, fuzzy
+msgid "%1$s (%2$s current)"
 msgstr "%s (%s current)"
 
 #: views/nodes/stats.ctp:39
-msgid "%s%% translated"
+#, fuzzy
+msgid "%1$s%% translated"
 msgstr "%s%% translated"
 
 #: views/nodes/stats.ctp:41
@@ -605,11 +625,13 @@ msgid "The cookbook needs you! No updates for one month."
 msgstr "The cookbook needs you! No updates for one month."
 
 #: views/nodes/todo.ctp:7
-msgid "Want to check or update the <a href=\"%s\">po file</a> for %s?"
+#, fuzzy
+msgid "Want to check or update the <a href=\"%1$s\">po file</a> for %2$s?"
 msgstr "Quieres compropbar el <a href=\"%s\">fichero po</a> para castellano?"
 
 #: views/nodes/todo.ctp:10
-msgid "These is no <a href=\"%s\">po file</a> for %s"
+#, fuzzy
+msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
 msgstr "These is no <a href=\"%s\">po file</a> for %s"
 
 #: views/nodes/todo.ctp:13
@@ -631,14 +653,16 @@ msgid "See comments for this section"
 msgstr "Ver comentarios para esta sección"
 
 #: views/nodes/view_all.ctp:112;124
-msgid "Change history for %s"
+#, fuzzy
+msgid "Change history for %1$s"
 msgstr "Historia de cambios para %s"
 
 #: views/revisions/admin_pending.ctp:7
-msgid "%s pending %s submission"
-msgid_plural "%s pending %s submissions"
-msgstr[0] ""
-msgstr[1] ""
+#, fuzzy
+msgid "%1$s pending %2$s submission"
+msgid_plural "%3$s pending %4$s submissions"
+msgstr[0] "Mis contribuciones"
+msgstr[1] "Mis contribuciones"
 
 #: views/revisions/results.ctp:8
 msgid "Search Results"
@@ -650,7 +674,7 @@ msgstr "Sin resultados"
 
 #: views/revisions/rss/index.ctp:13
 #, fuzzy
-msgid "Submitted by: %s"
+msgid "Submitted by: %1$s"
 msgstr "enviado por %s"
 
 #: views/revisions/search.ctp:1

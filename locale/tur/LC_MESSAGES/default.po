@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"POT-Creation-Date: 2009-04-02 10:50+0200\n"
 "PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Serhat Artun <sartun@gmail.com>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
@@ -545,33 +545,33 @@ msgstr ""
 "İşte adanmış zamanı olanlara çağrı, ter ve gözyaşları ile yazmak için , "
 "cookbook içeriğini tercüme edin ve düzenleyin."
 
-#: views/nodes/stats.ctp:6;36
+#: views/nodes/stats.ctp:6;37
 msgid "Top %s Contributors"
 msgstr "Ençok %s Katkıda bulunan"
 
-#: views/nodes/stats.ctp:8;37
+#: views/nodes/stats.ctp:8;38
 msgid "Last update: %s"
 msgstr "Son güncelleme: %s"
 
-#: views/nodes/stats.ctp:26;62
+#: views/nodes/stats.ctp:26;63
 msgid "%s (%s current)"
 msgstr "%s (%s yürürlükte)"
 
-#: views/nodes/stats.ctp:38
+#: views/nodes/stats.ctp:39
 msgid "%s%% translated"
 msgstr "%s%% tercüme edildi"
 
-#: views/nodes/stats.ctp:40
+#: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr "Cookbook'un size ihtiyacı var! Bu dil için sunuş yok!"
 
-#: views/nodes/stats.ctp:43
+#: views/nodes/stats.ctp:44
 msgid ""
 "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 "Cookbook'un size ihtiyacı var! Bu dil güncellenmez ise yakında kaldırılacak."
 
-#: views/nodes/stats.ctp:45
+#: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr "Cookbook'un size ihtiyacı var! Bir aydan beri güncellenme yapılmadı."
 

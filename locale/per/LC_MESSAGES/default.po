@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"POT-Creation-Date: 2009-04-02 10:50+0200\n"
 "PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Renan Gonçalves <renan.saddam@gmail.com>\n"
 "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
@@ -263,7 +263,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "Please review the %s for submitting to the Cookbook to ensure consistency."
-msgstr "لطفاً راهنماهای لازم برای ارسال به کتاب آشپزی را مطالعه کنید."
+msgstr "لطفاً راهنماهای لازم برای ارسال به کتاب آشپزی را مطالعه کنید. %s"
 
 #: views/elements/content_form_note.ctp:6
 msgid "Guidelines"
@@ -286,7 +286,7 @@ msgstr ""
 #: views/elements/language_links.ctp:27
 #, fuzzy
 msgid "Also available in %s"
-msgstr "مجموعه‌های موجود"
+msgstr "مجموعه‌های موجود %s"
 
 #: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
@@ -509,7 +509,7 @@ msgstr "منطق این ویرایش چیست؟ (لطفاً انگلیسی بن�
 #: views/nodes/edit.ctp:44
 #, fuzzy
 msgid "Edit %s"
-msgstr "ویرایش"
+msgstr "ویرایش %s"
 
 #: views/nodes/edit.ctp:53;56
 msgid "Resources"
@@ -543,32 +543,32 @@ msgid ""
 "write, translate and edit the cookbook contents."
 msgstr ""
 
-#: views/nodes/stats.ctp:6;36
+#: views/nodes/stats.ctp:6;37
 msgid "Top %s Contributors"
 msgstr ""
 
-#: views/nodes/stats.ctp:8;37
+#: views/nodes/stats.ctp:8;38
 msgid "Last update: %s"
 msgstr ""
 
-#: views/nodes/stats.ctp:26;62
+#: views/nodes/stats.ctp:26;63
 msgid "%s (%s current)"
 msgstr ""
 
-#: views/nodes/stats.ctp:38
+#: views/nodes/stats.ctp:39
 msgid "%s%% translated"
 msgstr ""
 
-#: views/nodes/stats.ctp:40
+#: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr ""
 
-#: views/nodes/stats.ctp:43
+#: views/nodes/stats.ctp:44
 msgid ""
 "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 
-#: views/nodes/stats.ctp:45
+#: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr ""
 

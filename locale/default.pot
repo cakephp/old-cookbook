@@ -5,8 +5,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: cakebook-\n"
-"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"Project-Id-Version: cakebook-nosvn\n"
+"POT-Creation-Date: 2009-04-02 10:52+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team:\n"
@@ -535,31 +535,31 @@ msgstr ""
 msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
 msgstr ""
 
-#: views/nodes/stats.ctp:6;36
+#: views/nodes/stats.ctp:6;37
 msgid "Top %s Contributors"
 msgstr ""
 
-#: views/nodes/stats.ctp:8;37
+#: views/nodes/stats.ctp:8;38
 msgid "Last update: %s"
 msgstr ""
 
-#: views/nodes/stats.ctp:26;62
+#: views/nodes/stats.ctp:26;63
 msgid "%s (%s current)"
 msgstr ""
 
-#: views/nodes/stats.ctp:38
+#: views/nodes/stats.ctp:39
 msgid "%s%% translated"
 msgstr ""
 
-#: views/nodes/stats.ctp:40
+#: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr ""
 
-#: views/nodes/stats.ctp:43
+#: views/nodes/stats.ctp:44
 msgid "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 
-#: views/nodes/stats.ctp:45
+#: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr ""
 

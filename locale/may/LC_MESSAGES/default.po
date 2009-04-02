@@ -38,7 +38,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cakebook-\n"
-"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"POT-Creation-Date: 2009-04-02 10:50+0200\n"
 "PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
@@ -305,7 +305,7 @@ msgid ""
 "Please review the %s for submitting to the Cookbook to ensure consistency."
 msgstr ""
 "Sila periksa panduan yang diberikan sebelum menghantar kepada Cookbook untuk "
-"memastikan ianya konsisten."
+"memastikan ianya konsisten. %s"
 
 #: views/elements/content_form_note.ctp:6
 msgid "Guidelines"
@@ -328,7 +328,7 @@ msgstr ""
 #: views/elements/language_links.ctp:27
 #, fuzzy
 msgid "Also available in %s"
-msgstr "Koleksi sedia ada"
+msgstr "Koleksi sedia ada %s"
 
 #: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
@@ -341,7 +341,7 @@ msgstr "Masih tiada akaun lagi ? Pergi ke %s dan daftar"
 #: views/elements/node_options.ctp:8
 #, fuzzy
 msgid "Translate"
-msgstr "%s%% diterjemah"
+msgstr "diterjemah"
 
 #: views/elements/node_options.ctp:9
 msgid "There is no translation for this section please submit one"
@@ -553,7 +553,7 @@ msgstr "Apakah sebab untuk kemaskini ? (Dalam bahasa Inggeris) :)"
 #: views/nodes/edit.ctp:44
 #, fuzzy
 msgid "Edit %s"
-msgstr "Kemaskini"
+msgstr "Kemaskini %s"
 
 #: views/nodes/edit.ctp:53;56
 msgid "Resources"
@@ -589,33 +589,33 @@ msgstr ""
 "Berikan ucapan kepada semua yang mendedikasikan masa, peluh dan air mata "
 "untuk menulis, menterjemah dan mengemaskini kandungan cookbook"
 
-#: views/nodes/stats.ctp:6;36
+#: views/nodes/stats.ctp:6;37
 msgid "Top %s Contributors"
 msgstr "Penyumbang %s teratas"
 
-#: views/nodes/stats.ctp:8;37
+#: views/nodes/stats.ctp:8;38
 msgid "Last update: %s"
 msgstr "Kemaskini terakhir: %s"
 
-#: views/nodes/stats.ctp:26;62
+#: views/nodes/stats.ctp:26;63
 msgid "%s (%s current)"
 msgstr "%s (%s sekarang)"
 
-#: views/nodes/stats.ctp:38
+#: views/nodes/stats.ctp:39
 msgid "%s%% translated"
 msgstr "%s%% diterjemah"
 
-#: views/nodes/stats.ctp:40
+#: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr "Cookbook memerlukan anda ! Tiada penghantaran untuk bahasa ini !"
 
-#: views/nodes/stats.ctp:43
+#: views/nodes/stats.ctp:44
 msgid ""
 "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 "Cookbook memerlukan anda! Bahasa ini akan dipadam jika tidak dikemaskini"
 
-#: views/nodes/stats.ctp:45
+#: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr "Cookbook memerlukan anda! Tiada kemaskini selama sebulan."
 

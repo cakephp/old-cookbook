@@ -26,7 +26,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-04-01 21:36+0200\n"
+"POT-Creation-Date: 2009-04-02 10:50+0200\n"
 "PO-Revision-Date: 2009-03-25 12:27+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
@@ -292,7 +292,7 @@ msgstr ""
 msgid ""
 "Please review the %s for submitting to the Cookbook to ensure consistency."
 msgstr ""
-"Pro favor revisa las recomendacines sobre como contribuir con el cookbook"
+"Pro favor revisa %s sobre como contribuir con el cookbook"
 
 #: views/elements/content_form_note.ctp:6
 msgid "Guidelines"
@@ -315,7 +315,7 @@ msgstr ""
 #: views/elements/language_links.ctp:27
 #, fuzzy
 msgid "Also available in %s"
-msgstr "Colecciones disponibles"
+msgstr "Colecciones disponibles %s"
 
 #: views/elements/login_hint.ctp:2
 msgid "Login with your Bakery account"
@@ -328,7 +328,7 @@ msgstr "¿No tienes? Ve a %s e inscríbete"
 #: views/elements/node_options.ctp:8
 #, fuzzy
 msgid "Translate"
-msgstr "%s%% translated"
+msgstr "translated"
 
 #: views/elements/node_options.ctp:9
 msgid "There is no translation for this section please submit one"
@@ -540,7 +540,7 @@ msgstr "¿Cuál es la razón para este cambio? (En inglés por favor) :)"
 #: views/nodes/edit.ctp:44
 #, fuzzy
 msgid "Edit %s"
-msgstr "Editar"
+msgstr "Editar %s"
 
 #: views/nodes/edit.ctp:53;56
 msgid "Resources"
@@ -574,33 +574,33 @@ msgid ""
 "write, translate and edit the cookbook contents."
 msgstr ""
 
-#: views/nodes/stats.ctp:6;36
+#: views/nodes/stats.ctp:6;37
 msgid "Top %s Contributors"
 msgstr "Principales contribuidores %s"
 
-#: views/nodes/stats.ctp:8;37
+#: views/nodes/stats.ctp:8;38
 msgid "Last update: %s"
 msgstr "Last update: %s"
 
-#: views/nodes/stats.ctp:26;62
+#: views/nodes/stats.ctp:26;63
 msgid "%s (%s current)"
 msgstr "%s (%s current)"
 
-#: views/nodes/stats.ctp:38
+#: views/nodes/stats.ctp:39
 msgid "%s%% translated"
 msgstr "%s%% translated"
 
-#: views/nodes/stats.ctp:40
+#: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
 msgstr "The cookbook needs you! No submissions for this language!"
 
-#: views/nodes/stats.ctp:43
+#: views/nodes/stats.ctp:44
 msgid ""
 "The cookbook needs you! This language will soon be removed if not updated."
 msgstr ""
 "The cookbook needs you! This language will soon be removed if not updated."
 
-#: views/nodes/stats.ctp:45
+#: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr "The cookbook needs you! No updates for one month."
 

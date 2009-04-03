@@ -123,13 +123,14 @@ class RevisionsController extends AppController {
 		$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
 
 		$defaultLang = Configure::read('Languages.default');
-		if (!$results && $this->params['lang'] !== $defaultLang) {
+		if ($this->params['lang'] !== $defaultLang && count($results) < $limit) {
 			$langQuery = ' AND lang:'. $defaultLang;
-			$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
-			if ($results) {
-				foreach ($results as $i => &$row) {
+			$eResults = $this->Revision->search($query.$langQuery.$collectionQuery, $limit - count($results), 1);
+			if ($eResults) {
+				foreach ($eResults as $i => &$row) {
 					$row['Result']['lang'] = $lang;
 				}
+				$results = am((array)$results, $eResults);
 			}
 		}
 		$searchSlugs = Set::combine($results, '/Result/cake_id', '/Result/slug');

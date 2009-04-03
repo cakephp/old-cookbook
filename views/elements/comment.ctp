@@ -30,6 +30,6 @@ if ($this->action == 'recent') {
 	echo htmlspecialchars($title);
 echo "</p>";
 echo "<div class=\"commentbody\">";
-echo '<p>' . implode(explode("\n", htmlspecialchars($body)), '</p><p>') . '</p>';
+echo '<p>' . implode(explode("\n", h($body)), '</p><p>') . '</p>';
 echo "</div>";
 echo "</div>";?>

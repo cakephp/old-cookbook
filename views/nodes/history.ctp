@@ -1,5 +1,8 @@
-<h1>History</h1>
-<?php if ($this->params['lang'] != $defaultLang) {
+<?php if (empty($this->params['isAjax'])) : ?>
+	<h1><?php __('History') ?></h1>
+<?php
+endif;
+if ($this->params['lang'] != $defaultLang) {
 	$url = $this->passedArgs;
 	$url[] = 1;
 	echo '<p>' . $html->link(__('See English edits too', true), $url) . '</p>';

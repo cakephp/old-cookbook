@@ -41,8 +41,8 @@ foreach ($data as $row) {
 		$row['Node']?$html->link($row['Node']['sequence'], am($pass, array('page' => 1, 'node_id' => $row['Revision']['node_id']))):'',
 		$html->link($row['Revision']['title'], array('action' => 'view', $row['Revision']['id'])),
 		$html->link($row['Revision']['lang'], am($pass, array('page' => 1, 'lang:' . $row['Revision']['lang']))),
-		$User?$html->link($User['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
-		$User?'<a href="mailto:' . $User['email'] . '">' . $User['email'] . '</a>':'',
+		$row['User']?$html->link($row['User']['username'], am($pass, array('page' => 1, 'user_id' => $row['Revision']['user_id']))):'',
+		$row['User']?'<a href="mailto:' . $row['User']['email'] . '">' . $row['User']['email'] . '</a>':'',
 		$html->link($row['Revision']['status'], am($pass, array('page' => 1, 'status' => $row['Revision']['status']))),
 		$html->link($row['Revision']['created'], am($pass, array('page' => 1, 'created' => $row['Revision']['created']))),
 	);

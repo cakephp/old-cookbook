@@ -1,4 +1,4 @@
-<div class="nodes add">
+<div class="nodes add ajaxFormContainer">
 <?php
 $contents = '';
 if (isset($this->data['Revision']['content'])) {

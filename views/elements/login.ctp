@@ -1,2 +1,17 @@
-<?php /* SVN FILE: $Id: login.ctp 600 2008-08-07 17:55:23Z AD7six $ */
-include(APP . 'plugins' . DS . 'users' . DS . 'views' . DS . 'users' . DS . 'login.ctp'); ?>
+<div class="login">
+<?php
+	echo $form->create('User', array('action' => 'login'));
+	echo $form->hidden('redirect', array('value' => $session->read('Auth.redirect')));
+?>
+	<fieldset>
+		<legend><?php __('Login') ?></legend>
+<?php
+		echo $form->input('username');
+		$after = '<p>' . $html->link(__('Forgot your password?', true), array('admin'=> false, 'action' => 'reset')) .'</p>';
+		echo $form->input('password', array('after' => $after));
+?>
+	</fieldset>
+<?php
+	echo $form->end(__('Login', true));
+?>
+</div>

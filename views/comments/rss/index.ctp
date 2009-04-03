@@ -11,7 +11,7 @@
 			return;
 		}
 		return array(
-			'title'		=> $row['Node']['sequence'] . ' ' . $row['Revision']['title'] . ' - ' . $html->clean(htmlspecialchars($row['Comment']['title'])),
+			'title'		=> $row['Node']['sequence'] . ' ' . $row['Revision']['title'] . ' - ' . $html->clean(h($row['Comment']['title'])),
 			'link'		=> array('controller' => 'comments', 'action' => 'index', $row['Comment']['node_id'], 'lang' => $row['Comment']['lang'], '#'
 		=> "comment_{$row['Comment']['id']}"),
 			'description'	=> $_this->element('comment', array('data' => $row, 'fixedDates' => true)),

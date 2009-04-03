@@ -4,7 +4,7 @@
 foreach ($counts as $lang => $count) {
 	$menu->add(array(
 		'section' => 'Options' ,
-		'title' => sprintf(__n('%1$s pending %2$s submission', '%3$s pending %4$s submissions', $count, true), $count, up($lang)),
+		'title' => sprintf(__n('%1$s pending %2$s submission', '%1$s pending %2$s submissions', $count, true), $count, up($lang)),
 		'url' => array('language' => $lang),
 		'under' => 'Pending'
 	));

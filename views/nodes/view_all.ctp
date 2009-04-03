@@ -17,7 +17,7 @@ if ($this->params['isAjax']) {
 	$this->set('currentNode', $currentNode['Node']);
 	$attributes = '';
 	echo "<h2 id= \"{$currentNode['Revision']['slug']}-{$currentNode['Node']['id']}\">" .
-		$currentNode['Node']['sequence'] . ' ' . htmlspecialchars($currentNode['Revision']['title']) . "</h2>";
+		$currentNode['Node']['sequence'] . ' ' . h($currentNode['Revision']['title']) . "</h2>";
 
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $currentNode));
@@ -36,10 +36,6 @@ if ($this->params['isAjax']) {
 			false
 		);
 	}
-	echo '<div class="comments" id="comments-' . $currentNode['Node']['id'] . '">';
-	echo '<div class="comment">';
-	echo $html->link(__('See comments for this section', true), array('controller' => 'comments', 'action' => 'index', $currentNode['Node']['id']));
-	echo '</div></div>';
 
 	array_shift ($data);
 	foreach ($data as $id => $row) {
@@ -49,7 +45,7 @@ if ($this->params['isAjax']) {
 		$sequence = $row['Node']['sequence'];
 		$sequence = $sequence?$sequence:'#';
 		echo "<h$level id=\"{$row['Revision']['slug']}-{$row['Node']['id']}\">" .
-			$html->link($sequence, '#' . $row['Revision']['slug'] . '-' . $row['Node']['id']) . ' ' . htmlspecialchars($row['Revision']['title']) . "</h$level>";
+			$html->link($sequence, '#' . $row['Revision']['slug'] . '-' . $row['Node']['id']) . ' ' . h($row['Revision']['title']) . "</h$level>";
 
 		echo '<div class="options">';
 			echo $this->element('node_options', array('data' => $row));

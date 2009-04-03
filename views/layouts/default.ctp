@@ -189,9 +189,9 @@ echo $html->meta('keywords',
 		</div>
 	</div>
 <?php
-echo $miJavascript->link(array('jquery' => array()), false);
+echo $miJavascript->link(array('jquery' => array('form')), false);
 echo $miJavascript->link('jquery-ui', false);
-echo $miJavascript->link('scripts', false);
+echo $miJavascript->link(array('scripts', 'popup'), false);
 echo $miJavascript->link();
 
 if(isProduction()): ?>

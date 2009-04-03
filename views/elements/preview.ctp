@@ -25,7 +25,7 @@ if (empty($errors['Revision'])) {
 <fieldset>
 	<?php echo $previewText ?>
 	<div id='preview'>
-		<h2><?php echo htmlspecialchars($data['Revision']['title']) ?> </h2>
+		<h2><?php echo h($data['Revision']['title']) ?> </h2>
 		<div class="view"><?php
 			if (isset($highlight)) {
 				echo $highlight->auto($data['Revision']['content']);

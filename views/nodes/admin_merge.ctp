@@ -2,7 +2,7 @@
 if (isset($preview)) :
 ?>
 <div id='preview' class="nodes view">
-	<h2><?php echo htmlspecialchars($preview['title']) ?> </h2>
+	<h2><?php echo h($preview['title']) ?> </h2>
 	<div class="body"><?php
 		if (isset($highlight)) {
 			echo $highlight->auto($preview['content']);

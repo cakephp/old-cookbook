@@ -19,7 +19,7 @@ foreach ($data as $id => $row) {
 	$sequence = $row['Node']['sequence'];
 	$sequence = $sequence?$sequence:'#';
 	echo "<h2 id=\"{$row['Revision']['slug']}-{$row['Node']['id']}\">" .
-		$html->link($sequence, array('action' => 'view', $row['Node']['id'], $row['Revision']['slug'])) . ' ' . htmlspecialchars($row['Revision']['title']) . "</h2>";
+		$html->link($sequence, array('action' => 'view', $row['Node']['id'], $row['Revision']['slug'])) . ' ' . h($row['Revision']['title']) . "</h2>";
 
 	echo '<div class="options">';
 		echo $this->element('node_options', array('data' => $row));

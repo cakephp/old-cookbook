@@ -4,7 +4,7 @@
 	<li><?php echo sprintf(
 		__('Please review %1$s to ensure consistency.', true),
 		$html->link(__('the guidelines for submitting to the Cookbook', true),
-		array('controller' => 'nodes', 'action' => 'view', '482'))
+		array('controller' => 'nodes', 'action' => 'view', '482'), array('class' => 'popout'))
 	) ?></li>
 <?php if ($this->action == 'add' && $this->params['lang'] !== Configure::read('Languages.default')): ?>
 	<li><?php echo sprintf(

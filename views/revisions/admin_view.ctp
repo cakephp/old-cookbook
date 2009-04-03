@@ -13,7 +13,7 @@ echo '<p>' . up($data['Revision']['lang']) .
 		array('admin' => false, 'controller' => 'nodes', 'action' => 'view', 'lang' => $data['Revision']['lang'], $data['Node']['id'])) . ' ' .
 	$time->timeAgoInWords($data['Revision']['created']) . '</p>';
 if(!empty($data['Revision']['reason'])) {
-	echo '<p>Reason: ' . htmlspecialchars($data['Revision']['reason']) . '</p>';
+	echo '<p>Reason: ' . h($data['Revision']['reason']) . '</p>';
 }
 echo "<h2>" . $data['Revision']['title'] . "</h2>";
 echo $this->element('node_options', array (
@@ -26,15 +26,16 @@ echo $this->element('node_options', array (
 	)
 ));
 echo $data['Revision']['content'];
-$revisionContent = htmlspecialchars_decode('<title>' . $data['Revision']['title'] . "</title>\r\n" . $data['Revision']['content']);
+$revisionContent = htmlspecialchars_decode('<title>' . $data['Revision']['title'] . "</title>\r\n" . $data['Revision']['content'], 'UTF-8');
 if ($data['Revision']['node_id'] && isset($current) && $data['Revision']['id'] != $current['Revision']['id']) {
 	echo '<hr />';
 	echo '<h2>{Current} ' . $current['Revision']['title'] . '</h2>';
 	echo $current['Revision']['content'];
-	$currentContent = htmlspecialchars_decode('<title>' . $current['Revision']['title'] . "</title>\r\n" . $current['Revision']['content']);
+	$currentContent = htmlspecialchars_decode('<title>' . $current['Revision']['title'] . "</title>\r\n" . $current['Revision']['content'],
+		'UTF-8');
 	echo '<hr />';
 	echo '<h2>Changes</h2>';
-	echo $diff->compare(htmlspecialchars($currentContent),htmlspecialchars($revisionContent));
+	echo $diff->compare(h($currentContent),h($revisionContent));
 }
 
 echo $this->element('node_navigation');

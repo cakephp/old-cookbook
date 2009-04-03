@@ -1006,8 +1006,8 @@ class NodesController extends AppController {
 		$path = $this->currentPath;
 		if (count($path) > 2) {
 			$direct = false;
-			array_shift($path);
-			array_shift($path);
+			array_shift($path); // collection index
+			array_shift($path); // collection
 			$ids = Set::extract($path, '/Node/id');
 		} else {
 			$direct = true;
@@ -1015,7 +1015,8 @@ class NodesController extends AppController {
 		$book = array_shift($path);
 		if (!$return) {
 			if ($direct) {
-				$conditions['Node.parent_id'] = $this->currentNode['id'];
+				$node = current(array_pop($path));
+				$conditions['Node.parent_id'] = $node['id'];
 				$sideToc = $this->Node->find('all', compact('conditions', 'fields', 'recursive', 'order'));
 			} else {
 				$conditions['Node.show_in_toc'] = 1;

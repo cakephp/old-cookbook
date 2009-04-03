@@ -118,21 +118,14 @@ class RevisionsController extends AppController {
 		$collection = !empty($this->passedArgs['collection']) ? $this->passedArgs['collection'] : 2;
 
 		// we should make a query object and use Zend_Search_Lucene api to construct it
-		$langQuery = ' AND lang:'. $lang;
+		$defaultLang = Configure::read('Languages.default');
+		if ($this->params['lang'] === $defaultLang) {
+			$langQuery = ' AND lang:'. $lang;
+		} else {
+			$langQuery = ' (lang:'. $lang . '^2 OR lang:' . $defaultLang . ')';
+		}
 		$collectionQuery = ' AND collection:'. $collection;
 		$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
-
-		$defaultLang = Configure::read('Languages.default');
-		if ($this->params['lang'] !== $defaultLang && count($results) < $limit) {
-			$langQuery = ' AND lang:'. $defaultLang;
-			$eResults = $this->Revision->search($query.$langQuery.$collectionQuery, $limit - count($results), 1);
-			if ($eResults) {
-				foreach ($eResults as $i => &$row) {
-					$row['Result']['lang'] = $lang;
-				}
-				$results = am((array)$results, $eResults);
-			}
-		}
 		$searchSlugs = Set::combine($results, '/Result/cake_id', '/Result/slug');
 		$conditions['id'] = array_keys($searchSlugs);
 		$fields = array('slug');

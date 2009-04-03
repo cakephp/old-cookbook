@@ -33,7 +33,7 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	var $components = array('Auth', 'Users.Bakery', 'RequestHandler');
+	var $components = array('Auth', 'Cookie', 'Users.Bakery', 'RequestHandler');
 /**
  * helpers variable
  *

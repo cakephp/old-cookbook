@@ -350,6 +350,7 @@ class Revision extends AppModel {
  * @return void
  */
 	function reset() {
+		$this->recursive = -1;
 		$nodes = array_keys($this->Node->find('list', array(
 			'conditions' => array('Node.id >' => 0),
 			'order' => 'id',
@@ -368,7 +369,7 @@ class Revision extends AppModel {
 				$conditions = array(
 					'node_id' => $id,
 					'lang' => $lang,
-					'NOT' => array('status' => array('rejected'))
+					'NOT' => array('status' => 'rejected')
 				);
 				$count = $this->find('count', compact('conditions'));
 				if (!$count) {
@@ -382,7 +383,7 @@ class Revision extends AppModel {
 				$last = $this->find('first', compact('conditions', 'order', 'fields'));
 				if (!$last) {
 					unset($conditions['Revision.status']);
-					$last = $this->find('first', compact('conditions', 'order'));
+					$last = $this->find('first', compact('conditions', 'order', 'fields'));
 				}
 				$this->updateAll(array('status' => '"current"'), array('Revision.id' => $last['Revision']['id']));
 				$conditions['Revision.status'] = 'current';

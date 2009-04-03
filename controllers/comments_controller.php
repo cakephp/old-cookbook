@@ -99,6 +99,9 @@ class CommentsController extends AppController {
 			$this->Comment->create();
 			if($this->Comment->save($this->data)) {
 				$this->Session->setFlash(__('Your comment has been added', true));
+				if (!empty($this->params['isAjax'])) {
+					return $this->redirect(array('action' => 'index', $id));
+				}
 				return $this->redirect($this->Session->read('referer'), null, true);
 			} else {
 				$this->Session->setFlash(__('Please correct errors below.', true));
@@ -137,7 +140,7 @@ class CommentsController extends AppController {
 		$conditions['Comment.node_id'] = $Node['Node']['id'];
 		$conditions['Comment.lang'] = $this->params['lang'];
 		$conditions['Comment.published'] = 1;
-		if ($this->params['url']['ext'] == 'html') {
+		if ($this->params['url']['ext'] == 'html' || !empty($this->params['isAjax'])) {
 			$order = 'Comment.created ASC';
 		} else {
 			$order = 'Comment.created DESC';

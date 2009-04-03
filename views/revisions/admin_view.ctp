@@ -26,13 +26,12 @@ echo $this->element('node_options', array (
 	)
 ));
 echo $data['Revision']['content'];
-$revisionContent = htmlspecialchars_decode('<title>' . $data['Revision']['title'] . "</title>\r\n" . $data['Revision']['content'], 'UTF-8');
+$revisionContent = htmlspecialchars_decode('<title>' . $data['Revision']['title'] . "</title>\r\n" . $data['Revision']['content']);
 if ($data['Revision']['node_id'] && isset($current) && $data['Revision']['id'] != $current['Revision']['id']) {
 	echo '<hr />';
 	echo '<h2>{Current} ' . $current['Revision']['title'] . '</h2>';
 	echo $current['Revision']['content'];
-	$currentContent = htmlspecialchars_decode('<title>' . $current['Revision']['title'] . "</title>\r\n" . $current['Revision']['content'],
-		'UTF-8');
+	$currentContent = htmlspecialchars_decode('<title>' . $current['Revision']['title'] . "</title>\r\n" . $current['Revision']['content']);
 	echo '<hr />';
 	echo '<h2>Changes</h2>';
 	echo $diff->compare(h($currentContent),h($revisionContent));
@@ -54,16 +53,18 @@ $menu->add(array(
 if ($data['Revision']['status'] == 'current') {
 	$menu->add(array(
 		'title' => 'Unapprove',
-		'url' => array('action' => 'hide', $data['Revision']['id'])
+		'url' => array('action' => 'hide', $data['Revision']['id']),
 	));
 } elseif ($data['Revision']['status'] == 'pending') {
 	$menu->add(array(
 		'title' => 'Approve',
-		'url' => array('action' => 'approve', $data['Revision']['id'])
+		'url' => array('action' => 'approve', $data['Revision']['id']),
+		'class' => 'dialogs'
 	));
 	$menu->add(array(
 		'title' => 'Reject',
-		'url' => array('action' => 'reject', $data['Revision']['id'])
+		'url' => array('action' => 'reject', $data['Revision']['id']),
+		'class' => 'dialogs'
 	));
 	$menu->add(array(
 		'title' => 'Ignore',

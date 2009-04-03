@@ -6,8 +6,12 @@ $fields = array(
 	'Revision.reason' => array('label' => 'Public Log message')
 );
 if (isset($isSignificant) && $isSignificant) {
-	$fields['is_significant'] = array('type' => 'radio', 'options' => array(1 => 'yes', 0 => 'no'),
-	'legend' => 'Should translations be marked for review?');
+	$fields['is_significant'] = array('type' => 'radio',
+		'default' => 1,
+		'options' => array(1 => 'yes', 0 => 'no'),
+		'legend' => 'Should translations be marked for review?',
+		'class' => 'radio'
+	);
 
 }
 echo $form->inputs($fields);

@@ -459,3 +459,11 @@ div.column {
 input, textarea {
 	clear:none;
 }
+input.radio  {
+	display: inline;
+	width: 3em;
+	margin: 0 0.5em 0 1em;
+}
+fieldset fieldset label {
+	display: inline;
+}

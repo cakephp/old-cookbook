@@ -355,7 +355,7 @@ class Revision extends AppModel {
 			'order' => 'id',
 			'recursive' => -1
 		)));
-		set_time_limit (min(count($nodes) / 10, 30));
+		set_time_limit (max(count($nodes) / 10, 30));
 		$this->unbindModel(array('belongsTo' => array('Node')), false);
 		$order = 'Revision.id DESC';
 		$fields = array('id');

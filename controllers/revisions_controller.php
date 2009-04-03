@@ -246,7 +246,7 @@ class RevisionsController extends AppController {
 		$isSignificant = false;
 		$defaultLang = Configure::read('Languages.default');
 		if (
-			$this->params['lang'] === $defaultLang &&
+			$data['Revision']['lang'] === $defaultLang &&
 			$data['Revision']['node_id'] &&
 			$this->Revision->find('list',
 				array('conditions' => array(
@@ -389,8 +389,17 @@ class RevisionsController extends AppController {
 		$id = $this->Revision->field('id', array('id >' . $id, 'status' => 'pending', 'lang' =>
 			$this->Revision->field('lang')));
 		if ($id) {
+			if (!empty($this->params['isAjax'])) {
+				$this->set('url', array('action' => 'view', $id));
+				return $this->render('/elements/force_redirect');
+				return $this->flash('Done', array('action' => 'view', $id), 0);
+			}
 			return $this->redirect(array('action' => 'view', $id), null, true);
 		} else {
+			if (!empty($this->params['isAjax'])) {
+ 				$this->set('url', array('action' => 'pending'));
+				return $this->render('/elements/force_redirect');
+			}
 			//$this->Session->setFlash('No more pending revisions for that language');
 			return $this->redirect(array('action' => 'pending'), null, true);
 		}

@@ -120,7 +120,7 @@ $(function() {
 	 * For any div with the class ajaxFormContainer - load the form into the same container
 	 * This prevents losing any open (none-modal) dialogs in the process, hence it's here
 	 */
-	$('div.ajaxFormContainer').each(function(){
+	$('div.container').each(function(){
 		containForms(this);
 	});
 });

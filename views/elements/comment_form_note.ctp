@@ -1,4 +1,4 @@
-<div class="note">
+<div class="note container">
 	<p><?php __('Is a comment appropriate?') ?></p>
 	<ul>
 	<li><?php echo sprintf(

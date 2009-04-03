@@ -379,10 +379,10 @@ div#body                                {text-align:left;}
 div.nodes .options                      {background-color:#f6f6ff;padding:5px 20px;font-size:11px;}
 div.flags                               {position:relative;top:25px;right:10px;height:auto;float:none;text-align:right;}
 
-.summary a, .body a {
+.summary a, .body a, .container a {
 	border-bottom: 1px dashed;
 }
-.summary a:hover, .body a:hover {
+.summary a:hover, .body a:hover, .container a:hover {
 	border-bottom: 1px solid;
 	text-decoration: none;
 }

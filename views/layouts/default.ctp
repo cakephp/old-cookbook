@@ -153,13 +153,8 @@ echo $html->meta('keywords',
 				<?php echo $this->element('crumbs'); ?>
 				<cake:nocache>
 					<?php
-						if($session->check('Message.auth')):
-							$session->flash('auth');
-						endif;
-
-						if($session->check('Message.flash')):
-							$session->flash();
-						endif;
+						$session->flash('auth');
+						$session->flash();
 					?>
 				</cake:nocache>
 

@@ -654,12 +654,13 @@ class NodesController extends AppController {
  * todo method
  *
  * List all sections that are not translated
+ * Give a short cache time so that if it's stale, it's not stale for long
  *
  * @return void
  * @access public
  */
 	function todo() {
-		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
+		$this->cacheAction = array('duration' => '+1 hour', 'callbacks' => false);
 		$this->paginate['limit'] = 20;
 		$conditions = array('Revision.status' => 'pending', 'Revision.lang' => $this->params['lang']);
 		$recursive = -1;
@@ -733,7 +734,6 @@ class NodesController extends AppController {
 		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		$languages = Configure::read('Languages.all');
 		$db =& ConnectionManager::getDataSource($this->Node->useDbConfig);
-		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		$nodes = $this->Node->find('count', array('recursive' => -1));
 		$counts = $this->Node->Revision->find('all', array(
 			'conditions' => array('status' => 'current', 'lang' => $languages),

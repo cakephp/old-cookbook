@@ -33,7 +33,7 @@ class Comment extends AppModel {
  * @var string
  * @access public
  */
-	var $name= 'Comment';
+	var $name = 'Comment';
 /**
  * belongsTo variable
  *
@@ -60,13 +60,15 @@ class Comment extends AppModel {
  * @access public
  */
 	var $validate = array(
-			      'title'=> array(
-					      'required'=> VALID_NOT_EMPTY
-					     ),
-			      'body'=>array(
-					    'required'=> VALID_NOT_EMPTY
-					   )
-			     );
+		'title' => array(
+			array('rule' => 'notEmpty', 'on' => 'create', 'required' => true),
+			array('rule' => 'notEmpty'),
+		),
+		'body'=>array(
+			array('rule' => 'notEmpty', 'on' => 'create', 'required' => true),
+			array('rule' => 'notEmpty'),
+		),
+	);
 /**
  * beforeSave function
  *

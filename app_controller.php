@@ -41,7 +41,7 @@ class AppController extends Controller {
  * @access public
  */
 	var $helpers = array(
-		'Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false),
+		'Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false, 'showWarnings' => false),
 		'MiHtml', 'MiJavascript',
 		'Form', 'Time', 'Javascript', 'Cache');
 /**
@@ -103,6 +103,7 @@ class AppController extends Controller {
 			'admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 		$this->Auth->autoRedirect = false;
 		$this->Auth->allow('display');
+		$this->Auth->ajaxLogin =  'login';
 		$this->{$this->modelClass}->currentUserId = $this->Auth->user('id');
 	}
 /**
@@ -293,7 +294,7 @@ class AppController extends Controller {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->__conditions = $this->{$this->modelClass}->searchConditions($term);
-		$this->Session->setFlash(sprintf(__('All %1$s matching the term "%2$s"', true), Inflector::humanize($this->name), htmlspecialchars($term)));
+		$this->Session->setFlash(sprintf(__('All %1$s matching the term "%2$s"', true), Inflector::humanize($this->name), h($term)));
 		$this->admin_index();
 		$this->render('admin_index');
 	}

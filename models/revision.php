@@ -350,11 +350,13 @@ class Revision extends AppModel {
  * @return void
  */
 	function reset() {
-		$this->recursive = -1;
-		$nodes = $this->find('list', array(
-			'fields' => array('node_id', 'node_id'),
-			'conditions' => array('node_id >' => 0)
-		));
+		$nodes = array_keys($this->Node->find('list', array(
+			'conditions' => array('Node.id >' => 0),
+			'order' => 'id',
+			'recursive' => -1
+		)));
+		set_time_limit (min(count($nodes) / 10, 30));
+		$this->unbindModel(array('belongsTo' => array('Node')), false);
 		$order = 'Revision.id DESC';
 		$fields = array('id');
 		foreach ($nodes as $id) {
@@ -366,18 +368,26 @@ class Revision extends AppModel {
 				$conditions = array(
 					'node_id' => $id,
 					'lang' => $lang,
-					'status' => array('current', 'previous')
+					'NOT' => array('status' => array('rejected'))
 				);
-				if (!$this->find('count', compact('conditions'))) {
+				$count = $this->find('count', compact('conditions'));
+				if (!$count) {
 					continue;
 				}
 				$conditions['Revision.status'] = 'current';
-				if ($this->find('count', compact('conditions'))) {
+				if ($this->find('count', compact('conditions')) === 1) {
 					continue;
 				}
 				$conditions['Revision.status'] = 'previous';
 				$last = $this->find('first', compact('conditions', 'order', 'fields'));
+				if ($last) {
+					unset($conditions['Revision.status']);
+					$last = $this->find('first', compact('conditions', 'order'));
+				}
 				$this->updateAll(array('status' => '"current"'), array('Revision.id' => $last['Revision']['id']));
+				$conditions['Revision.status'] = 'current';
+				$conditions['NOT'] = array('Revision.id' => $last['Revision']['id']);
+				$this->updateAll(array('Revision.status' => '"previous"'), $conditions);
 			}
 		}
 	}

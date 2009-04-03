@@ -380,7 +380,7 @@ class Revision extends AppModel {
 				}
 				$conditions['Revision.status'] = 'previous';
 				$last = $this->find('first', compact('conditions', 'order', 'fields'));
-				if ($last) {
+				if (!$last) {
 					unset($conditions['Revision.status']);
 					$last = $this->find('first', compact('conditions', 'order'));
 				}

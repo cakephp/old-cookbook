@@ -140,7 +140,7 @@ class RevisionsController extends AppController {
 		}
 		//we need to pop the lang val from the terms
 		$terms = $this->Revision->terms();
-		$terms = array_diff($terms, array($lang, $collection));
+		$terms = array_diff($terms, array($lang, $collection, $defaultLang));
 		if ($results) {
 			//Paginator cheating ;) maybe put it in an element in the view?
 			$count = $this->Revision->hits_count();

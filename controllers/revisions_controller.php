@@ -121,6 +121,17 @@ class RevisionsController extends AppController {
 		$langQuery = ' AND lang:'. $lang;
 		$collectionQuery = ' AND collection:'. $collection;
 		$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
+
+		$defaultLang = Configure::read('Languages.default');
+		if (!$results && $this->params['lang'] !== $defaultLang) {
+			$langQuery = ' AND lang:'. $defaultLang;
+			$results = $this->Revision->search($query.$langQuery.$collectionQuery, $limit, $page);
+			if ($results) {
+				foreach ($results as $i => &$row) {
+					$row['Result']['lang'] = $lang;
+				}
+			}
+		}
 		$searchSlugs = Set::combine($results, '/Result/cake_id', '/Result/slug');
 		$conditions['id'] = array_keys($searchSlugs);
 		$fields = array('slug');
@@ -136,7 +147,6 @@ class RevisionsController extends AppController {
 		//we need to pop the lang val from the terms
 		$terms = $this->Revision->terms();
 		$terms = array_diff($terms, array($lang, $collection));
-		debug ($results); die;
 		if ($results) {
 			//Paginator cheating ;) maybe put it in an element in the view?
 			$count = $this->Revision->hits_count();

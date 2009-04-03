@@ -7,8 +7,7 @@
 		'legend' => 'Login',
 		'username',
 		'psword' => array('label' => __('Password', true), 'value' => '', 'after' => $after),
-		'remember_me' => array('label' => __('Remember me', true),
-			'type' => 'checkbox', 'after' => '<p>' . __('for 2 weeks unless I sign out.', true) . '</p>'),
+		'remember_me' => array('label' => __('Remember me', true), 'type' => 'checkbox')
 	));
 	echo $form->end(__('Login', true));
 ?>

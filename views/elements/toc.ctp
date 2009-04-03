@@ -9,13 +9,17 @@ if (isset($currentPath[2])) {
 	), array('title' => __('see fully expanded table of contents (only)', true), 'id' => 'tocLink')) . ' : ';
 } elseif (isset($currentPath[1])) {
 	$i = 1;
-	$title .= __('Books in ', true);
 } else {
 	$title .= __('Available collections', true);
 }
 if ($i) {
-	$title .= $html->link($currentPath[$i]['Revision']['title'],
+	$linkTitle = $html->link($currentPath[$i]['Revision']['title'],
 		array('controller' => 'nodes', 'action' => 'view', $currentPath[$i]['Node']['id'], $currentPath[$i]['Revision']['slug']));
+}
+if ($i === 1) {
+	$title .= sprintf(__('Books in %1$s', true), $linkTitle);
+} elseif ($i) {
+	$title .= $linkTitle;
 }
 echo '<h4>' . $title . '</h4>';
 $selected = array();

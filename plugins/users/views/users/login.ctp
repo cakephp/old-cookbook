@@ -2,20 +2,14 @@
 <?php
 	echo $form->create('User', array('action' => 'login'));
 	echo $form->hidden('redirect', array('value' => $session->read('Auth.redirect')));
-?>
-	<fieldset>
-		<legend><?php __('Login') ?></legend>
-<?php
-	foreach($loginFields as $label => $field):
-		$after = null;
-		if ($label == 'password') {
-			$after = '<p>' . $html->link(__('Forgot your password?', true), array('admin'=> false, 'action' => 'reset')) .'</p>';
-		}
-		echo $form->input($field, array('label' => Inflector::humanize($label), 'after' => $after));
-	endforeach;
-?>
-	</fieldset>
-<?php
+	$after = '<p>' . $html->link(__('Forgot your password?', true), 'http://bakery.cakephp.org') . '</p>';
+	echo $form->inputs(array(
+		'legend' => 'Login',
+		'username',
+		'psword' => array('label' => __('Password', true), 'value' => '', 'after' => $after),
+		'remember_me' => array('label' => __('Remember me', true),
+			'type' => 'checkbox', 'after' => '<p>' . __('for 2 weeks unless I sign out.', true) . '</p>'),
+	));
 	echo $form->end(__('Login', true));
 ?>
 </div>

@@ -10,9 +10,9 @@ define('INVALID', '0');
 */
 class BakeryComponent extends Object {
 
-	var $components = array('Auth');
+	var $components = array('Auth', 'Cookie', 'Session');
 
-	function initialize() {
+	function initialize(&$controller) {
 		$this->Auth->loginAction = '/users/login';
 		$this->Auth->logoutRedirect = '/';
 
@@ -20,6 +20,9 @@ class BakeryComponent extends Object {
 		$this->Auth->authorize = 'object';
 		$this->Auth->object = $this;
 		$this->Auth->authenticate = $this;
+		if (!$this->Auth->user('id')) {
+			$this->_cookieAuth($controller);
+		}
 	}
 
 	function startup(&$controller) {
@@ -69,6 +72,32 @@ class BakeryComponent extends Object {
 			$user = array('User' => array('Level' => READ, 'Group' => null));
 		}
 		$controller->set('auth', $user);
+	}
+/**
+ * cookieAuth method
+ *
+ * @param mixed $controller
+ * @return void
+ * @access protected
+ */
+	function _cookieAuth(&$controller) {
+		$cookie = $this->Cookie->read('User');
+		if (!empty($cookie['id']) && !empty($cookie['token'])) {
+
+			$user = $this->Auth->getModel();
+			$user->id = $cookie['id'];
+			$currentToken = $user->token(null, array('length' => 100, 'fields' => array(
+				$this->Auth->fields['username'], $this->Auth->fields['password']
+			)));
+
+			if ($cookie['token'] !== $currentToken) {
+				return $this->Cookie->del('User');
+			}
+			if ($this->Auth->login($cookie['id'])) {
+				$display = $user->display();
+				$this->Session->setFlash(sprintf(__('Welcome back %1$s.', true), $display));
+			}
+		}
 	}
 }
 ?>

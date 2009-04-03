@@ -64,6 +64,35 @@ class User extends UsersAppModel {
 		return true;
 	}
 
+	function display($id = null) {
+		if (!$id) {
+			if (!$this->id) {
+				return false;
+			}
+			$id = $this->id;
+		}
+		return current($this->find('list', array('conditions' => array($this->alias . '.id' => $id))));
+	}
+
+	function token($data = array(), $params = array()) {
+		$conditions = array('id' => $this->id);
+		$fields = '*';
+		$recursive = -1;
+		extract($params);
+		if (!$data) {
+			$data = $this->find('first', compact('conditions', 'fields', 'recursive'));
+		}
+		$return = Security::hash(serialize($data), null, true);
+		if ($length) {
+			while(strlen($return) < $length) {
+				$return .= Security::hash($return, null, true);
+			}
+			$return = substr($return, 0, $length);
+		}
+		return $return;
+	}
+
+
 	function beforeSave() {
 		if(!$this->id) {
 			$this->data['User']['email_token'] = $this->__generateToken();

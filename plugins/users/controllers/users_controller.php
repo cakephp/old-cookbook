@@ -41,7 +41,7 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
-	var $components = array('Email');
+	var $components = array('Email', 'Cookie');
 
 	var $helpers = array('Html', 'Form');
 
@@ -56,17 +56,20 @@ class UsersController extends AppController {
 	}
 
 	function login() {
-		/* this causes crazy redirects. I dont know why we need it since it is handled by AuthComponent
+		if ($this->data && $this->Auth->user('id')) {
+			if (!empty($this->data['User']['remember_me'])) {
+				$this->User->id = $this->Auth->user('id');
+				$token = $this->User->token(null, array('length' => 100, 'fields' => array(
+					$this->Auth->fields['username'], $this->Auth->fields['password']
+				)));
+				$this->Cookie->write('User.id', $this->User->id, true, '+2 weeks');
+				$this->Cookie->write('User.token', $token, true, '+2 weeks');
+			}
+			$display = $this->User->display();
+			$this->Session->setFlash(sprintf(__('Welcome back %1$s.', true), $display));
+			return $this->redirect($this->Auth->redirect());
+		}
 		if ($this->Auth->user('id')) {
-			$this->redirect($this->referer('/'), null, true);
-		}
-		if (!$this->Session->check('Auth.from')) {
-			$this->Session->write('Auth.from', $this->Session->read('referer'));
-		}
-		unset($this->data['User']['psword']);
-		*/
-		if($this->Auth->user('id'))
-		{
 			if(!empty($this->data['User']['redirect'])){
 				$this->redirect($this->data['User']['redirect'], null, true);
 			} else {
@@ -76,8 +79,12 @@ class UsersController extends AppController {
 	}
 
 	function logout() {
-		$this->Session->destroy();
-		$this->redirect(array('plugin' => null, 'controller' => 'nodes', 'action' => 'index'), null, true);
+		if ($this->Auth->user()) {
+			$this->Cookie->del('User');
+			$this->Session->destroy();
+			$this->Session->setFlash(__('Bye for now!', true));
+		}
+		$this->redirect($this->Auth->logout());
 	}
 
 	function reset() {

@@ -30,7 +30,9 @@ $(document).ready(function() {
 		$('a[@href="#' + anchor + '"]').click();
 	}
 	/* Toggle Code */
-	$('pre.code').before('<a class="codeToggle" href="#">Plain Text View</a>');
+	$('pre.code')
+		.before('<a class="codeToggle" href="#">Plain Text View</a>')
+		.next().css('border-top', 'none');
 	$('a.codeToggle').click().toggle(function() {
 			$(this).next().show();
 			$(this).next().next().hide();
@@ -55,59 +57,13 @@ $(document).ready(function() {
 	$('#tocFull').dialog({
 		autoOpen: false,
 		width: 1000,
-		height: 550,
-		modal: false
+		height: 'auto',
+		resizable: false,
+		draggable: false,
+		modal: true
 	});
 	$('a#tocLink').click(function(){
 		$('#tocFull').dialog('open');
 		return false;
 	});
-	/**
-	 * Dialogs - use .ajax suffix to ensure full page view caching doesn't get confused
-	 */
-	$('ul.dialogs a, a.dialog, a.popout')
-		.click(function(){
-			$('<div class="dialog" style="display;none">Loading...</div>')
-				.attr('title', $(this).text())
-				.appendTo('body')
-				.load($(this).attr('href') + '.ajax', function(){
-					containLinks(this);
-				}).dialog({
-					autoOpen: false,
-					width: 500,
-					height: 300,
-				})
-				.dialog('open');
-			return false;
-		});
-	/**
-	 * containLinks, for the passed base find any links within it and ajax load into the same container
-	 */
-	function containLinks (base) {
-		var base = $(base);
-		$('a', base).click(function() {
-			if ($(this).hasClass('popout')) {
-				$(this)
-					.click(function(){
-						$('<div class="dialog" style="display;none">Loading...</div>')
-							.attr('title', $(this).text())
-							.appendTo('body')
-							.load($(this).attr('href') + '.ajax', function(){
-								containLinks(this);
-							}).dialog({
-								autoOpen: false,
-								width: 500,
-								height: 300,
-							})
-							.dialog('open');
-						return false;
-					});
-			} else {
-				base.load($(this).attr('href') + '.ajax', function() {
-					containLinks(base);
-				});
-			}
-			return false;
-		});
-	}
 });

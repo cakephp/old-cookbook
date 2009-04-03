@@ -262,7 +262,7 @@ pre.shell {
 
 ol.code {
 	margin: 0 0 1em;
-	padding: 0;
+	padding: 3px 0;
 	font-size: 0.75em;
 	line-height: 1.8em;
 	overflow: auto;
@@ -270,6 +270,7 @@ ol.code {
 	text-align: left;
 	list-style-position: inside;
 	border: 1px solid #d3d3d0;
+	border-top: 1.8em solid #F0F0F0;
 }
 ol.code li {
 	float: left;

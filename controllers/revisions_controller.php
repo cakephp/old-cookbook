@@ -663,10 +663,10 @@ class RevisionsController extends AppController {
 		} else {
 			$conditions['Revision.lang'] = $this->params['lang'];
 		}
-
 		$this->data = $this->Revision->find('all', array(
 			'conditions' => $conditions,
-			'order' => array('Revision.created DESC')
+			'order' => array('Revision.created DESC'),
+			'limit' => 30
 		));
 		$this->pageTitle = sprintf(__('Current Pending revisions ', true));
 		$this->render('index');

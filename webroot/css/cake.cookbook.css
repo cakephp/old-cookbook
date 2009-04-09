@@ -467,3 +467,6 @@ input.radio  {
 fieldset fieldset label {
 	display: inline;
 }
+#cakefest {
+	margin: 10px 30px;
+}

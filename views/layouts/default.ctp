@@ -147,7 +147,9 @@ echo $html->meta('keywords',
 				?>
 				<cake:nocache>
 					<?php echo $this->element('side_menu'); ?>
-				</cake:nocache>
+                                </cake:nocache>
+                                <?php echo $html->image('cakefest2009.png', array(
+                                  'id' => 'cakefest', 'url' => 'http://cakefest.org', 'alt' => 'CakeFest #3: July 9-12 2009 Berlin!')); ?>
 			</div>
 			<div id="body">
 				<?php echo $this->element('crumbs'); ?>

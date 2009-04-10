@@ -2,15 +2,14 @@
 <div class="summary">
 <?php
 $i18n = I18n::getInstance();
-
+$translatorHelp = $html->link(__('Please help out by updating the translation file', true), array('action' => 'view', 817));
 if (file_exists(APP . 'locale' . DS . $i18n->l10n->locale . DS . 'LC_MESSAGES' . DS . 'default.po')) {
-	echo '<p class="note">' . sprintf(__('Want to check or update the <a href="%1$s">po file</a> for %2$s?', true),
-		'http://thechaw.com/cakebook/source/locale/' . $i18n->l10n->locale . '/LC_MESSAGES/default.po', $i18n->l10n->language);
+	echo '<p class="note">' . sprintf(__('Want to check the fixed texts used on the site for %1$s? %2$s', true),
+		$i18n->l10n->language, $translatorHelp);
 } else {
-	echo '<p class="warning">' . sprintf(__('These is no <a href="%1$s">po file</a> for %2$s', true),
-		'http://thechaw.com/cakebook/source/locale/eng/LC_MESSAGES/default.po', $i18n->l10n->language);
+	echo '<p class="warning">' . sprintf(__('We don\'t have %1$s translations for the fixed texts used on the site. %2$s', true),
+		$i18n->l10n->language, $translatorHelp);
 }
-echo '. ' . __('Please use <a href="http://www.poedit.net">Po Edit</a> when editing po files', true);
 echo '</p><p>' . __('These sections either do not have a translation, or the English text has changed since it was translated', true) . '</p>';
 ?>
 </div>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cbt\n"
-"POT-Creation-Date: 2009-04-02 20:06+0200\n"
+"POT-Creation-Date: 2009-04-10 13:01+0200\n"
 "PO-Revision-Date: 2009-04-01 21:44+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgid "Recent Changes"
 msgstr "Perubahan Terkini"
 
 #: controllers/changes_controller.php:141
-#: controllers/comments_controller.php:199
+#: controllers/comments_controller.php:202
 #, fuzzy
 msgid "by %1$s"
 msgstr "oleh %s"
@@ -57,7 +57,7 @@ msgstr "oleh %s"
 msgid "restricted to status: %1$s"
 msgstr "dibatasi atas status: %s"
 
-#: controllers/comments_controller.php:92;124
+#: controllers/comments_controller.php:92;127
 msgid "Invalid Node."
 msgstr "Node tidak sah."
 
@@ -65,28 +65,29 @@ msgstr "Node tidak sah."
 msgid "Your comment has been added"
 msgstr "Komentar anda telah ditambahkan."
 
-#: controllers/comments_controller.php:104
+#: controllers/comments_controller.php:107
 msgid "Please correct errors below."
 msgstr "Silahkan perbaiki kesalahan-kesalahan di bawah ini."
 
-#: controllers/comments_controller.php:128
+#: controllers/comments_controller.php:131
 msgid "No permissions to see comments for that section"
 msgstr "Tidak berhak melihat komentar untuk bagian tersebut."
 
-#: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
+#: controllers/comments_controller.php:139 views/elements/node_options.ctp:20
+#: views/nodes/view_all.ctp:127;137
 #, fuzzy
 msgid "Comments for %1$s"
 msgstr "Komentar untuk %s"
 
-#: controllers/comments_controller.php:169
+#: controllers/comments_controller.php:172
 msgid "Invalid Comment."
 msgstr "Komentar tidak sah."
 
-#: controllers/comments_controller.php:188 views/comments/index.ctp:5
+#: controllers/comments_controller.php:191 views/comments/index.ctp:6
 msgid "Recent Comments"
 msgstr "Komentar Terkini"
 
-#: controllers/comments_controller.php:190 views/layouts/default.ctp:63
+#: controllers/comments_controller.php:193 views/layouts/default.ctp:63
 msgid "Recent Comments for all languages"
 msgstr "Komentar Terkini untuk semua bahasa"
 
@@ -95,11 +96,8 @@ msgid "Invalid Collection"
 msgstr "Koleksi tidak sah"
 
 #: controllers/nodes_controller.php:814;922
-msgid ""
-"Thanks for your contribution! Your suggestion has been submitted for review."
-msgstr ""
-"Terima kasih atas kontribusi Anda! Anjuran Anda telah dikirim untuk kami "
-"tinjau."
+msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr "Terima kasih atas kontribusi Anda! Anjuran Anda telah dikirim untuk kami tinjau."
 
 #: controllers/nodes_controller.php:877
 msgid "This function is for comparing different (public) language content"
@@ -113,19 +111,19 @@ msgstr ""
 msgid "Translation to %1$s"
 msgstr ""
 
-#: controllers/revisions_controller.php:619;624;676
+#: controllers/revisions_controller.php:632;637;689
 msgid "Only current and previous revisions can be viewed"
 msgstr "Hanya revisi terkini dan yang terdahulu yang dapat dilihat"
 
-#: controllers/revisions_controller.php:628
+#: controllers/revisions_controller.php:641
 msgid "Only possible to compare revisions of the same node"
 msgstr "Hanya mungkin untuk membedakan revisi pada node yang sama"
 
-#: controllers/revisions_controller.php:658
+#: controllers/revisions_controller.php:671
 msgid "Current Pending revisions "
 msgstr ""
 
-#: controllers/revisions_controller.php:680
+#: controllers/revisions_controller.php:693
 #, fuzzy
 msgid "Please login to access this revision"
 msgstr "Silahkan masuk untuk melanjutkan."
@@ -180,21 +178,21 @@ msgid_plural "%1$s %2$s comments"
 msgstr[0] "%s (terkini adalah %s)"
 msgstr[1] "%s (terkini adalah %s)"
 
-#: views/comments/index.ctp:3
+#: views/comments/index.ctp:4
 #, fuzzy
 msgid "Comments: %1$s"
 msgstr "Komentar: %s"
 
-#: views/comments/index.ctp:10
+#: views/comments/index.ctp:12
 msgid "No Comments yet!"
 msgstr "Belum ada komentar!"
 
-#: views/comments/index.ctp:18
+#: views/comments/index.ctp:20
 #, fuzzy
 msgid "Add a comment"
 msgstr "Komentar tidak sah."
 
-#: views/comments/index.ctp:21
+#: views/comments/index.ctp:23
 msgid "This page as a feed"
 msgstr "Halaman ini sebagai feed"
 
@@ -243,9 +241,7 @@ msgid "You can change it"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:8
-msgid ""
-"Do you want help with this topic? There are ways to %1$s and more "
-"appropriate places to %2$s for %3$s"
+msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:9
@@ -279,21 +275,15 @@ msgstr ""
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
 msgid "Please review %1$s to ensure consistency."
-msgstr ""
-"Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep "
-"untuk memastikan konsistensi. %s"
+msgstr "Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep untuk memastikan konsistensi. %s"
 
 #: views/elements/content_form_note.ctp:6
 #, fuzzy
 msgid "the guidelines for submitting to the Cookbook"
-msgstr ""
-"Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep "
-"untuk memastikan konsistensi. %s"
+msgstr "Silahkan tinjau kembali panduan untuk mengirimkan isi ke dalam buku resep untuk memastikan konsistensi. %s"
 
 #: views/elements/content_form_note.ctp:11
-msgid ""
-"Before being accepted, new content must be available in %1$s. Please submit "
-"your suggestion in %2$s if possible"
+msgid "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
 msgstr ""
 
 #: views/elements/content_form_note.ctp:12;13
@@ -322,15 +312,15 @@ msgstr "Belum mempunyai akun? %s Silahkan mendaftar"
 msgid "Translate"
 msgstr "telah diterjemahkan sebanyak"
 
-#: views/elements/node_options.ctp:9
+#: views/elements/node_options.ctp:9 views/nodes/view_all.ctp:36;76
 msgid "There is no translation for this section please submit one"
 msgstr ""
 
-#: views/elements/node_options.ctp:11
+#: views/elements/node_options.ctp:11 views/nodes/view_all.ctp:40
 msgid "Edit"
 msgstr "Sunting"
 
-#: views/elements/node_options.ctp:12
+#: views/elements/node_options.ctp:12 views/nodes/view_all.ctp:41
 msgid "Don't like this text? Submit your thoughts"
 msgstr ""
 
@@ -348,6 +338,7 @@ msgid "there is a pending change for this section"
 msgstr "ada perubahan yang masih ditangguhkan untuk bagian ini"
 
 #: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
+#: views/nodes/history.ctp:2
 msgid "History"
 msgstr "Sejarah"
 
@@ -391,16 +382,16 @@ msgstr ""
 msgid "Save it"
 msgstr ""
 
-#: views/elements/search.ctp:21 views/elements/search_form.ctp:6
+#: views/elements/search.ctp:21 views/elements/search_form.ctp:13
 msgid "Search"
 msgstr "Cari"
 
-#: views/elements/search_form.ctp:4
+#: views/elements/search_form.ctp:8
 #, fuzzy
 msgid "Collection"
 msgstr "Koleksi tidak sah"
 
-#: views/elements/search_form.ctp:5
+#: views/elements/search_form.ctp:11
 #, fuzzy
 msgid "Search term"
 msgstr "Cari"
@@ -435,11 +426,11 @@ msgstr "Tentang CakePHP"
 msgid "Donate"
 msgstr "Sumbang"
 
-#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:92
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:112
 msgid "All in one page"
 msgstr "Semuanya dalam satu halaman"
 
-#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:99
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:119
 msgid "Suggest a new section here"
 msgstr "Anjurkan bagian baru di sini"
 
@@ -451,13 +442,14 @@ msgstr "Daftar Isi"
 msgid "see fully expanded table of contents (only)"
 msgstr "lihat keseluruhan daftar isi "
 
-#: views/elements/toc.ctp:12
-msgid "Books in "
-msgstr "Buku dalam"
-
-#: views/elements/toc.ctp:14
+#: views/elements/toc.ctp:13
 msgid "Available collections"
 msgstr "Koleksi yang tersedia"
+
+#: views/elements/toc.ctp:20
+#, fuzzy
+msgid "Books in %1$s"
+msgstr "Buku dalam"
 
 #: views/layouts/default.ctp:37
 msgid "Mobile version"
@@ -502,20 +494,12 @@ msgid "after"
 msgstr "setelah"
 
 #: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
-msgid ""
-"Contents. Code in pre tags will be escaped. Submissions with no html "
-"formatting will be formatted automatically"
-msgstr ""
-"Isi. Kode dalam tag pre akan di-escape. Pengiriman tanpa kode html akan "
-"diformat secara otomatis"
+msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr "Isi. Kode dalam tag pre akan di-escape. Pengiriman tanpa kode html akan diformat secara otomatis"
 
 #: views/nodes/add.ctp:40
-msgid ""
-"Optionally explain in brief why you are proposing this addition (In English "
-"Please) :)"
-msgstr ""
-"Jelaskan dengan singkat mengapa anda mengajukan penambahan ini (usahakan "
-"dalam bahasa Inggris)"
+msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr "Jelaskan dengan singkat mengapa anda mengajukan penambahan ini (usahakan dalam bahasa Inggris)"
 
 #: views/nodes/add.ctp:44
 msgid "Add a new section"
@@ -525,7 +509,7 @@ msgstr "Tambahkan bagian baru"
 msgid "You are sure? Please check the preview"
 msgstr "Anda yakin? Silahkan lihat preview"
 
-#: views/nodes/compare.ctp:10 views/revisions/view.ctp:11
+#: views/nodes/compare.ctp:13 views/revisions/view.ctp:11
 msgid "Differences"
 msgstr "Perbedaan"
 
@@ -560,18 +544,13 @@ msgstr ""
 msgid "English History"
 msgstr "Lihat suntingan dalam bahasa Inggris-nya juga"
 
-#: views/nodes/history.ctp:5
+#: views/nodes/history.ctp:8
 msgid "See English edits too"
 msgstr "Lihat suntingan dalam bahasa Inggris-nya juga"
 
 #: views/nodes/stats.ctp:4
-msgid ""
-"Here's a shout out to those who have dedicated time, sweat and tears to "
-"write, translate and edit the cookbook contents."
-msgstr ""
-"Berikut ini ditujukan kepada orang-orang yang telah mendedikasikan waktu, "
-"keringat dan air mata untuk menulis, menerjemahkan dan mengedit isi buku "
-"resep."
+msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr "Berikut ini ditujukan kepada orang-orang yang telah mendedikasikan waktu, keringat dan air mata untuk menulis, menerjemahkan dan mengedit isi buku resep."
 
 #: views/nodes/stats.ctp:6;37
 #, fuzzy
@@ -598,46 +577,45 @@ msgid "The cookbook needs you! No submissions for this language!"
 msgstr "Buku resep ini membutuhkanmu! Tidak ada kiriman untuk bahasa ini!"
 
 #: views/nodes/stats.ctp:44
-msgid ""
-"The cookbook needs you! This language will soon be removed if not updated."
-msgstr ""
-"Buku resep ini membutuhkanmu! Bahasa ini akan dibuang jika tidak "
-"diperbaharui."
+msgid "The cookbook needs you! This language will soon be removed if not updated."
+msgstr "Buku resep ini membutuhkanmu! Bahasa ini akan dibuang jika tidak diperbaharui."
 
 #: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
 msgstr "Buku resep ini membutuhkanmu! tidak ada pembaharuan selama sebulan!"
 
+#: views/nodes/todo.ctp:5
+msgid "Please help out by updating the translation file"
+msgstr ""
+
 #: views/nodes/todo.ctp:7
 #, fuzzy
-msgid "Want to check or update the <a href=\"%1$s\">po file</a> for %2$s?"
+msgid "Want to check the fixed texts used on the site for %1$s? %2$s"
 msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
 
 #: views/nodes/todo.ctp:10
-#, fuzzy
-msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
-msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
+msgid "We don't have %1$s translations for the fixed texts used on the site. %2$s"
+msgstr ""
 
 #: views/nodes/todo.ctp:13
+msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr "Bagian ini tidak mempunyai terjemahan, atau teks dalam bahasa Inggris-nya telah berubah sejak waktu diterjemahkan"
+
+#: views/nodes/view_all.ctp:32;72
 #, fuzzy
-msgid ""
-"Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po "
-"files"
-msgstr "Silahkan masuk untuk melanjutkan."
+msgid "There is no translation yet for this section. You can %1$s."
+msgstr "ada perubahan yang masih ditangguhkan untuk bagian ini"
 
-#: views/nodes/todo.ctp:14
-msgid ""
-"These sections either do not have a translation, or the English text has "
-"changed since it was translated"
-msgstr ""
-"Bagian ini tidak mempunyai terjemahan, atau teks dalam bahasa Inggris-nya "
-"telah berubah sejak waktu diterjemahkan"
+#: views/nodes/view_all.ctp:34;74
+#, fuzzy
+msgid "translate this"
+msgstr "telah diterjemahkan sebanyak"
 
-#: views/nodes/view_all.ctp:41;65
+#: views/nodes/view_all.ctp:85
 msgid "See comments for this section"
 msgstr "Lihat komentar untuk bagian ini"
 
-#: views/nodes/view_all.ctp:112;124
+#: views/nodes/view_all.ctp:132;144
 #, fuzzy
 msgid "Change history for %1$s"
 msgstr "Sejarah Perubahan untuk %s"
@@ -645,7 +623,7 @@ msgstr "Sejarah Perubahan untuk %s"
 #: views/revisions/admin_pending.ctp:7
 #, fuzzy
 msgid "%1$s pending %2$s submission"
-msgid_plural "%3$s pending %4$s submissions"
+msgid_plural "%1$s pending %2$s submissions"
 msgstr[0] "Kiriman Saya"
 msgstr[1] "Kiriman Saya"
 
@@ -665,6 +643,14 @@ msgstr "dikirim oleh %s"
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr "Cari di book.cakephp.org"
+
+#, fuzzy
+#~ msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
+#~ msgstr "Tidak ada <a href=\"%s\">po file</a> untuk %s"
+
+#, fuzzy
+#~ msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+#~ msgstr "Silahkan masuk untuk melanjutkan."
 
 #~ msgid "Whoops, not a valid language."
 #~ msgstr "Aduh, bukan bahasa yang sah."

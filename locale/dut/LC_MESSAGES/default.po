@@ -39,7 +39,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2009-04-02 20:06+0200\n"
+"POT-Creation-Date: 2009-04-10 13:01+0200\n"
 "PO-Revision-Date: 2009-04-01 21:38+0100\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -85,7 +85,7 @@ msgid "Recent Changes"
 msgstr "Recente wijzigingen"
 
 #: controllers/changes_controller.php:141
-#: controllers/comments_controller.php:199
+#: controllers/comments_controller.php:202
 #, fuzzy
 msgid "by %1$s"
 msgstr "door %s"
@@ -95,7 +95,7 @@ msgstr "door %s"
 msgid "restricted to status: %1$s"
 msgstr "alleen beschikbaar voor: %s"
 
-#: controllers/comments_controller.php:92;124
+#: controllers/comments_controller.php:92;127
 msgid "Invalid Node."
 msgstr "Ongeldig item."
 
@@ -103,31 +103,29 @@ msgstr "Ongeldig item."
 msgid "Your comment has been added"
 msgstr "De opmerking is toegevoegd"
 
-#: controllers/comments_controller.php:104
+#: controllers/comments_controller.php:107
 msgid "Please correct errors below."
-msgstr ""
-"Er zijn fouten opgetreden in invoer. Corrigeer a.u.b. de onderstaande fouten."
+msgstr "Er zijn fouten opgetreden in invoer. Corrigeer a.u.b. de onderstaande fouten."
 
-#: controllers/comments_controller.php:128
+#: controllers/comments_controller.php:131
 msgid "No permissions to see comments for that section"
-msgstr ""
-"Je beschikt niet over voldoende rechten om de opmerkingen bij deze sectie te "
-"zien."
+msgstr "Je beschikt niet over voldoende rechten om de opmerkingen bij deze sectie te zien."
 
-#: controllers/comments_controller.php:136 views/nodes/view_all.ctp:107;117
+#: controllers/comments_controller.php:139 views/elements/node_options.ctp:20
+#: views/nodes/view_all.ctp:127;137
 #, fuzzy
 msgid "Comments for %1$s"
 msgstr "Opmerkingen bij %s"
 
-#: controllers/comments_controller.php:169
+#: controllers/comments_controller.php:172
 msgid "Invalid Comment."
 msgstr "Ongeldig bericht."
 
-#: controllers/comments_controller.php:188 views/comments/index.ctp:5
+#: controllers/comments_controller.php:191 views/comments/index.ctp:6
 msgid "Recent Comments"
 msgstr "Recente berichten"
 
-#: controllers/comments_controller.php:190 views/layouts/default.ctp:63
+#: controllers/comments_controller.php:193 views/layouts/default.ctp:63
 msgid "Recent Comments for all languages"
 msgstr "Recente berichten ( alle talen )"
 
@@ -136,16 +134,12 @@ msgid "Invalid Collection"
 msgstr "Ongeldige verzameling"
 
 #: controllers/nodes_controller.php:814;922
-msgid ""
-"Thanks for your contribution! Your suggestion has been submitted for review."
-msgstr ""
-"Bedankt voor je inzending! Je werk is ingediend en zal beoordeeld worden."
+msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr "Bedankt voor je inzending! Je werk is ingediend en zal beoordeeld worden."
 
 #: controllers/nodes_controller.php:877
 msgid "This function is for comparing different (public) language content"
-msgstr ""
-"Met deze functionaliteit kan publiekelijke content uit verschillende talen "
-"met elkaar vergeleken worden."
+msgstr "Met deze functionaliteit kan publiekelijke content uit verschillende talen met elkaar vergeleken worden."
 
 #: controllers/nodes_controller.php:930
 msgid "Edit/Correction"
@@ -155,19 +149,19 @@ msgstr ""
 msgid "Translation to %1$s"
 msgstr ""
 
-#: controllers/revisions_controller.php:619;624;676
+#: controllers/revisions_controller.php:632;637;689
 msgid "Only current and previous revisions can be viewed"
 msgstr "Alleen de huidige en oudere versies kunnen bekeken worden"
 
-#: controllers/revisions_controller.php:628
+#: controllers/revisions_controller.php:641
 msgid "Only possible to compare revisions of the same node"
 msgstr "Het is alleen mogelijk om versies te vergelijken van hetzelfde item"
 
-#: controllers/revisions_controller.php:658
+#: controllers/revisions_controller.php:671
 msgid "Current Pending revisions "
 msgstr ""
 
-#: controllers/revisions_controller.php:680
+#: controllers/revisions_controller.php:693
 #, fuzzy
 msgid "Please login to access this revision"
 msgstr "Meld je aan om door te gaan"
@@ -222,21 +216,21 @@ msgid_plural "%1$s %2$s comments"
 msgstr[0] "%s (%s huidig)"
 msgstr[1] "%s (%s huidig)"
 
-#: views/comments/index.ctp:3
+#: views/comments/index.ctp:4
 #, fuzzy
 msgid "Comments: %1$s"
 msgstr "Commentaar: %s"
 
-#: views/comments/index.ctp:10
+#: views/comments/index.ctp:12
 msgid "No Comments yet!"
 msgstr "Er is nog geen commentaar toegevoegd!"
 
-#: views/comments/index.ctp:18
+#: views/comments/index.ctp:20
 #, fuzzy
 msgid "Add a comment"
 msgstr "Ongeldig bericht."
 
-#: views/comments/index.ctp:21
+#: views/comments/index.ctp:23
 msgid "This page as a feed"
 msgstr "Deze pagina heeft een feed"
 
@@ -285,9 +279,7 @@ msgid "You can change it"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:8
-msgid ""
-"Do you want help with this topic? There are ways to %1$s and more "
-"appropriate places to %2$s for %3$s"
+msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
 msgstr ""
 
 #: views/elements/comment_form_note.ctp:9
@@ -321,21 +313,15 @@ msgstr ""
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
 msgid "Please review %1$s to ensure consistency."
-msgstr ""
-"Zorg er voor dat je %s hebt gelezen om consistentie te garanderen onder de "
-"artikelen."
+msgstr "Zorg er voor dat je %s hebt gelezen om consistentie te garanderen onder de artikelen."
 
 #: views/elements/content_form_note.ctp:6
 #, fuzzy
 msgid "the guidelines for submitting to the Cookbook"
-msgstr ""
-"Zorg er voor dat je %s hebt gelezen om consistentie te garanderen onder de "
-"artikelen."
+msgstr "Zorg er voor dat je %s hebt gelezen om consistentie te garanderen onder de artikelen."
 
 #: views/elements/content_form_note.ctp:11
-msgid ""
-"Before being accepted, new content must be available in %1$s. Please submit "
-"your suggestion in %2$s if possible"
+msgid "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
 msgstr ""
 
 #: views/elements/content_form_note.ctp:12;13
@@ -364,15 +350,15 @@ msgstr "Nog een account? Ga naar %s om je te registreren"
 msgid "Translate"
 msgstr "%s%% vertaald"
 
-#: views/elements/node_options.ctp:9
+#: views/elements/node_options.ctp:9 views/nodes/view_all.ctp:36;76
 msgid "There is no translation for this section please submit one"
 msgstr ""
 
-#: views/elements/node_options.ctp:11
+#: views/elements/node_options.ctp:11 views/nodes/view_all.ctp:40
 msgid "Edit"
 msgstr "Wijzigen"
 
-#: views/elements/node_options.ctp:12
+#: views/elements/node_options.ctp:12 views/nodes/view_all.ctp:41
 msgid "Don't like this text? Submit your thoughts"
 msgstr ""
 
@@ -390,6 +376,7 @@ msgid "there is a pending change for this section"
 msgstr "er is al een wijziging in behandeling voor dit item"
 
 #: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
+#: views/nodes/history.ctp:2
 msgid "History"
 msgstr "Geschiedenis"
 
@@ -433,16 +420,16 @@ msgstr ""
 msgid "Save it"
 msgstr ""
 
-#: views/elements/search.ctp:21 views/elements/search_form.ctp:6
+#: views/elements/search.ctp:21 views/elements/search_form.ctp:13
 msgid "Search"
 msgstr "Zoeken"
 
-#: views/elements/search_form.ctp:4
+#: views/elements/search_form.ctp:8
 #, fuzzy
 msgid "Collection"
 msgstr "Ongeldige verzameling"
 
-#: views/elements/search_form.ctp:5
+#: views/elements/search_form.ctp:11
 #, fuzzy
 msgid "Search term"
 msgstr "Zoeken"
@@ -476,11 +463,11 @@ msgstr "Over CakePHP"
 msgid "Donate"
 msgstr "Doneren"
 
-#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:92
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:112
 msgid "All in one page"
 msgstr "Alles op 1 pagina"
 
-#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:99
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:119
 msgid "Suggest a new section here"
 msgstr "Een nieuwe rubriek hier"
 
@@ -492,13 +479,14 @@ msgstr "Inhoudsopgave"
 msgid "see fully expanded table of contents (only)"
 msgstr "bekijk de volledige inhoudsopgave"
 
-#: views/elements/toc.ctp:12
-msgid "Books in "
-msgstr "Boeken over "
-
-#: views/elements/toc.ctp:14
+#: views/elements/toc.ctp:13
 msgid "Available collections"
 msgstr "Beschikbare verzamelingen"
+
+#: views/elements/toc.ctp:20
+#, fuzzy
+msgid "Books in %1$s"
+msgstr "Boeken over "
 
 #: views/layouts/default.ctp:37
 msgid "Mobile version"
@@ -543,17 +531,11 @@ msgid "after"
 msgstr "na"
 
 #: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
-msgid ""
-"Contents. Code in pre tags will be escaped. Submissions with no html "
-"formatting will be formatted automatically"
-msgstr ""
-"Inhoud. Gebruik de pre tag voor code. Inzendingen zonder html formateerde "
-"tekst zal automatisch geformateerd worden"
+msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr "Inhoud. Gebruik de pre tag voor code. Inzendingen zonder html formateerde tekst zal automatisch geformateerd worden"
 
 #: views/nodes/add.ctp:40
-msgid ""
-"Optionally explain in brief why you are proposing this addition (In English "
-"Please) :)"
+msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
 msgstr "Wat is de reden voor jouw wijziging? ( In het Engels )"
 
 #: views/nodes/add.ctp:44
@@ -564,7 +546,7 @@ msgstr "Nieuwe rubiek toevoegen"
 msgid "You are sure? Please check the preview"
 msgstr "Ben je klaar? Controleer het voorbeeld"
 
-#: views/nodes/compare.ctp:10 views/revisions/view.ctp:11
+#: views/nodes/compare.ctp:13 views/revisions/view.ctp:11
 msgid "Differences"
 msgstr "Verschillen"
 
@@ -599,17 +581,13 @@ msgstr ""
 msgid "English History"
 msgstr "Geef ook de wijzigingen aan Engelse artikelen weer"
 
-#: views/nodes/history.ctp:5
+#: views/nodes/history.ctp:8
 msgid "See English edits too"
 msgstr "Geef ook de wijzigingen aan Engelse artikelen weer"
 
 #: views/nodes/stats.ctp:4
-msgid ""
-"Here's a shout out to those who have dedicated time, sweat and tears to "
-"write, translate and edit the cookbook contents."
-msgstr ""
-"Alle mensen die tijd hebben gevonden om te schrijven voor deze handleiding, "
-"Bedankt!"
+msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr "Alle mensen die tijd hebben gevonden om te schrijven voor deze handleiding, Bedankt!"
 
 #: views/nodes/stats.ctp:6;37
 #, fuzzy
@@ -633,51 +611,48 @@ msgstr "%s%% vertaald"
 
 #: views/nodes/stats.ctp:41
 msgid "The cookbook needs you! No submissions for this language!"
-msgstr ""
-"Het cookbook heeft jou nodig! Er zijn nog geen inzendingen voor deze taal!"
+msgstr "Het cookbook heeft jou nodig! Er zijn nog geen inzendingen voor deze taal!"
 
 #: views/nodes/stats.ctp:44
-msgid ""
-"The cookbook needs you! This language will soon be removed if not updated."
-msgstr ""
-"Het cookbook heeft jou nodig! Deze taal zal verwijderd worden wanneer er "
-"geen nieuwe inzendingen komen."
+msgid "The cookbook needs you! This language will soon be removed if not updated."
+msgstr "Het cookbook heeft jou nodig! Deze taal zal verwijderd worden wanneer er geen nieuwe inzendingen komen."
 
 #: views/nodes/stats.ctp:46
 msgid "The cookbook needs you! No updates for one month."
+msgstr "Het cookbook heeft jou nodig! Deze taal heeft meer dan een maand geen inzendingen gehad."
+
+#: views/nodes/todo.ctp:5
+msgid "Please help out by updating the translation file"
 msgstr ""
-"Het cookbook heeft jou nodig! Deze taal heeft meer dan een maand geen "
-"inzendingen gehad."
 
 #: views/nodes/todo.ctp:7
 #, fuzzy
-msgid "Want to check or update the <a href=\"%1$s\">po file</a> for %2$s?"
+msgid "Want to check the fixed texts used on the site for %1$s? %2$s"
 msgstr "Er is geen <a href=\"%s\">po bestand</avoor %s"
 
 #: views/nodes/todo.ctp:10
-#, fuzzy
-msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
-msgstr "Er is geen <a href=\"%s\">po bestand</avoor %s"
+msgid "We don't have %1$s translations for the fixed texts used on the site. %2$s"
+msgstr ""
 
 #: views/nodes/todo.ctp:13
-msgid ""
-"Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po "
-"files"
-msgstr ""
+msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr "Deze rubrieken zijn nog niet vertaald of de Engelse tekst is gewijzigd sinds de laatste wijziging aan de rubiek."
 
-#: views/nodes/todo.ctp:14
-msgid ""
-"These sections either do not have a translation, or the English text has "
-"changed since it was translated"
-msgstr ""
-"Deze rubrieken zijn nog niet vertaald of de Engelse tekst is gewijzigd sinds "
-"de laatste wijziging aan de rubiek."
+#: views/nodes/view_all.ctp:32;72
+#, fuzzy
+msgid "There is no translation yet for this section. You can %1$s."
+msgstr "er is al een wijziging in behandeling voor dit item"
 
-#: views/nodes/view_all.ctp:41;65
+#: views/nodes/view_all.ctp:34;74
+#, fuzzy
+msgid "translate this"
+msgstr "%s%% vertaald"
+
+#: views/nodes/view_all.ctp:85
 msgid "See comments for this section"
 msgstr "Bekijk het commentaar van gebruikers bij deze rubriek"
 
-#: views/nodes/view_all.ctp:112;124
+#: views/nodes/view_all.ctp:132;144
 #, fuzzy
 msgid "Change history for %1$s"
 msgstr "Geschiedenis van wijzigingen voor %s"
@@ -685,7 +660,7 @@ msgstr "Geschiedenis van wijzigingen voor %s"
 #: views/revisions/admin_pending.ctp:7
 #, fuzzy
 msgid "%1$s pending %2$s submission"
-msgid_plural "%3$s pending %4$s submissions"
+msgid_plural "%1$s pending %2$s submissions"
 msgstr[0] "Mijn inzendingen"
 msgstr[1] "Mijn inzendingen"
 
@@ -705,6 +680,10 @@ msgstr "ingediend door %s"
 #: views/revisions/search.ctp:1
 msgid "Search book.cakephp.org"
 msgstr "Doorzoek book.cakephp.org"
+
+#, fuzzy
+#~ msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
+#~ msgstr "Er is geen <a href=\"%s\">po bestand</avoor %s"
 
 #~ msgid "Whoops, not a valid language."
 #~ msgstr "Oeps, geen geldige taal"

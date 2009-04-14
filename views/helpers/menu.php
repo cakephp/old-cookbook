@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id: menu.php 901 2009-04-01 19:29:15Z ad7six $ */
+/* SVN FILE: $Id: menu.php 916 2009-04-09 09:03:07Z ad7six $ */
 /**
  * Short description for menu.php
  *
@@ -18,9 +18,9 @@
  * @package       base
  * @subpackage    base.views.helpers
  * @since         v 1.0
- * @version       $Revision: 901 $
+ * @version       $Revision: 916 $
  * @modifiedby    $LastChangedBy: ad7six $
- * @lastmodified  $Date: 2009-04-01 21:29:15 +0200 (Wed, 01 Apr 2009) $
+ * @lastmodified  $Date: 2009-04-09 11:03:07 +0200 (Thu, 09 Apr 2009) $
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 /**
@@ -214,6 +214,13 @@ class MenuHelper extends AppHelper {
 				$under = Router::normalize($under);
 			}
 		}
+		if ($under === $key) {
+			if ($settings['showWarnings'])  {
+				trigger_error ('MenuHelper::add<br />' . $key . ' Menu item cannot have itself as its own parent');
+			}
+			return;
+		}
+
 		list($here, $markActive, $url) = $this->__setHere($section, $url, $key, $settings['activeMode'], $settings['hereMode'], $options);
 		if ($options) {
 			extract($options);
@@ -281,6 +288,8 @@ class MenuHelper extends AppHelper {
 			trigger_error ('MenuHelper::add<br /> Duplicate menu item detected for item "' . $title .
 				'" in menu "' . $section . '".<br />You can change the field used to detect duplicates' .
 				' which is currently set to ' . $settings['uniqueKey'] . ', can be changed to ' . $altKey . '.');
+		} else {
+			return;
 		}
 		if ($settings['hereMode'] === 'text' && $here === true) {
 			$this->__flatData[$section][$key]['url'] = false;
@@ -465,9 +474,9 @@ class MenuHelper extends AppHelper {
 		foreach ($this->__attributes[$tag] as $i => &$values) {
 			foreach ($values as $j => &$val) {
 				if (is_array($val)) {
-					$_a = '';
+					$_a = array();
 					foreach ($val as $k => &$v) {
-						$_a .= $k . ':' . $v;
+						$_a[] = $k . ':' . $v;
 					}
 					$val = implode(';', $_a);
 				}

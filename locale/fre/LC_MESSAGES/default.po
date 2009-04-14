@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CookBook 1.0\n"
 "POT-Creation-Date: 2009-04-02 20:06+0200\n"
-"PO-Revision-Date: 2009-04-07 14:12+0100\n"
-"Last-Translator: Avairet <avairet@cakephp-fr.org>\n"
+"PO-Revision-Date: 2009-04-14 23:02+0100\n"
+"Last-Translator: Matthieu Sadouni <matthieusadouni@gmail.com>\n"
 "Language-Team: Cakephp Fr <contact@cakephp-fr.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgstr "réservé au statut : %1$s"
 
 #: controllers/comments_controller.php:92;124
 msgid "Invalid Node."
-msgstr "Noeud invalide"
+msgstr "Nœud invalide"
 
 #: controllers/comments_controller.php:101
 msgid "Your comment has been added"
@@ -105,7 +105,7 @@ msgstr "Cette fonction permet de comparer des contenus (publics) de différentes
 
 #: controllers/nodes_controller.php:930
 msgid "Edit/Correction"
-msgstr "Edition/Correction"
+msgstr "Édition/Correction"
 
 #: controllers/nodes_controller.php:932
 msgid "Translation to %1$s"
@@ -117,7 +117,7 @@ msgstr "Seules les révisions courantes et précédentes peuvent être visualis�
 
 #: controllers/revisions_controller.php:628
 msgid "Only possible to compare revisions of the same node"
-msgstr "Il est seulement possible de comparer les révisions d'un même noeud"
+msgstr "Il est seulement possible de comparer les révisions d'un même nœud"
 
 #: controllers/revisions_controller.php:658
 msgid "Current Pending revisions "
@@ -227,7 +227,7 @@ msgstr "Voulez-vous mettre un problème en évidence dans le texte ? %1$s"
 
 #: views/elements/comment_form_note.ctp:6
 msgid "You can change it"
-msgstr "Vous pouvez changer çà"
+msgstr "Vous pouvez changer ça"
 
 #: views/elements/comment_form_note.ctp:8
 msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
@@ -303,7 +303,7 @@ msgstr "Il n'y a pas de traduction pour cette section, merci d'en soumettre une"
 
 #: views/elements/node_options.ctp:11
 msgid "Edit"
-msgstr "Editer"
+msgstr "Éditer"
 
 #: views/elements/node_options.ctp:12
 msgid "Don't like this text? Submit your thoughts"
@@ -348,7 +348,7 @@ msgstr "Suivant »"
 
 #: views/elements/preview.ctp:6
 msgid "How'd you like them apples?"
-msgstr "Qu'est-ce que vous dîtes de çà ?"
+msgstr "Qu'est-ce que vous dites de ça ?"
 
 #: views/elements/preview.ctp:7
 msgid "How's that for a slice of fried gold?"
@@ -360,7 +360,7 @@ msgstr "Elle est pas belle cette tranche de gâteau ?"
 
 #: views/elements/preview.ctp:9
 msgid "Are we done yet?"
-msgstr "Sommes-nous prêt maintenant ?"
+msgstr "Sommes-nous prêts maintenant ?"
 
 #: views/elements/preview.ctp:57
 msgid "Save it"
@@ -397,11 +397,11 @@ msgstr "Top Contributeurs"
 
 #: views/elements/secondary_nav.ctp:18
 msgid "Todo"
-msgstr "A faire"
+msgstr "À faire"
 
 #: views/elements/secondary_nav.ctp:20
 msgid "About CakePHP"
-msgstr "A propos de CakePHP"
+msgstr "À propos de CakePHP"
 
 #: views/elements/secondary_nav.ctp:21
 msgid "Donate"
@@ -482,7 +482,7 @@ msgstr "Contenus. Le code dans les balises pre sera échappé. Les soumissions s
 
 #: views/nodes/add.ctp:40
 msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
-msgstr "Expliquez brièvement pourquoi vous proposez cet ajout (en anglais s'il vous plait) :)"
+msgstr "Expliquez brièvement pourquoi vous proposez cet ajout (en anglais s'il vous plaît) :)"
 
 #: views/nodes/add.ctp:44
 msgid "Add a new section"
@@ -490,7 +490,7 @@ msgstr "Ajouter une nouvelle section"
 
 #: views/nodes/admin_merge.ctp:18
 msgid "You are sure? Please check the preview"
-msgstr "Etes-vous sûr ? Merci de vérifier la prévisualisation"
+msgstr "Êtes-vous sûr ? Merci de vérifier la prévisualisation"
 
 #: views/nodes/compare.ctp:10
 #: views/revisions/view.ctp:11
@@ -503,7 +503,7 @@ msgstr "Quelle est la raison de cette édition ? (en anglais s'il vous plait) :)
 
 #: views/nodes/edit.ctp:44
 msgid "Edit %1$s"
-msgstr "Editer %1$s"
+msgstr "Éditer %1$s"
 
 #: views/nodes/edit.ctp:53;56
 msgid "Resources"

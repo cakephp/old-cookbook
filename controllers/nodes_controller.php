@@ -927,7 +927,7 @@ class NodesController extends AppController {
 		} else {
 			$this->data = $this->Node->read(null);
 			if ($this->data['Revision']['id']) {
-				$this->data['Revision']['reason'] = __('Edit/Correction', true);
+				$this->data['Revision']['reason'] = 'Edit/Correction';
 			} else {
 				$this->data['Revision']['reason'] = sprintf(__('Translation to %1$s', true), $this->params['lang']);
 			}

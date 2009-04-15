@@ -399,7 +399,7 @@ table tr th, table tr td                {padding:5px; border:1px solid #DDD;}
 
 .warning 				{margin:1em 0;padding:10px 10px 10px 35px;background:#FEE url(images/24-message-warn.png) no-repeat 7px 7px;border:1px solid #900;}
 .note 					{margin:1em 0;padding:10px 10px 10px 35px;background:#FFB url(images/24-message-info.png) no-repeat 7px 7px;border:1px solid #CC6;}
-p.contribute, div.contribute		{margin:1em 0;padding:10px 10px 10px 35px;background:#BFF url(images/24-message-contribute.png) no-repeat 7px 7px;border:1px solid #CC6;}
+p.contribute, div.contribute		{margin:1em 0;padding:10px 10px 10px 35px;background:#EFF url(images/24-message-contribute.png) no-repeat 7px 7px;border:1px solid #CC6;}
 .method 				{margin:1em 0;font-weight:bold;font-size:14px;margin-left:20px}
 a.selected {
 	background: #ddd;

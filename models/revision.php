@@ -82,7 +82,9 @@ class Revision extends AppModel {
 			'preview' => array('rule' => array('equalTo', '0')),
 			'title' => array(
 				//array('rule' => 'noHtml', 'message' => 'No Html in section titles'),
-				'missing' => '/[^\\s]/'
+				'missing' => '/[^\\s]/',
+				array('rule' => array('duplicateSubmission', 'title'), 'on' => 'create',
+					'message' => 'No change detected or there\'s already an identical submission pending'),
 			),
 			'content' => array(
 				'missing' => array('rule' => '/[^\\s]/', 'last' => true),
@@ -456,6 +458,16 @@ class Revision extends AppModel {
 	function checkWellFormed($content) {
 		// To be called as part of validation routine
 	}
+	function duplicateSubmission() {
+		$this->data[$this->alias];
+		$row = array(
+			'node_id' => $this->data[$this->alias]['node_id'],
+			'title' => $this->data[$this->alias]['title'],
+			'content' => $this->data[$this->alias]['content'],
+			'status' => array('pending', 'current')
+		);
+		return $this->hasAny($row);
+	}
 /**
  * getId function
  *
@@ -496,10 +508,8 @@ class Revision extends AppModel {
  * @return void
  */
 	function _clearCache($type = null) {
-		if ($this->field('status') == 'current') {
-			clearCache(null, 'views');
-			clearCache(null, 'views', ''); // clear elements
-		}
+		clearCache(null, 'views');
+		clearCache(null, 'views', ''); // clear elements
 	}
 
 /**

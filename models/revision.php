@@ -461,12 +461,13 @@ class Revision extends AppModel {
 	function duplicateSubmission() {
 		$this->data[$this->alias];
 		$row = array(
+			'lang' => $this->Node->language,
 			'node_id' => $this->data[$this->alias]['node_id'],
 			'title' => $this->data[$this->alias]['title'],
 			'content' => $this->data[$this->alias]['content'],
 			'status' => array('pending', 'current')
 		);
-		return $this->hasAny($row);
+		return !$this->hasAny($row);
 	}
 /**
  * getId function

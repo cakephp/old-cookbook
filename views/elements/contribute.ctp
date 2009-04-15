@@ -1,5 +1,6 @@
 <?php
 $translatorHelp = $html->link(__('more informations about translations', true), array('action' => 'view', 818));
+$data['Revision']['flags'] .= ';foo';
 if (!$data['Revision']['id']) :
 	echo '<p class="contribute">';
 	echo sprintf(__('There is no translation yet for this section. Please help out and %1$s.', true),
@@ -28,5 +29,6 @@ elseif (strpos($data['Revision']['flags'], 'englishChanged') !== false) : ?>
 			echo $html->link(__('Compare the current text to the original', true), $url)
 		?></li>
 	</ul>
+	<p><?php echo $translatorHelp; ?></p>
 </div>
 <?php endif; ?>

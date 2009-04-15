@@ -49,6 +49,13 @@ class RevisionsController extends AppController {
  */
 	function beforeFilter() {
 		if ($this->action == 'view') {
+			if (isset($this->params['requested'])) {
+				foreach ($this->params as $i => $v) {
+					if (is_numeric($i)) {
+						$this->params['pass'][$i] = $v;
+					}
+				}
+			}
 			$urlSlug = isset($this->params['pass'][1])?$this->params['pass'][1]:'';
 			$conditions['Revision.id'] = $this->params['pass'][0];
 			$fields = array ('id', 'lang', 'slug', 'node_id');
@@ -678,7 +685,10 @@ class RevisionsController extends AppController {
  * @return void
  * @access public
  */
-	function view($id) {
+	function view($id = null) {
+		if (!empty($this->params['requested'])) {
+			$id = $this->params[0];
+		}
 		$this->Revision->recursive = 0;
 		$this->data['this'] = $this->Revision->find('first', array('conditions' => array('Revision.id' => $id)));
 		if (in_array($this->data['this']['Revision']['status'], array('current', 'previous'))) {

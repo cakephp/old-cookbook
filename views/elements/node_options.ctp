@@ -36,7 +36,7 @@ foreach($flags as $flag) {
 		$compare = false;
 		$flagLis .= '<li class="flag englishChanged">' .
 			$html->link(__('This text may be out of sync with the English version', true),
-			array('action' => 'compare', $data['Node']['id'], $data['Revision']['slug']), array('class' => 'dialog')) . '</li>';
+			array('action' => 'redirect_to_revision', $data['Node']['id'], $data['Revision']['slug']), array('class' => 'dialog')) . '</li>';
 	} else {
 		$flagLis .= '<li class="flag warning">' . __($flag, true) . '</li>';
 	}

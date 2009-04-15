@@ -15,7 +15,8 @@ if (isset($this->data['Revision']['content'])) {
 }
 echo $this->element('attachments', array('path' => IMAGES . 'Node/' . $this->data['Revision']['node_id']));
 if ($session->read('Auth.User.Level') == ADMIN && $this->action == 'edit') {
-	$menu->addm('Admin', array(
+	$menu->settings('Admin');
+	$menu->add(array(
 		array('title' => 'Edit Node Properties', 'url' => array('admin' => true, 'action' => 'edit', $this->data['Revision']['node_id'])),
 		array('title' => 'TOC', 'url' => array('admin' => true, 'action' => 'toc', $this->data['Revision']['node_id'])),
 		array('title' => 'Merge', 'url' => array('admin' => true, 'action' => 'merge', $this->data['Revision']['node_id'])),

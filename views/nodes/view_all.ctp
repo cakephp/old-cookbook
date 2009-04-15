@@ -27,20 +27,7 @@ if ($this->params['isAjax']) {
 	}
 	if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $currentNode['Revision']['content'])))) != '') {
 		echo '<div class="summary">';
-			if (!$data['Node']['Revision']['id']) {
-				echo '<p class="note contribute">' .
-				sprintf(__('There is no translation yet for this section. You can %1$s.', true),
-					$html->link(
-						__('translate this' , true),
-						array('action'=>'edit',$data['Node']['Node']['id'], $data['Node']['Revision']['slug']),
-						array('title' => __('There is no translation for this section please submit one', true))
-					)
-				) . '</p>';
-			} else {
-				$out[] = $html->link(__('Edit', true), array('action'=>'edit',$data['Node']['id'], $data['Revision']['slug']), array('title' =>
-					__('Don\'t like this text? Submit your thoughts', true), 'class' => 'contribute'));
-			}
-
+			echo $this->element('contribute', array('data' => $currentNode));
 			echo $theme->out($currentNode['Revision']['content']);
 		echo '</div>';
 		echo $html->meta(
@@ -67,16 +54,7 @@ if ($this->params['isAjax']) {
 
 		if (trim(html_entity_decode(strip_tags(str_replace('&nbsp;', '', $row['Revision']['content'])))) != '') {
 			echo '<div class="body">';
-				if (!$row['Revision']['id']) {
-					echo '<p class="note contribute">' .
-					sprintf(__('There is no translation yet for this section. You can %1$s.', true),
-						$html->link(
-							__('translate this' , true),
-							array('action'=>'edit',$row['Node']['id'], $row['Revision']['slug']),
-							array('title' => __('There is no translation for this section please submit one', true))
-						)
-					) . '</p>';
-				}
+				echo $this->element('contribute', array('data' => $row));
 				echo $theme->out($row['Revision']['content']);
 			echo '</div>';
 		}

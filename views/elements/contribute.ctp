@@ -1,5 +1,5 @@
 <?php
-$translatorHelp = $html->link(__('More informations about translations', true), array('action' => 'view', 818));
+$translatorHelp = $html->link(__('More information about translations', true), array('action' => 'view', 818));
 $data['Revision']['flags'] .= ';foo';
 if (!$data['Revision']['id']) :
 	echo '<p class="contribute">';

@@ -81,6 +81,7 @@ class BakeryComponent extends Object {
  * @access protected
  */
 	function _cookieAuth(&$controller) {
+		$this->Cookie->initialize($controller);
 		$cookie = $this->Cookie->read('User');
 		if (!empty($cookie['id']) && !empty($cookie['token'])) {
 

@@ -1,5 +1,5 @@
 <?php
-$translatorHelp = $html->link(__('more informations about translations', true), array('action' => 'view', 818));
+$translatorHelp = $html->link(__('More informations about translations', true), array('action' => 'view', 818));
 $data['Revision']['flags'] .= ';foo';
 if (!$data['Revision']['id']) :
 	echo '<p class="contribute">';
@@ -10,7 +10,7 @@ if (!$data['Revision']['id']) :
 			array('title' => __('There is no translation for this section please submit one', true))
 		)
 	);
-	echo sprintf(__(' For more information see %1$s', true), $translatorHelp);
+	echo '. ' . $translatorHelp;
 	echo '</p>';
 elseif (strpos($data['Revision']['flags'], 'englishChanged') !== false) : ?>
 <div class="contribute">

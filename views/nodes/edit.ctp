@@ -51,34 +51,35 @@ echo $form->end();
 ?>
 </div>
 <?php
-$menu->settings(__('Resources', true), array('class' => 'dialogs'));
-$lang = Configure::read('Languages.default');
-$menu->add(array(
-	array('section' => __('Resources', true), 'title' => __('Current Version', true), 'url' => array('action' => 'view',
-		$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
-));
-$menu->add(array(
-	array('title' => __('History', true), 'url' => array('action' => 'history',
-		$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
-));
-if ($data['Revision']['lang'] != $lang) {
+if (isset($this->data['Node']['id'])) {
+	$menu->settings(__('Resources', true), array('class' => 'dialogs'));
+	$lang = Configure::read('Languages.default');
 	$menu->add(array(
-		array('title' => __('English Version', true), 'url' => array('action' => 'view',
-			'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
+		array('section' => __('Resources', true), 'title' => __('Current Version', true), 'url' => array('action' => 'view',
+			$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
 	));
 	$menu->add(array(
-		array('title' => __('Compare to English', true), 'url' => array('action' => 'compare',
-			$this->data['Node']['id'], $contentSlugs[$lang]))
+		array('title' => __('History', true), 'url' => array('action' => 'history',
+			$this->data['Node']['id'], $contentSlugs[$this->data['Revision']['lang']]))
 	));
-	$menu->add(array(
-		array('title' => __('See what changed', true), 'url' => array('action' => 'redirect_to_revision',
-			$this->data['Node']['id'], $contentSlugs[$lang]))
-	));
-	$menu->add(array(
-		array('title' => __('English History', true), 'url' => array('action' => 'history',
-			'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
-	));
+	if ($data['Revision']['lang'] != $lang) {
+		$menu->add(array(
+			array('title' => __('English Version', true), 'url' => array('action' => 'view',
+				'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
+		));
+		$menu->add(array(
+			array('title' => __('Compare to English', true), 'url' => array('action' => 'compare',
+				$this->data['Node']['id'], $contentSlugs[$lang]))
+		));
+		$menu->add(array(
+			array('title' => __('See what changed', true), 'url' => array('action' => 'redirect_to_revision',
+				$this->data['Node']['id'], $contentSlugs[$lang]))
+		));
+		$menu->add(array(
+			array('title' => __('English History', true), 'url' => array('action' => 'history',
+				'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
+		));
+	}
 }
-
 echo $this->element('markitup', array('process' => 'textarea'));
 ?>

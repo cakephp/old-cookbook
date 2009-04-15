@@ -108,7 +108,7 @@ class NodesController extends AppController {
 		}
 		if (!isset($this->params['url']['ext']) || $this->params['url']['ext'] != 'xml') {
 			$this->Auth->allowedActions = array('index', 'view', 'complete', 'toc', 'collections',
-				'app_name', 'compare', 'history', 'stats', 'todo');
+				'app_name', 'compare', 'history', 'redirect_to_revision', 'stats', 'todo');
 		}
 	}
 /**
@@ -660,7 +660,7 @@ class NodesController extends AppController {
  * @access public
  */
 	function todo() {
-		$this->cacheAction = array('duration' => '+1 hour', 'callbacks' => false);
+		$this->cacheAction = array('duration' => CACHE_DURATION, 'callbacks' => false);
 		$this->paginate['limit'] = 20;
 		$conditions = array('Revision.status' => 'pending', 'Revision.lang' => $this->params['lang']);
 		$recursive = -1;
@@ -684,11 +684,11 @@ class NodesController extends AppController {
  * @return void
  */
 	function view($nodeId = false, $slug = '') {
-		if ($this->params['url']['ext'] == 'xml') {
+		if (!empty($this->params['url']['ext']) && $this->params['url']['ext'] == 'xml') {
 			$this->redirect(am(array('action' => 'complete'), $this->passedArgs));
 		}
 		if (!$nodeId || $nodeId == Configure::read('Site.homeNode')) {
-			$this->redirect(array('index'));
+			$this->redirect(array('index'), null, true, true);
 		}
 		$this->Node->id = $this->currentNode;
 		$depth = $this->Node->field('Node.depth');
@@ -891,6 +891,60 @@ class NodesController extends AppController {
 		$this->render('compare');
 	}
 /**
+ * redirect_to_revision method
+ *
+ * For translations, accessing this function will redirect to the (approximate) revision that the translation
+ * was based on (showing the Original content difference)
+ *
+ * @param mixed $id
+ * @param mixed $redirectLang null
+ * @return void
+ * @access public
+ */
+	function redirect_to_revision($id, $slug = null) {
+		$default = Configure::read('Languages.default');
+		if ($this->Node->language === $default) {
+			$this->redirect('/');
+		}
+		$this->Node->id = $this->currentNode;
+		if ($this->Node->Revision->hasField('based_on_id')) {
+			$fields = array('Revision.id', 'Revision.created', 'Revision.based_on_id');
+		} else {
+			$fields = array('Revision.id', 'Revision.created');
+		}
+		$current = $this->Node->findById($id, $fields, null, 0);
+		if (empty($current['Revision']['created'])) {
+			$this->redirect('/');
+		}
+		if (!empty($current['Revision']['based_on_id'])) {
+			$data = $this->Node->Revision->find('first', array(
+				'conditions' => array(
+					'Revision.id' => $current['Revision']['based_on_id']
+				),
+				'fields' => array('Revision.id', 'Revision.slug'),
+				'recursive' => -1,
+			));
+		} else {
+			$data = $this->Node->Revision->find('first', array(
+				'conditions' => array(
+					'Revision.node_id' => $id,
+					'Revision.lang' => $default,
+					'Revision.created <' => $current['Revision']['created'],
+					'Revision.status' => array('current', 'previous')
+				),
+				'fields' => array('Revision.id', 'Revision.slug'),
+				'recursive' => -1,
+				'order' => array('Revision.created DESC')
+			));
+			$this->Node->Revision->id = $current['Revision']['id'];
+			$this->Node->Revision->saveField('based_on_id', $data['Revision']['id']);
+		}
+		$this->redirect(array(
+			'controller' => 'revisions', 'action' => 'view',
+			$data['Revision']['id'], $data['Revision']['slug']
+		));
+	}
+/**
  * edit function
  *
  * @param mixed $id
@@ -914,13 +968,14 @@ class NodesController extends AppController {
 						$parent = $this->Node->field('parent_id');
 						$this->Node->reset($parent);
 						if (!$this->data['Node']['show_in_toc']) {
-							$this->redirect(array('action' => 'view', $parent));
+							$this->redirect(array('action' => 'view', $parent), null, true, true);
 						}
 					}
-					$this->redirect(array('action' => 'view', $id));
+					$slug = $this->Node->Revision->field('slug');
+					$this->redirect(array('action' => 'view', $id, $slug), null, true, true);
 				}
 				$this->Session->setFlash(__('Thanks for your contribution! Your suggestion has been submitted for review.', true));
-				return $this->redirect($this->Session->read('referer'));
+				return $this->redirect($this->Session->read('referer'), null, true, true);
 			} else {
 				$this->data['Revision'] = $this->Node->Revision->data['Revision'];
 			}

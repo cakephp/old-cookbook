@@ -33,7 +33,7 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	var $components = array('Auth', 'Cookie', 'Users.Bakery', 'RequestHandler');
+	var $components = array('Users.Bakery', 'Auth', 'Cookie', 'RequestHandler');
 /**
  * helpers variable
  *
@@ -135,7 +135,12 @@ class AppController extends Controller {
  * @access public
  * @return void
  */
-	function redirect($url, $code = null, $exit = true) {
+	function redirect($url, $code = null, $exit = true, $force = false) {
+		if ($force && isset($this->params['isAjax'])) {
+			$this->set(compact('url'));
+			$this->output = '';
+			return $this->render('/elements/force_redirect', 'ajax');
+		}
 		if (!is_array($url)) {
 			return parent::redirect($url, $code, $exit);
 		}

@@ -61,7 +61,7 @@ class DiffHelper extends AppHelper {
  * @var mixed
  * @access public
  */
-	var $explode_on = "\r\n";
+	var $explode_on = array("\n");
 
 /**
  * How many context lines do you want to see around the changed line?
@@ -122,14 +122,14 @@ class DiffHelper extends AppHelper {
  * @return void
  */
 	function __explode($text){
-		$text = preg_replace('/\&gt;\s*\&lt;/m', "&gt;\r\n&lt;", $text);
+		$text = preg_replace('/\&gt;\s*\&lt;/m', "&gt;\n&lt;", $text);
 		if(is_array($this->explode_on)){
 			foreach($this->explode_on as $explode_on){
 				$text =  explode($explode_on, $text);
 			}
 			return $text;
 		}
-		return  explode($this->explode_on, $text);
+		return explode($this->explode_on, $text);
 	}
 }
 ?>

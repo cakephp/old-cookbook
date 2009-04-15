@@ -71,6 +71,10 @@ if ($data['Revision']['lang'] != $lang) {
 			$this->data['Node']['id'], $contentSlugs[$lang]))
 	));
 	$menu->add(array(
+		array('title' => __('See what changed', true), 'url' => array('action' => 'redirect_to_revision',
+			$this->data['Node']['id'], $contentSlugs[$lang]))
+	));
+	$menu->add(array(
 		array('title' => __('English History', true), 'url' => array('action' => 'history',
 			'lang' => $lang, $this->data['Node']['id'], $contentSlugs[$lang]))
 	));

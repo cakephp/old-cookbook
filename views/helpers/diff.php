@@ -123,6 +123,7 @@ class DiffHelper extends AppHelper {
  */
 	function __explode($text){
 		$text = preg_replace('/\&gt;\s*\&lt;/m', "&gt;\n&lt;", $text);
+		$text = str_replace("\r", '', $text);
 		if(is_array($this->explode_on)){
 			foreach($this->explode_on as $explode_on){
 				$text =  explode($explode_on, $text);

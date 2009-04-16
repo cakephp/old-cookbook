@@ -472,3 +472,11 @@ fieldset fieldset label {
 #cakefest {
 	margin: 10px 30px;
 }
+a.leavePopup {
+	margin:-10px 0 0;
+	padding:1px;
+	position:absolute;
+	right:1.5em;
+	top:50%;
+	width:19px;
+}

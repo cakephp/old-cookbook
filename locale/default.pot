@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cakebook-\n"
-"POT-Creation-Date: 2009-04-10 13:04+0200\n"
+"POT-Creation-Date: 2009-04-16 09:23+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
 "Language-Team:\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: controllers/comments_controller.php:139
 #: views/elements/node_options.ctp:20
-#: views/nodes/view_all.ctp:127;137
+#: views/nodes/view_all.ctp:105;115
 msgid "Comments for %1$s"
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Invalid Collection"
 msgstr ""
 
-#: controllers/nodes_controller.php:814;922
+#: controllers/nodes_controller.php:814;977
 msgid "Thanks for your contribution! Your suggestion has been submitted for review."
 msgstr ""
 
@@ -106,27 +106,23 @@ msgstr ""
 msgid "This function is for comparing different (public) language content"
 msgstr ""
 
-#: controllers/nodes_controller.php:930
-msgid "Edit/Correction"
-msgstr ""
-
-#: controllers/nodes_controller.php:932
+#: controllers/nodes_controller.php:987
 msgid "Translation to %1$s"
 msgstr ""
 
-#: controllers/revisions_controller.php:632;637;689
+#: controllers/revisions_controller.php:639;644;699
 msgid "Only current and previous revisions can be viewed"
 msgstr ""
 
-#: controllers/revisions_controller.php:641
+#: controllers/revisions_controller.php:648
 msgid "Only possible to compare revisions of the same node"
 msgstr ""
 
-#: controllers/revisions_controller.php:671
+#: controllers/revisions_controller.php:678
 msgid "Current Pending revisions "
 msgstr ""
 
-#: controllers/revisions_controller.php:693
+#: controllers/revisions_controller.php:703
 msgid "Please login to access this revision"
 msgstr ""
 
@@ -280,6 +276,35 @@ msgstr ""
 msgid "English"
 msgstr ""
 
+#: views/elements/contribute.ctp:2
+msgid "More information about translations"
+msgstr ""
+
+#: views/elements/contribute.ctp:6
+msgid "There is no translation yet for this section. Please help out and %1$s."
+msgstr ""
+
+#: views/elements/contribute.ctp:8
+msgid "translate this"
+msgstr ""
+
+#: views/elements/contribute.ctp:10
+#: views/elements/node_options.ctp:9
+msgid "There is no translation for this section please submit one"
+msgstr ""
+
+#: views/elements/contribute.ctp:17
+msgid "The original text for this section has changed since it was translated. Please help resolve this difference. You can:"
+msgstr ""
+
+#: views/elements/contribute.ctp:25
+msgid "See what has changed"
+msgstr ""
+
+#: views/elements/contribute.ctp:29
+msgid "Compare the current text to the original"
+msgstr ""
+
 #: views/elements/language_links.ctp:21
 msgid "No %1$s translation yet for %2$s"
 msgstr ""
@@ -300,18 +325,11 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
-#: views/elements/node_options.ctp:9
-#: views/nodes/view_all.ctp:36;76
-msgid "There is no translation for this section please submit one"
-msgstr ""
-
 #: views/elements/node_options.ctp:11
-#: views/nodes/view_all.ctp:40
 msgid "Edit"
 msgstr ""
 
 #: views/elements/node_options.ctp:12
-#: views/nodes/view_all.ctp:41
 msgid "Don't like this text? Submit your thoughts"
 msgstr ""
 
@@ -328,7 +346,7 @@ msgid "there is a pending change for this section"
 msgstr ""
 
 #: views/elements/node_options.ctp:28
-#: views/nodes/edit.ctp:60
+#: views/nodes/edit.ctp:62
 #: views/nodes/history.ctp:2
 msgid "History"
 msgstr ""
@@ -415,12 +433,12 @@ msgid "Donate"
 msgstr ""
 
 #: views/elements/side_menu.ctp:14
-#: views/nodes/view_all.ctp:112
+#: views/nodes/view_all.ctp:90
 msgid "All in one page"
 msgstr ""
 
 #: views/elements/side_menu.ctp:24
-#: views/nodes/view_all.ctp:119
+#: views/nodes/view_all.ctp:97
 msgid "Suggest a new section here"
 msgstr ""
 
@@ -470,7 +488,7 @@ msgid "Want to know why?"
 msgstr ""
 
 #: views/nodes/add.ctp:24
-#: views/nodes/edit.ctp:30
+#: views/nodes/edit.ctp:31
 msgid "Show me a preview before submitting"
 msgstr ""
 
@@ -483,7 +501,7 @@ msgid "after"
 msgstr ""
 
 #: views/nodes/add.ctp:35
-#: views/nodes/edit.ctp:33
+#: views/nodes/edit.ctp:34
 msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
 msgstr ""
 
@@ -504,31 +522,35 @@ msgstr ""
 msgid "Differences"
 msgstr ""
 
-#: views/nodes/edit.ctp:38
+#: views/nodes/edit.ctp:39
 msgid "What is the reason for the edit? (In English Please) :)"
 msgstr ""
 
-#: views/nodes/edit.ctp:44
+#: views/nodes/edit.ctp:45
 msgid "Edit %1$s"
 msgstr ""
 
-#: views/nodes/edit.ctp:53;56
+#: views/nodes/edit.ctp:55;58
 msgid "Resources"
 msgstr ""
 
-#: views/nodes/edit.ctp:56
+#: views/nodes/edit.ctp:58
 msgid "Current Version"
 msgstr ""
 
-#: views/nodes/edit.ctp:65
+#: views/nodes/edit.ctp:67
 msgid "English Version"
 msgstr ""
 
-#: views/nodes/edit.ctp:69
+#: views/nodes/edit.ctp:71
 msgid "Compare to English"
 msgstr ""
 
-#: views/nodes/edit.ctp:73
+#: views/nodes/edit.ctp:75
+msgid "See what changed"
+msgstr ""
+
+#: views/nodes/edit.ctp:79
 msgid "English History"
 msgstr ""
 
@@ -584,19 +606,11 @@ msgstr ""
 msgid "These sections either do not have a translation, or the English text has changed since it was translated"
 msgstr ""
 
-#: views/nodes/view_all.ctp:32;72
-msgid "There is no translation yet for this section. You can %1$s."
-msgstr ""
-
-#: views/nodes/view_all.ctp:34;74
-msgid "translate this"
-msgstr ""
-
-#: views/nodes/view_all.ctp:85
+#: views/nodes/view_all.ctp:63
 msgid "See comments for this section"
 msgstr ""
 
-#: views/nodes/view_all.ctp:132;144
+#: views/nodes/view_all.ctp:110;122
 msgid "Change history for %1$s"
 msgstr ""
 

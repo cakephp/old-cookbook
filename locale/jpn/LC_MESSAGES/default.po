@@ -1,671 +1,687 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2009-04-10 13:01+0200\n"
-"PO-Revision-Date: 2009-03-25 12:27+0100\n"
-"Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
-"Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: ../../../\n"
+msgid   ""
+msgstr  "Project-Id-Version: Cookbook 1.0\n"
+        "POT-Creation-Date: 2009-04-16 09:23+0200\n"
+        "PO-Revision-Date: 2009-03-25 12:27+0100\n"
+        "Last-Translator: Andy Dawson <andydawson76@yahoo.co.uk>\n"
+        "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "X-Poedit-Basepath: ../../../\n"
 
 #: controllers/attachments_controller.php:81
-msgid "Attachment controller - no class or foreignKey error."
-msgstr ""
+msgid   "Attachment controller - no class or foreignKey error."
+msgstr  ""
 
 #: controllers/attachments_controller.php:106
 #, fuzzy
-msgid "Existing Attachment for %1$s, id %2$s updated"
-msgstr "登録されていた %s への添付 id %s は更新されました"
+msgid   "Existing Attachment for %1$s, id %2$s updated"
+msgstr  "登録されていた %s への添付 id %s は更新されました"
 
 #: controllers/attachments_controller.php:108
 #, fuzzy
-msgid "New Attachment for %1$s, id %2$s added"
-msgstr "新しい %s への添付 id %s が登録されました"
+msgid   "New Attachment for %1$s, id %2$s added"
+msgstr  "新しい %s への添付 id %s が登録されました"
 
 #: controllers/attachments_controller.php:133
 #, fuzzy
-msgid "%1$s with id %2$s updated"
-msgstr "%s id %s は更新されました"
+msgid   "%1$s with id %2$s updated"
+msgstr  "%s id %s は更新されました"
 
 #: controllers/attachments_controller.php:136
-msgid "errors in form"
-msgstr "フォームにエラーがあります"
+msgid   "errors in form"
+msgstr  "フォームにエラーがあります"
 
 #: controllers/changes_controller.php:127
 #, fuzzy
-msgid "Recent Changes for %1$s"
-msgstr "%s への最近の変更"
+msgid   "Recent Changes for %1$s"
+msgstr  "%s への最近の変更"
 
 #: controllers/changes_controller.php:131 views/layouts/default.ctp:52
-msgid "Recent Changes for all languages"
-msgstr "全ての言語への最近の変更"
+msgid   "Recent Changes for all languages"
+msgstr  "全ての言語への最近の変更"
 
 #: controllers/changes_controller.php:133 views/layouts/default.ctp:46
-msgid "Recent Changes"
-msgstr "最近の変更"
+msgid   "Recent Changes"
+msgstr  "最近の変更"
 
 #: controllers/changes_controller.php:141
 #: controllers/comments_controller.php:202
 #, fuzzy
-msgid "by %1$s"
-msgstr "登録者 %s"
+msgid   "by %1$s"
+msgstr  "登録者 %s"
 
 #: controllers/changes_controller.php:146
 #, fuzzy
-msgid "restricted to status: %1$s"
-msgstr "ステータスを %s に変更しました"
+msgid   "restricted to status: %1$s"
+msgstr  "ステータスを %s に変更しました"
 
 #: controllers/comments_controller.php:92;127
-msgid "Invalid Node."
-msgstr "ノードが異常です"
+msgid   "Invalid Node."
+msgstr  "ノードが異常です"
 
 #: controllers/comments_controller.php:101
-msgid "Your comment has been added"
-msgstr "あなたのコメントは登録されました"
+msgid   "Your comment has been added"
+msgstr  "あなたのコメントは登録されました"
 
 #: controllers/comments_controller.php:107
-msgid "Please correct errors below."
-msgstr "以下のエラーを訂正してください"
+msgid   "Please correct errors below."
+msgstr  "以下のエラーを訂正してください"
 
 #: controllers/comments_controller.php:131
-msgid "No permissions to see comments for that section"
-msgstr "このセクションのコメントを見る権限がありません"
+msgid   "No permissions to see comments for that section"
+msgstr  "このセクションのコメントを見る権限がありません"
 
 #: controllers/comments_controller.php:139 views/elements/node_options.ctp:20
-#: views/nodes/view_all.ctp:127;137
+#: views/nodes/view_all.ctp:105;115
 #, fuzzy
-msgid "Comments for %1$s"
-msgstr "%s へのコメント"
+msgid   "Comments for %1$s"
+msgstr  "%s へのコメント"
 
 #: controllers/comments_controller.php:172
-msgid "Invalid Comment."
-msgstr "正しくないコメントです。"
+msgid   "Invalid Comment."
+msgstr  "正しくないコメントです。"
 
 #: controllers/comments_controller.php:191 views/comments/index.ctp:6
-msgid "Recent Comments"
-msgstr "最近のコメント"
+msgid   "Recent Comments"
+msgstr  "最近のコメント"
 
 #: controllers/comments_controller.php:193 views/layouts/default.ctp:63
-msgid "Recent Comments for all languages"
-msgstr "全ての言語への最近のコメント"
+msgid   "Recent Comments for all languages"
+msgstr  "全ての言語への最近のコメント"
 
 #: controllers/nodes_controller.php:789
-msgid "Invalid Collection"
-msgstr "正しくないコレクションです"
+msgid   "Invalid Collection"
+msgstr  "正しくないコレクションです"
 
-#: controllers/nodes_controller.php:814;922
-msgid "Thanks for your contribution! Your suggestion has been submitted for review."
-msgstr "ご協力ありがとうございます！　投稿内容はレビューへ回送されました"
+#: controllers/nodes_controller.php:814;977
+msgid   "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr  "ご協力ありがとうございます！　投稿内容はレビューへ回送されました"
 
 #: controllers/nodes_controller.php:877
-msgid "This function is for comparing different (public) language content"
-msgstr "この機能は他の言語のコンテンツとの比較の為のものです"
+msgid   "This function is for comparing different (public) language content"
+msgstr  "この機能は他の言語のコンテンツとの比較の為のものです"
 
-#: controllers/nodes_controller.php:930
-msgid "Edit/Correction"
-msgstr ""
+#: controllers/nodes_controller.php:987
+msgid   "Translation to %1$s"
+msgstr  ""
 
-#: controllers/nodes_controller.php:932
-msgid "Translation to %1$s"
-msgstr ""
+#: controllers/revisions_controller.php:639;644;699
+msgid   "Only current and previous revisions can be viewed"
+msgstr  "現在と直前のリビジョンのみ閲覧できます"
 
-#: controllers/revisions_controller.php:632;637;689
-msgid "Only current and previous revisions can be viewed"
-msgstr "現在と直前のリビジョンのみ閲覧できます"
+#: controllers/revisions_controller.php:648
+msgid   "Only possible to compare revisions of the same node"
+msgstr  "同一ノードのリビジョン間のみ比較できます"
 
-#: controllers/revisions_controller.php:641
-msgid "Only possible to compare revisions of the same node"
-msgstr "同一ノードのリビジョン間のみ比較できます"
+#: controllers/revisions_controller.php:678
+msgid   "Current Pending revisions "
+msgstr  ""
 
-#: controllers/revisions_controller.php:671
-msgid "Current Pending revisions "
-msgstr ""
-
-#: controllers/revisions_controller.php:693
-msgid "Please login to access this revision"
-msgstr "このリビジョンにアクセスするにはログインしてください"
+#: controllers/revisions_controller.php:703
+msgid   "Please login to access this revision"
+msgstr  "このリビジョンにアクセスするにはログインしてください"
 
 #: models/node.php:168
-msgid "Default Title"
-msgstr "このセクションはまだ書かれていません"
+msgid   "Default Title"
+msgstr  "このセクションはまだ書かれていません"
 
 #: models/node.php:171
-msgid "default_slug"
-msgstr "見つかりません"
+msgid   "default_slug"
+msgstr  "見つかりません"
 
 #: models/node.php:174
-msgid "Default Content"
-msgstr "<p>このセクションはまだ書かれていません。何かアイデアがあればリンクから提案をお願いします</p>"
+msgid   "Default Content"
+msgstr  "<p>このセクションはまだ書かれていません。何かアイデアがあればリンクから提案をお願いします</p>"
 
 #: views/changes/index.ctp:16
 #, fuzzy
-msgid "change submitted by %1$s, %2$s"
-msgstr "変更は登録されました by %s %s"
+msgid   "change submitted by %1$s, %2$s"
+msgstr  "変更は登録されました by %s %s"
 
 #: views/changes/index.ctp:22
-msgid "accepted"
-msgstr "承認"
+msgid   "accepted"
+msgstr  "承認"
 
 #: views/changes/index.ctp:25
-msgid "not accepted"
-msgstr "非承認"
+msgid   "not accepted"
+msgstr  "非承認"
 
 #: views/changes/index.ctp:28
-msgid "pending"
-msgstr "保留"
+msgid   "pending"
+msgstr  "保留"
 
 #: views/changes/index.ctp:33
 #, fuzzy
-msgid "changed from %1$s to %2$s by %3$s, %4$s"
-msgstr "%s から %s へ変更されました 変更者 %s, %s"
+msgid   "changed from %1$s to %2$s by %3$s, %4$s"
+msgstr  "%s から %s へ変更されました 変更者 %s, %s"
 
 #: views/changes/index.ctp:39
 #, fuzzy
-msgid "submitted by %1$s"
-msgstr "%s による投稿"
+msgid   "submitted by %1$s"
+msgstr  "%s による投稿"
 
 #: views/comments/add.ctp:6
-msgid "Comment: %s"
-msgstr "コメント: %s"
+msgid   "Comment: %s"
+msgstr  "コメント: %s"
 
 #: views/comments/admin_index.ctp:8
 #, fuzzy
-msgid "%1$s %2$s comment"
-msgid_plural "%1$s %2$s comments"
-msgstr[0] "%s (通算 %s)"
-msgstr[1] "%s (通算 %s)"
+msgid   "%1$s %2$s comment"
+msgid_plural    "%1$s %2$s comments"
+msgstr[0]       "%s (通算 %s)"
+msgstr[1]       "%s (通算 %s)"
 
 #: views/comments/index.ctp:4
 #, fuzzy
-msgid "Comments: %1$s"
-msgstr "コメント: %s"
+msgid   "Comments: %1$s"
+msgstr  "コメント: %s"
 
 #: views/comments/index.ctp:12
-msgid "No Comments yet!"
-msgstr "まだコメントはありません"
+msgid   "No Comments yet!"
+msgstr  "まだコメントはありません"
 
 #: views/comments/index.ctp:20
 #, fuzzy
-msgid "Add a comment"
-msgstr "正しくないコメントです。"
+msgid   "Add a comment"
+msgstr  "正しくないコメントです。"
 
 #: views/comments/index.ctp:23
-msgid "This page as a feed"
-msgstr "このページをフィードで"
+msgid   "This page as a feed"
+msgstr  "このページをフィードで"
 
 #: views/elements/attachments.ctp:1
-msgid "Images/Files associated with this content"
-msgstr "このコンテンツに関連付けられたファイル・画像"
+msgid   "Images/Files associated with this content"
+msgstr  "このコンテンツに関連付けられたファイル・画像"
 
 #: views/elements/comment.ctp:8
-msgid "unknown"
-msgstr "不明"
+msgid   "unknown"
+msgstr  "不明"
 
 #: views/elements/comment.ctp:15
 #, fuzzy
-msgid "By %1$s on %2$s"
-msgstr "変更者 %s 変更日時 %s"
+msgid   "By %1$s on %2$s"
+msgstr  "変更者 %s 変更日時 %s"
 
 #: views/elements/comment.ctp:17
 #, fuzzy
-msgid "By %1$s %2$s"
-msgstr "変更者 %s %s"
+msgid   "By %1$s %2$s"
+msgstr  "変更者 %s %s"
 
 #: views/elements/comment_form.ctp:4
-msgid "Login to add a comment"
-msgstr "コメントするにはログインしてください"
+msgid   "Login to add a comment"
+msgstr  "コメントするにはログインしてください"
 
 #: views/elements/comment_form.ctp:17
 #, fuzzy
-msgid "Comment on %1$s"
-msgstr "%s へのコメント"
+msgid   "Comment on %1$s"
+msgstr  "%s へのコメント"
 
 #: views/elements/comment_form.ctp:24
 #, fuzzy
-msgid "add comment"
-msgstr "正しくないコメントです。"
+msgid   "add comment"
+msgstr  "正しくないコメントです。"
 
 #: views/elements/comment_form_note.ctp:2
-msgid "Is a comment appropriate?"
-msgstr ""
+msgid   "Is a comment appropriate?"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:5
-msgid "Do you want to highlight a problem in the text? %1$s"
-msgstr ""
+msgid   "Do you want to highlight a problem in the text? %1$s"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:6
-msgid "You can change it"
-msgstr ""
+msgid   "You can change it"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:8
-msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
-msgstr ""
+msgid   "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:9
-msgid "help yourself"
-msgstr ""
+msgid   "help yourself"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:10
-msgid "ask"
-msgstr ""
+msgid   "ask"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:11
-msgid "help"
-msgstr ""
+msgid   "help"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:13
-msgid "Do you want to highlight a problem with the application? %1$s or %2$s"
-msgstr ""
+msgid   "Do you want to highlight a problem with the application? %1$s or %2$s"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:14
-msgid "You can ticket it"
-msgstr ""
+msgid   "You can ticket it"
+msgstr  ""
 
 #: views/elements/comment_form_note.ctp:15
-msgid "You can fix it"
-msgstr ""
+msgid   "You can fix it"
+msgstr  ""
 
 #: views/elements/content_form_note.ctp:2
-msgid "Tips"
-msgstr ""
+msgid   "Tips"
+msgstr  ""
 
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
-msgid "Please review %1$s to ensure consistency."
-msgstr "Cookbookの一貫性の為に登録の際はガイドラインを確認してください。 %s"
+msgid   "Please review %1$s to ensure consistency."
+msgstr  "Cookbookの一貫性の為に登録の際はガイドラインを確認してください。 %s"
 
 #: views/elements/content_form_note.ctp:6
 #, fuzzy
-msgid "the guidelines for submitting to the Cookbook"
-msgstr "Cookbookの一貫性の為に登録の際はガイドラインを確認してください。 %s"
+msgid   "the guidelines for submitting to the Cookbook"
+msgstr  "Cookbookの一貫性の為に登録の際はガイドラインを確認してください。 %s"
 
 #: views/elements/content_form_note.ctp:11
-msgid "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
-msgstr ""
+msgid   "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
+msgstr  ""
 
 #: views/elements/content_form_note.ctp:12;13
-msgid "English"
-msgstr ""
+msgid   "English"
+msgstr  ""
+
+#: views/elements/contribute.ctp:2
+msgid   "More information about translations"
+msgstr  ""
+
+#: views/elements/contribute.ctp:6
+#, fuzzy
+msgid   "There is no translation yet for this section. Please help out and %1$s."
+msgstr  "このセクションには保留されている変更があります"
+
+#: views/elements/contribute.ctp:8
+#, fuzzy
+msgid   "translate this"
+msgstr  "翻訳済み"
+
+#: views/elements/contribute.ctp:10 views/elements/node_options.ctp:9
+msgid   "There is no translation for this section please submit one"
+msgstr  ""
+
+#: views/elements/contribute.ctp:17
+msgid   "The original text for this section has changed since it was translated. Please help resolve this difference. You can:"
+msgstr  ""
+
+#: views/elements/contribute.ctp:25
+msgid   "See what has changed"
+msgstr  ""
+
+#: views/elements/contribute.ctp:29
+msgid   "Compare the current text to the original"
+msgstr  ""
 
 #: views/elements/language_links.ctp:21
-msgid "No %1$s translation yet for %2$s"
-msgstr ""
+msgid   "No %1$s translation yet for %2$s"
+msgstr  ""
 
 #: views/elements/language_links.ctp:27
 #, fuzzy
-msgid "Also available in %1$s"
-msgstr "閲覧可能なコレクション %s"
+msgid   "Also available in %1$s"
+msgstr  "閲覧可能なコレクション %s"
 
 #: views/elements/login_hint.ctp:2
-msgid "Login with your Bakery account"
-msgstr "Bakeryのアカウントでログインしてください"
+msgid   "Login with your Bakery account"
+msgstr  "Bakeryのアカウントでログインしてください"
 
 #: views/elements/login_hint.ctp:3
-msgid "Not got one? Hop on over to %s and sign up"
-msgstr "アカウントをまだ取っていませんか？ %s へアクセスして取得してください"
+msgid   "Not got one? Hop on over to %s and sign up"
+msgstr  "アカウントをまだ取っていませんか？ %s へアクセスして取得してください"
 
 #: views/elements/node_options.ctp:8
 #, fuzzy
-msgid "Translate"
-msgstr "翻訳済み"
+msgid   "Translate"
+msgstr  "翻訳済み"
 
-#: views/elements/node_options.ctp:9 views/nodes/view_all.ctp:36;76
-msgid "There is no translation for this section please submit one"
-msgstr ""
+#: views/elements/node_options.ctp:11
+msgid   "Edit"
+msgstr  "編集"
 
-#: views/elements/node_options.ctp:11 views/nodes/view_all.ctp:40
-msgid "Edit"
-msgstr "編集"
-
-#: views/elements/node_options.ctp:12 views/nodes/view_all.ctp:41
-msgid "Don't like this text? Submit your thoughts"
-msgstr ""
+#: views/elements/node_options.ctp:12
+msgid   "Don't like this text? Submit your thoughts"
+msgstr  ""
 
 #: views/elements/node_options.ctp:16
-msgid "View just this section"
-msgstr "このセクションを見る"
+msgid   "View just this section"
+msgstr  "このセクションを見る"
 
 #: views/elements/node_options.ctp:20
 #, fuzzy
-msgid "Comments (%1$s)"
-msgstr "コメント (%s)"
+msgid   "Comments (%1$s)"
+msgstr  "コメント (%s)"
 
 #: views/elements/node_options.ctp:25
-msgid "there is a pending change for this section"
-msgstr "このセクションには保留されている変更があります"
+msgid   "there is a pending change for this section"
+msgstr  "このセクションには保留されている変更があります"
 
-#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
+#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:62
 #: views/nodes/history.ctp:2
-msgid "History"
-msgstr "変更履歴"
+msgid   "History"
+msgstr  "変更履歴"
 
 #: views/elements/node_options.ctp:38
-msgid "This text may be out of sync with the English version"
-msgstr "このテキストは英語版と同期がとれていないようです"
+msgid   "This text may be out of sync with the English version"
+msgstr  "このテキストは英語版と同期がとれていないようです"
 
 #: views/elements/node_options.ctp:45
-msgid "Compare to original content"
-msgstr "オリジナルとの比較"
+msgid   "Compare to original content"
+msgstr  "オリジナルとの比較"
 
 #: views/elements/paging.ctp:3
-msgid "Page %s"
-msgstr "%sページ"
+msgid   "Page %s"
+msgstr  "%sページ"
 
 #: views/elements/paging.ctp:4
-msgid "« previous"
-msgstr "«前へ"
+msgid   "« previous"
+msgstr  "«前へ"
 
 #: views/elements/paging.ctp:7
-msgid "Next »"
-msgstr "次へ»"
+msgid   "Next »"
+msgstr  "次へ»"
 
 #: views/elements/preview.ctp:6
-msgid "How'd you like them apples?"
-msgstr ""
+msgid   "How'd you like them apples?"
+msgstr  ""
 
 #: views/elements/preview.ctp:7
-msgid "How's that for a slice of fried gold?"
-msgstr ""
+msgid   "How's that for a slice of fried gold?"
+msgstr  ""
 
 #: views/elements/preview.ctp:8
-msgid "How's that for a slice of cake?"
-msgstr ""
+msgid   "How's that for a slice of cake?"
+msgstr  ""
 
 #: views/elements/preview.ctp:9
-msgid "Are we done yet?"
-msgstr ""
+msgid   "Are we done yet?"
+msgstr  ""
 
 #: views/elements/preview.ctp:57
-msgid "Save it"
-msgstr "保存"
+msgid   "Save it"
+msgstr  "保存"
 
 #: views/elements/search.ctp:21 views/elements/search_form.ctp:13
-msgid "Search"
-msgstr "検索"
+msgid   "Search"
+msgstr  "検索"
 
 #: views/elements/search_form.ctp:8
 #, fuzzy
-msgid "Collection"
-msgstr "正しくないコレクションです"
+msgid   "Collection"
+msgstr  "正しくないコレクションです"
 
 #: views/elements/search_form.ctp:11
 #, fuzzy
-msgid "Search term"
-msgstr "検索"
+msgid   "Search term"
+msgstr  "検索"
 
 #: views/elements/secondary_nav.ctp:5
 #, fuzzy
-msgid "Logged in as %1$s"
-msgstr "%s としてログインしました"
+msgid   "Logged in as %1$s"
+msgstr  "%s としてログインしました"
 
 #: views/elements/secondary_nav.ctp:6
-msgid "Logout"
-msgstr "ログアウト"
+msgid   "Logout"
+msgstr  "ログアウト"
 
 #: views/elements/secondary_nav.ctp:11
-msgid "Login"
-msgstr "ログイン"
+msgid   "Login"
+msgstr  "ログイン"
 
 #: views/elements/secondary_nav.ctp:15
-msgid "Top Contributors"
-msgstr "優秀な貢献者"
+msgid   "Top Contributors"
+msgstr  "優秀な貢献者"
 
 #: views/elements/secondary_nav.ctp:18
-msgid "Todo"
-msgstr "Todo"
+msgid   "Todo"
+msgstr  "Todo"
 
 #: views/elements/secondary_nav.ctp:20
-msgid "About CakePHP"
-msgstr "CakePHPについて"
+msgid   "About CakePHP"
+msgstr  "CakePHPについて"
 
 #: views/elements/secondary_nav.ctp:21
-msgid "Donate"
-msgstr "寄付"
+msgid   "Donate"
+msgstr  "寄付"
 
-#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:112
-msgid "All in one page"
-msgstr "全てを１ページで"
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:90
+msgid   "All in one page"
+msgstr  "全てを１ページで"
 
-#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:119
-msgid "Suggest a new section here"
-msgstr "新しいセクションを提案する"
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:97
+msgid   "Suggest a new section here"
+msgstr  "新しいセクションを提案する"
 
 #: views/elements/toc.ctp:7 views/nodes/toc.ctp:4
-msgid "Table of Contents"
-msgstr "目次"
+msgid   "Table of Contents"
+msgstr  "目次"
 
 #: views/elements/toc.ctp:9
-msgid "see fully expanded table of contents (only)"
-msgstr "完全な目次を見る"
+msgid   "see fully expanded table of contents (only)"
+msgstr  "完全な目次を見る"
 
 #: views/elements/toc.ctp:13
-msgid "Available collections"
-msgstr "閲覧可能なコレクション"
+msgid   "Available collections"
+msgstr  "閲覧可能なコレクション"
 
 #: views/elements/toc.ctp:20
 #, fuzzy
-msgid "Books in %1$s"
-msgstr "ブックス in"
+msgid   "Books in %1$s"
+msgstr  "ブックス in"
 
 #: views/layouts/default.ctp:37
-msgid "Mobile version"
-msgstr ""
+msgid   "Mobile version"
+msgstr  ""
 
 #: views/layouts/default.ctp:57
-msgid "Recent comments"
-msgstr "最近のコメント"
+msgid   "Recent comments"
+msgstr  "最近のコメント"
 
 #: views/layouts/default.ctp:74;79
-msgid "My Submissions"
-msgstr "自分の提案"
+msgid   "My Submissions"
+msgstr  "自分の提案"
 
 #: views/layouts/default.ctp:87
 #, fuzzy
-msgid "Pending Submissions"
-msgstr "自分の提案"
+msgid   "Pending Submissions"
+msgstr  "自分の提案"
 
 #: views/layouts/default.ctp:119
 #, fuzzy
-msgid "Welcome to %1$s"
-msgstr "%s へようこそ"
+msgid   "Welcome to %1$s"
+msgstr  "%s へようこそ"
 
 #: views/layouts/error.ctp:5;33
-msgid "CakePHP: the rapid development php framework"
-msgstr "CakePHP: 高速開発PHPフレームワーク"
+msgid   "CakePHP: the rapid development php framework"
+msgstr  "CakePHP: 高速開発PHPフレームワーク"
 
 #: views/layouts/flash/new_content_default_language.ctp:5
-msgid "Want to know why?"
-msgstr ""
+msgid   "Want to know why?"
+msgstr  ""
 
-#: views/nodes/add.ctp:24 views/nodes/edit.ctp:30
-msgid "Show me a preview before submitting"
-msgstr "登録の前にプレビューを見せてください"
+#: views/nodes/add.ctp:24 views/nodes/edit.ctp:31
+msgid   "Show me a preview before submitting"
+msgstr  "登録の前にプレビューを見せてください"
 
 #: views/nodes/add.ctp:26
-msgid "under"
-msgstr "下の"
+msgid   "under"
+msgstr  "下の"
 
 #: views/nodes/add.ctp:29
-msgid "after"
-msgstr "以降の"
+msgid   "after"
+msgstr  "以降の"
 
-#: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
-msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
-msgstr "preタグの中のコードはエスケープされます。htmlフォーマットされていない投稿は自動的にhtmlでフォーマットされます"
+#: views/nodes/add.ctp:35 views/nodes/edit.ctp:34
+msgid   "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr  "preタグの中のコードはエスケープされます。htmlフォーマットされていない投稿は自動的にhtmlでフォーマットされます"
 
 #: views/nodes/add.ctp:40
-msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
-msgstr "任意 この提案を行う理由を説明してください (英語でお願いします) :)"
+msgid   "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr  "任意 この提案を行う理由を説明してください (英語でお願いします) :)"
 
 #: views/nodes/add.ctp:44
-msgid "Add a new section"
-msgstr "新しいセクションを追加する"
+msgid   "Add a new section"
+msgstr  "新しいセクションを追加する"
 
 #: views/nodes/admin_merge.ctp:18
-msgid "You are sure? Please check the preview"
-msgstr "よろしいですか？プレビューを確認してください"
+msgid   "You are sure? Please check the preview"
+msgstr  "よろしいですか？プレビューを確認してください"
 
 #: views/nodes/compare.ctp:13 views/revisions/view.ctp:11
-msgid "Differences"
-msgstr "差分"
+msgid   "Differences"
+msgstr  "差分"
 
-#: views/nodes/edit.ctp:38
-msgid "What is the reason for the edit? (In English Please) :)"
-msgstr "この変更の理由は何ですか？(英語でお願いします)"
+#: views/nodes/edit.ctp:39
+msgid   "What is the reason for the edit? (In English Please) :)"
+msgstr  "この変更の理由は何ですか？(英語でお願いします)"
 
-#: views/nodes/edit.ctp:44
+#: views/nodes/edit.ctp:45
 #, fuzzy
-msgid "Edit %1$s"
-msgstr "編集 %s"
+msgid   "Edit %1$s"
+msgstr  "編集 %s"
 
-#: views/nodes/edit.ctp:53;56
-msgid "Resources"
-msgstr ""
+#: views/nodes/edit.ctp:55;58
+msgid   "Resources"
+msgstr  ""
 
-#: views/nodes/edit.ctp:56
-msgid "Current Version"
-msgstr ""
+#: views/nodes/edit.ctp:58
+msgid   "Current Version"
+msgstr  ""
 
-#: views/nodes/edit.ctp:65
+#: views/nodes/edit.ctp:67
 #, fuzzy
-msgid "English Version"
-msgstr "英語の編集もご覧ください"
+msgid   "English Version"
+msgstr  "英語の編集もご覧ください"
 
-#: views/nodes/edit.ctp:69
-msgid "Compare to English"
-msgstr ""
+#: views/nodes/edit.ctp:71
+msgid   "Compare to English"
+msgstr  ""
 
-#: views/nodes/edit.ctp:73
+#: views/nodes/edit.ctp:75
 #, fuzzy
-msgid "English History"
-msgstr "英語の編集もご覧ください"
+msgid   "See what changed"
+msgstr  "最近の変更"
+
+#: views/nodes/edit.ctp:79
+#, fuzzy
+msgid   "English History"
+msgstr  "英語の編集もご覧ください"
 
 #: views/nodes/history.ctp:8
-msgid "See English edits too"
-msgstr "英語の編集もご覧ください"
+msgid   "See English edits too"
+msgstr  "英語の編集もご覧ください"
 
 #: views/nodes/stats.ctp:4
-msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
-msgstr ""
+msgid   "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr  ""
 
 #: views/nodes/stats.ctp:6;37
 #, fuzzy
-msgid "Top %1$s Contributors"
-msgstr "トップ %s 貢献者"
+msgid   "Top %1$s Contributors"
+msgstr  "トップ %s 貢献者"
 
 #: views/nodes/stats.ctp:8;38
 #, fuzzy
-msgid "Last update: %1$s"
-msgstr "最終更新: %s"
+msgid   "Last update: %1$s"
+msgstr  "最終更新: %s"
 
 #: views/nodes/stats.ctp:26;63
 #, fuzzy
-msgid "%1$s (%2$s current)"
-msgstr "%s (通算 %s)"
+msgid   "%1$s (%2$s current)"
+msgstr  "%s (通算 %s)"
 
 #: views/nodes/stats.ctp:39
 #, fuzzy
-msgid "%1$s%% translated"
-msgstr "%s%% 翻訳済み"
+msgid   "%1$s%% translated"
+msgstr  "%s%% 翻訳済み"
 
 #: views/nodes/stats.ctp:41
-msgid "The cookbook needs you! No submissions for this language!"
-msgstr "cookbook はあなたを必要としています！この言語にはまだ提案がありません"
+msgid   "The cookbook needs you! No submissions for this language!"
+msgstr  "cookbook はあなたを必要としています！この言語にはまだ提案がありません"
 
 #: views/nodes/stats.ctp:44
-msgid "The cookbook needs you! This language will soon be removed if not updated."
-msgstr "cookbookはあなたを必要としています。この言語は変更がなければ間もなく削除されます"
+msgid   "The cookbook needs you! This language will soon be removed if not updated."
+msgstr  "cookbookはあなたを必要としています。この言語は変更がなければ間もなく削除されます"
 
 #: views/nodes/stats.ctp:46
-msgid "The cookbook needs you! No updates for one month."
-msgstr "cookbookはあなたを必要としています。１か月間変更がありません"
+msgid   "The cookbook needs you! No updates for one month."
+msgstr  "cookbookはあなたを必要としています。１か月間変更がありません"
 
 #: views/nodes/todo.ctp:5
-msgid "Please help out by updating the translation file"
-msgstr ""
+msgid   "Please help out by updating the translation file"
+msgstr  ""
 
 #: views/nodes/todo.ctp:7
 #, fuzzy
-msgid "Want to check the fixed texts used on the site for %1$s? %2$s"
-msgstr "この<a href=\"%s\">po file</a>の変更を確認 %s の為に確認しますか？"
+msgid   "Want to check the fixed texts used on the site for %1$s? %2$s"
+msgstr  "この<a href=\"%s\">po file</a>の変更を確認 %s の為に確認しますか？"
 
 #: views/nodes/todo.ctp:10
-msgid "We don't have %1$s translations for the fixed texts used on the site. %2$s"
-msgstr ""
+msgid   "We don't have %1$s translations for the fixed texts used on the site. %2$s"
+msgstr  ""
 
 #: views/nodes/todo.ctp:13
-msgid "These sections either do not have a translation, or the English text has changed since it was translated"
-msgstr "これらのセクションはまだ翻訳されていないか、翻訳されてから英語版が変更されています"
+msgid   "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr  "これらのセクションはまだ翻訳されていないか、翻訳されてから英語版が変更されています"
 
-#: views/nodes/view_all.ctp:32;72
+#: views/nodes/view_all.ctp:63
+msgid   "See comments for this section"
+msgstr  "このセクションへのコメントを見る"
+
+#: views/nodes/view_all.ctp:110;122
 #, fuzzy
-msgid "There is no translation yet for this section. You can %1$s."
-msgstr "このセクションには保留されている変更があります"
-
-#: views/nodes/view_all.ctp:34;74
-#, fuzzy
-msgid "translate this"
-msgstr "翻訳済み"
-
-#: views/nodes/view_all.ctp:85
-msgid "See comments for this section"
-msgstr "このセクションへのコメントを見る"
-
-#: views/nodes/view_all.ctp:132;144
-#, fuzzy
-msgid "Change history for %1$s"
-msgstr "%s への変更履歴"
+msgid   "Change history for %1$s"
+msgstr  "%s への変更履歴"
 
 #: views/revisions/admin_pending.ctp:7
 #, fuzzy
-msgid "%1$s pending %2$s submission"
-msgid_plural "%1$s pending %2$s submissions"
-msgstr[0] "自分の提案"
-msgstr[1] "自分の提案"
+msgid   "%1$s pending %2$s submission"
+msgid_plural    "%1$s pending %2$s submissions"
+msgstr[0]       "自分の提案"
+msgstr[1]       "自分の提案"
 
 #: views/revisions/results.ctp:8
-msgid "Search Results"
-msgstr "検索結果"
+msgid   "Search Results"
+msgstr  "検索結果"
 
 #: views/revisions/results.ctp:32
-msgid "No results"
-msgstr "見つかりませんでした"
+msgid   "No results"
+msgstr  "見つかりませんでした"
 
 #: views/revisions/rss/index.ctp:13
 #, fuzzy
-msgid "Submitted by: %1$s"
-msgstr "投稿者: %s"
+msgid   "Submitted by: %1$s"
+msgstr  "投稿者: %s"
 
 #: views/revisions/search.ctp:1
-msgid "Search book.cakephp.org"
-msgstr "book.cakephp.org を検索"
+msgid   "Search book.cakephp.org"
+msgstr  "book.cakephp.org を検索"
 
 #, fuzzy
-#~ msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
-#~ msgstr "<a href=\"%s\">po file</a> がありません。　対象 %s"
+#~ msgid        "These is no <a href=\"%1$s\">po file</a> for %2$s"
+#~ msgstr       "<a href=\"%s\">po file</a> がありません。　対象 %s"
 
-#~ msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
-#~ msgstr "pp files を編集する場合は <a href=\"http://www.poedit.net\">Po Edit</a> を使ってください"
+#~ msgid        "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+#~ msgstr       "pp files を編集する場合は <a href=\"http://www.poedit.net\">Po Edit</a> を使ってください"
 
-#~ msgid "Whoops, not a valid language."
-#~ msgstr "言語が正常でないみたいです・・・"
+#~ msgid        "Whoops, not a valid language."
+#~ msgstr       "言語が正常でないみたいです・・・"
 
-#~ msgid "Please login to continue"
-#~ msgstr "続けるにはログインしてください"
+#~ msgid        "Please login to continue"
+#~ msgstr       "続けるにはログインしてください"
 
-#~ msgid "All %s matching the term \"%s\""
-#~ msgstr "全ての %s (%s からの検索結果)"
+#~ msgid        "All %s matching the term \"%s\""
+#~ msgstr       "全ての %s (%s からの検索結果)"
 
-#~ msgid "Forgot your password?"
-#~ msgstr "パスワードを忘れた時は？"
+#~ msgid        "Forgot your password?"
+#~ msgstr       "パスワードを忘れた時は？"
 
-#~ msgid "Changed by: %s"
-#~ msgstr "変更者: %s"
+#~ msgid        "Changed by: %s"
+#~ msgstr       "変更者: %s"
 
-#~ msgid "Options"
-#~ msgstr "オプション"
+#~ msgid        "Options"
+#~ msgstr       "オプション"
 
-#~ msgid "Debug setting does not allow access to this url."
-#~ msgstr "Debug setting does not allow access to this url."
+#~ msgid        "Debug setting does not allow access to this url."
+#~ msgstr       "Debug setting does not allow access to this url."

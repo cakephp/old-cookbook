@@ -1,675 +1,694 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: Cookbook 1.0\n"
-"POT-Creation-Date: 2009-04-10 13:01+0200\n"
-"PO-Revision-Date: 2009-03-25 12:27+0100\n"
-"Last-Translator: Serhat Artun <sartun@gmail.com>\n"
-"Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: ../../../\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+msgid   ""
+msgstr  "Project-Id-Version: Cookbook 1.0\n"
+        "POT-Creation-Date: 2009-04-16 09:23+0200\n"
+        "PO-Revision-Date: 2009-03-25 12:27+0100\n"
+        "Last-Translator: Serhat Artun <sartun@gmail.com>\n"
+        "Language-Team: Documentation CakePHP <docs@cakephp.org>\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=UTF-8\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "X-Poedit-Basepath: ../../../\n"
+        "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: controllers/attachments_controller.php:81
-msgid "Attachment controller - no class or foreignKey error."
-msgstr "Ek denetleyicisi - sınıf yada yabancı anahtar hatası."
+msgid   "Attachment controller - no class or foreignKey error."
+msgstr  "Ek denetleyicisi - sınıf yada yabancı anahtar hatası."
 
 #: controllers/attachments_controller.php:106
 #, fuzzy
-msgid "Existing Attachment for %1$s, id %2$s updated"
-msgstr "%s için mevcut ek, id %s güncellendi"
+msgid   "Existing Attachment for %1$s, id %2$s updated"
+msgstr  "%s için mevcut ek, id %s güncellendi"
 
 #: controllers/attachments_controller.php:108
 #, fuzzy
-msgid "New Attachment for %1$s, id %2$s added"
-msgstr "%s için yeni ek, id %s eklendi"
+msgid   "New Attachment for %1$s, id %2$s added"
+msgstr  "%s için yeni ek, id %s eklendi"
 
 #: controllers/attachments_controller.php:133
 #, fuzzy
-msgid "%1$s with id %2$s updated"
-msgstr "%s , id'si %s güncellendi."
+msgid   "%1$s with id %2$s updated"
+msgstr  "%s , id'si %s güncellendi."
 
 #: controllers/attachments_controller.php:136
-msgid "errors in form"
-msgstr "Form'da hata"
+msgid   "errors in form"
+msgstr  "Form'da hata"
 
 #: controllers/changes_controller.php:127
 #, fuzzy
-msgid "Recent Changes for %1$s"
-msgstr "%s için Yeni Değişiklikler"
+msgid   "Recent Changes for %1$s"
+msgstr  "%s için Yeni Değişiklikler"
 
 #: controllers/changes_controller.php:131 views/layouts/default.ctp:52
-msgid "Recent Changes for all languages"
-msgstr "Tüm dillerdeki Yeni Değişiklikler"
+msgid   "Recent Changes for all languages"
+msgstr  "Tüm dillerdeki Yeni Değişiklikler"
 
 #: controllers/changes_controller.php:133 views/layouts/default.ctp:46
-msgid "Recent Changes"
-msgstr "Yeni Değişiklikler"
+msgid   "Recent Changes"
+msgstr  "Yeni Değişiklikler"
 
 #: controllers/changes_controller.php:141
 #: controllers/comments_controller.php:202
 #, fuzzy
-msgid "by %1$s"
-msgstr "%s tarafından"
+msgid   "by %1$s"
+msgstr  "%s tarafından"
 
 #: controllers/changes_controller.php:146
 #, fuzzy
-msgid "restricted to status: %1$s"
-msgstr "Sınırlı durum: %s"
+msgid   "restricted to status: %1$s"
+msgstr  "Sınırlı durum: %s"
 
 #: controllers/comments_controller.php:92;127
-msgid "Invalid Node."
-msgstr "Geçersiz  Nod."
+msgid   "Invalid Node."
+msgstr  "Geçersiz  Nod."
 
 #: controllers/comments_controller.php:101
-msgid "Your comment has been added"
-msgstr "Yorumunuz eklendi."
+msgid   "Your comment has been added"
+msgstr  "Yorumunuz eklendi."
 
 #: controllers/comments_controller.php:107
-msgid "Please correct errors below."
-msgstr "Lütfen aşağıdaki hataları düzeltin."
+msgid   "Please correct errors below."
+msgstr  "Lütfen aşağıdaki hataları düzeltin."
 
 #: controllers/comments_controller.php:131
-msgid "No permissions to see comments for that section"
-msgstr "Bu bölümün yorumları görmek için izin yok"
+msgid   "No permissions to see comments for that section"
+msgstr  "Bu bölümün yorumları görmek için izin yok"
 
 #: controllers/comments_controller.php:139 views/elements/node_options.ctp:20
-#: views/nodes/view_all.ctp:127;137
+#: views/nodes/view_all.ctp:105;115
 #, fuzzy
-msgid "Comments for %1$s"
-msgstr "%s için yorumlar"
+msgid   "Comments for %1$s"
+msgstr  "%s için yorumlar"
 
 #: controllers/comments_controller.php:172
-msgid "Invalid Comment."
-msgstr "Geçersiz Yorum."
+msgid   "Invalid Comment."
+msgstr  "Geçersiz Yorum."
 
 #: controllers/comments_controller.php:191 views/comments/index.ctp:6
-msgid "Recent Comments"
-msgstr "Yeni Yorumlar"
+msgid   "Recent Comments"
+msgstr  "Yeni Yorumlar"
 
 #: controllers/comments_controller.php:193 views/layouts/default.ctp:63
-msgid "Recent Comments for all languages"
-msgstr "Tüm diller için Yeni Yorumlar"
+msgid   "Recent Comments for all languages"
+msgstr  "Tüm diller için Yeni Yorumlar"
 
 #: controllers/nodes_controller.php:789
-msgid "Invalid Collection"
-msgstr "Geçersiz Koleksiyon"
+msgid   "Invalid Collection"
+msgstr  "Geçersiz Koleksiyon"
 
-#: controllers/nodes_controller.php:814;922
-msgid "Thanks for your contribution! Your suggestion has been submitted for review."
-msgstr "Katkınız için teşekkürler! Öneriniz değerlendirilmek için gönderildi."
+#: controllers/nodes_controller.php:814;977
+msgid   "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr  "Katkınız için teşekkürler! Öneriniz değerlendirilmek için gönderildi."
 
 #: controllers/nodes_controller.php:877
-msgid "This function is for comparing different (public) language content"
-msgstr "Bu fonksiyon değişik (genel) dil içeriğini karşılaştırmak için"
+msgid   "This function is for comparing different (public) language content"
+msgstr  "Bu fonksiyon değişik (genel) dil içeriğini karşılaştırmak için"
 
-#: controllers/nodes_controller.php:930
-msgid "Edit/Correction"
-msgstr "Düzenle/Düzeltme"
-
-#: controllers/nodes_controller.php:932
+#: controllers/nodes_controller.php:987
 #, fuzzy
-msgid "Translation to %1$s"
-msgstr "%s ye tercüme"
+msgid   "Translation to %1$s"
+msgstr  "%s ye tercüme"
 
-#: controllers/revisions_controller.php:632;637;689
-msgid "Only current and previous revisions can be viewed"
-msgstr "Sadece mevcut ve önceki revizyonlar görüntülenebilir"
+#: controllers/revisions_controller.php:639;644;699
+msgid   "Only current and previous revisions can be viewed"
+msgstr  "Sadece mevcut ve önceki revizyonlar görüntülenebilir"
 
-#: controllers/revisions_controller.php:641
-msgid "Only possible to compare revisions of the same node"
-msgstr "Sadece aynı nod üzerinde revizyon karşılaştırması mümkün"
+#: controllers/revisions_controller.php:648
+msgid   "Only possible to compare revisions of the same node"
+msgstr  "Sadece aynı nod üzerinde revizyon karşılaştırması mümkün"
 
-#: controllers/revisions_controller.php:671
-msgid "Current Pending revisions "
-msgstr "Şuan ki Bekleyen revizyonlar"
+#: controllers/revisions_controller.php:678
+msgid   "Current Pending revisions "
+msgstr  "Şuan ki Bekleyen revizyonlar"
 
-#: controllers/revisions_controller.php:693
-msgid "Please login to access this revision"
-msgstr "Bu revizyona erişim için giriş yapın"
+#: controllers/revisions_controller.php:703
+msgid   "Please login to access this revision"
+msgstr  "Bu revizyona erişim için giriş yapın"
 
 #: models/node.php:168
-msgid "Default Title"
-msgstr "Bu bölüm henüz yazılmadı"
+msgid   "Default Title"
+msgstr  "Bu bölüm henüz yazılmadı"
 
 #: models/node.php:171
-msgid "default_slug"
-msgstr "eksik"
+msgid   "default_slug"
+msgstr  "eksik"
 
 #: models/node.php:174
-msgid "Default Content"
-msgstr "<p> By bölüm henüz yazılmadı, Eğer buraya koyacak bir fikriniz var ise bağlantıları kullanarak önerinizi bize bildirin </p>"
+msgid   "Default Content"
+msgstr  "<p> By bölüm henüz yazılmadı, Eğer buraya koyacak bir fikriniz var ise bağlantıları kullanarak önerinizi bize bildirin </p>"
 
 #: views/changes/index.ctp:16
 #, fuzzy
-msgid "change submitted by %1$s, %2$s"
-msgstr "Değişiklik %s tarafından gönderildi , %s"
+msgid   "change submitted by %1$s, %2$s"
+msgstr  "Değişiklik %s tarafından gönderildi , %s"
 
 #: views/changes/index.ctp:22
-msgid "accepted"
-msgstr "kabul edildi"
+msgid   "accepted"
+msgstr  "kabul edildi"
 
 #: views/changes/index.ctp:25
-msgid "not accepted"
-msgstr "kabul edilmedi"
+msgid   "not accepted"
+msgstr  "kabul edilmedi"
 
 #: views/changes/index.ctp:28
-msgid "pending"
-msgstr "beklemede"
+msgid   "pending"
+msgstr  "beklemede"
 
 #: views/changes/index.ctp:33
 #, fuzzy
-msgid "changed from %1$s to %2$s by %3$s, %4$s"
-msgstr "%s den %s ye %s tarafından değiştirildi, %s"
+msgid   "changed from %1$s to %2$s by %3$s, %4$s"
+msgstr  "%s den %s ye %s tarafından değiştirildi, %s"
 
 #: views/changes/index.ctp:39
 #, fuzzy
-msgid "submitted by %1$s"
-msgstr "%s tarafından gönderildi"
+msgid   "submitted by %1$s"
+msgstr  "%s tarafından gönderildi"
 
 #: views/comments/add.ctp:6
-msgid "Comment: %s"
-msgstr "Yorum: %s"
+msgid   "Comment: %s"
+msgstr  "Yorum: %s"
 
 #: views/comments/admin_index.ctp:8
 #, fuzzy
-msgid "%1$s %2$s comment"
-msgid_plural "%1$s %2$s comments"
-msgstr[0] "%s %s yorumlar"
+msgid   "%1$s %2$s comment"
+msgid_plural    "%1$s %2$s comments"
+msgstr[0]       "%s %s yorumlar"
 
 #: views/comments/index.ctp:4
 #, fuzzy
-msgid "Comments: %1$s"
-msgstr "Yorumlar: %s"
+msgid   "Comments: %1$s"
+msgstr  "Yorumlar: %s"
 
 #: views/comments/index.ctp:12
-msgid "No Comments yet!"
-msgstr "Henüz herhangi bir yorum yok!"
+msgid   "No Comments yet!"
+msgstr  "Henüz herhangi bir yorum yok!"
 
 #: views/comments/index.ctp:20
 #, fuzzy
-msgid "Add a comment"
-msgstr "yorum ekle"
+msgid   "Add a comment"
+msgstr  "yorum ekle"
 
 #: views/comments/index.ctp:23
-msgid "This page as a feed"
-msgstr "Besleme olarak bur sayfa"
+msgid   "This page as a feed"
+msgstr  "Besleme olarak bur sayfa"
 
 #: views/elements/attachments.ctp:1
-msgid "Images/Files associated with this content"
-msgstr "Bu içerik ile ilgili Resimler/Dosyalar"
+msgid   "Images/Files associated with this content"
+msgstr  "Bu içerik ile ilgili Resimler/Dosyalar"
 
 #: views/elements/comment.ctp:8
-msgid "unknown"
-msgstr "bilinmiyor"
+msgid   "unknown"
+msgstr  "bilinmiyor"
 
 #: views/elements/comment.ctp:15
 #, fuzzy
-msgid "By %1$s on %2$s"
-msgstr "%s tarafından, %s üzerinde"
+msgid   "By %1$s on %2$s"
+msgstr  "%s tarafından, %s üzerinde"
 
 #: views/elements/comment.ctp:17
 #, fuzzy
-msgid "By %1$s %2$s"
-msgstr "Tarafından %s %s"
+msgid   "By %1$s %2$s"
+msgstr  "Tarafından %s %s"
 
 #: views/elements/comment_form.ctp:4
-msgid "Login to add a comment"
-msgstr "Yorum eklemek için giriş yap"
+msgid   "Login to add a comment"
+msgstr  "Yorum eklemek için giriş yap"
 
 #: views/elements/comment_form.ctp:17
 #, fuzzy
-msgid "Comment on %1$s"
-msgstr "%s üzerindeki yorumlar"
+msgid   "Comment on %1$s"
+msgstr  "%s üzerindeki yorumlar"
 
 #: views/elements/comment_form.ctp:24
-msgid "add comment"
-msgstr "yorum ekle"
+msgid   "add comment"
+msgstr  "yorum ekle"
 
 #: views/elements/comment_form_note.ctp:2
-msgid "Is a comment appropriate?"
-msgstr "Bir yorum yerindemi?"
+msgid   "Is a comment appropriate?"
+msgstr  "Bir yorum yerindemi?"
 
 #: views/elements/comment_form_note.ctp:5
 #, fuzzy
-msgid "Do you want to highlight a problem in the text? %1$s"
-msgstr "Metin deki bir problemi vurgulamak mı istiyorsunuz? %s"
+msgid   "Do you want to highlight a problem in the text? %1$s"
+msgstr  "Metin deki bir problemi vurgulamak mı istiyorsunuz? %s"
 
 #: views/elements/comment_form_note.ctp:6
-msgid "You can change it"
-msgstr "Değiştirebilirsiniz"
+msgid   "You can change it"
+msgstr  "Değiştirebilirsiniz"
 
 #: views/elements/comment_form_note.ctp:8
 #, fuzzy
-msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
-msgstr "Bu başlığa yardımcımı olmak istiyorsunuz? %s ye her zaman yollar vardır ve %s ye daha uygun olan %s için"
+msgid   "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
+msgstr  "Bu başlığa yardımcımı olmak istiyorsunuz? %s ye her zaman yollar vardır ve %s ye daha uygun olan %s için"
 
 #: views/elements/comment_form_note.ctp:9
-msgid "help yourself"
-msgstr "kendinize yardımcı olun"
+msgid   "help yourself"
+msgstr  "kendinize yardımcı olun"
 
 #: views/elements/comment_form_note.ctp:10
-msgid "ask"
-msgstr "sorun"
+msgid   "ask"
+msgstr  "sorun"
 
 #: views/elements/comment_form_note.ctp:11
-msgid "help"
-msgstr "yardım"
+msgid   "help"
+msgstr  "yardım"
 
 #: views/elements/comment_form_note.ctp:13
 #, fuzzy
-msgid "Do you want to highlight a problem with the application? %1$s or %2$s"
-msgstr "Uygulamadaki bir problemi vurgulamak mı istiyorsunuz? %s veya %s"
+msgid   "Do you want to highlight a problem with the application? %1$s or %2$s"
+msgstr  "Uygulamadaki bir problemi vurgulamak mı istiyorsunuz? %s veya %s"
 
 #: views/elements/comment_form_note.ctp:14
-msgid "You can ticket it"
-msgstr "Onu etiketleyebilirsiniz"
+msgid   "You can ticket it"
+msgstr  "Onu etiketleyebilirsiniz"
 
 #: views/elements/comment_form_note.ctp:15
-msgid "You can fix it"
-msgstr "Onu onarabilirsiniz"
+msgid   "You can fix it"
+msgstr  "Onu onarabilirsiniz"
 
 #: views/elements/content_form_note.ctp:2
-msgid "Tips"
-msgstr "İpuçları"
+msgid   "Tips"
+msgstr  "İpuçları"
 
 #: views/elements/content_form_note.ctp:5
 #, fuzzy
-msgid "Please review %1$s to ensure consistency."
-msgstr "Cookbook'un tutarlılığını sağlamak için lütfen %s yi gözden geçirin"
+msgid   "Please review %1$s to ensure consistency."
+msgstr  "Cookbook'un tutarlılığını sağlamak için lütfen %s yi gözden geçirin"
 
 #: views/elements/content_form_note.ctp:6
 #, fuzzy
-msgid "the guidelines for submitting to the Cookbook"
-msgstr "Cookbook'un tutarlılığını sağlamak için lütfen %s yi gözden geçirin"
+msgid   "the guidelines for submitting to the Cookbook"
+msgstr  "Cookbook'un tutarlılığını sağlamak için lütfen %s yi gözden geçirin"
 
 #: views/elements/content_form_note.ctp:11
 #, fuzzy
-msgid "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
-msgstr "Kabul edilmeden önce, yeni içerik %s içinde mevcut olmalıdır. Mümkün ise lütfen önerinizi %s içine gönderin"
+msgid   "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
+msgstr  "Kabul edilmeden önce, yeni içerik %s içinde mevcut olmalıdır. Mümkün ise lütfen önerinizi %s içine gönderin"
 
 #: views/elements/content_form_note.ctp:12;13
-msgid "English"
-msgstr "İngilizce"
+msgid   "English"
+msgstr  "İngilizce"
+
+#: views/elements/contribute.ctp:2
+msgid   "More information about translations"
+msgstr  ""
+
+#: views/elements/contribute.ctp:6
+#, fuzzy
+msgid   "There is no translation yet for this section. Please help out and %1$s."
+msgstr  "Bu bölüm için tercüme yok lütfen bir tane gönderin"
+
+#: views/elements/contribute.ctp:8
+#, fuzzy
+msgid   "translate this"
+msgstr  "Tercüme et"
+
+#: views/elements/contribute.ctp:10 views/elements/node_options.ctp:9
+msgid   "There is no translation for this section please submit one"
+msgstr  "Bu bölüm için tercüme yok lütfen bir tane gönderin"
+
+#: views/elements/contribute.ctp:17
+msgid   "The original text for this section has changed since it was translated. Please help resolve this difference. You can:"
+msgstr  ""
+
+#: views/elements/contribute.ctp:25
+msgid   "See what has changed"
+msgstr  ""
+
+#: views/elements/contribute.ctp:29
+msgid   "Compare the current text to the original"
+msgstr  ""
 
 #: views/elements/language_links.ctp:21
 #, fuzzy
-msgid "No %1$s translation yet for %2$s"
-msgstr "%s için %s tercümesi henüz yok"
+msgid   "No %1$s translation yet for %2$s"
+msgstr  "%s için %s tercümesi henüz yok"
 
 #: views/elements/language_links.ctp:27
 #, fuzzy
-msgid "Also available in %1$s"
-msgstr "%s 'de mevcut"
+msgid   "Also available in %1$s"
+msgstr  "%s 'de mevcut"
 
 #: views/elements/login_hint.ctp:2
-msgid "Login with your Bakery account"
-msgstr "Bakery hesabınız ile giriş yapın"
+msgid   "Login with your Bakery account"
+msgstr  "Bakery hesabınız ile giriş yapın"
 
 #: views/elements/login_hint.ctp:3
-msgid "Not got one? Hop on over to %s and sign up"
-msgstr "Bir tane yokmu? Hemen %s ye atlayın ve kayıt olun"
+msgid   "Not got one? Hop on over to %s and sign up"
+msgstr  "Bir tane yokmu? Hemen %s ye atlayın ve kayıt olun"
 
 #: views/elements/node_options.ctp:8
-msgid "Translate"
-msgstr "Tercüme et"
+msgid   "Translate"
+msgstr  "Tercüme et"
 
-#: views/elements/node_options.ctp:9 views/nodes/view_all.ctp:36;76
-msgid "There is no translation for this section please submit one"
-msgstr "Bu bölüm için tercüme yok lütfen bir tane gönderin"
+#: views/elements/node_options.ctp:11
+msgid   "Edit"
+msgstr  "Düzenle"
 
-#: views/elements/node_options.ctp:11 views/nodes/view_all.ctp:40
-msgid "Edit"
-msgstr "Düzenle"
-
-#: views/elements/node_options.ctp:12 views/nodes/view_all.ctp:41
-msgid "Don't like this text? Submit your thoughts"
-msgstr "Bu metinden hoşlanmadınız mı? Kendi görüşünüzü gönderin"
+#: views/elements/node_options.ctp:12
+msgid   "Don't like this text? Submit your thoughts"
+msgstr  "Bu metinden hoşlanmadınız mı? Kendi görüşünüzü gönderin"
 
 #: views/elements/node_options.ctp:16
-msgid "View just this section"
-msgstr "Sadece bu bölümü göster"
+msgid   "View just this section"
+msgstr  "Sadece bu bölümü göster"
 
 #: views/elements/node_options.ctp:20
 #, fuzzy
-msgid "Comments (%1$s)"
-msgstr "Yorumlar (%s)"
+msgid   "Comments (%1$s)"
+msgstr  "Yorumlar (%s)"
 
 #: views/elements/node_options.ctp:25
-msgid "there is a pending change for this section"
-msgstr "Bu bölüm için bekleyen değişiklik var"
+msgid   "there is a pending change for this section"
+msgstr  "Bu bölüm için bekleyen değişiklik var"
 
-#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:60
+#: views/elements/node_options.ctp:28 views/nodes/edit.ctp:62
 #: views/nodes/history.ctp:2
-msgid "History"
-msgstr "Geçmiş"
+msgid   "History"
+msgstr  "Geçmiş"
 
 #: views/elements/node_options.ctp:38
-msgid "This text may be out of sync with the English version"
-msgstr "Bu yazı ingilizce versiyonuyla senkron olmayabilir."
+msgid   "This text may be out of sync with the English version"
+msgstr  "Bu yazı ingilizce versiyonuyla senkron olmayabilir."
 
 #: views/elements/node_options.ctp:45
-msgid "Compare to original content"
-msgstr "Orijinal içerik ile karşılaştır"
+msgid   "Compare to original content"
+msgstr  "Orijinal içerik ile karşılaştır"
 
 #: views/elements/paging.ctp:3
-msgid "Page %s"
-msgstr "Sayfa %s"
+msgid   "Page %s"
+msgstr  "Sayfa %s"
 
 #: views/elements/paging.ctp:4
-msgid "« previous"
-msgstr "« önceki"
+msgid   "« previous"
+msgstr  "« önceki"
 
 #: views/elements/paging.ctp:7
-msgid "Next »"
-msgstr "sonraki »"
+msgid   "Next »"
+msgstr  "sonraki »"
 
 #: views/elements/preview.ctp:6
-msgid "How'd you like them apples?"
-msgstr "Bu elmalari nasil seversiniz ?"
+msgid   "How'd you like them apples?"
+msgstr  "Bu elmalari nasil seversiniz ?"
 
 #: views/elements/preview.ctp:7
-msgid "How's that for a slice of fried gold?"
-msgstr "Bir dilim kızarmış altın için bu nasıl ?"
+msgid   "How's that for a slice of fried gold?"
+msgstr  "Bir dilim kızarmış altın için bu nasıl ?"
 
 #: views/elements/preview.ctp:8
-msgid "How's that for a slice of cake?"
-msgstr "Bir dilim kek için bu nasıl ?"
+msgid   "How's that for a slice of cake?"
+msgstr  "Bir dilim kek için bu nasıl ?"
 
 #: views/elements/preview.ctp:9
-msgid "Are we done yet?"
-msgstr "Henüz tamamladık mı ?"
+msgid   "Are we done yet?"
+msgstr  "Henüz tamamladık mı ?"
 
 #: views/elements/preview.ctp:57
-msgid "Save it"
-msgstr "Kaydet"
+msgid   "Save it"
+msgstr  "Kaydet"
 
 #: views/elements/search.ctp:21 views/elements/search_form.ctp:13
-msgid "Search"
-msgstr "Ara"
+msgid   "Search"
+msgstr  "Ara"
 
 #: views/elements/search_form.ctp:8
-msgid "Collection"
-msgstr "Koleksiyon"
+msgid   "Collection"
+msgstr  "Koleksiyon"
 
 #: views/elements/search_form.ctp:11
-msgid "Search term"
-msgstr "Arama koşulu"
+msgid   "Search term"
+msgstr  "Arama koşulu"
 
 #: views/elements/secondary_nav.ctp:5
 #, fuzzy
-msgid "Logged in as %1$s"
-msgstr "%s olarak giriş yapmış"
+msgid   "Logged in as %1$s"
+msgstr  "%s olarak giriş yapmış"
 
 #: views/elements/secondary_nav.ctp:6
-msgid "Logout"
-msgstr "Çıkış"
+msgid   "Logout"
+msgstr  "Çıkış"
 
 #: views/elements/secondary_nav.ctp:11
-msgid "Login"
-msgstr "Giriş"
+msgid   "Login"
+msgstr  "Giriş"
 
 #: views/elements/secondary_nav.ctp:15
-msgid "Top Contributors"
-msgstr "Ençok Katkıda Bulunanlar"
+msgid   "Top Contributors"
+msgstr  "Ençok Katkıda Bulunanlar"
 
 #: views/elements/secondary_nav.ctp:18
-msgid "Todo"
-msgstr "Yapılacaklar"
+msgid   "Todo"
+msgstr  "Yapılacaklar"
 
 #: views/elements/secondary_nav.ctp:20
-msgid "About CakePHP"
-msgstr "CakePHP Hakkında"
+msgid   "About CakePHP"
+msgstr  "CakePHP Hakkında"
 
 #: views/elements/secondary_nav.ctp:21
-msgid "Donate"
-msgstr "Bağış yap"
+msgid   "Donate"
+msgstr  "Bağış yap"
 
-#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:112
-msgid "All in one page"
-msgstr "Hepsi bir sayfada"
+#: views/elements/side_menu.ctp:14 views/nodes/view_all.ctp:90
+msgid   "All in one page"
+msgstr  "Hepsi bir sayfada"
 
-#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:119
-msgid "Suggest a new section here"
-msgstr "Yeni bir bölüm öner"
+#: views/elements/side_menu.ctp:24 views/nodes/view_all.ctp:97
+msgid   "Suggest a new section here"
+msgstr  "Yeni bir bölüm öner"
 
 #: views/elements/toc.ctp:7 views/nodes/toc.ctp:4
-msgid "Table of Contents"
-msgstr "İçerik"
+msgid   "Table of Contents"
+msgstr  "İçerik"
 
 #: views/elements/toc.ctp:9
-msgid "see fully expanded table of contents (only)"
-msgstr "Tüm (sadece) içerik tablosu genişletilmiş olarak gör"
+msgid   "see fully expanded table of contents (only)"
+msgstr  "Tüm (sadece) içerik tablosu genişletilmiş olarak gör"
 
 #: views/elements/toc.ctp:13
-msgid "Available collections"
-msgstr "Mevcut koleksiyonlar"
+msgid   "Available collections"
+msgstr  "Mevcut koleksiyonlar"
 
 #: views/elements/toc.ctp:20
 #, fuzzy
-msgid "Books in %1$s"
-msgstr "İçindeki Kitaplar"
+msgid   "Books in %1$s"
+msgstr  "İçindeki Kitaplar"
 
 #: views/layouts/default.ctp:37
-msgid "Mobile version"
-msgstr "Mobil versiyonu"
+msgid   "Mobile version"
+msgstr  "Mobil versiyonu"
 
 #: views/layouts/default.ctp:57
-msgid "Recent comments"
-msgstr "Son yorumlar"
+msgid   "Recent comments"
+msgstr  "Son yorumlar"
 
 #: views/layouts/default.ctp:74;79
-msgid "My Submissions"
-msgstr "Submissions"
+msgid   "My Submissions"
+msgstr  "Submissions"
 
 #: views/layouts/default.ctp:87
-msgid "Pending Submissions"
-msgstr "Bekleyen Sunuşlar"
+msgid   "Pending Submissions"
+msgstr  "Bekleyen Sunuşlar"
 
 #: views/layouts/default.ctp:119
 #, fuzzy
-msgid "Welcome to %1$s"
-msgstr "%s ye hoş geldiniz"
+msgid   "Welcome to %1$s"
+msgstr  "%s ye hoş geldiniz"
 
 #: views/layouts/error.ctp:5;33
-msgid "CakePHP: the rapid development php framework"
-msgstr "CakePHP: hızlı geliştirme php framework"
+msgid   "CakePHP: the rapid development php framework"
+msgstr  "CakePHP: hızlı geliştirme php framework"
 
 #: views/layouts/flash/new_content_default_language.ctp:5
-msgid "Want to know why?"
-msgstr "Neden olduğunu bilmek istermisiniz?"
+msgid   "Want to know why?"
+msgstr  "Neden olduğunu bilmek istermisiniz?"
 
-#: views/nodes/add.ctp:24 views/nodes/edit.ctp:30
-msgid "Show me a preview before submitting"
-msgstr "Göndermeden önce ön izlemeyi göster"
+#: views/nodes/add.ctp:24 views/nodes/edit.ctp:31
+msgid   "Show me a preview before submitting"
+msgstr  "Göndermeden önce ön izlemeyi göster"
 
 #: views/nodes/add.ctp:26
-msgid "under"
-msgstr "altında"
+msgid   "under"
+msgstr  "altında"
 
 #: views/nodes/add.ctp:29
-msgid "after"
-msgstr "sonra"
+msgid   "after"
+msgstr  "sonra"
 
-#: views/nodes/add.ctp:35 views/nodes/edit.ctp:33
-msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
-msgstr "İçerikler. pre etiketlerinin içindeki kodlar aklanacaktır . html biçimsiz sunuşlar otamatik olarak formatlanacaktır."
+#: views/nodes/add.ctp:35 views/nodes/edit.ctp:34
+msgid   "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr  "İçerikler. pre etiketlerinin içindeki kodlar aklanacaktır . html biçimsiz sunuşlar otamatik olarak formatlanacaktır."
 
 #: views/nodes/add.ctp:40
-msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
-msgstr "İsteğe bağlı olarak kısaca açıklayın neden bu ilaveyi öneriyorsunuz (İngilizce Lütfen) :)"
+msgid   "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr  "İsteğe bağlı olarak kısaca açıklayın neden bu ilaveyi öneriyorsunuz (İngilizce Lütfen) :)"
 
 #: views/nodes/add.ctp:44
-msgid "Add a new section"
-msgstr "Yeni bir bölüm ekle"
+msgid   "Add a new section"
+msgstr  "Yeni bir bölüm ekle"
 
 #: views/nodes/admin_merge.ctp:18
-msgid "You are sure? Please check the preview"
-msgstr "Eminsiniz? Lütfen ön izlemeyi kontrol edin"
+msgid   "You are sure? Please check the preview"
+msgstr  "Eminsiniz? Lütfen ön izlemeyi kontrol edin"
 
 #: views/nodes/compare.ctp:13 views/revisions/view.ctp:11
-msgid "Differences"
-msgstr "Farklılıklar"
+msgid   "Differences"
+msgstr  "Farklılıklar"
 
-#: views/nodes/edit.ctp:38
-msgid "What is the reason for the edit? (In English Please) :)"
-msgstr "Düzenleme sebebiniz nedir? (İngilizce lütfen) :)"
+#: views/nodes/edit.ctp:39
+msgid   "What is the reason for the edit? (In English Please) :)"
+msgstr  "Düzenleme sebebiniz nedir? (İngilizce lütfen) :)"
 
-#: views/nodes/edit.ctp:44
+#: views/nodes/edit.ctp:45
 #, fuzzy
-msgid "Edit %1$s"
-msgstr "Düzenle %s"
+msgid   "Edit %1$s"
+msgstr  "Düzenle %s"
 
-#: views/nodes/edit.ctp:53;56
-msgid "Resources"
-msgstr ""
+#: views/nodes/edit.ctp:55;58
+msgid   "Resources"
+msgstr  ""
 
-#: views/nodes/edit.ctp:56
+#: views/nodes/edit.ctp:58
 #, fuzzy
-msgid "Current Version"
-msgstr "Şuan ki Bekleyen revizyonlar"
+msgid   "Current Version"
+msgstr  "Şuan ki Bekleyen revizyonlar"
 
-#: views/nodes/edit.ctp:65
+#: views/nodes/edit.ctp:67
 #, fuzzy
-msgid "English Version"
-msgstr "İngilizce"
+msgid   "English Version"
+msgstr  "İngilizce"
 
-#: views/nodes/edit.ctp:69
-msgid "Compare to English"
-msgstr ""
+#: views/nodes/edit.ctp:71
+msgid   "Compare to English"
+msgstr  ""
 
-#: views/nodes/edit.ctp:73
+#: views/nodes/edit.ctp:75
 #, fuzzy
-msgid "English History"
-msgstr "İngilizce düzenlemeleride görün"
+msgid   "See what changed"
+msgstr  "Yeni Değişiklikler"
+
+#: views/nodes/edit.ctp:79
+#, fuzzy
+msgid   "English History"
+msgstr  "İngilizce düzenlemeleride görün"
 
 #: views/nodes/history.ctp:8
-msgid "See English edits too"
-msgstr "İngilizce düzenlemeleride görün"
+msgid   "See English edits too"
+msgstr  "İngilizce düzenlemeleride görün"
 
 #: views/nodes/stats.ctp:4
-msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
-msgstr "İşte adanmış zamanı olanlara çağrı, ter ve gözyaşları ile yazmak için , cookbook içeriğini tercüme edin ve düzenleyin."
+msgid   "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr  "İşte adanmış zamanı olanlara çağrı, ter ve gözyaşları ile yazmak için , cookbook içeriğini tercüme edin ve düzenleyin."
 
 #: views/nodes/stats.ctp:6;37
 #, fuzzy
-msgid "Top %1$s Contributors"
-msgstr "Ençok %s Katkıda bulunan"
+msgid   "Top %1$s Contributors"
+msgstr  "Ençok %s Katkıda bulunan"
 
 #: views/nodes/stats.ctp:8;38
 #, fuzzy
-msgid "Last update: %1$s"
-msgstr "Son güncelleme: %s"
+msgid   "Last update: %1$s"
+msgstr  "Son güncelleme: %s"
 
 #: views/nodes/stats.ctp:26;63
 #, fuzzy
-msgid "%1$s (%2$s current)"
-msgstr "%s (%s yürürlükte)"
+msgid   "%1$s (%2$s current)"
+msgstr  "%s (%s yürürlükte)"
 
 #: views/nodes/stats.ctp:39
 #, fuzzy
-msgid "%1$s%% translated"
-msgstr "%s%% tercüme edildi"
+msgid   "%1$s%% translated"
+msgstr  "%s%% tercüme edildi"
 
 #: views/nodes/stats.ctp:41
-msgid "The cookbook needs you! No submissions for this language!"
-msgstr "Cookbook'un size ihtiyacı var! Bu dil için sunuş yok!"
+msgid   "The cookbook needs you! No submissions for this language!"
+msgstr  "Cookbook'un size ihtiyacı var! Bu dil için sunuş yok!"
 
 #: views/nodes/stats.ctp:44
-msgid "The cookbook needs you! This language will soon be removed if not updated."
-msgstr "Cookbook'un size ihtiyacı var! Bu dil güncellenmez ise yakında kaldırılacak."
+msgid   "The cookbook needs you! This language will soon be removed if not updated."
+msgstr  "Cookbook'un size ihtiyacı var! Bu dil güncellenmez ise yakında kaldırılacak."
 
 #: views/nodes/stats.ctp:46
-msgid "The cookbook needs you! No updates for one month."
-msgstr "Cookbook'un size ihtiyacı var! Bir aydan beri güncellenme yapılmadı."
+msgid   "The cookbook needs you! No updates for one month."
+msgstr  "Cookbook'un size ihtiyacı var! Bir aydan beri güncellenme yapılmadı."
 
 #: views/nodes/todo.ctp:5
-msgid "Please help out by updating the translation file"
-msgstr ""
+msgid   "Please help out by updating the translation file"
+msgstr  ""
 
 #: views/nodes/todo.ctp:7
 #, fuzzy
-msgid "Want to check the fixed texts used on the site for %1$s? %2$s"
-msgstr "<a href=\"%s\">po dosyasını</a> (%s için) kontrol etmek yada güncellemek istermisiniz?"
+msgid   "Want to check the fixed texts used on the site for %1$s? %2$s"
+msgstr  "<a href=\"%s\">po dosyasını</a> (%s için) kontrol etmek yada güncellemek istermisiniz?"
 
 #: views/nodes/todo.ctp:10
-msgid "We don't have %1$s translations for the fixed texts used on the site. %2$s"
-msgstr ""
+msgid   "We don't have %1$s translations for the fixed texts used on the site. %2$s"
+msgstr  ""
 
 #: views/nodes/todo.ctp:13
-msgid "These sections either do not have a translation, or the English text has changed since it was translated"
-msgstr "Bu bölümlerde ya çeviri yok, yada İngilizce metin tercüme edildiğinde beri değişti"
+msgid   "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr  "Bu bölümlerde ya çeviri yok, yada İngilizce metin tercüme edildiğinde beri değişti"
 
-#: views/nodes/view_all.ctp:32;72
+#: views/nodes/view_all.ctp:63
+msgid   "See comments for this section"
+msgstr  "Bu bölüm için yorumları görün"
+
+#: views/nodes/view_all.ctp:110;122
 #, fuzzy
-msgid "There is no translation yet for this section. You can %1$s."
-msgstr "Bu bölüm için tercüme yok lütfen bir tane gönderin"
-
-#: views/nodes/view_all.ctp:34;74
-#, fuzzy
-msgid "translate this"
-msgstr "Tercüme et"
-
-#: views/nodes/view_all.ctp:85
-msgid "See comments for this section"
-msgstr "Bu bölüm için yorumları görün"
-
-#: views/nodes/view_all.ctp:132;144
-#, fuzzy
-msgid "Change history for %1$s"
-msgstr "%s için değişiklik geçmişi"
+msgid   "Change history for %1$s"
+msgstr  "%s için değişiklik geçmişi"
 
 #: views/revisions/admin_pending.ctp:7
 #, fuzzy
-msgid "%1$s pending %2$s submission"
-msgid_plural "%1$s pending %2$s submissions"
-msgstr[0] "%s beklemede %s sunulmuş"
+msgid   "%1$s pending %2$s submission"
+msgid_plural    "%1$s pending %2$s submissions"
+msgstr[0]       "%s beklemede %s sunulmuş"
 
 #: views/revisions/results.ctp:8
-msgid "Search Results"
-msgstr "Arama Sonuçları"
+msgid   "Search Results"
+msgstr  "Arama Sonuçları"
 
 #: views/revisions/results.ctp:32
-msgid "No results"
-msgstr "Sonuç yok"
+msgid   "No results"
+msgstr  "Sonuç yok"
 
 #: views/revisions/rss/index.ctp:13
 #, fuzzy
-msgid "Submitted by: %1$s"
-msgstr "Gönderen: %s"
+msgid   "Submitted by: %1$s"
+msgstr  "Gönderen: %s"
 
 #: views/revisions/search.ctp:1
-msgid "Search book.cakephp.org"
-msgstr "Ara book.cakephp.org"
+msgid   "Search book.cakephp.org"
+msgstr  "Ara book.cakephp.org"
+
+#~ msgid        "Edit/Correction"
+#~ msgstr       "Düzenle/Düzeltme"
 
 #, fuzzy
-#~ msgid "These is no <a href=\"%1$s\">po file</a> for %2$s"
-#~ msgstr " <a href=\"%s\">po dosyası</a> (%s için) yok "
+#~ msgid        "These is no <a href=\"%1$s\">po file</a> for %2$s"
+#~ msgstr       " <a href=\"%s\">po dosyası</a> (%s için) yok "
 
-#~ msgid "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
-#~ msgstr "Po dosyalarını güncellerken lütfen <a href=\"http://www.poedit.net\">Po Edit</a> kullanın"
+#~ msgid        "Please use <a href=\"http://www.poedit.net\">Po Edit</a> when editing po files"
+#~ msgstr       "Po dosyalarını güncellerken lütfen <a href=\"http://www.poedit.net\">Po Edit</a> kullanın"
 
-#~ msgid "Guidelines"
-#~ msgstr "Yönergeler"
+#~ msgid        "Guidelines"
+#~ msgstr       "Yönergeler"
 
-#~ msgid "Whoops, not a valid language."
-#~ msgstr "Hops, geçerli bir dil değil."
+#~ msgid        "Whoops, not a valid language."
+#~ msgstr       "Hops, geçerli bir dil değil."
 
-#~ msgid "Please login to continue"
-#~ msgstr "Lütfen devam etmek için giriş yapın"
+#~ msgid        "Please login to continue"
+#~ msgstr       "Lütfen devam etmek için giriş yapın"
 
-#~ msgid "All %s matching the term \"%s\""
-#~ msgstr "Tüm %s eşleşmiş terimler \"%s\""
+#~ msgid        "All %s matching the term \"%s\""
+#~ msgstr       "Tüm %s eşleşmiş terimler \"%s\""
 
-#~ msgid "Forgot your password?"
-#~ msgstr "Şifrenimi unuttun?"
+#~ msgid        "Forgot your password?"
+#~ msgstr       "Şifrenimi unuttun?"
 
-#~ msgid "Changed by: %s"
-#~ msgstr "Değiştiren: %s"
+#~ msgid        "Changed by: %s"
+#~ msgstr       "Değiştiren: %s"
 
-#~ msgid "Options"
-#~ msgstr "Seçenekler"
+#~ msgid        "Options"
+#~ msgstr       "Seçenekler"
 
-#~ msgid "Debug setting does not allow access to this url."
-#~ msgstr "Debug setting does not allow access to this url."
+#~ msgid        "Debug setting does not allow access to this url."
+#~ msgstr       "Debug setting does not allow access to this url."

@@ -4,7 +4,8 @@
 <head>
 <?php
 if (!empty($auth['User']['Level']) && $auth['User']['Level'] == ADMIN) {
-        echo "<!-- " . trim(file_get_contents(APP . '.git/FETCH_HEAD')) . "-->";
+        //echo "<!-- " . exec('git rev-parse HEAD') . " -->";
+        echo "<!-- " . trim(file_get_contents(APP . '.git/refs/heads/master')) . " -->";
 }
 // Preventing automatic language detection
 Configure::write('Config.language', $this->params['lang']);

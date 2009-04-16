@@ -688,7 +688,7 @@ class NodesController extends AppController {
 			$this->redirect(am(array('action' => 'complete'), $this->passedArgs));
 		}
 		if (!$nodeId || $nodeId == Configure::read('Site.homeNode')) {
-			$this->redirect(array('index'), null, true, true);
+			return $this->redirect(array('action' => 'index'), null, true, true);
 		}
 		$this->Node->id = $this->currentNode;
 		$depth = $this->Node->field('Node.depth');

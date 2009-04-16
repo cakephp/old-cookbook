@@ -3,6 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php
+if (!empty($auth['User']['Level']) && $auth['User']['Level'] == ADMIN) {
+        echo "<!-- " . trim(file_get_contents(APP . '.git/FETCH_HEAD')) . "-->";
+}
 // Preventing automatic language detection
 Configure::write('Config.language', $this->params['lang']);
 ?>
@@ -108,7 +111,7 @@ echo $html->meta('keywords',
 ?>
 </head>
 <body>
-	<div id="container">
+        <div id="container">
 		<div id="header">
 			<h1>
 				<?php

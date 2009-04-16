@@ -43,6 +43,7 @@ class UniqueUrlComponent extends Object {
  */
 	function initialize (&$controller) {
 		$this->controller =& $controller;
+		$this->check();
 	}
 /**
  * Verify that the current url is the right url to view the content

@@ -136,7 +136,7 @@ class AppController extends Controller {
  * @return void
  */
 	function redirect($url, $code = null, $exit = true, $force = false) {
-		if ($force && isset($this->params['isAjax'])) {
+		if ($force && !empty($this->params['isAjax'])) {
 			$this->set(compact('url'));
 			$this->output = '';
 			return $this->render('/elements/force_redirect', 'ajax');

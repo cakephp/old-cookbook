@@ -22,12 +22,5 @@
  */
 App::import('Vendor', 'MiCompressor');
 list($_, $request) = explode('?', $_SERVER['REQUEST_URI']);
-echo MiCompressor::serve(compact('request')); return;
-echo MiCompressor::serve(array(
-	'request' => $request,
-	'compress' => Configure::read() < 2,
-	'clear' => true,
-	'log' => true,
-	'type' => 'js'
-));
+echo MiCompressor::serve($request, 'js'); return;
 ?>

@@ -54,6 +54,10 @@ $langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja',
 sort($langs);
 Configure::write('Languages.all', $langs);
 
+Configure::write('MiCompressor.clearCache', false);
+Configure::write('MiCompressor.cacheDir', CACHE . 'assets' . DS);
+Configure::write('MiCompressor.salt', trim(file_get_contents(APP . '.git/refs/heads/master')));
+
 define('ADMIN', '800');
 define('EDITOR', '700');
 define('MODERATOR', '600');

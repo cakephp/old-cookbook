@@ -2,7 +2,7 @@
 <?php
 	echo $form->create('User', array('action' => 'login'));
 	echo $form->hidden('redirect', array('value' => $session->read('Auth.redirect')));
-	$after = '<p>' . $html->link(__('Forgot your password?', true), 'http://bakery.cakephp.org') . '</p>';
+	$after = '<p>' . $html->link(__('Forgot your password?', true), 'http://bakery.cakephp.org/users/reset') . '</p>';
 	echo $form->inputs(array(
 		'legend' => 'Login',
 		'username',

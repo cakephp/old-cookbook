@@ -1,0 +1,637 @@
+# Copyright 2008 Andy Dawson <andydawson76@yahoo.co.uk>
+# No version information was available in the source files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: cakebook-\n"
+"POT-Creation-Date: 2009-04-16 09:23+0200\n"
+"PO-Revision-Date: 2009-07-15 15:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ../../../\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: controllers/attachments_controller.php:81
+msgid "Attachment controller - no class or foreignKey error."
+msgstr "Anhang Controller - keine Klasse oder Fremdschlüssel Fehler"
+
+#: controllers/attachments_controller.php:106
+msgid "Existing Attachment for %1$s, id %2$s updated"
+msgstr "Existierender Anhang für %1$s, ID %2$s hinzugefügt"
+
+#: controllers/attachments_controller.php:108
+msgid "New Attachment for %1$s, id %2$s added"
+msgstr "Neuer Anhang für %1$s, ID %2$s hinzugefügt"
+
+#: controllers/attachments_controller.php:133
+msgid "%1$s with id %2$s updated"
+msgstr "%1$s mit der ID %2$s aktualisiert"
+
+#: controllers/attachments_controller.php:136
+msgid "errors in form"
+msgstr "Fehler im Formular"
+
+#: controllers/changes_controller.php:127
+msgid "Recent Changes for %1$s"
+msgstr "Letze Änderungen für %1$s"
+
+#: controllers/changes_controller.php:131
+#: views/layouts/default.ctp:52
+msgid "Recent Changes for all languages"
+msgstr "Letze Änderungen für alle Sprachen"
+
+#: controllers/changes_controller.php:133
+#: views/layouts/default.ctp:46
+msgid "Recent Changes"
+msgstr "Letze Änderungen"
+
+#: controllers/changes_controller.php:141
+#: controllers/comments_controller.php:202
+msgid "by %1$s"
+msgstr "von %1$s"
+
+#: controllers/changes_controller.php:146
+msgid "restricted to status: %1$s"
+msgstr "beschränkt auf den Status: %1$s"
+
+#: controllers/comments_controller.php:92;127
+msgid "Invalid Node."
+msgstr "Ungültiger Knoten."
+
+#: controllers/comments_controller.php:101
+msgid "Your comment has been added"
+msgstr "Dein Kommentar wurde hinzugefügt"
+
+#: controllers/comments_controller.php:107
+msgid "Please correct errors below."
+msgstr "Bitte korrigiere die unten aufgeführten Fehler."
+
+#: controllers/comments_controller.php:131
+msgid "No permissions to see comments for that section"
+msgstr "Keine Berechtigung Kommentare zu diesem Abschnitt zu sehen"
+
+#: controllers/comments_controller.php:139
+#: views/elements/node_options.ctp:20
+#: views/nodes/view_all.ctp:105;115
+msgid "Comments for %1$s"
+msgstr "Kommentare für %1$s"
+
+#: controllers/comments_controller.php:172
+msgid "Invalid Comment."
+msgstr "Ungültiges Kommentar."
+
+#: controllers/comments_controller.php:191
+#: views/comments/index.ctp:6
+msgid "Recent Comments"
+msgstr "Letze Kommentare"
+
+#: controllers/comments_controller.php:193
+#: views/layouts/default.ctp:63
+msgid "Recent Comments for all languages"
+msgstr "Letze Kommentare für alle Sprachen"
+
+#: controllers/nodes_controller.php:789
+msgid "Invalid Collection"
+msgstr "Ungültige Sammlung"
+
+#: controllers/nodes_controller.php:814;977
+msgid "Thanks for your contribution! Your suggestion has been submitted for review."
+msgstr "Vielen Danke für deinen Beitrag! Dein Vorschlag wurde zur Überprüfung übermittelt."
+
+#: controllers/nodes_controller.php:877
+msgid "This function is for comparing different (public) language content"
+msgstr "Diese Funktion dient zum Vergleichen verschiedener (öffentlicher) Spachinhalte"
+
+#: controllers/nodes_controller.php:987
+msgid "Translation to %1$s"
+msgstr "Übersetzung nach %1$s"
+
+#: controllers/revisions_controller.php:639;644;699
+msgid "Only current and previous revisions can be viewed"
+msgstr "Nur aktuelle oder vorherige Änderungen können angezeigt werden"
+
+#: controllers/revisions_controller.php:648
+msgid "Only possible to compare revisions of the same node"
+msgstr "Es ist nur möglich Änderungen des gleichen Knotens zu vergleichen"
+
+#: controllers/revisions_controller.php:678
+msgid "Current Pending revisions "
+msgstr "Aktuell anstehende Änderungen"
+
+#: controllers/revisions_controller.php:703
+msgid "Please login to access this revision"
+msgstr "Bitte melde dich an um diese Änderungen aufzurufen"
+
+#: models/node.php:168
+msgid "Default Title"
+msgstr "Standardtitel"
+
+#: models/node.php:171
+msgid "default_slug"
+msgstr "Standardtyp"
+
+#: models/node.php:174
+msgid "Default Content"
+msgstr "Standardinhalt"
+
+#: views/changes/index.ctp:16
+msgid "change submitted by %1$s, %2$s"
+msgstr "Änderung übermittelt von %1$s, %2$s"
+
+#: views/changes/index.ctp:22
+msgid "accepted"
+msgstr "akzeptiert"
+
+#: views/changes/index.ctp:25
+msgid "not accepted"
+msgstr "nicht akzeptiert"
+
+#: views/changes/index.ctp:28
+msgid "pending"
+msgstr "anstehend"
+
+#: views/changes/index.ctp:33
+msgid "changed from %1$s to %2$s by %3$s, %4$s"
+msgstr "geändert von %1$s nach %2$s von %3$s, %4$s"
+
+#: views/changes/index.ctp:39
+msgid "submitted by %1$s"
+msgstr "übermittelt von %1$s"
+
+#: views/comments/add.ctp:6
+msgid "Comment: %s"
+msgstr "Kommentar: %s"
+
+#: views/comments/admin_index.ctp:8
+msgid "%1$s %2$s comment"
+msgid_plural "%1$s %2$s comments"
+msgstr[0] "%1$s %2$s Kommentar"
+msgstr[1] "%1$s %2$s Kommentare"
+
+#: views/comments/index.ctp:4
+msgid "Comments: %1$s"
+msgstr "Kommentare: %s"
+
+#: views/comments/index.ctp:12
+msgid "No Comments yet!"
+msgstr "Bisher keine Kommentare!"
+
+#: views/comments/index.ctp:20
+msgid "Add a comment"
+msgstr "Füge ein Kommentar hinzu"
+
+#: views/comments/index.ctp:23
+msgid "This page as a feed"
+msgstr "Diese Seite ist ein Feed"
+
+#: views/elements/attachments.ctp:1
+msgid "Images/Files associated with this content"
+msgstr "Bild/Datei verknüpft mit Inhalt"
+
+#: views/elements/comment.ctp:8
+msgid "unknown"
+msgstr "unbekannt"
+
+#: views/elements/comment.ctp:15
+msgid "By %1$s on %2$s"
+msgstr "Von %1$s am %2$s"
+
+#: views/elements/comment.ctp:17
+msgid "By %1$s %2$s"
+msgstr "Von %1$s %2$s"
+
+#: views/elements/comment_form.ctp:4
+msgid "Login to add a comment"
+msgstr "Melde dich an um ein Kommentar hinzuzufügen"
+
+#: views/elements/comment_form.ctp:17
+msgid "Comment on %1$s"
+msgstr "Kommentare zu %1$s"
+
+#: views/elements/comment_form.ctp:24
+msgid "add comment"
+msgstr "Kommentar hinzufügen"
+
+#: views/elements/comment_form_note.ctp:2
+msgid "Is a comment appropriate?"
+msgstr "Ist ein Kommentar angebracht?"
+
+#: views/elements/comment_form_note.ctp:5
+msgid "Do you want to highlight a problem in the text? %1$s"
+msgstr "Möchtest du ein Problem im Text hinweisen? %1$s"
+
+#: views/elements/comment_form_note.ctp:6
+msgid "You can change it"
+msgstr "Du kannst es ändern"
+
+#: views/elements/comment_form_note.ctp:8
+msgid "Do you want help with this topic? There are ways to %1$s and more appropriate places to %2$s for %3$s"
+msgstr "Möchtest du bei diesem Thema helfen? Es gibt Wege um %1$s und besser geeignete Plätze nach %3$s zu %2$s"
+
+#: views/elements/comment_form_note.ctp:9
+msgid "help yourself"
+msgstr "dir selbst zu helfen"
+
+#: views/elements/comment_form_note.ctp:10
+msgid "ask"
+msgstr "fragen"
+
+#: views/elements/comment_form_note.ctp:11
+msgid "help"
+msgstr "Hilfe"
+
+#: views/elements/comment_form_note.ctp:13
+msgid "Do you want to highlight a problem with the application? %1$s or %2$s"
+msgstr "Möchtest du auf ein Problem mit der Anwendung hinweisen? %1$s oder %2$s"
+
+#: views/elements/comment_form_note.ctp:14
+msgid "You can ticket it"
+msgstr "Du kannst ein Ticket dafür erstellen"
+
+#: views/elements/comment_form_note.ctp:15
+msgid "You can fix it"
+msgstr "du kannst es reparieren"
+
+#: views/elements/content_form_note.ctp:2
+msgid "Tips"
+msgstr "Tipps"
+
+#: views/elements/content_form_note.ctp:5
+msgid "Please review %1$s to ensure consistency."
+msgstr "Bitte überprüfe %1$s um die Konsistenz sicherzustellen."
+
+#: views/elements/content_form_note.ctp:6
+msgid "the guidelines for submitting to the Cookbook"
+msgstr "die Richtlinien zum Hinzufügen in das Kochbuch"
+
+#: views/elements/content_form_note.ctp:11
+msgid "Before being accepted, new content must be available in %1$s. Please submit your suggestion in %2$s if possible"
+msgstr "Neuer Inhalt muss in %1$s verfügbar sein, bevor er akzeptiert wird. Bitte übermittle den Vorschlag in %2$s sofern möglich"
+
+#: views/elements/content_form_note.ctp:12;13
+msgid "English"
+msgstr "Englisch"
+
+#: views/elements/contribute.ctp:2
+msgid "More information about translations"
+msgstr "Mehr Informationen über Übersetzungen"
+
+#: views/elements/contribute.ctp:6
+msgid "There is no translation yet for this section. Please help out and %1$s."
+msgstr "Es gibt zur Zeit keine Übersetzung für diesen Abschnitt. Bitte hilf mit und "
+
+#: views/elements/contribute.ctp:8
+msgid "translate this"
+msgstr "übersetze es"
+
+#: views/elements/contribute.ctp:10
+#: views/elements/node_options.ctp:9
+msgid "There is no translation for this section please submit one"
+msgstr "Es gibt keine Übersetzung für diesen Abschnitt, bitte sende eine ein"
+
+#: views/elements/contribute.ctp:17
+msgid "The original text for this section has changed since it was translated. Please help resolve this difference. You can:"
+msgstr "Der Originaltext dieses Abschnitts hat sich seit der letzen Übersetzung geändert. Bitte hilf dabei die Unterschiede zu lösen. Du kannst:"
+
+#: views/elements/contribute.ctp:25
+msgid "See what has changed"
+msgstr "Sehen was sich geändert hat"
+
+#: views/elements/contribute.ctp:29
+msgid "Compare the current text to the original"
+msgstr "Den aktuellen mit dem Originalinhalt vergleichen"
+
+#: views/elements/language_links.ctp:21
+msgid "No %1$s translation yet for %2$s"
+msgstr "Biseher keine %1$s Übersetzung für %2$s"
+
+#: views/elements/language_links.ctp:27
+msgid "Also available in %1$s"
+msgstr "Auch verfügbar in %1$s"
+
+#: views/elements/login_hint.ctp:2
+msgid "Login with your Bakery account"
+msgstr "Melde dich mit deinem Bakery-Account an."
+
+#: views/elements/login_hint.ctp:3
+msgid "Not got one? Hop on over to %s and sign up"
+msgstr "Du hast keinen? Hüpf rein in %s und melde dich an"
+
+#: views/elements/node_options.ctp:8
+msgid "Translate"
+msgstr "Übersetzen"
+
+#: views/elements/node_options.ctp:11
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: views/elements/node_options.ctp:12
+msgid "Don't like this text? Submit your thoughts"
+msgstr "Du magst diesen text nicht. Sende deine Gedanken"
+
+#: views/elements/node_options.ctp:16
+msgid "View just this section"
+msgstr "Nur diesen Abschnitt anzeigen"
+
+#: views/elements/node_options.ctp:20
+msgid "Comments (%1$s)"
+msgstr "Kommentare (%1$s)"
+
+#: views/elements/node_options.ctp:25
+msgid "there is a pending change for this section"
+msgstr "es gibt eine anstehende Änderung zu diesem Abschnitt"
+
+#: views/elements/node_options.ctp:28
+#: views/nodes/edit.ctp:62
+#: views/nodes/history.ctp:2
+msgid "History"
+msgstr "Versionsgeschichte"
+
+#: views/elements/node_options.ctp:38
+msgid "This text may be out of sync with the English version"
+msgstr "Diese Text stimmt eventuell nicht mehr mit der englischen Version überein"
+
+#: views/elements/node_options.ctp:45
+msgid "Compare to original content"
+msgstr "Vergleiche mit dem Originalinhalt"
+
+#: views/elements/paging.ctp:3
+msgid "Page %s"
+msgstr "Seite %s"
+
+#: views/elements/paging.ctp:4
+msgid "« previous"
+msgstr "« vorherige"
+
+#: views/elements/paging.ctp:7
+msgid "Next »"
+msgstr "nächste »"
+
+#: views/elements/preview.ctp:6
+msgid "How'd you like them apples?"
+msgstr "Wie gefallen dir diese Äpfel?"
+
+#: views/elements/preview.ctp:7
+msgid "How's that for a slice of fried gold?"
+msgstr "Wie ist das für ein Stück vom Zuckerguss?"
+
+#: views/elements/preview.ctp:8
+msgid "How's that for a slice of cake?"
+msgstr "Wie ist das für ein Stück vom Kuchen?"
+
+#: views/elements/preview.ctp:9
+msgid "Are we done yet?"
+msgstr "Bist du schon fertig"
+
+#: views/elements/preview.ctp:57
+msgid "Save it"
+msgstr "Speichere es"
+
+#: views/elements/search.ctp:21
+#: views/elements/search_form.ctp:13
+msgid "Search"
+msgstr "Suche"
+
+#: views/elements/search_form.ctp:8
+msgid "Collection"
+msgstr "Sammlung"
+
+#: views/elements/search_form.ctp:11
+msgid "Search term"
+msgstr "Suchwort"
+
+#: views/elements/secondary_nav.ctp:5
+msgid "Logged in as %1$s"
+msgstr "Angemeldet als %1$s"
+
+#: views/elements/secondary_nav.ctp:6
+msgid "Logout"
+msgstr "Abmelden"
+
+#: views/elements/secondary_nav.ctp:11
+msgid "Login"
+msgstr "Anmelden"
+
+#: views/elements/secondary_nav.ctp:15
+msgid "Top Contributors"
+msgstr "Top Mitwirkender"
+
+#: views/elements/secondary_nav.ctp:18
+msgid "Todo"
+msgstr "Todo"
+
+#: views/elements/secondary_nav.ctp:20
+msgid "About CakePHP"
+msgstr "Über CakePHP"
+
+#: views/elements/secondary_nav.ctp:21
+msgid "Donate"
+msgstr "Spenden"
+
+#: views/elements/side_menu.ctp:14
+#: views/nodes/view_all.ctp:90
+msgid "All in one page"
+msgstr "Alle in einer Seite"
+
+#: views/elements/side_menu.ctp:24
+#: views/nodes/view_all.ctp:97
+msgid "Suggest a new section here"
+msgstr "Schlage einen neuen Abschnitt vor"
+
+#: views/elements/toc.ctp:7
+#: views/nodes/toc.ctp:4
+msgid "Table of Contents"
+msgstr "Inhaltsverzeichnis"
+
+#: views/elements/toc.ctp:9
+msgid "see fully expanded table of contents (only)"
+msgstr "sieh dir (nur) das erweiterte Inhaltverzeichnis an"
+
+#: views/elements/toc.ctp:13
+msgid "Available collections"
+msgstr "Verfügbare Sammlungen"
+
+#: views/elements/toc.ctp:20
+msgid "Books in %1$s"
+msgstr "Bücher in %1$s"
+
+#: views/layouts/default.ctp:37
+msgid "Mobile version"
+msgstr "Mobile Version"
+
+#: views/layouts/default.ctp:57
+msgid "Recent comments"
+msgstr "Letzte Kommentare"
+
+#: views/layouts/default.ctp:74;79
+msgid "My Submissions"
+msgstr "Meine Beiträge"
+
+#: views/layouts/default.ctp:87
+msgid "Pending Submissions"
+msgstr "Anstehende Beiträge"
+
+#: views/layouts/default.ctp:119
+msgid "Welcome to %1$s"
+msgstr "Willkommen zum %1$s"
+
+#: views/layouts/error.ctp:5;33
+msgid "CakePHP: the rapid development php framework"
+msgstr "CakePHP: the rapid development php framework"
+
+#: views/layouts/flash/new_content_default_language.ctp:5
+msgid "Want to know why?"
+msgstr "Willst du wissen warum?"
+
+#: views/nodes/add.ctp:24
+#: views/nodes/edit.ctp:31
+msgid "Show me a preview before submitting"
+msgstr "Zeig mir eine Vorschau vor dem Übermitteln"
+
+#: views/nodes/add.ctp:26
+msgid "under"
+msgstr "unter"
+
+#: views/nodes/add.ctp:29
+msgid "after"
+msgstr "nach"
+
+#: views/nodes/add.ctp:35
+#: views/nodes/edit.ctp:34
+msgid "Contents. Code in pre tags will be escaped. Submissions with no html formatting will be formatted automatically"
+msgstr "Inhalte. Quellcode in pre Tags werden escaped. Beiträge ohne HTML Formatierung werden automatisch formatiert"
+
+#: views/nodes/add.ctp:40
+msgid "Optionally explain in brief why you are proposing this addition (In English Please) :)"
+msgstr "Bitte gibt optional an, wieseo du diesen Zusatz vorschlägst (Bitte in englisch) :)"
+
+#: views/nodes/add.ctp:44
+msgid "Add a new section"
+msgstr "Füge einen neuen Abschnitt hinzu"
+
+#: views/nodes/admin_merge.ctp:18
+msgid "You are sure? Please check the preview"
+msgstr "Bist du sicher? Bitte prüfe die Vorschau"
+
+#: views/nodes/compare.ctp:13
+#: views/revisions/view.ctp:11
+msgid "Differences"
+msgstr "Unterschiede"
+
+#: views/nodes/edit.ctp:39
+msgid "What is the reason for the edit? (In English Please) :)"
+msgstr "Was ist der Grund für die Änderung? (Bitte in englisch) :)"
+
+#: views/nodes/edit.ctp:45
+msgid "Edit %1$s"
+msgstr "Bearbeite %1$s"
+
+#: views/nodes/edit.ctp:55;58
+msgid "Resources"
+msgstr "Quellen"
+
+#: views/nodes/edit.ctp:58
+msgid "Current Version"
+msgstr "Aktuelle Version"
+
+#: views/nodes/edit.ctp:67
+msgid "English Version"
+msgstr "Englische Version"
+
+#: views/nodes/edit.ctp:71
+msgid "Compare to English"
+msgstr "Vegleiche mit Englisch"
+
+#: views/nodes/edit.ctp:75
+msgid "See what changed"
+msgstr "Sieh was sich geändert hat"
+
+#: views/nodes/edit.ctp:79
+msgid "English History"
+msgstr "Englische Versionsgeschichte"
+
+#: views/nodes/history.ctp:8
+msgid "See English edits too"
+msgstr "Auch die englischen Änderungen ansehen"
+
+#: views/nodes/stats.ctp:4
+msgid "Here's a shout out to those who have dedicated time, sweat and tears to write, translate and edit the cookbook contents."
+msgstr "Hier ist eine Ansage an alle, die Zeit, Schweiß und Tränen übrig haben, übersetze und bearbeite den Inhalt des Kochbuchs."
+
+#: views/nodes/stats.ctp:6;37
+msgid "Top %1$s Contributors"
+msgstr "Top %1$s Mitwirkende"
+
+#: views/nodes/stats.ctp:8;38
+msgid "Last update: %1$s"
+msgstr "Letzte Aktualisierung: %1$s"
+
+#: views/nodes/stats.ctp:26;63
+msgid "%1$s (%2$s current)"
+msgstr "%1$s (%2$s aktuell)"
+
+#: views/nodes/stats.ctp:39
+msgid "%1$s%% translated"
+msgstr "%1$s%% übersetzt"
+
+#: views/nodes/stats.ctp:41
+msgid "The cookbook needs you! No submissions for this language!"
+msgstr "Das Kochbuch braucht dich! Kein Beitrag zu dieser Sprache!"
+
+#: views/nodes/stats.ctp:44
+msgid "The cookbook needs you! This language will soon be removed if not updated."
+msgstr "Das Kochbuch braucht dich! Diese Sprache wird bald entfernt, wenn sie nicht aktualisiert wird."
+
+#: views/nodes/stats.ctp:46
+msgid "The cookbook needs you! No updates for one month."
+msgstr "Das Kochbuch braucht dich! Kein Aktualisierungen in diesem Monat."
+
+#: views/nodes/todo.ctp:5
+msgid "Please help out by updating the translation file"
+msgstr "Bitte hilf beim Aktualisieren der Übersetzungsdatei mit"
+
+#: views/nodes/todo.ctp:7
+msgid "Want to check the fixed texts used on the site for %1$s? %2$s"
+msgstr "Möchtest du den statischen Text, der auf dieser Seite für %1$s verwendet wird überprüfen? %2$s"
+
+#: views/nodes/todo.ctp:10
+msgid "We don't have %1$s translations for the fixed texts used on the site. %2$s"
+msgstr "Wir haben keine %1$s Übersetzung für den statischen Text auf dieser Seite. %2$s"
+
+#: views/nodes/todo.ctp:13
+msgid "These sections either do not have a translation, or the English text has changed since it was translated"
+msgstr "Diese Abschnitte haben entweder keine Übersetzung oder der englische Text wurde seit der letzten Übersetzung geändert"
+
+#: views/nodes/view_all.ctp:63
+msgid "See comments for this section"
+msgstr "Sieh dir die Kommentare zu diesem Abschnitt an"
+
+#: views/nodes/view_all.ctp:110;122
+msgid "Change history for %1$s"
+msgstr "Versionsgeschichte für %1$s"
+
+#: views/revisions/admin_pending.ctp:7
+msgid "%1$s pending %2$s submission"
+msgid_plural "%1$s pending %2$s submissions"
+msgstr[0] "%1$s anstehende %2$s Übermittlung"
+msgstr[1] "%1$s anstehende %2$s Übermittlungen"
+
+#: views/revisions/results.ctp:8
+msgid "Search Results"
+msgstr "Suchergebnis"
+
+#: views/revisions/results.ctp:32
+msgid "No results"
+msgstr "Keine Ergebnisse"
+
+#: views/revisions/rss/index.ctp:13
+msgid "Submitted by: %1$s"
+msgstr "Übermittelt von: %1$s"
+
+#: views/revisions/search.ctp:1
+msgid "Search book.cakephp.org"
+msgstr "Durchsuche book.cakephp.org"
+

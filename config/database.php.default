@@ -94,7 +94,7 @@ class DATABASE_CONFIG {
 		'prefix' => '',
 		'encoding' => 'UTF8'
 	);
-	var $default = array(
+	var $bakery = array(
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',

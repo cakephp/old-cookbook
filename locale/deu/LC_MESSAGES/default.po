@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cakebook-\n"
 "POT-Creation-Date: 2009-04-16 09:23+0200\n"
-"PO-Revision-Date: 2009-07-15 15:26+0100\n"
+"PO-Revision-Date: 2009-07-16 16:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -181,7 +181,7 @@ msgstr "Bisher keine Kommentare!"
 
 #: views/comments/index.ctp:20
 msgid "Add a comment"
-msgstr "Füge ein Kommentar hinzu"
+msgstr "Füge einen Kommentar hinzu"
 
 #: views/comments/index.ctp:23
 msgid "This page as a feed"
@@ -277,15 +277,15 @@ msgstr "Englisch"
 
 #: views/elements/contribute.ctp:2
 msgid "More information about translations"
-msgstr "Mehr Informationen über Übersetzungen"
+msgstr "Mehr Informationen zu Übersetzungen"
 
 #: views/elements/contribute.ctp:6
 msgid "There is no translation yet for this section. Please help out and %1$s."
-msgstr "Es gibt zur Zeit keine Übersetzung für diesen Abschnitt. Bitte hilf mit und "
+msgstr "Es gibt zur Zeit keine Übersetzung für diesen Abschnitt. Bitte hilf mit und %1$s"
 
 #: views/elements/contribute.ctp:8
 msgid "translate this"
-msgstr "übersetze es"
+msgstr "übersetze ihn"
 
 #: views/elements/contribute.ctp:10
 #: views/elements/node_options.ctp:9
@@ -318,7 +318,7 @@ msgstr "Melde dich mit deinem Bakery-Account an."
 
 #: views/elements/login_hint.ctp:3
 msgid "Not got one? Hop on over to %s and sign up"
-msgstr "Du hast keinen? Hüpf rein in %s und melde dich an"
+msgstr "Du hast keinen? Hüpf rein in %s und melde dich an!"
 
 #: views/elements/node_options.ctp:8
 msgid "Translate"
@@ -417,7 +417,7 @@ msgstr "Anmelden"
 
 #: views/elements/secondary_nav.ctp:15
 msgid "Top Contributors"
-msgstr "Top Mitwirkender"
+msgstr "Top Mitwirkende"
 
 #: views/elements/secondary_nav.ctp:18
 msgid "Todo"

@@ -108,7 +108,7 @@ class Node extends AppModel {
  * @access public
  * @return void
  */
-	function addToTree ($revisionId, $approve = false) {
+	function addToTree($revisionId, $approve = false) {
 		$id = $this->Revision->field('node_id');
 		if ($id && $this->hasAny(array('id' => $id))) {
 			// already in
@@ -317,6 +317,57 @@ class Node extends AppModel {
  */
 	function book($id, $fields = array('id')) {
 		return $this->_getNode(2, $id, $fields);
+	}
+
+/**
+ * copy method
+ *
+ * @param mixed $id
+ * @param mixed $parentId null
+ * @return void
+ * @access public
+ */
+	function copy($id, $parentId = null) {
+		set_time_limit(0);
+		if (!$id) {
+			$id = $this->id;
+		}
+		if (!$id) {
+			return false;
+		}
+		$this->id = $id;
+		$lft = $this->field('lft');
+		$rght = $this->field('rght');
+		$conditions = array(
+			array(
+				'Node.lft >=' => $lft,
+				'Node.rght <=' => $rght
+			),
+		);
+		$order = 'lft';
+		$recursive = -1;
+		$original = $this->find('all', compact('recursive', 'conditions', 'order'));
+		$idMap = Set::extract($original, '/Node/id');
+		$idMap = array_combine($idMap, $idMap);
+		$this->query('START TRANSACTION');
+		foreach($original as $row) {
+			$oldId = $row['Node']['id'];
+			unset($row['Node']['id']);
+			unset($row['Node']['lft']);
+			unset($row['Node']['rght']);
+			unset($row['Node']['depth']);
+			unset($row['Node']['sequence']);
+			if (isset($idMap[$row['Node']['parent_id']])) {
+				$row['Node']['parent_id'] = $idMap[$row['Node']['parent_id']];
+			} elseif ($parentId) {
+				$row['Node']['parent_id'] = $parentId;
+			}
+			$this->create();
+			$this->save($row);
+			$idMap[$oldId] = $this->id;
+			$this->_copyRevisions($oldId, $this->id);
+		}
+		$this->query('COMMIT');
 	}
 /**
  * collection function
@@ -991,6 +1042,31 @@ class Node extends AppModel {
 			return $result['Node'];
 		}
 		return false;
+	}
+
+/**
+ * copyRevisions method
+ *
+ * @param mixed $from id
+ * @param mixed $to to
+ * @return void
+ * @access protected
+ */
+	function _copyRevisions($from, $to) {
+		$recursive = -1;
+		$conditions = array(
+			'Revision.node_id' => $from,
+			'Revision.status' => 'current'
+		);
+		$rows = $this->Revision->find('all', compact('recursive', 'conditions', 'fields'));
+		foreach($rows as $row) {
+			unset($row['Revision']['id']);
+			unset($row['Revision']['under_node_id']);
+			unset($row['Revision']['after_node_id']);
+			$row['Revision']['node_id'] = $to;
+			$this->Revision->create();
+			$this->Revision->save($row);
+		}
 	}
 /**
  * clearCache function

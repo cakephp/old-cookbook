@@ -2,6 +2,7 @@
 /**
  * This file has no dependencies beyond the html helper
  * This ensures that irrespective of the error, it can be displayed
+ * It's used in production model for a serious error such as no DB connection
  */
 
 /**

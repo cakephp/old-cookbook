@@ -22,6 +22,7 @@
  * @since         CakePHP v 0.10.8.2117
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
+
 /**
  *
  * This file is loaded automatically by the app/webroot/index.php file after the core bootstrap.php is loaded
@@ -29,6 +30,7 @@
  * You can also use this to include or require any files in your application.
  *
  */
+
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  * This is related to Ticket #470 (https://trac.cakephp.org/ticket/470)
@@ -38,7 +40,13 @@
  * $controllerPaths = array('this path to controllers', 'second full path to controllers', 'etc...');
  *
  */
-//EOF
+
+/**
+ * This is included in the path for css and js files, and should be updated whenever they are touched
+ * Set to the date of the last update
+ */
+Configure::write('MiCompressor.fingerprint', '20100125'); // Last time the js or css was edited
+
 // Which node to use for the home page
 Configure::write('Site.homeNode', 3);
 
@@ -49,9 +57,31 @@ Configure::write('Site.email', 'team@cakefoundation.org');
 Configure::write('Site.database', 'bakery');
 
 Configure::write('Languages.default', 'en');
-$langs = array('ar', 'en', 'fa', 'fr', 'de', 'es', 'pt', 'nl', 'id', 'it', 'ja', 'bg', 'hu', 'pl', 'cz', 'cn', 'ko',
-       	'ro', 'ms', 'tw', 'ru', 'el', 'tr');
-sort($langs);
+$langs = array(
+	'ar',
+	'bg',
+	'cn',
+	'cz',
+	'de',
+	'el',
+	'en',
+	'es',
+	'fa',
+	'fr',
+	'hu',
+	'id',
+	'it',
+	'ja',
+	'ko',
+	'ms',
+	'nl',
+	'pt',
+	'pl',
+	'ro',
+	'ru',
+	'tr',
+	'tw'
+);
 Configure::write('Languages.all', $langs);
 
 Configure::write('MiCompressor.clearCache', false);
@@ -71,9 +101,11 @@ if (Configure::read()) {
 	define('CACHE_DURATION', '+99 days');
 	ob_start('ob_gzhandler');
 }
+
 /**
  * isProduction method
  *
+ * @TODO base this off a path or something else that isn't potentially volatile
  * @return void
  * @access public
  */
@@ -83,4 +115,3 @@ function isProduction() {
 	}
 	return ($_SERVER['HTTP_HOST'] === 'book.cakephp.org');
 }
-?>

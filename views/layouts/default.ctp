@@ -4,8 +4,8 @@
 <head>
 <?php
 if (!empty($auth['User']['Level']) && $auth['User']['Level'] == ADMIN) {
-        //echo "<!-- " . exec('git rev-parse HEAD') . " -->";
-        echo "<!-- " . trim(file_get_contents(APP . '.git/refs/heads/master')) . " -->";
+	//echo "<!-- " . exec('git rev-parse HEAD') . " -->";
+	echo "<!-- " . trim(file_get_contents(APP . '.git/refs/heads/master')) . " -->";
 }
 // Preventing automatic language detection
 Configure::write('Config.language', $this->params['lang']);
@@ -103,16 +103,25 @@ echo $html->meta('keywords',
 	} else {
 		$base = $html->url('/' . $this->params['lang'] . '/');
 	}
-        echo $javascript->codeBlock("var baseUrl = '{$base}';");
-        echo $miHtml->css(array('cake.generic', 'cake.cookbook', 'theme/ui.core', 'theme/ui.dialog', 'theme/ui.resizable', 'theme/ui.theme'),
-         'stylesheet', array('media' => 'screen'), false);
-        echo $miHtml->css('print', 'stylesheet', array('media' => 'print'), false);
-        echo $miHtml->css();
+	echo $javascript->codeBlock("var baseUrl = '{$base}';");
+	$asset->css(array(
+			'cake.generic',
+			'cake.cookbook',
+			'theme/ui.core',
+			'theme/ui.dialog',
+			'theme/ui.resizable',
+			'theme/ui.theme'
+		),
+		'stylesheet',
+		array('media' => 'screen')
+	);
+	$asset->css('print', 'stylesheet', array('media' => 'print'));
+	echo $asset->out('css');
 	echo $scripts_for_layout;
 ?>
 </head>
 <body>
-        <div id="container">
+	<div id="container">
 		<div id="header">
 			<h1>
 				<?php
@@ -149,11 +158,11 @@ echo $html->meta('keywords',
 						echo $this->element('toc');
 					}
 				?>
-	                        <?php echo $html->image('cakefest2009.png', array(
-                                  'id' => 'cakefest', 'url' => 'http://cakefest.org', 'alt' => 'CakeFest #3: July 9-12 2009 Berlin!')); ?>
+				<?php echo $html->image('cakefest2009.png', array(
+					'id' => 'cakefest', 'url' => 'http://cakefest.org', 'alt' => 'CakeFest #3: July 9-12 2009 Berlin!')); ?>
 				<cake:nocache>
 					<?php echo $this->element('side_menu'); ?>
-                                </cake:nocache>
+				</cake:nocache>
 			</div>
 			<div id="body">
 				<?php echo $this->element('crumbs'); ?>
@@ -190,22 +199,17 @@ echo $html->meta('keywords',
 		</div>
 	</div>
 <?php
-echo $miJavascript->link(array('jquery' => array('form')), false);
-echo $miJavascript->link('jquery-ui', false);
-echo $miJavascript->link(array('scripts', 'popup'), false);
-echo $miJavascript->link();
-
-if(isProduction()): ?>
-	<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-		var pageTracker = _gat._getTracker("UA-743287-3");
-		pageTracker._initData();
-		pageTracker._trackPageview();
-	</script>
-<?php endif;
+echo $asset->js(array(
+	'jquery',
+	'jquery.form',
+	'jquery-ui',
+	'scripts',
+	'popup'
+));
+echo $asset->out('js');
+if(isProduction()) {
+	echo $this->element('analytics');
+}
 $this->set('data', false); $this->cache->data = false;
 ?>
 </body>

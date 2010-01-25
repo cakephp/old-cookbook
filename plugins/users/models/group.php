@@ -28,6 +28,7 @@
  * @since         Bakery v 1.0.0.0
  * @license       http://www.cakefoundation.org/licenses/csfl/  The CSFL License
  */
+
 /**
  * Short description for file.
  *
@@ -39,26 +40,47 @@
  *
  */
 class Group extends UsersAppModel {
-/**
- * Enter description here...
- *
- * @var string
- */
-    var $name = 'Group';
-/**
- * Enter description here...
- *
- * @var unknown_type
- */
-	var $validate = array('name' => VALID_NOT_EMPTY);
-
-	var $belongsTo = array('Level' => array('className' => 'Users.Level'));
 
 /**
- * Enter description here...
+ * name property
+ *
+ * @var string 'Group'
+ * @access public
+ */
+	var $name = 'Group';
+
+/**
+ * validate property
  *
  * @var array
+ * @access public
  */
-   var $hasMany = array('User'=> array('className' => 'Users.User'));
+	var $validate = array(
+		'name' => 'notEmpty'
+	);
+
+/**
+ * belongsTo property
+ *
+ * @var array
+ * @access public
+ */
+	var $belongsTo = array(
+		'Level' => array(
+			'className' => 'Users.Level'
+		)
+	);
+
+/**
+ * hasMany property
+ *
+ * @var array
+ * @access public
+ */
+	var $hasMany = array(
+		'User' => array(
+			'className' => 'Users.User'
+		)
+	);
 }
 ?>

@@ -19,29 +19,30 @@
 		echo $html->meta('keywords', 'CakePHP Documentation, ' . str_replace(' :: ', ', ', $title_for_layout));
 	?>
 	<title><?php echo ($title_for_layout ? $title_for_layout : $app['tag_line']) . ' :: ' . $app['name']; ?></title>
-<?php echo $miHtml->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'), null, array(), false);
-	echo $miHtml->css();
-	?>
-        <link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
+<?php
+$asset->css(array('yui.reset-fonts-grids', 'cake.cookbook.mobile'));
+echo $asset->out('css');
+?>
+	<link rel="apple-touch-icon" href="<?php e($this->base.'/img/iphone.png'); ?>"/>
 </head>
 <body>
 	<div id="doc3">
 		<div id="hd">
 			<h1>CakePHP Cookbook <sup>mobile!</sup></h1>
 		</div>
-   		<div id="bd">
-   			<div class="yui-g" id="collections_row">
+ 		<div id="bd">
+ 			<div class="yui-g" id="collections_row">
 				<?php e($this->element('collections')); ?>
-   			</div>
-   			<div class="yui-g" id="search_row">
+ 			</div>
+ 			<div class="yui-g" id="search_row">
 				<?php e($this->element('search')); ?>
-   			</div>
-   			<!--
-   			<div class="yui-g" id="crumb_row">
-   				<?php e($this->element('crumbs')); ?>
-   			</div>
-   			 -->
-   			<div class="yui-g" id="document">
+ 			</div>
+ 			<!--
+ 			<div class="yui-g" id="crumb_row">
+ 				<?php e($this->element('crumbs')); ?>
+ 			</div>
+ 			 -->
+ 			<div class="yui-g" id="document">
 				<cake:nocache><?php
 					if($session->check('Message.auth')):
 						$session->flash('auth');
@@ -51,26 +52,26 @@
 						$session->flash();
 					endif;
 				?></cake:nocache>
-   				<?php e($content_for_layout); ?>
-   			</div>
+ 				<?php e($content_for_layout); ?>
+ 			</div>
 
-   			<div class="yui-gc" id="document_menu">
-	            <div class="yui-u first">
+ 			<div class="yui-gc" id="document_menu">
+				 <div class="yui-u first">
 					<?php
 						if ($this->name == 'Nodes' && isset($data['Node']['Node']) && !$isAdmin) {
 							$url = $html->url(array('admin' => false, 'controller' => 'nodes', 'action' => 'toc', $data['Node']['Node']['id']));
 							echo $this->element('toc');
 						}
 					?>
-	            </div>
-	            <div class="yui-u">
-	            	<cake:nocache>   <?php echo $this->element('side_menu'); ?></cake:nocache>
-	            </div>
-	        </div>
+				</div>
+				<div class="yui-u">
+					<cake:nocache>   <?php echo $this->element('side_menu'); ?></cake:nocache>
+				</div>
 			</div>
-   		</div>
-   		<div id="ft">
-			<cake:nocache> <?php echo $this->element('secondary_nav'); ?></cake:nocache>
+		</div>
+	</div>
+	<div id="ft">
+		<cake:nocache> <?php echo $this->element('secondary_nav'); ?></cake:nocache>
 			<div id="copy">
 				<p id="img"><?php echo ' &nbsp; ';
 					echo $html->link(
@@ -87,7 +88,7 @@
 				</p>
 				<p id="csf">&copy; <a href="http://cakefoundation.org">Cake Software Foundation, Inc.</a></p>
 			</div>
-   		</div>
-   	</div>
+		</div>
+	</div>
 </body>
 </html>

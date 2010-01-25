@@ -630,3 +630,4 @@ function log() {
 };
 
 })(jQuery);
+

@@ -1,0 +1,9 @@
+[submodule "plugins/mi"]
+	path = plugins/mi
+	url = git://github.com/AD7six/mi.git
+[submodule "plugins/mi_asset"]
+	path = plugins/mi_asset
+	url = git://github.com/AD7six/mi_asset.git
+[submodule "plugins/mi_panel"]
+	path = plugins/mi_panel
+	url = git://github.com/AD7six/mi_panel.git

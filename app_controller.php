@@ -33,7 +33,12 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	var $components = array('Users.Bakery', 'Auth', 'Cookie', 'RequestHandler');
+	var $components = array(
+		'Users.Bakery',
+		'Auth',
+		'Cookie',
+		'RequestHandler'
+	);
 /**
  * helpers variable
  *
@@ -41,9 +46,12 @@ class AppController extends Controller {
  * @access public
  */
 	var $helpers = array(
-		'Tree', 'Menu' => array('autoI18n' => true, 'genericElement' => false, 'showWarnings' => false),
-		'MiHtml', 'MiJavascript',
-		'Form', 'Time', 'Javascript', 'Cache');
+		'Tree',
+		'Menu' => array('autoI18n' => true, 'genericElement' => false, 'showWarnings' => false),
+		'MiAsset.Asset',
+		'Form', 'Time', 'Javascript',
+		'Cache'
+	);
 /**
  * currentNode variable
  *
@@ -160,7 +168,7 @@ class AppController extends Controller {
  * @access public
  * @return void
  */
-	function admin_add () {
+	function admin_add() {
 		if (!empty ($this->data)) {
 			$this->data['Revision']['user_id'] = $this->Auth->user('id');
 			if ($this->{$this->modelClass}->save($this->data)) {
@@ -249,7 +257,7 @@ class AppController extends Controller {
  * @access public
  * @return void
  */
-	function admin_view ($id) {
+	function admin_view($id) {
 		if (!$this->{$this->modelClass}->hasAny(array($this->{$this->modelClass}->primaryKey => $id))) {
 			$this->redirect(array('action' => 'index'), null, true);
 		}
@@ -268,7 +276,7 @@ class AppController extends Controller {
 	function admin_index() {
 		if (!isset($this->__conditions)) {
 			App::import('Component', 'Filter');
-			$this->Filter =& new FilterComponent();
+			$this->Filter = new FilterComponent();
 			$this->Component->_loadComponents($this->Filter);
 			$this->Filter->startup($this);
 			$conditions = $this->Filter->parse();
@@ -302,21 +310,6 @@ class AppController extends Controller {
 		$this->Session->setFlash(sprintf(__('All %1$s matching the term "%2$s"', true), Inflector::humanize($this->name), h($term)));
 		$this->admin_index();
 		$this->render('admin_index');
-	}
-/**
- * appError method
- *
- * @param string $message
- * @return void
- * @access public
- */
-	function appError($message = 'x') {
-		if (Configure::read()) {
-			debug (func_get_args());
-			debug (Router::currentRoute()); die;
-		}
-		$this->Session->setFlash('Whoops! nothing to see there');
-		$this->redirect('/');
 	}
 }
 ?>

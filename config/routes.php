@@ -26,13 +26,23 @@
  */
 $defaultLang = Configure::read('Languages.default');
 if (!empty($fromUrl)) {
-       	if (strpos($fromUrl, 'admin') === 0) {
+	if (strpos($fromUrl, 'admin') === 0) {
 		Router::connectNamed(true);
 	} else {
 		Router::connectNamed(array('node', 'user', 'language', 'status', 'query', 'collection'), array('default' => true));
 	}
 }
 Router::parseExtensions('rss', 'xml', 'ajax');
+
+/**
+ * Forward css and js requests to the asset serve funciton
+ */
+Router::connect(
+	'/:mediaType/*',
+	array('plugin' => 'mi_asset', 'controller' => 'asset', 'action' => 'serve'),
+	array('mediaType' => '(css|js)')
+);
+
 // Legacy
 Router::connect('/chapter/*', array('controller' => 'redirect', 'action' => 'process', 'chapter'));
 Router::connect('/appendix/*', array('controller' => 'redirect', 'action' => 'process', 'appendix'));
@@ -66,14 +76,14 @@ $routes = array(
 	array('/:controller/:action/*', array('controller' => 'nodes', 'action' => 'index'), array())
 );
 foreach ($routes as $route) {
-        $route[1]['theme'] = 'default'; // default layout
-        $route[1]['lang'] = $defaultLang;
-        $route[2]['lang'] = '[a-z]{2}';
-        Router::connect($route[0], $route[1], $route[2]);
-        Router::connect('/:lang' . $route[0], $route[1], $route[2]);
+	$route[1]['theme'] = 'default'; // default layout
+	$route[1]['lang'] = $defaultLang;
+	$route[2]['lang'] = '[a-z]{2}';
+	Router::connect($route[0], $route[1], $route[2]);
+	Router::connect('/:lang' . $route[0], $route[1], $route[2]);
 
-        $route[1]['theme'] = 'mobile';
-        Router::connect('/m' . $route[0], $route[1], $route[2]);
-        Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
+	$route[1]['theme'] = 'mobile';
+	Router::connect('/m' . $route[0], $route[1], $route[2]);
+	Router::connect('/m/:lang' . $route[0], $route[1], $route[2]);
 }
 ?>

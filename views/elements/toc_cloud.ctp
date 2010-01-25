@@ -1,5 +1,5 @@
 <?php
-echo $miHtml->css('full_width', null, array('media' => 'screen'), false);
+$asset->css('full_width', null, array('media' => 'screen'));
 if (!empty($title)) {
 	echo '<h2>' . $book['Revision']['title'] . '</h2>';
  }

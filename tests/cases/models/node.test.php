@@ -20,6 +20,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 App::import('Model', 'Node');
+
 /**
  * NodeTestCase class
  *
@@ -28,6 +29,7 @@ App::import('Model', 'Node');
  * @subpackage    cookbook.tests.cases.models
  */
 class NodeTestCase extends CakeTestCase {
+
 /**
  * Node property
  *
@@ -35,23 +37,33 @@ class NodeTestCase extends CakeTestCase {
  * @access public
  */
 	var $Node = null;
+
 /**
  * fixtures property
  *
  * @var array
  * @access public
  */
-	var $fixtures = array('app.node');
-/**
- * start method
- *
- * @return void
- * @access public
- */
-	function start() {
-		parent::start();
-		$this->Node =& ClassRegistry::init('Node');
+
+	var $fixtures = array(
+		'app.node',
+		'app.revision',
+		'plugin.users.user',
+		'plugin.users.group',
+		'plugin.users.level',
+		'plugin.users.profile',
+		'app.comment'
+	);
+
+	function startTest() {
+		$this->Node = ClassRegistry::init('Node');
 	}
+
+	function endTest() {
+		unset($this->Node);
+		ClassRegistry::flush();
+	}
+
 /**
  * testNodeInstance method
  *
@@ -61,6 +73,71 @@ class NodeTestCase extends CakeTestCase {
 	function testNodeInstance() {
 		$this->assertTrue(is_a($this->Node, 'Node'));
 	}
+
+	function testAddToTree() {
+
+	}
+
+	function testFindNeighbor() {
+
+	}
+
+	function testBook() {
+
+	}
+
+	function testCopy() {
+
+	}
+
+	function testCollection() {
+
+	}
+
+	function testExportDatum() {
+
+	}
+
+	function testGeneratetreelist() {
+
+	}
+
+	function testImport() {
+
+	}
+
+	function testInitialize() {
+
+	}
+
+	function testMerge() {
+
+	}
+
+	function testMoveUp() {
+
+	}
+
+	function testMoveDown() {
+
+	}
+
+	function testReset() {
+
+	}
+
+	function testResetDepth() {
+
+	}
+
+	function testResetSequence() {
+
+	}
+
+	function testSetLanguage() {
+
+	}
+
 /**
  * testNodeFind method
  *

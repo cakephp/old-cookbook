@@ -1,7 +1,5 @@
 <?php
-if ($this->name == 'Users') {
-	echo $this->element('login_hint');
-}
+
 $sections = $menu->sections();
 if (!$this->name && !empty($this->data['Node'])) {
 	// rendered from cache

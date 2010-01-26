@@ -367,6 +367,11 @@ class Node extends AppModel {
 			$idMap[$oldId] = $this->id;
 			$this->_copyRevisions($oldId, $this->id);
 		}
+		if ($this->field('depth', array('id' => $idMap[$id])) < 3) {
+			$this->resetSequences($idMap[$id]);
+		} else {
+			$this->resetSequences($this->field('parent_id', array('id' => $idMap[$id])));
+		}
 		$this->query('COMMIT');
 	}
 /**

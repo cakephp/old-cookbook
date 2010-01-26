@@ -516,7 +516,7 @@ class NodesController extends AppController {
  * @return void
  */
 	function admin_toc($id = null) {
-		$this->helpers[] = 'Tree';
+		$this->helpers[] = 'Mi.Tree';
 		$fields = array('Node.*', 'Revision.title', 'Revision.slug');
 		if ($id) {
 			$conditions['OR']['Node.parent_id'] = array($id, $this->Node->field('parent_id'));

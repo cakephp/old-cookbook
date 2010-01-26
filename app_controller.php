@@ -47,8 +47,8 @@ class AppController extends Controller {
  * @access public
  */
 	var $helpers = array(
-		'Tree',
-		'Menu' => array('autoI18n' => true, 'genericElement' => false, 'showWarnings' => false),
+		'Mi.Tree',
+		'Mi.Menu',
 		'MiAsset.Asset',
 		'Form', 'Time', 'Javascript',
 		'Cache',

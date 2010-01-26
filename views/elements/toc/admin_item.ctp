@@ -27,6 +27,7 @@ if ($Node['parent_id']) {
 	$links[] = $html->link('move anywhere', array ('action' => 'move', $id), array ('title' => 'Move Somewhere else'));
 }
 $links[] = $html->link('merge', array ('action' => 'merge', $id), array ('title' => 'Move this content to a different place'));
+$links[] = $html->link('copy', array ('action' => 'copy', $id), array ('title' => 'Make a copy of this'));
 if ($auth['User']['Level'] >= COMMENTER) {
 	$links[] = $html->link('delete', array ('action' => 'delete', $id), array ('title' => 'delete node \'' . $title . '\' and all children.'));
 	if ($Node['parent_id']) {

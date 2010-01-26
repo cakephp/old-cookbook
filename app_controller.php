@@ -36,6 +36,7 @@ class AppController extends Controller {
 	var $components = array(
 		'Users.Bakery',
 		'Auth',
+		'Session',
 		'Cookie',
 		'RequestHandler'
 	);
@@ -50,7 +51,8 @@ class AppController extends Controller {
 		'Menu' => array('autoI18n' => true, 'genericElement' => false, 'showWarnings' => false),
 		'MiAsset.Asset',
 		'Form', 'Time', 'Javascript',
-		'Cache'
+		'Cache',
+		'Session'
 	);
 /**
  * currentNode variable

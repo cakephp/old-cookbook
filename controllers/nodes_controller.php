@@ -134,6 +134,16 @@ class NodesController extends AppController {
 		}
 		parent::beforeRender();
 	}
+
+	function admin_copy($id) {
+		if (!$id) {
+			return $this->redirect(array('action' => 'toc', $id), null, true);
+		}
+		if ($newId = $this->Node->copy($id)) {
+			return $this->redirect(array('action' => 'toc', $newId), null, true);
+		}
+		return $this->redirect(array('action' => 'toc', $id), null, true);
+	}
 /**
  * admin_delete function
  *

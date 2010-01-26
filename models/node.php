@@ -320,11 +320,11 @@ class Node extends AppModel {
 	}
 
 /**
- * copy method
+ * copy a node and all children including the current revisions.
  *
  * @param mixed $id
  * @param mixed $parentId null
- * @return void
+ * @return mixed the id of the new node, or false on failure
  * @access public
  */
 	function copy($id, $parentId = null) {
@@ -363,7 +363,7 @@ class Node extends AppModel {
 				$row['Node']['parent_id'] = $parentId;
 			}
 			$this->create();
-			$this->save($row);
+			$this->save($row, false);
 			$idMap[$oldId] = $this->id;
 			$this->_copyRevisions($oldId, $this->id);
 		}
@@ -373,6 +373,7 @@ class Node extends AppModel {
 			$this->resetSequences($this->field('parent_id', array('id' => $idMap[$id])));
 		}
 		$this->query('COMMIT');
+		return $idMap[$id];
 	}
 /**
  * collection function
@@ -1070,7 +1071,7 @@ class Node extends AppModel {
 			unset($row['Revision']['after_node_id']);
 			$row['Revision']['node_id'] = $to;
 			$this->Revision->create();
-			$this->Revision->save($row);
+			$this->Revision->save($row, false);
 		}
 	}
 /**

@@ -185,12 +185,10 @@ echo $html->meta('keywords',
 			<p>
 				<?php
 				echo $this->element('language_links') . ' &nbsp; ';
-				echo $html->link(
-						$html->image('cake.power.gif', array(
-							'alt'=>"CakePHP: the PHP Rapid Development Framework"
-						)),
-						'http://www.cakephp.org/', null, null, false
-					);
+				echo $html->image('cake.power.gif', array(
+						'alt' => 'CakePHP: the PHP Rapid Development Framework',
+						'url' => 'http://www.cakephp.org/'
+					));
 				?>
 				<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">
 					<?php echo $html->image('license.png', array('alt' => "Creative Commons License"));?>

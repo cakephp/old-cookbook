@@ -31,7 +31,7 @@ echo $html->meta('keywords',
 
 ?>
 <title>
-	<?php echo  ($title_for_layout?$title_for_layout:$app['tag_line']) . ' :: ' . $app['name'];?>
+	<?php echo  ($title_for_layout ? $title_for_layout:$app['tag_line']) . ' :: ' . $app['name'];?>
 </title>
 
 <link rel="icon" href="<?php echo $this->webroot;?>favicon.ico" type="image/x-icon" />

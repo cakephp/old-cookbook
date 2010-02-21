@@ -169,8 +169,8 @@ echo $html->meta('keywords',
 				<?php echo $this->element('crumbs'); ?>
 				<cake:nocache>
 					<?php
-						$session->flash('auth');
-						$session->flash();
+						echo $session->flash('auth');
+						echo $session->flash();
 					?>
 				</cake:nocache>
 

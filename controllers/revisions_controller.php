@@ -404,7 +404,6 @@ class RevisionsController extends AppController {
 			if (!empty($this->params['isAjax'])) {
 				$this->set('url', array('action' => 'view', $id));
 				return $this->render('/elements/force_redirect');
-				return $this->flash('Done', array('action' => 'view', $id), 0);
 			}
 			return $this->redirect(array('action' => 'view', $id), null, true);
 		} else {

@@ -1,4 +1,4 @@
-<div class="nodes add container">
+<div class="nodes add">
 <?php
 $contents = '';
 if (isset($this->data['Revision']['content'])) {

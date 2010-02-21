@@ -80,7 +80,7 @@ class UsersController extends AppController {
 
 	function logout() {
 		if ($this->Auth->user()) {
-			$this->Cookie->del('User');
+			$this->Cookie->delete('User');
 			$this->Session->destroy();
 			$this->Session->setFlash(__('Bye for now!', true));
 		}

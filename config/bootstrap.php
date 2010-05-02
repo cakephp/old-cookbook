@@ -48,7 +48,7 @@
 Configure::write('MiCompressor.fingerprint', '20100125'); // Last time the js or css was edited
 
 // Which node to use for the home page
-Configure::write('Site.homeNode', 3);
+Configure::write('Site.homeNode', 876);
 
 Configure::write('Site.name', 'CakePHP Cookbook');
 

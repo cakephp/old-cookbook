@@ -79,8 +79,10 @@ $langs = array(
 	'pl',
 	'ro',
 	'ru',
+	'sk',
 	'tr',
-	'tw'
+	'tw',
+	'vi'
 );
 Configure::write('Languages.all', $langs);
 

@@ -6,6 +6,8 @@
 		<li><a href="http://bakery.cakephp.org/">Bakery</a></li>
 		<li><a href="http://live.cakephp.org/">Live</a></li>
 		<li><a href="http://cakeforge.org/">Forge</a></li>
-		<li><a href="https://code.cakephp.org/">Code</a></li>
+		<li><a href="http://github.com/cakephp">Source</a></li>
+		<li><a href="http://cakephp.lighthouseapp.com/">Tickets</a></li>
+		<li><a href="http://cakeqs.org/">Questions</a></li>
 	</ul>
 </div>

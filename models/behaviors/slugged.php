@@ -61,7 +61,8 @@ class SluggedBehavior extends ModelBehavior {
 		'length' => 100,
 		'overwrite' => true,
 		'unique' => false,
-		'notices' => true
+		'notices' => true,
+		'multi-byte' => false,
 	);
 /**
  * setup method
@@ -188,6 +189,13 @@ class SluggedBehavior extends ModelBehavior {
 		}
 		if (strlen($slug) > $length) {
 			$slug = substr ($slug, $length);
+		}
+		if ($multibyte && function_exists('mb_convert_encoding')) {
+			$encoding = $multibyte;
+			if ($multibyte == true) {
+				$encoding = Configure::read('App.encoding');
+			}
+			$slug = mb_convert_encoding($slug, $encoding, $encoding);
 		}
 		return $slug;
 	}

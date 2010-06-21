@@ -64,6 +64,11 @@ class AppHelper extends Helper {
 				);
 			}
 		}
+		if (isset($url[1])) {
+			$encoding = Configure::read('App.encoding');
+			$slug = mb_convert_encoding($url[1], $encoding, $encoding);
+			$url[1] = $slug;
+		}
 		return parent::url($url, $full);
 	}
 }

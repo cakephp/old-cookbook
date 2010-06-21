@@ -69,7 +69,7 @@ class Revision extends AppModel {
  * @access public
  */
 	var $actsAs = array (
-		'Slugged' => array('length' => 150, 'label' => 'title', 'overwrite' => true, 'unique' => false, 'mode' => 'id'),
+		'Slugged' => array('length' => 50, 'label' => 'title', 'overwrite' => true, 'unique' => false, 'mode' => 'id', 'multibyte' => true),
 		'Searchable.Searchable'
 	);
 /**

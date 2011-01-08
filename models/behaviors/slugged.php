@@ -188,7 +188,7 @@ class SluggedBehavior extends ModelBehavior {
 			}
 		}
 		if (strlen($slug) > $length) {
-			$slug = substr ($slug, $length);
+			$slug = substr ($slug, 0, $length);
 		}
 		if ($multibyte && function_exists('mb_convert_encoding')) {
 			$encoding = $multibyte;

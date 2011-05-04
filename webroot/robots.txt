@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /compare/
+Disallow: /*/compare/
+Disallow: /edit/
+Disallow: /*/edit/
+Disallow: /history/
+Disallow: /*/history/
+Disallow: /revisions/
+Disallow: /*/revisions/

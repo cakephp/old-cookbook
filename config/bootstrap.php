@@ -88,7 +88,9 @@ Configure::write('Languages.all', $langs);
 
 Configure::write('MiCompressor.clearCache', false);
 Configure::write('MiCompressor.cacheDir', CACHE . 'assets' . DS);
-Configure::write('MiCompressor.salt', trim(file_get_contents(APP . '.git/refs/heads/master')));
+if (file_exists(APP . '.git/refs/heads/master')) {
+	Configure::write('MiCompressor.salt', trim(file_get_contents(APP . '.git/refs/heads/master')));
+}
 
 define('ADMIN', '800');
 define('EDITOR', '700');
